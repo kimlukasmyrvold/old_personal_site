@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Specifies the language of the website -->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Kim Lukas Myrvold</title>
-    <link rel="icon" href="./img/kimlukasmyrvold_x2.png">
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site look better on window sizes -->
+    <meta name="author" content="Kim Lukas Myrvold"> <!-- Name of the author who made this website -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js"> <!-- Defines keywords for search engines -->
+    <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
+    <title>Home - Kim Lukas Myrvold</title> <!-- Changes the name of the website -->
+    <link rel="icon" href="./icon.jpg"> <!-- Changes the icon for the website -->
+    <link rel="stylesheet" href="./css/main.css"> <!-- Stylesheet for website, make stuff look good -->
 </head>
 
 <body>
@@ -15,31 +17,33 @@
         <div class="navbar">
             <h1>Home Page</h1>
             <div>
-                <button name="btn-toggle" class="btn-toggle";><img src="./img/light mode button.png" alt="Change theme button" id="theme_btn"></button>
+                <button name="btn-toggle" class="btn-toggle";><img src="./img/theme button.png" alt="Change theme button" id="theme_btn"></button>
                     <script type="text/javascript" src="./js/main.js"></script>
             </div>
             <a class="active" href="./">Home</a>
             <a href="./html/about.html">About</a>
         </div>
     </nav>
-    <!-- End of Navbar -->
+    <!-- Navbar -->
 
     <br><br><br>
     
-    <!-- Page -->
+    <!-- Main -->
     <section>
-        <div class="intro">
+        <div id="intro" class="intro">
             <table>
-                <tr>
-                    <td>
-                        <img src="./img/kimlukasmyrvold_x2.png" alt="A picture of me" width="auto" height="300px" style="border-radius: 180px;">
-                    </td>
-                    <td>
-                        <h2>Kim Lukas Myrvold</h2>
-                        <h3>16 years old</h3>
-                        <h3>Born on the 21st of May 2006</h3>
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="./img/kimlukasmyrvold.png" alt="A picture of me">
+                        </td>
+                        <td>
+                            <h2>Kim Lukas Myrvold</h2>
+                            <h3>16 years old</h3>
+                            <h3>Born on the 21st of May 2006</h3>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </section>
@@ -75,33 +79,30 @@
             <p>Eius saepe nostrum voluptatum assumenda!</p>
             <p>Adipisci, saepe! Expedita, cumque dicta!</p>
             <p>Asperiores similique corrupti nulla quibusdam!</p>
-            <p>Nobis facilis sint quasi dolores.</p>
-            <p>Voluptatibus pariatur tenetur rerum sit.</p>
-            <p>Debitis iure obcaecati ipsam quas?</p>
-            <p>Ratione architecto odio in quia!</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Officiis quasi quo culpa in.</p>
-            <p>Voluptate, modi officiis. Debitis, velit?</p>
-            <p>Fuga beatae sunt qui eos?</p>
-            <p>Asperiores maxime laboriosam saepe quo!</p>
         </div>
     </section>
-    <!-- End of page -->
+    <!-- Main -->
 
 
-    <!-- Bottom of page -->
-    <footer>
-        <div class="footer">
-            <div>
-                <a href="./html/about.html">Contact me</a>
-                <div>
-                    <h3>Location: Årum, Fredrikstad, Norway</h3>
-                    <h3>Email: kimlukasmyrvold06@gmail.com</h3>
-                    <h3>Phone: +47 484 26 624</h3>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div>
+            <table class="footer-table">
+                <tr>
+                    <th>
+                        <a href="./html/about.html">Contact information</a>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="./html/about.html">Location: Årum, Fredrikstad, Norway</a>
+                        <a href="./html/about.html">Email: kimlukasmyrvold06@gmail.com</a>
+                        <a href="./html/about.html">Phone: +47 484 26 624</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </footer>
-    <!-- End of bottom of page -->
+    <!-- Footer -->
 </body>
 </html>

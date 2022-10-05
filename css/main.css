@@ -1,81 +1,62 @@
 /* Website themes */
 /* Light mode */
 body {
-    --text-color: black;
-    --bkg-color: rgb(238, 238, 238);
-    --link-color: rgb(255, 153, 0);
-    --visited: rgb(235, 113, 0);
-    --hover: rgb(223, 89, 0);
-    --active: rgb(39, 39, 39);
-    --nav-bkg-color: rgb(195, 195, 195);
+    --text-color1: rgb(0, 0, 0);
+    --text-color2: rgb(255, 255, 255);
+
+    --bkg-color1: rgb(255, 255, 255);
+    --bkg-color2: rgb(195, 195, 195);
+    --bkg-color3: rgb(40, 40, 40);
+
+    --link-color1: rgb(255, 153, 0);
+    --link-color2: rgb(235, 113, 0);
+    --link-color3: rgb(223, 89, 0);
+    --link-color4: rgb(39, 39, 39);
+
+    --none: rgba(0, 255, 255, 0);
 }
 /* Dark mode */
 body.dark-theme {
-    --text-color: white;
-    --bkg-color: #383838;
-    --link-color: rgb(0, 238, 255);
-    --visited: rgb(0, 183, 255);
-    --hover: rgb(0, 184, 190);
-    --active: rgb(175, 175, 175);
-    --nav-bkg-color: #282828;
+    --text-color1: rgb(255, 255, 255);
+    --text-color2: rgb(0, 0, 0);
+
+    --bkg-color1: rgb(56, 56, 56);
+    --bkg-color2: rgb(40, 40, 40);
+    --bkg-color3: rgb(195, 195, 195);
+
+    --link-color1: rgb(0, 238, 255);
+    --link-color2: rgb(0, 183, 255);
+    --link-color3: rgb(0, 184, 190);
+    --link-color4: rgb(175, 175, 175);
+
+    --none: rgba(0, 255, 255, 0);
 }
 
-/* Changes the website background color and font */
+/* Changes the website background color, font, text color and disables horizontal scroll */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--bkg-color);
-    color: var(--text-color);
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    background-color: var(--bkg-color1);
+    color: var(--text-color1);
+    overflow-x: hidden;
 }
 
 
-/* Link styling */
-/* Changes link color */
-a:link {
-  color: var(--link-color);
-  text-decoration: none;
-}
-/* Changes link color for visited links */
-a:visited {
-  color: var(--visited);
-  text-decoration: none;
-}
-/* Changes link color when hovering over it */
-a:hover {
-  color: var(--hover);
-  text-decoration: none;
-}
-/* Changes color for link when you clicked it */
-a:active {
-  color: var(--active);
-  text-decoration: none;
-}
 
-
-/* Other Styling */
-/* Styling for tables */
-th, td {
-    padding-top: none;
-    padding-bottom: none;
-    padding-left: none;
-    padding-right: 40px;
-}
-
-
-/* Navbar styling */
+/* Styling the navigation bar (navbar) */
 /* Add a black background color to the top navigation */
 .navbar {
-    background-color: var(--nav-bkg-color);
+    background-color: var(--bkg-color2);
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
     overflow: hidden;
-    z-index: 1;
+    z-index: 1; /* makes the navbar always the top most layer. Before when scrolling the text would be displayed over the navbar */
 }
-/* Style the links inside the navigation bar */
+/* Styleing the links inside the navigation bar */
 .navbar a {
     float: right;
-    color: var(--text-color);
+    color: var(--text-color1);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -83,18 +64,18 @@ th, td {
 }
 /* Change the color of links on hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: var(--bkg-color3);
+    color: var(--text-color2);
 }
 /* Add a color to the active/current link */
 .navbar a.active {
-    background-color: #04AA6D;
-    color: white;
+    background-color: rgb(4, 170, 109);
+    color: rgb(255, 255, 255);
 }
 /* Button design */
 .navbar button {
     float: right;
-    background-color: var(--nav-bkg-color);
+    background-color: var(--bkg-color2);
     border: none;
     scale: 21.5%;
     position: relative;
@@ -102,31 +83,31 @@ th, td {
     top: -78px;
     margin-right: -158px;
     margin-bottom: -158px;
+    cursor: pointer
 }
 /* styling h1 */
 .navbar h1 {
     position: fixed;
-    top: -46px;
+    top: -48px;
     left: -9px;
-    width: auto;
-    overflow: hidden;
     color: var(--text-color);
-    text-align: left;
     padding: 14px 16px;
     font-size: 40px;
 }
 
 
+
 /* Introduction styling */
+/* Changes default styling for everything with intro class */
 .intro {
-    background-color: var(--bkg-color);
+    background-color: var(--bkg-color1);
     position: relative;
     top: 0px;
     left: 0px;
     width: 100%;
     overflow: hidden;
 }
-
+/* Changes the styling h2 tags */
 .intro h2 {
     position: relative;
     left: 0px;
@@ -134,35 +115,52 @@ th, td {
     margin: 0px;
     margin-bottom: 10px;
 }
+/* Styling for h3 tags */
 .intro h3 {
     position: relative;
     left: 0px;
     margin-top: 4px;
     margin-bottom: 0px;
 }
+/* Styling for img tag */
+.intro img {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 300px;
+    margin: 0;
+    padding: 0;
+}
+/* Styling for tables */
+.intro td {
+    padding-right: 40px;
+}
+
 
 
 /* Footer styling */
-
+/* Changes the default styling for everything with footer class */
 .footer {
-    position: relative;
-    left: 0px;
-    width: 100%;
-    border-top: 2px solid var(--text-color);
-    background: var(--nav-bkg-color);
-    overflow-x: hidden;
-    margin: 0px;
-    padding: 20px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 25px 0 30px 0;
+    margin: 0;
+    background-color: var(--bkg-color2);
+    text-align: center;
 }
-.footer h3 {
-    position: relative;
-    left: 12px;
-    color: yellow;
-}
+/* Change style for links with footer class */
 .footer a {
-    position: relative;
-    left: 12px;
-    color: yellow;
-    font-size: 32px;
-    top: 8px;
+    text-decoration: none;
+    color: var(--text-color1);
+    font-size: 22px;
+    line-height: 1.5;
+}
+/* Styling for table with footer class */
+table.footer-table {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
