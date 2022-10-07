@@ -1,7 +1,7 @@
 /* Website themes */
 /* Light mode */
 body {
-    --text-color1: rgb(0, 0, 0);
+    --text-color1: rgb(28, 28, 28);
     --text-color2: rgb(255, 255, 255);
 
     --bkg-color1: rgb(255, 255, 255);
@@ -17,7 +17,7 @@ body {
 /* Dark mode */
 body.dark-theme {
     --text-color1: rgb(255, 255, 255);
-    --text-color2: rgb(0, 0, 0);
+    --text-color2: rgb(28, 28, 28);
 
     --bkg-color1: rgb(56, 56, 56);
     --bkg-color2: rgb(40, 40, 40);
@@ -38,18 +38,21 @@ body {
     overflow-x: hidden;
 }
 
-/* Changes */
+/* Styling the section element so that everything within in it is seperated from the navbar and footer */
 section {
     position: relative;
     padding: 55px 0 20px;
     margin: 0;
 }
 
+/* Styling the hr tag so it looks better */
 hr {
     position: relative;
     padding: 0;
     margin: 40px 0;
     border: 1px solid var(--bkg-color3);
+    border-radius: 1px;
+    background-color: var(--bkg-color3);
 }
 
 
@@ -67,10 +70,11 @@ hr {
     border: 0;
     z-index: 1; /* makes the navbar always the top most layer. Before when scrolling the text would be displayed over the navbar */
 }
-/* Styleing the links inside the navigation bar */
+/* Styling the links inside the navigation bar */
 .navbar a {
     float: right;
     color: var(--text-color1);
+    background-color: var(--bkg-color2);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -78,7 +82,7 @@ hr {
 }
 /* Change the color of links on hover */
 .navbar a:hover {
-    background-color: var(--bkg-color3);
+    background-color: var(--bkg-color3); /* Gave background color so it's easier to see when text over header */
     color: var(--text-color2);
 }
 /* Add a color to the active/current link */
@@ -115,13 +119,12 @@ hr {
 /* Introduction styling */
 /* Changes default styling for everything with intro class */
 .intro {
-    background-color: var(--bkg-color1);
     position: relative;
     top: 0px;
     left: 0px;
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin: 15px 0 0 0;
     overflow: hidden;
 }
 /* Changes the styling h2 tags */
