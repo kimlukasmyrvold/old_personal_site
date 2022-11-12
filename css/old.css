@@ -1,0 +1,342 @@
+/* Variables for dark theme and light theme */
+/* Dark theme (default) */
+body {
+    /* Body colors */
+    --body-color: rgba(12, 24, 33, 1);
+    --body-color-gradient: linear-gradient(150deg, rgba(22,34,33,1) 0%, rgba(12,34,53,1) 59%, rgba(32,49,77,1) 100%);
+    --body-color-inverse: rgba(240, 240, 240, 1);
+
+    /* Text colors */
+    --text-color: rgb(240, 240, 240);
+    --text-color-inverse: rgb(12, 12, 12);
+    --text-color-hover: rgb(200, 200, 200);
+
+    /* Nav colors */
+    --nav-color: rgba(2, 14, 23, 0.94);
+    --nav-color-active: rgba(27, 42, 65, 1);
+    --nav-color-hover: rgba(240, 240, 240, 1);
+    --nav-color-footer: rgba(2, 14, 23, 0.5);
+    --nav-color-menu: rgba(2, 14, 23, 1);
+
+    --footer-color: rgba(2, 14, 23, 0.94);
+
+    /* Icon color */
+    --icon-color: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
+}
+
+/* Light theme */
+body.light-theme {
+    /* Body colors */
+    --body-color: rgba(250, 250, 250, 1);
+    --body-color-gradient: linear-gradient(150deg, rgba(250,250,250,1) 0%, rgba(200,200,200,1) 50%, rgb(190, 190, 190) 100%);
+    --body-color-inverse: rgba(12, 24, 33, 1);
+
+    /* Text colors */
+    --text-color: rgb(12, 12, 12);
+    --text-color-inverse: rgb(240, 240, 240);
+    --text-color-hover: rgb(60, 60, 60);
+
+    /* Nav colors */
+    --nav-color: rgba(255, 255, 255, 0.96);
+    --nav-color-active: rgba(27, 42, 65, 1);
+    --nav-color-hover: rgba(12, 12, 12, 1);
+    --nav-color-footer: rgba(110, 131, 135, 1);
+    --nav-color-menu: rgba(255, 255, 255, 1);
+
+    --footer-color: rgba(255, 255, 255, 0.70);
+
+    /* Icon color */
+    --icon-color: filter: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
+}
+ 
+
+
+/* Body (the bones of the website*/
+
+body {
+    min-height: 100vh; /* Using veiwport height */
+    background: var(--body-color-gradient);
+    color: var(--text-color);
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+/* Using flex for easier setup of navbar, article, footer and other stuff it might be used for */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Navbar (the bar on the top that shows links and header */
+
+nav {
+    height: 50px;
+    background: var(--nav-color);
+    position: sticky; /* Putting it as sticky so it "sticks" to the top of page */
+    top: 0;
+    z-index: 1000; /* Setting z-index to 1000 so it's always on top */    
+
+}
+.navbar-container {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+/* Change the color of links when displayed normally */
+.navbar-container a {
+    float: right;
+    background: var(--nav-color);
+    text-align: center;
+    padding: 14.7px 16px;
+    font-size: 17px;
+}
+/* Change the color of links on hover */
+.navbar-container a:hover {
+    background-color: var(--nav-color-hover); /* Gave background color so it's easier to see when text over header */
+    color: var(--text-color-inverse);
+}
+/* Add a color to the active/current link */
+.navbar-container .active {
+    background-color: var(--nav-color-active);
+    color: rgb(240, 240, 240);
+}
+/* styling for the hamburger image */
+.navbar-container img {
+    filter: var(--icon-color); /* Using filter to change the color of the image from black to white depending on the theme */
+    height: 60px;
+    width: 35px;
+}
+/* Styling the button and placing it where it should be */
+.navbar-container button {
+    float: right;
+    border: none;
+    background: transparent;
+    cursor: pointer; /* Makes it show the pointer when you hover over it. This way it looks clickable */
+    padding: 0;
+    margin: -5px 6px 0 6px;
+}
+/* Styling the header so it's correctly placed and looks good */
+.navbar-container .header{
+    float: left;
+    padding: 5px 0 0 8px;
+    margin: 0;
+    background: none;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 32px;
+    text-align: center;
+}
+/* Makes the header not change color when hovering it, the header is also a link user can use to go to top */
+.navbar-container .header:hover {
+    background: none;
+    color: var(--text-color);
+}
+
+
+/* Navbar hamburger menu */
+
+.navmenu {
+    display: none;
+    flex-direction: column;
+    min-height: 100px;
+    width: 145px;
+    background: var(--nav-color-menu);
+    position: fixed;
+    top: 50px;
+    right: 0;
+}
+.navmenuShow {
+    display: flex;
+    flex-direction: column;
+}
+.NavmenuBtn {
+    float: right;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: -5px 6px 0 6px;
+}
+.NavmenuBtnToggle {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.navmenu-container {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: var(--nav-color-menu);
+}
+/* Change the color of links when displayed normally */
+.navmenu-container a {
+    background: var(--nav-color);
+    text-align: left;
+    padding: 14.7px 5px;
+    margin: 0;
+    font-size: 17px;
+    display: block;
+}
+/* Change the color of links on hover */
+.navmenu-container a:hover {
+    background-color: var(--nav-color-hover);
+    color: var(--text-color-inverse);
+}
+/* Add a color to the active/current link */
+.navmenu-container a.active {
+    background-color: var(--nav-color-active);
+    color: rgb(240, 240, 240);
+}
+.navmenu-container hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    padding: 0;
+    margin: 4px 5px;
+}
+.navmenu-ext-links {
+    margin-bottom: 6px;
+}
+.navmenu-ext-links a {
+    padding: 6px 5px;
+    margin: 0;
+}
+.navmenu-container h1, .navmenu-container h2, .navmenu-container h3, .navmenu-container h4, .navmenu-container h5, .navmenu-container h6, .navmenu-container p, .navmenu-container button {
+    padding: 8px 5px;
+    margin: 0;
+    border: 0;
+}
+
+/* -------------------- */
+
+.NavmenuDropdownAppearance {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.NavmenuAppearanceBtn {
+    background: var(--nav-color-menu);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+}
+button.NavmenuAppearanceBtn {
+    font-size: 20px;
+    padding: 8px 5px;
+    margin: 0;
+}
+.NavmenuAppearanceBtn:hover {
+    background: var(--nav-color-menu);
+    color: var(--text-color-hover);
+}
+.NavmenuAppearance {
+    display: none;
+    background: var(--nav-color-menu);
+    z-index: 998;
+}
+.NavmenuAppearance p {
+    padding: 7px 10px;
+}
+.NavmenuAppearanceShow {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ----------------------- */
+
+
+/* Article (the main part of the website) */
+
+article {
+    flex: 1; /* Using flex 1 so footer is always pushed to bottom of veiwport  */
+}
+.article-container {
+    margin: 20px 10px;
+    padding: 0;
+}
+.article-container hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    background-color: var(--body-color-inverse);
+    margin: 20px 3px 25px 3px;
+}
+
+.intro img {
+    padding: 0 20px 0 0;
+    margin: 0;
+}
+.intro h2 {
+    font-size: 36px;
+    text-decoration: underline 2px;
+    padding: 0;
+    margin: 0 0 16px 0;
+}
+.intro p {
+    font-size: 20px;
+    padding: 0;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+
+
+/* Footer (The bottom part of the website */
+
+footer {
+    min-height: 100px;
+    background: var(--footer-color);
+}
+/* Styling for stuff inside footer */
+.footer-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Styling footer image */
+.footer-container img {
+    /* max-width: 100%; */
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+}
+/* Styling footer hr */
+.footer-container hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    background-color: var(--body-color-inverse);
+    margin: 15px 0;
+}
+/* Styling footer p */
+.footer-container p {
+    font-size: 28px;
+    padding: 0;
+    margin: 0;
+}
+/* Styling footer links */
+.footer-container a {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+/* Styling footer table */
+.footer-container td {
+    margin: 0;
+    padding: 0 15px;
+}
+
+
+
+/* Links (Changes all the links for the website */
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+a:hover {
+    text-decoration: none;
+    color: var(--text-color-hover);
+}

@@ -1,106 +1,143 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Specifies the language of the website -->
+<html lang="en">
+
 <head>
     <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site look better on window sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes site look better on window sizes -->
     <meta name="author" content="Kim Lukas Myrvold"> <!-- Name of the author who made this website -->
-    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js"> <!-- Defines keywords for search engines -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <!-- Defines keywords for search engines -->
     <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
-    <title>Home - Kim Lukas Myrvold</title> <!-- Changes the name of the website -->
+
+    <title>New CV</title> <!-- Changes the name of the website -->
+
     <link rel="icon" type="image/x-icon" href="./favicon.ico"> <!-- Changes the icon for the website -->
     <link rel="stylesheet" href="./css/main.css"> <!-- Stylesheet for website, make stuff look good -->
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="navbar">
-            <h1>Home Page</h1>
-            <div>
-                <button name="btn-toggle" class="btn-toggle";><img src="./img/theme button.png" alt="Change theme button" id="theme_btn"></button>
-                    <script type="text/javascript" src="./js/main.js"></script>
+    <div class="navbar">
+        <div class="topnav">
+            <a class="links" id="navHeader" href="../index.html">Startside</a>
+
+            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
+                <img src="./img/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+            </button>
+
+            <a class="links" id="navActive" href="./index.html">Startside</a>
+            <a class="links" href="./html/contact.html">Kontakt meg</a>
+        </div>
+
+        <div class="sidemenu-container">
+            <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
+
+            <div id="sidemenu" class="sidemenu">
+                <div id="navlinks" class="navlinks">
+                    <a id="navActive" href="./index.html">Startside</a>
+                    <a href="./html/contact.html">Kontakt meg</a>
+
+                    <hr>
+                </div>
+
+                <div class="dropdowns">
+                    <div class="appearance">
+                        <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
+                            <span>Utseende</span>
+                        </button>
+
+                        <div id="appearance-drop" class="appearance-drop">
+                            <!-- <button id="device-theme-btn" onclick="theme_btn_device()">Enhet modus</button> -->
+                            <!-- ^^^^^^ will be added in future, maybe... -->
+                            <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
+                            <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
+                        </div>
+                    </div>
+
+                    <div class="language">
+                        <button id="language-btn" onclick="language_btn()" class="language-btn">
+                            <span>Språk</span>
+                        </button>
+
+                        <div id="language-drop" class="language-drop">
+                            <button id="english-btn" onclick="language_btn_english()">English</button>
+                            <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="social">
+                    <table>
+                        <tr>
+                            <td>
+                                <img class="github-logo" src="./img/GitHub-Mark-Light-32px.png" alt="github logo">
+                                <a href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                                    rel="noreferrer noopener">Github</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="youtube-logo" src="./img/youtube-logo.png" alt="youtube logo">
+                                <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
+                                    rel="noreferrer noopener">Youtube</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <a class="active" href="./">Home</a>
-            <a href="./html/about.html">About</a>
-            <a href="./html/python_test.html">Python test site</a>
         </div>
-    </nav>
-    <!-- Navbar -->
-    
-    <!-- Main -->
-    <section>
-        <div class="intro">
+    </div>
+
+    <div class="main">
+        <div class="intro" id="intro">
             <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img src="./img/kimlukasmyrvold.png" alt="A picture of me">
-                        </td>
-                        <td>
-                            <h2>Kim Lukas Myrvold</h2>
-                            <h3>16 years old</h3>
-                            <h3>Born on the 21st of May 2006</h3>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <hr>
-
-        <div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, rerum!</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Perferendis architecto doloribus nemo et.</p>
-            <p>Rem nostrum culpa atque odit!</p>
-            <p>Non corrupti possimus autem dolore.</p>
-            <p>Vero optio fugiat minima expedita?</p>
-            <p>Sed laudantium recusandae non ut!</p>
-            <p>Officiis maxime natus minima beatae.</p>
-            <p>Quis beatae harum laudantium delectus.</p>
-            <p>Impedit voluptas sit vero excepturi.</p>
-            <p>Incidunt quisquam ratione minima obcaecati.</p>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p>Fugit asperiores praesentium ratione minima!</p>
-            <p>Incidunt obcaecati quo minima sed.</p>
-            <p>Soluta nemo fugit inventore magni?</p>
-            <p>Sint quidem facilis soluta quo!</p>
-            <p>Fuga ipsum sapiente harum hic.</p>
-            <p>Error impedit saepe veniam ullam.</p>
-            <p>Veritatis doloribus quas quis praesentium?</p>
-            <p>Quia quos sequi esse consequatur?</p>
-            <p>Quae voluptatibus sapiente alias consequatur!</p>
-            <p>Neque modi tenetur quasi cum.</p>
-            <p>Eveniet cum facilis maxime magni?</p>
-            <p>Ab doloribus quas minus facere!</p>
-            <p>Eius saepe nostrum voluptatum assumenda!</p>
-            <p>Adipisci, saepe! Expedita, cumque dicta!</p>
-            <p>Asperiores similique corrupti nulla quibusdam!</p>
-        </div>
-    </section>
-    <!-- Main -->
-
-
-    <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div>
-            <table class="footer-table">
-                <tr>
-                    <th>
-                        <a href="./html/about.html">Contact information</a>
-                    </th>
-                </tr>
                 <tr>
                     <td>
-                        <a href="./html/about.html">Location: Årum, Fredrikstad, Norway</a>
-                        <a href="./html/about.html">Email: kimlukasmyrvold06@gmail.com</a>
-                        <a href="./html/about.html">Phone: +47 484 26 624</a>
+                        <img src="./img/kimlukasmyrvold.png" alt="Picture of me">
+                    </td>
+                    <td>
+                        <h2>Kim Lukas Myrvold</h2>
+                        <p class="intro-age">16 år gammel</p>
+                        <p class="intro-cake">Født: 21. Mai. 2006</p>
+                        <p>Årum, Fredrikstad</p>
+                        <a href="./html/contact.html">
+                            <p class="intro-email">kimlukasmyrvold06@gmail.com</p>
+                        </a>
                     </td>
                 </tr>
             </table>
         </div>
-    </footer>
-    <!-- Footer -->
+
+        <hr>
+        
+        <!-- <a class="links" href="mailto:kimlukasmyrvold06@gmail.com">Email</a><br>
+        <a class="links" href="tel: 48426624">Phone</a> -->
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <table>
+                <tr>
+                    <td>
+                        <img src="./favicon.ico" alt="Picture of me">
+                    </td>
+                    <td>
+                        <p>Kim Lukas Myrvold</p>
+                        <hr>
+                        <a class="links" href="./html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
+                        <br>
+                        <a class="links" href="./html/contact.html">Telefon: 48426624</a>
+                        <br>
+                        <a class="links" href="./html/contact.html">Lokasjon: Fredrikstad, Norway</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./javascript/main.js"></script>
 </body>
+
 </html>

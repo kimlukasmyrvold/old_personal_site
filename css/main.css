@@ -1,186 +1,382 @@
-/* Website themes */
-/* Light mode */
+/* Variables for dark theme and light theme */
+/* Dark theme (default) */
 body {
-    --text-color1: rgb(28, 28, 28);
-    --text-color2: rgb(255, 255, 255);
+    /* Body colors */
+    --body-color: rgba(12, 24, 33, 1);
+    --body-color-gradient: linear-gradient(150deg, rgba(22,34,33,1) 0%, rgba(12,34,53,1) 59%, rgba(32,49,77,1) 100%);
+    --body-color-inverse: rgba(240, 240, 240, 1);
 
-    --bkg-color1: rgb(255, 255, 255);
-    --bkg-color2: rgb(195, 195, 195);
-    --bkg-color3: rgb(40, 40, 40);
+    /* Text colors */
+    --text-color: rgb(240, 240, 240);
+    --text-color-inverse: rgb(12, 12, 12);
+    --text-color-hover: rgb(200, 200, 200);
 
-    /* Link colors not currently in use */
-    --link-color1: rgb(255, 153, 0);
-    --link-color2: rgb(235, 113, 0);
-    --link-color3: rgb(223, 89, 0);
-    --link-color4: rgb(39, 39, 39);
-}
-/* Dark mode */
-body.dark-theme {
-    --text-color1: rgb(255, 255, 255);
-    --text-color2: rgb(28, 28, 28);
+    /* Nav colors */
+    --nav-color: rgba(2, 14, 23, 0.94);
+    --nav-color-active: rgba(27, 42, 65, 1);
+    --nav-color-hover: rgba(240, 240, 240, 1);
+    --nav-color-menu: rgba(2, 14, 23, 1);
 
-    --bkg-color1: rgb(56, 56, 56);
-    --bkg-color2: rgb(40, 40, 40);
-    --bkg-color3: rgb(195, 195, 195);
+    /* footer color */
+    --footer-color: rgba(2, 14, 23, 0.94);
 
-    /* Link colors not currently in use */
-    --link-color1: rgb(0, 238, 255);
-    --link-color2: rgb(0, 183, 255);
-    --link-color3: rgb(0, 184, 190);
-    --link-color4: rgb(175, 175, 175);
+    /* Icon color */
+    --icon-color: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
+    --icon-color-invert: filter: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
 }
 
-/* Changes the website background color, font, text color and disables horizontal scroll */
-body {
+/* Light theme */
+body.light-theme {
+    /* Body colors */
+    --body-color: rgba(250, 250, 250, 1);
+    --body-color-gradient: linear-gradient(150deg, rgba(250,250,250,1) 0%, rgba(200,200,200,1) 50%, rgb(190, 190, 190) 100%);
+    --body-color-inverse: rgba(12, 24, 33, 1);
+
+    /* Text colors */
+    --text-color: rgb(12, 12, 12);
+    --text-color-inverse: rgb(240, 240, 240);
+    --text-color-hover: rgb(60, 60, 60);
+
+    /* Nav colors */
+    --nav-color: rgba(255, 255, 255, 0.96);
+    --nav-color-active: rgba(27, 42, 65, 1);
+    --nav-color-hover: rgba(12, 12, 12, 1);
+    --nav-color-menu: rgba(255, 255, 255, 1);
+
+    /* footer color */
+    --footer-color: rgba(255, 255, 255, 0.70);
+
+    /* Icon color */
+    --icon-color: filter: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
+    --icon-color-invert: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
+}
+
+
+* {
     font-family: Tahoma, Arial, Helvetica, sans-serif;
-    background-color: var(--bkg-color1);
-    color: var(--text-color1);
-    overflow-x: hidden;
-}
-
-/* Styling the section element so that everything within in it is seperated from the navbar and footer */
-section {
-    position: relative;
-    padding: 55px 0 20px;
-    margin: 0;
-}
-
-/* Styling the hr tag so it looks better */
-hr {
-    position: relative;
-    padding: 0;
-    margin: 40px 0;
-    border: 1px solid var(--bkg-color3);
-    border-radius: 1px;
-    background-color: var(--bkg-color3);
-}
-
-
-/* Styling the navigation bar (navbar) */
-/* Add a black background color to the top navigation */
-.navbar {
-    background-color: var(--bkg-color2);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    z-index: 1; /* makes the navbar always the top most layer. Before when scrolling the text would be displayed over the navbar */
-}
-/* Styling the links inside the navigation bar */
-.navbar a {
-    float: right;
-    color: var(--text-color1);
-    background-color: var(--bkg-color2);
-    text-align: center;
-    padding: 14px 16px;
+    color: var(--text-color);
     text-decoration: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh; /* Using veiwport height */
+    background: var(--body-color-gradient);
+}
+/* Using flex for easier setup of navbar, article, footer and other stuff it might be used for */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar {
+    background: var(--nav-color);
+    height: 50px;
+    position: sticky;
+    top: 0;
+}
+.topnav {
+    height: 50px;
+    z-index: 900;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.topnav a {
+    float: right;
+    background: var(--nav-color);
+    text-align: center;
+    padding: 14.7px 16px;
     font-size: 17px;
 }
-/* Change the color of links on hover */
-.navbar a:hover {
-    background-color: var(--bkg-color3); /* Gave background color so it's easier to see when text over header */
-    color: var(--text-color2);
+.topnav a:hover {
+    background-color: var(--nav-color-hover); /* Gave background color so it's easier to see when text over header */
+    color: var(--text-color-inverse);
 }
-/* Add a color to the active/current link */
-.navbar a.active {
-    background-color: rgb(4, 170, 109);
-    color: rgb(255, 255, 255);
-}
-/* Button design */
-.navbar button {
-    float: right;
-    background-color: transparent;
-    border: none;
-    scale: 21.5%;
-    position: relative;
-    right: 78px;
-    top: -78px;
-    margin-right: -158px;
-    margin-bottom: -158px;
-    cursor: pointer
-}
-/* styling h1 */
-.navbar h1 {
-    position: fixed;
-    top: -48px;
-    left: -9px;
+#navHeader {
+    float: left;
+    padding: 5px 0 0 12px;
+    margin: 0;
+    background: none;
     color: var(--text-color);
-    padding: 14px 16px;
-    font-size: 40px;
-    z-index: -1;
+    text-decoration: none;
+    font-size: 32px;
+    text-align: center;
 }
-
-
-
-/* Introduction styling */
-/* Changes default styling for everything with intro class */
-.intro {
+#navActive {
+    background-color: var(--nav-color-active);
+    color: rgb(240, 240, 240);
+}
+#sidemenu-btn {
     position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
+    float: right;
+    border: none;
+    background: transparent;
+    cursor: pointer; /* Makes it show the pointer when you hover over it. This way it looks clickable */
     padding: 0;
-    margin: 15px 0 0 0;
-    overflow: hidden;
+    margin: -5px 6px 0 6px;
+    z-index: 950;
 }
-/* Changes the styling h2 tags */
-.intro h2 {
+#sidemenu-btn-img {
+    filter: var(--icon-color); /* Using filter to change the color of the image from black to white depending on the theme */
+    height: 60px;
+    width: 35px;
+}
+.sidemenu {
+    display: none;
+    min-height: 300px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.sidemenu-show {
+    min-height: 200px;
+    width: 145px;
+    background: var(--nav-color-menu);
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+}
+.sidemenu-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 901;
+    display: none;
+}
+.sidemenu-overlay-show {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 901;
+    display: block;
+    /* background-color: rgba(255, 0, 0, 0.23);  */
+}
+.sidemenu-show hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    padding: 0;
+    margin: 4px 5px;
+    opacity: 0.06;
+}
+.navlinks-hidden {
+    display: none;
+}
+.navlinks a {
+    background: var(--nav-color);
+    text-align: left;
+    padding: 14.7px 5px;
+    margin: 0;
+    font-size: 18px;
+    display: block;
+}
+.navlinks a:hover {
+    background-color: var(--nav-color-hover);
+    color: var(--text-color-inverse);
+}
+
+
+
+.appearance-btn {
+    background: var(--nav-color-menu);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 8px 0 8px 5px;
+}
+.appearance-btn::after {
+    content: '⬇️';
+}
+.appearance-btn-clicked::after {
+    content: '⬆️';
+}
+
+
+.appearance-drop {
+    display: none;
+}
+.appearance-drop-show {
+    display: block;
+}
+.appearance-drop-show button {
+    background: var(--nav-color-menu);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 0 7px 10px;
+}
+
+
+
+.language-btn {
+    background: var(--nav-color-menu);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 8px 0 8px 5px;
+}
+.language-btn::after {
+    content: '⬇️';
+}
+.language-btn-clicked::after {
+    content: '⬆️';
+}
+
+
+.language-drop {
+    display: none;
+}
+.language-drop-show {
+    display: block;
+}
+.language-drop-show button {
+    background: var(--nav-color-menu);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 0 10px 10px;
+    display: block;
+}
+
+
+.social {
+    margin: 10px 0 10px 3px;
+    line-height: 1.7rem;
+}
+.social a {
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: underline;
+}
+.social a:hover {
+    color: var(--text-color-hover);
+}
+
+img.github-logo {
+    filter: var(--icon-color-invert);
+    height: 19px;
+    width: auto;
+    padding: 0;
+    margin: 0;
     position: relative;
-    left: 0px;
-    font-size: 1.8em;
-    margin: 0px;
-    margin-bottom: 10px;
+    top: 3px;
+    left: 2px;
 }
-/* Styling for h3 tags */
-.intro h3 {
+img.youtube-logo {
+    height: 19px;
+    width: auto;
+    padding: 0;
+    margin: 0;
     position: relative;
-    left: 0px;
-    margin-top: 4px;
-    margin-bottom: 0px;
+    top: 3px;
+    left: 2px;
 }
-/* Styling for img tag */
+
+
+
+
+
+.main {
+    flex: 1;
+    margin: 20px 10px;
+    padding: 0;
+}
+.main hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    background-color: var(--body-color-inverse);
+    margin: 20px 3px 25px 3px;
+}
+
 .intro img {
+    padding: 0 20px 0 0;
+    margin: 0;
+    border-radius: 50%;
     max-width: 100%;
     width: 300px;
     height: auto;
-    border-radius: 300px;
-    margin: 0;
+}
+.intro h2 {
+    font-size: 36px;
+    text-decoration: underline 2px;
     padding: 0;
+    margin: 0 0 16px 0;
 }
-/* Styling for tables */
-.intro td {
-    padding-right: 40px;
+.intro p {
+    font-size: 20px;
+    padding: 0;
+    margin: 8px 0;
+    font-weight: 600;
 }
 
 
 
-/* Footer styling */
-/* Changes the default styling for everything with footer class */
+
+
+
 .footer {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 25px 0 30px 0;
-    margin: 0;
-    background-color: var(--bkg-color2);
-    text-align: center;
+    min-height: 50px;
+    background: var(--footer-color);
 }
-/* Change style for links with footer class */
-.footer a {
-    text-decoration: none;
-    color: var(--text-color1);
-    font-size: 22px;
-    line-height: 1.5;
+/* Styling for stuff inside footer */
+.footer-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-/* Styling for table with footer class */
-table.footer-table {
-    display: inline;
+/* Styling footer image */
+.footer-container img {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+}
+/* Styling footer hr */
+.footer-container hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    background-color: var(--body-color-inverse);
+    margin: 15px 0;
+}
+/* Styling footer p */
+.footer-container p {
+    font-size: 28px;
     padding: 0;
     margin: 0;
-    text-align: center;
+}
+/* Styling footer links */
+.footer-container a {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+/* Styling footer table */
+.footer-container td {
+    margin: 0;
+    padding: 0 15px;
 }
