@@ -61,7 +61,7 @@ else {
 // Then it lets lang to equal english and saves lang to localstorage
 function language_btn_english() {
     if (lang == "norsk") {
-        window.location.pathname = "/cv/en" + window.location.pathname;
+        window.location.pathname = "/cv/en" + window.location.pathname.replace('/cv','');
         let lang = "english";
 
         localStorage.setItem("lang", lang);
