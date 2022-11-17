@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 
 <head>
     <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
@@ -10,31 +10,35 @@
     <!-- Defines keywords for search engines -->
     <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
 
-    <title>New CV</title> <!-- Changes the name of the website -->
+    <title>Kim Lukas Myrvold - CV</title> <!-- Changes the name of the website -->
 
     <link rel="icon" type="image/x-icon" href="./favicon.ico"> <!-- Changes the icon for the website -->
     <link rel="stylesheet" href="./css/main.css"> <!-- Stylesheet for website, make stuff look good -->
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="topnav">
-            <a class="links" id="navHeader" href="./index.html">Startside</a>
+    <navbar>
+        <nav class="topnav">
+            <header>
+                <a class="links" id="navHeader" href="./index.html">Startside</a>
+            </header>
 
             <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
                 <img src="./img/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
             </button>
 
-            <a class="links" id="navActive" href="./index.html">Startside</a>
-            <a class="links" href="./html/contact.html">Kontakt meg</a>
-        </div>
+            <div class="topnav-links">
+                <a class="links" id="navActive" href="./index.html">Startside</a>
+                <a class="links" href="./html/contact.html">Kontakt meg</a>
+            </div>
+        </nav>
 
-        <div class="sidemenu-container">
+        <aside class="sidemenu-container">
             <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
 
-            <div id="sidemenu" class="sidemenu">
-                <div id="navlinks" class="navlinks">
-                    <a id="navActive" href="./index.html">Startside</a>
+            <article id="sidemenu" class="sidemenu">
+                <div class="navlinks">
+                    <a class="top" id="navActive" href="./index.html">Startside</a>
                     <a href="./html/contact.html">Kontakt meg</a>
 
                     <hr>
@@ -73,7 +77,7 @@
                         <tr>
                             <td>
                                 <img class="github-logo" src="./img/GitHub-Mark-Light-32px.png" alt="github logo">
-                                <a href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                                <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
                                     rel="noreferrer noopener">Github</a>
                             </td>
                         </tr>
@@ -86,38 +90,43 @@
                         </tr>
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>
+            </article>
+        </aside>
+    </navbar>
 
-    <div class="main">
-        <div class="intro" id="intro">
+    <main>
+        <article class="intro" id="intro">
             <table>
                 <tr>
                     <td>
-                        <img src="./img/kimlukasmyrvold.png" alt="Picture of me">
+                        <img src="./img/kimlukasmyrvold.png" alt="Bilde av meg">
                     </td>
                     <td>
                         <h2>Kim Lukas Myrvold</h2>
-                        <p class="intro-age">16 år gammel</p>
-                        <p class="intro-cake">Født: 21. Mai. 2006</p>
+                        <p>2006, 16 år gammel</p>
                         <p>Årum, Fredrikstad</p>
                         <a href="./html/contact.html">
-                            <p class="intro-email">kimlukasmyrvold06@gmail.com</p>
+                            <p id="intro-email">kimlukasmyrvold06@gmail.com</p>
                         </a>
                     </td>
                 </tr>
             </table>
-        </div>
+        </article>
 
         <hr>
-        
+
+        <section class="about-me">
+            <h2>Om meg</h2>
+
+            <p>Jeg er en ansvarlig, ryddig og snill gutt på 16 år. Jeg lærer raskt og gjør mitt beste.</p>
+        </section>
+
         <!-- <a class="links" href="mailto:kimlukasmyrvold06@gmail.com">Email</a><br>
         <a class="links" href="tel: 48426624">Phone</a> -->
-    </div>
+    </main>
 
-    <div class="footer">
-        <div class="footer-container">
+    <footer>
+        <article class="footer-container">
             <table>
                 <tr>
                     <td>
@@ -134,8 +143,8 @@
                     </td>
                 </tr>
             </table>
-        </div>
-    </div>
+        </article>
+    </footer>
 
     <script type="text/javascript" src="./javascript/main.js"></script>
 </body>

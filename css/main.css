@@ -3,7 +3,7 @@
 body {
     /* Body colors */
     --body-color: rgba(12, 24, 33, 1);
-    --body-color-gradient: linear-gradient(150deg, rgba(22,34,33,1) 0%, rgba(12,34,53,1) 59%, rgba(32,49,77,1) 100%);
+    --body-color-gradient: linear-gradient(150deg, rgba(22, 34, 33, 1) 0%, rgba(12, 34, 53, 1) 59%, rgba(32, 49, 77, 1) 100%);
     --body-color-inverse: rgba(240, 240, 240, 1);
 
     /* Text colors */
@@ -22,14 +22,14 @@ body {
 
     /* Icon color */
     --icon-color: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
-    --icon-color-invert: filter: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
+    --icon-color-invert: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
 }
 
 /* Light theme */
 body.light-theme {
     /* Body colors */
     --body-color: rgba(250, 250, 250, 1);
-    --body-color-gradient: linear-gradient(150deg, rgba(250,250,250,1) 0%, rgba(200,200,200,1) 50%, rgb(190, 190, 190) 100%);
+    --body-color-gradient: linear-gradient(150deg, rgba(250, 250, 250, 1) 0%, rgba(200, 200, 200, 1) 50%, rgb(190, 190, 190) 100%);
     --body-color-inverse: rgba(12, 24, 33, 1);
 
     /* Text colors */
@@ -47,7 +47,7 @@ body.light-theme {
     --footer-color: rgba(255, 255, 255, 0.70);
 
     /* Icon color */
-    --icon-color: filter: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
+    --icon-color: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
     --icon-color-invert: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
 }
 
@@ -63,9 +63,12 @@ body.light-theme {
 }
 
 body {
-    min-height: 100vh; /* Using veiwport height */
+    /* Using veiwport height */
+    min-height: 100vh;
     background: var(--body-color-gradient);
+    overflow-x: hidden;
 }
+
 /* Using flex for easier setup of navbar, article, footer and other stuff it might be used for */
 body {
     display: flex;
@@ -74,15 +77,20 @@ body {
 
 .links {
     position: relative;
-    z-index: 1000;
+    z-index: 902;
 }
 
-.navbar {
+
+
+
+
+navbar {
     background: var(--nav-color);
     height: 50px;
     position: sticky;
     top: 0;
 }
+
 .topnav {
     height: 50px;
     z-index: 900;
@@ -90,6 +98,7 @@ body {
     padding: 0;
     border: none;
 }
+
 .topnav a {
     float: right;
     background: var(--nav-color);
@@ -97,10 +106,35 @@ body {
     padding: 14.7px 16px;
     font-size: 17px;
 }
+
 .topnav a:hover {
-    background-color: var(--nav-color-hover); /* Gave background color so it's easier to see when text over header */
+    /* Gave background color so it's easier to see when text over header */
+    background-color: var(--nav-color-hover);
     color: var(--text-color-inverse);
 }
+
+.topnav-links a {
+    float: right;
+    background: var(--nav-color);
+    text-align: center;
+    padding: 14.7px 16px;
+    font-size: 17px;
+    height: 50px;
+}
+
+.topnav-links a:hover {
+    /* Gave background color so it's easier to see when text over header */
+    background-color: var(--nav-color-hover);
+    color: var(--text-color-inverse);
+}
+
+@media all and (max-width: 500px) {
+    .topnav-links {
+        display: none;
+    }
+}
+
+
 #navHeader {
     float: left;
     padding: 5px 0 0 12px;
@@ -111,47 +145,50 @@ body {
     font-size: 32px;
     text-align: center;
 }
+
 #navActive {
     background-color: var(--nav-color-active);
     color: rgb(240, 240, 240);
 }
+
+
 #sidemenu-btn {
     position: relative;
     float: right;
     border: none;
     background: transparent;
-    cursor: pointer; /* Makes it show the pointer when you hover over it. This way it looks clickable */
+    /* Makes it show the pointer when you hover over it. This way it looks clickable */
+    cursor: pointer;
     padding: 0;
     margin: -5px 6px 0 6px;
     z-index: 950;
 }
+
 #sidemenu-btn-img {
-    filter: var(--icon-color); /* Using filter to change the color of the image from black to white depending on the theme */
+    /* Using filter to change the color of the image from black to white depending on the theme */
+    filter: var(--icon-color);
     height: 60px;
     width: 35px;
 }
+
 .sidemenu {
     display: none;
-    min-height: 300px;
-    width: 100px;
-    position: absolute;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
 }
+
 .sidemenu-show {
-    min-height: 200px;
+    min-height: 69px;
     width: 145px;
     background: var(--nav-color-menu);
     position: absolute;
     right: 0;
-    z-index: 1000;
-    margin: 0;
+    z-index: 999;
+    margin: .5em 1.4em 0 0;
     padding: 0;
     border: none;
+    border-radius: 1em;
     display: block;
 }
+
 .sidemenu-overlay {
     position: absolute;
     top: 0;
@@ -162,6 +199,7 @@ body {
     z-index: 901;
     display: none;
 }
+
 .sidemenu-overlay-show {
     position: absolute;
     top: 0;
@@ -171,31 +209,57 @@ body {
     height: 100vh;
     z-index: 901;
     display: block;
-    /* background-color: rgba(255, 0, 0, 0.23);  */
+    /* background-color: rgba(255, 0, 0, 0.23); */
 }
+
 .sidemenu-show hr {
     border: 1px solid var(--body-color-inverse);
-    border-radius: 10px;
+    border-radius: 1em;
     padding: 0;
     margin: 4px 5px;
     opacity: 0.06;
 }
-.navlinks-hidden {
+
+.navlinks {
     display: none;
 }
-.navlinks a {
+
+.navlinks a.top {
     background: var(--nav-color);
-    text-align: left;
-    padding: 14.7px 5px;
+    text-align: center;
+    padding: .7em 0;
     margin: 0;
     font-size: 18px;
     display: block;
+    border: none;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    z-index: 999;
+    position: relative;
 }
+
+.navlinks a {
+    background: var(--nav-color);
+    text-align: center;
+    padding: .7em 0;
+    margin: 0;
+    font-size: 18px;
+    display: block;
+    border: none;
+    z-index: 999;
+    position: relative;
+}
+
 .navlinks a:hover {
     background-color: var(--nav-color-hover);
     color: var(--text-color-inverse);
 }
 
+@media all and (max-width: 500px) {
+    .navlinks {
+        display: block;
+    }
+}
 
 
 .appearance-btn {
@@ -206,20 +270,23 @@ body {
     font-size: 18px;
     margin: 8px 0 8px 5px;
 }
+
 .appearance-btn::after {
     content: '⬇️';
 }
+
 .appearance-btn-clicked::after {
     content: '⬆️';
 }
 
-
 .appearance-drop {
     display: none;
 }
+
 .appearance-drop-show {
     display: block;
 }
+
 .appearance-drop-show button {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -230,7 +297,6 @@ body {
 }
 
 
-
 .language-btn {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -239,9 +305,11 @@ body {
     font-size: 18px;
     margin: 8px 0 8px 5px;
 }
+
 .language-btn::after {
     content: '⬇️';
 }
+
 .language-btn-clicked::after {
     content: '⬆️';
 }
@@ -250,9 +318,11 @@ body {
 .language-drop {
     display: none;
 }
+
 .language-drop-show {
     display: block;
 }
+
 .language-drop-show button {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -268,11 +338,13 @@ body {
     margin: 10px 0 10px 3px;
     line-height: 1.7rem;
 }
+
 .social a {
     display: inline-block;
     font-size: 18px;
     text-decoration: underline;
 }
+
 .social a:hover {
     color: var(--text-color-hover);
 }
@@ -287,6 +359,12 @@ img.github-logo {
     top: 3px;
     left: 2px;
 }
+
+#githubLink {
+    z-index: 999;
+    position: relative;
+}
+
 img.youtube-logo {
     height: 19px;
     width: auto;
@@ -301,12 +379,13 @@ img.youtube-logo {
 
 
 
-.main {
+main {
     flex: 1;
     margin: 20px 10px;
     padding: 0;
 }
-.main hr {
+
+main hr {
     border: 1px solid var(--body-color-inverse);
     border-radius: 10px;
     background-color: var(--body-color-inverse);
@@ -314,19 +393,22 @@ img.youtube-logo {
 }
 
 .intro img {
-    padding: 0 20px 0 0;
+    padding: 0;
     margin: 0;
-    border-radius: 50%;
+    border-radius: 10em;
     max-width: 100%;
+    min-width: 100px;
     width: 300px;
     height: auto;
 }
+
 .intro h2 {
     font-size: 36px;
     text-decoration: underline 2px;
     padding: 0;
     margin: 0 0 16px 0;
 }
+
 .intro p {
     font-size: 20px;
     padding: 0;
@@ -334,15 +416,27 @@ img.youtube-logo {
     font-weight: 600;
 }
 
+.intro table {
+    border-spacing: 1.35em 0;
+}
+
+.about-me h2 {
+    margin-bottom: .6em;
+}
+.intro #intro-email {
+    display: inline-block;
+    overflow: visible;
+
+}
 
 
 
 
-
-.footer {
+footer {
     min-height: 50px;
     background: var(--footer-color);
 }
+
 /* Styling for stuff inside footer */
 .footer-container {
     margin: 20px;
@@ -350,12 +444,14 @@ img.youtube-logo {
     justify-content: center;
     align-items: center;
 }
+
 /* Styling footer image */
 .footer-container img {
     width: 120px;
     height: auto;
     border-radius: 50%;
 }
+
 /* Styling footer hr */
 .footer-container hr {
     border: 1px solid var(--body-color-inverse);
@@ -363,18 +459,21 @@ img.youtube-logo {
     background-color: var(--body-color-inverse);
     margin: 15px 0;
 }
+
 /* Styling footer p */
 .footer-container p {
     font-size: 28px;
     padding: 0;
     margin: 0;
 }
+
 /* Styling footer links */
 .footer-container a {
     font-size: 16px;
     padding: 0;
     margin: 0;
 }
+
 /* Styling footer table */
 .footer-container td {
     margin: 0;

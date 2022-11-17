@@ -1,0 +1,10 @@
+engelsk knapp trykket -> sjekk om den er på norsk side, hvis den er legg til /en til pathname.
+	Hvis ikke, gjør ingenting. -> gjør om "lang" til "english" -> gå til url
+
+
+norsk knapp trykket -> sjekk om den er på norsk side hvis den er, gjør ingenting. Hvis ikke, 
+	fjern /en fra pathname -> gjør om "lang" til "norsk" -> gå til url
+
+
+når siden loader -> sjekk om pathname starter med /en/, hvis den gjør, sett "lang" til "english".
+	Hvis ikke, gjør om "lang" til "norsk"

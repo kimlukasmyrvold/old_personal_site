@@ -1,42 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 
 <head>
-    <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the character encoding for the website -->
+    <meta charset="UTF-8">
     <!-- Makes site look better on window sizes -->
-    <meta name="author" content="Kim Lukas Myrvold"> <!-- Name of the author who made this website -->
-    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Name of the author who made this website -->
+    <meta name="author" content="Kim Lukas Myrvold">
     <!-- Defines keywords for search engines -->
-    <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <!-- Give the website a description -->
+    <meta name="description" content="Kim Lukas Myrvold's CV">
 
-    <title>404 - Page Not Found</title> <!-- Name of the website -->
+    <!-- Name of the website -->
+    <title>404 - Page Not Found</title>
 
-    <link rel="icon" type="image/x-icon" href="https://kimlukasmyrvold.github.io/cv/favicon.ico"> <!-- Changes the icon for the website -->
-    <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/main.css"> <!-- Stylesheet for website, make stuff look good -->
-    <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/404.css"> <!-- Stylesheet for website, make stuff look good -->
+    <!-- Changes the icon for the website -->
+    <link rel="icon" type="image/x-icon" href="https://kimlukasmyrvold.github.io/cv/favicon.ico">
+    <!-- Stylesheet for website, make stuff look good -->
+    <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/main.css">
+    <!-- Stylesheet for website, make stuff look good -->
+    <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/404.css">
 </head>
 
 <body>
-
-    <div class="navbar">
-        <div class="topnav">
-            <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/">Tilbake til starten</a>
+    <navbar>
+        <nav class="topnav">
+            <header>
+                <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+            </header>
 
             <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <img src="https://kimlukasmyrvold.github.io/cv/img/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+                <img src="https://kimlukasmyrvold.github.io/cv/img/hamburger-menu.png" alt="Sidemenu button"
+                    id="sidemenu-btn-img">
             </button>
 
-            <a class="links" id="navActive" href="https://kimlukasmyrvold.github.io/cv/">Startside</a>
-            <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Kontakt meg</a>
-        </div>
+            <div class="topnav-links">
+                <a class="links" id="navActive" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+                <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Kontakt meg</a>
+            </div>
+        </nav>
 
-        <div class="sidemenu-container">
+        <aside class="sidemenu-container">
             <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
 
-            <div id="sidemenu" class="sidemenu">
-                <div id="navlinks" class="navlinks">
-                    <a id="navActive" href="https://kimlukasmyrvold.github.io/cv/">Startside</a>
+            <article id="sidemenu" class="sidemenu">
+                <div class="navlinks">
+                    <a class="top" id="navActive" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Kontakt meg</a>
 
                     <hr>
@@ -74,39 +85,40 @@
                     <table>
                         <tr>
                             <td>
-                                <img class="github-logo" src="https://kimlukasmyrvold.github.io/cv/img/GitHub-Mark-Light-32px.png" alt="github logo">
-                                <a href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                                <img class="github-logo"
+                                    src="https://kimlukasmyrvold.github.io/cv/img/GitHub-Mark-Light-32px.png"
+                                    alt="github logo">
+                                <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
                                     rel="noreferrer noopener">Github</a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <img class="youtube-logo" src="https://kimlukasmyrvold.github.io/cv/img/youtube-logo.png" alt="youtube logo">
+                                <img class="youtube-logo"
+                                    src="https://kimlukasmyrvold.github.io/cv/img/youtube-logo.png" alt="youtube logo">
                                 <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
                                     rel="noreferrer noopener">Youtube</a>
                             </td>
                         </tr>
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>
+            </article>
+        </aside>
+    </navbar>
 
-    <div class="main">
+    <main>
         <div class="error">
             <h1 id="errorHeader">Error 404 - Page Not Found</h1>
-            <h3 id="errorInfo">Siden du prøvde å nå finnes ikke, lenken har enten blitt fjernet eller modifisert.</h3>
+            <h3 id="errorInfo">Siden du prøvde å nå, finnes ikke, lenken har enten blitt fjernet eller modifisert.</h3>
 
-            <br>
-            <br>
-
-            <h3 id="errorInfoTwo">Trykk på hjem knappen for å komme til hjemmesiden.</h3>
-            <a id="errorHome" class="links" href="https://kimlukasmyrvold.github.io/cv/">Tilbake til hovedsiden</a>
+            <a id="errorHome" class="links" href="https://kimlukasmyrvold.github.io/cv/">
+                <p>Tilbake til hovedsiden</p>
+            </a>
         </div>
-    </div>
+    </main>
 
-    <div class="footer">
-        <div class="footer-container">
+    <footer>
+        <article class="footer-container">
             <table>
                 <tr>
                     <td>
@@ -115,19 +127,21 @@
                     <td>
                         <p>Kim Lukas Myrvold</p>
                         <hr>
-                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
+                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">E-post:
+                            kimlukasmyrvold06@gmail.com</a>
                         <br>
-                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Telefon: 48426624</a>
+                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Telefon:
+                            48426624</a>
                         <br>
-                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Lokasjon: Fredrikstad, Norway</a>
+                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Lokasjon:
+                            Fredrikstad, Norway</a>
                     </td>
                 </tr>
             </table>
-        </div>
-    </div>
+        </article>
+    </footer>
 
     <script type="text/javascript" src="https://kimlukasmyrvold.github.io/cv/javascript/main.js"></script>
-
 </body>
 
 </html>
