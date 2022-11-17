@@ -41,12 +41,12 @@ function language_btn() {
 // The .pathname is part of the URL after for example: "www.google.com" The pathname is what comes after.
 // Then I add .substring(0, 4) in order to only get the first four letters in the URL
 // The reason why it should only select the 4 first letters is because that is the only information I need in order to check if website is english or not.
-var currentURL = window.location.pathname.substring(0, 4);
+var currentURL = window.location.pathname.substring(0, 7);
 
 // Checks if the varible currentURL is equal to /en/
 // If it is, then it sets the variable lang to english and saves it to localstorage
 // If it is not, then it set the variable lang to norsk and saves it to localstorage
-if (currentURL == "/en/") {
+if (currentURL == "/cv/en/") {
     var lang = "english";
     localStorage.setItem("lang", lang);
 }
@@ -61,7 +61,7 @@ else {
 // Then it lets lang to equal english and saves lang to localstorage
 function language_btn_english() {
     if (lang == "norsk") {
-        window.location.pathname = "/en" + window.location.pathname;
+        window.location.pathname = "/cv/en" + window.location.pathname;
         let lang = "english";
 
         localStorage.setItem("lang", lang);
@@ -75,7 +75,7 @@ function language_btn_english() {
 // Then it lets lang to equal norsk and saves lang to localstorage
 function language_btn_norwegian() {
     if (lang == "english") {
-        window.location.pathname = window.location.pathname.slice(3);
+        window.location.pathname = window.location.pathname.replace('en/','');
         let lang = "norsk";
 
         localStorage.setItem("lang", lang);
