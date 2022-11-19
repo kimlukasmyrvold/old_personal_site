@@ -225,8 +225,8 @@ navbar {
 
 .navlinks a.top {
     background: var(--nav-color);
-    text-align: center;
-    padding: .7em 0;
+    text-align: left;
+    padding: .7em .4em;
     margin: 0;
     font-size: 18px;
     display: block;
@@ -239,8 +239,8 @@ navbar {
 
 .navlinks a {
     background: var(--nav-color);
-    text-align: center;
-    padding: .7em 0;
+    text-align: left;
+    padding: .7em .4em;
     margin: 0;
     font-size: 18px;
     display: block;
@@ -261,13 +261,17 @@ navbar {
 }
 
 
+.dropdowns {
+    margin-bottom: .6em;
+}
+
 .appearance-btn {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
     cursor: pointer;
     font-size: 18px;
-    margin: 8px 0 8px 5px;
+    margin: .5em .2em;
 }
 
 .appearance-btn::before {
@@ -295,8 +299,8 @@ navbar {
     color: var(--text-color);
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    margin: 0 0 7px 10px;
+    font-size: 17px;
+    margin: .15em 1.1em;
 }
 
 
@@ -306,7 +310,7 @@ navbar {
     border: none;
     cursor: pointer;
     font-size: 18px;
-    margin: 8px 0 8px 5px;
+    margin: .5em .2em;
 }
 
 .language-btn::before {
@@ -334,9 +338,8 @@ navbar {
     color: var(--text-color);
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    margin: 0 0 10px 10px;
-    display: block;
+    font-size: 17px;
+    margin: .15em 1.1em;
 }
 
 
