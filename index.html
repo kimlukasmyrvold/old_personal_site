@@ -24,11 +24,14 @@
             </header>
 
             <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <img src="./img/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+                <img src="./img/icons/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
             </button>
 
             <div class="topnav-links">
                 <a class="links" id="navActive" href="./index.html">Startside</a>
+                <a class="links" href="./html/education.html">Utdanning</a>
+                <a class="links" href="./html/work-experience.html">Arbeidserfaring</a>
+                <a class="links" href="./html/hobbies.html">Hobbier</a>
                 <a class="links" href="./html/contact.html">Kontakt meg</a>
             </div>
         </nav>
@@ -39,6 +42,9 @@
             <article id="sidemenu" class="sidemenu">
                 <div class="navlinks">
                     <a class="top" id="navActive" href="./index.html">Startside</a>
+                    <a href="./html/education.html">Utdanning</a>
+                    <a href="./html/work-experience.html">Arbeidserfaring</a>
+                    <a href="./html/hobbies.html">Hobbier</a>
                     <a href="./html/contact.html">Kontakt meg</a>
 
                     <hr>
@@ -76,14 +82,14 @@
                     <table>
                         <tr>
                             <td>
-                                <img class="github-logo" src="./img/GitHub-Mark-Light-32px.png" alt="github logo">
+                                <img class="github-logo" src="./img/icons/GitHub-Mark-Light-32px.png" alt="github logo">
                                 <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
                                     rel="noreferrer noopener">Github</a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <img class="youtube-logo" src="./img/youtube-logo.png" alt="youtube logo">
+                                <img class="youtube-logo" src="./img/icons/youtube-logo.png" alt="youtube logo">
                                 <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
                                     rel="noreferrer noopener">Youtube</a>
                             </td>
@@ -95,22 +101,18 @@
     </navbar>
 
     <main>
-        <article class="intro" id="intro">
-            <table>
-                <tr>
-                    <td>
-                        <img src="./img/kimlukasmyrvold.png" alt="Bilde av meg">
-                    </td>
-                    <td>
-                        <h2>Kim Lukas Myrvold</h2>
-                        <p>2006, 16 år gammel</p>
-                        <p>Årum, Fredrikstad</p>
-                        <a href="./html/contact.html">
-                            <p id="intro-email">kimlukasmyrvold06@gmail.com</p>
-                        </a>
-                    </td>
-                </tr>
-            </table>
+        <article class="intro">
+            <div>
+                <img src="./img/kimlukasmyrvold.png" alt="Bilde av meg">
+            </div>
+            <div id="text">
+                <h2>Kim Lukas Myrvold</h2>
+                <p>2006, 16 år gammel</p>
+                <p>Årum, Fredrikstad</p>
+                <a href="./html/contact.html" id="email">
+                    <p>kimlukasmyrvold06@gmail.com</p>
+                </a>
+            </div>
         </article>
 
         <hr>
@@ -129,7 +131,7 @@
         <article class="footer-container">
             <table>
                 <tr>
-                    <td>
+                    <td id="icon">
                         <img src="./favicon.ico" alt="Picture of me">
                     </td>
                     <td>
@@ -137,7 +139,7 @@
                         <hr>
                         <a class="links" href="./html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
                         <br>
-                        <a class="links" href="./html/contact.html">Telefon: 48426624</a>
+                        <a class="links" href="./html/contact.html">Telefon: +47 48426624</a>
                         <br>
                         <a class="links" href="./html/contact.html">Lokasjon: Fredrikstad, Norway</a>
                     </td>
