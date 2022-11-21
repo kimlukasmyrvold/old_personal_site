@@ -15,13 +15,12 @@
 
 .error #errorInfo {
     display: block;
-    margin: 25px 0;
+    margin: 20px 0;
     font-size: 30px;
 }
 
-#errorHome {
+.error #errorHome {
     display: inline-block;
-    margin: 25px 0;
-    color: red;
+    margin: 0;
     font-size: 1.5em;
 }

@@ -443,7 +443,7 @@ img.youtube-logo {
 
 main {
     flex: 1;
-    margin: 1.5em 15em;
+    margin: 1.5em 5em;
     align-self: center;
 }
 @media all and (max-width: 1150px) {
@@ -524,7 +524,6 @@ main hr {
 
 main#education {
     align-self: flex-start;
-    margin: 1.5em 5em;
 }
 
 .edu-intro div {
@@ -581,7 +580,6 @@ main#education {
 
 main#work-experience {
     align-self: flex-start;
-    margin: 1.5em 5em;
 }
 .work-jobs div {
     margin-bottom: 1em;
@@ -609,6 +607,42 @@ main#work-experience {
     color: var(--text-color-hover);
 }
 
+.work-jobs .paintDrop {
+    display: none;
+}
+.work-jobs .paintDrop_show {
+    display: block;
+}
+
+.work-jobs .vaccumDrop {
+    display: none;
+}
+.work-jobs .vaccumDrop_show {
+    display: block;
+}
+
+.work-jobs .takeOutTrashDrop {
+    display: none;
+}
+.work-jobs .takeOutTrashDrop_show {
+    display: block;
+}
+
+.work-jobs .otherJobsHomeDrop {
+    display: none;
+}
+.work-jobs .otherJobsHomeDrop_show {
+    display: block;
+}
+
+.work-jobs .jobsMyRoomDrop {
+    display: none;
+}
+.work-jobs .jobsMyRoomDrop_show {
+    display: block;
+}
+
+
 
 .contact-me {
     text-align: center;
@@ -619,8 +653,8 @@ main#work-experience {
 
 .contact-me form {
     border-radius: 10px;
-    padding: .5em 1.4em;
-    margin: 0 auto;
+    padding: .5em 1.4em .6em 1.4em;
+    margin: 1em auto;
     background: var(--body-color);
 }
 .contact-me input, .contact-me textarea {
@@ -645,33 +679,31 @@ main#work-experience {
 }
 .contact-me label {
     display: block;
-    padding: 1.2em 0 .2em 0;
+    padding: .4em 0 .2em 0;
     font-size: 1.3rem;
 }
 
-
-/* Ignore this */
-        /* .contact-me button {
-            background: var(--body-color);
-            border: 3px solid var(--body-color-inverse);
-            border-radius: 10px;
-            width: 550px;
-            height: 50px;
-            margin: .6em 0;
-            font-size: 1.4rem;
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-        .contact-me button::after {
-            content: url(../img/icons/email_send_48px.png);
-            filter: var(--icon-color-invert);
-            position: relative;
-            top: 4px;
-            left: 8px;
-        } */
+.contact-me input#submit {
+    background: var(--body-color);
+    border: 3px solid var(--body-color-inverse);
+    border-radius: 10px;
+    width: 550px;
+    height: 50px;
+    margin: .6em 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.contact-me input#submit::after {
+    content: url(../img/icons/email_send_48px.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 4px;
+    left: 8px;
+}
 
 
 

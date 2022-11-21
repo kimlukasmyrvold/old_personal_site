@@ -161,12 +161,37 @@ function theme_btn_dark() {
 // Function for Glemmen VGS
 function glemmenBtn() {
     document.getElementById("glemmenDrop").classList.toggle("glemmenDrop_show");
+    document.getElementById("glemmenBtn").classList.toggle("dropRightUp2");
 }
 // function for Borge Middle School
 function borgeBtn() {
     document.getElementById("borgeDrop").classList.toggle("borgeDrop_show");
+    document.getElementById("borgeBtn").classList.toggle("dropRightUp2");
 }
 // Function for Årum lower school
 function aarumBtn() {
     document.getElementById("aarumDrop").classList.toggle("aarumDrop_show");
+    document.getElementById("aarumBtn").classList.toggle("dropRightUp2");
+}
+
+
+function painthouseBtn() {
+    document.getElementById("paintDrop").classList.toggle("paintDrop_show");
+    document.getElementById("paintBtn").classList.toggle("dropRightUp");
+}
+function vaccumingBtn() {
+    document.getElementById("vaccumDrop").classList.toggle("vaccumDrop_show");
+    document.getElementById("vacuumingBtn").classList.toggle("dropRightUp");
+}
+function takeOutTrashBtn() {
+    document.getElementById("takeOutTrashDrop").classList.toggle("takeOutTrashDrop_show");
+    document.getElementById("takeOutTrashBtn").classList.toggle("dropRightUp");
+}
+function otherJobsHomeBtn() {
+    document.getElementById("otherJobsHomeDrop").classList.toggle("otherJobsHomeDrop_show");
+    document.getElementById("otherJobsHomeBtn").classList.toggle("dropRightUp");
+}
+function jobsMyRoomBtn() {
+    document.getElementById("jobsMyRoomDrop").classList.toggle("jobsMyRoomDrop_show");
+    document.getElementById("jobsMyRoomBtn").classList.toggle("dropRightUp");
 }
