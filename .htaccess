@@ -1,5 +1,5 @@
 # custom 404 page
-ErrorDocument 404 /404.html
+ErrorDocument 404 /html/404.html
 
 # Removes the extensions on the url. For example, "www.example.com/index.html" becomes "www.example.com/index"
 Options +MultiViews

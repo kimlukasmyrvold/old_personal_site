@@ -81,6 +81,64 @@ body {
 
 
 
+.dropRight::after {
+    content: url(../img/icons/dropdown_down.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 3px;
+    left: 2px;
+}
+.dropRightUp::after {
+    content: url(../img/icons/dropdown_up.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 3px;
+    left: 2px;
+}
+.dropLeft::before {
+    content: url(../img/icons/dropdown_down.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 3px;
+    right: 2px;
+}
+.dropLeftUp::before {
+    content: url(../img/icons/dropdown_up.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 3px;
+    right: 2px;
+}
+
+.dropRight2::after {
+    content: url(../img/icons/dropdown_down.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 6px;
+    left: 2px;
+}
+.dropRightUp2::after {
+    content: url(../img/icons/dropdown_up.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 6px;
+    left: 2px;
+}
+.dropLeft2::before {
+    content: url(../img/icons/dropdown_down.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 6px;
+    right: 2px;
+}
+.dropLeftUp2::before {
+    content: url(../img/icons/dropdown_up.png);
+    filter: var(--icon-color-invert);
+    position: relative;
+    top: 6px;
+    right: 2px;
+}
+
 
 
 navbar {
@@ -177,7 +235,7 @@ navbar {
 
 .sidemenu-show {
     min-height: 69px;
-    width: 145px;
+    width: 160px;
     background: var(--nav-color-menu);
     position: absolute;
     right: 0;
@@ -385,27 +443,29 @@ img.youtube-logo {
 
 main {
     flex: 1;
-    margin: 20px 10px;
-    padding: 0;
+    margin: 1.5em 15em;
+    align-self: center;
+}
+@media all and (max-width: 1150px) {
+    main {
+        margin: 1.5em 1em;
+    }
 }
 
 main hr {
     border: 1px solid var(--body-color-inverse);
     border-radius: 10px;
     background-color: var(--body-color-inverse);
-    margin: 20px 3px 25px 3px;
+    margin: 25px 0px;
 }
 
 .intro {
     display: inline-flex;
-    height: 100%;
+    align-self: center;
 }
 
 .intro img {
-    padding: 0;
-    margin: 0;
     border-radius: 10em;
-    max-width: 100%;
     width: 300px;
     height: auto;
 }
@@ -440,6 +500,178 @@ main hr {
     }
 }
 
+#homepage section {
+    margin-bottom: 1.5em;
+}
+
+#homepage section h2 {
+    margin-bottom: .5em;
+}
+#homepage section p {
+    line-height: 1.5em;
+}
+#homepage section span {
+    font-weight: 600;
+}
+#interests #moreInfo span {
+    font-weight: lighter;
+    text-decoration: underline;
+}
+#interests #moreInfo span:hover {
+    color: var(--text-color-hover);
+}
+
+
+main#education {
+    align-self: flex-start;
+    margin: 1.5em 5em;
+}
+
+.edu-intro div {
+    margin-bottom: 1em;
+}
+.edu-intro p.header {
+    font-size: 1.6em;
+}
+.edu-intro p {
+    line-height: 1.5em;
+}
+
+
+.edu-schools p {
+    font-size: 1.6em;
+}
+.edu-schools #dropdowns button {
+    font-size: 1.2em;
+    background: none;
+    margin: .2em 0;
+    height: 50px;
+}
+.edu-schools #dropdowns button:hover {
+    color: var(--text-color-hover);
+}
+.edu-schools #dropdowns button::before {
+    content: '- ';
+}
+.edu-schools #dropdowns p {
+    font-size: 1.09em;
+    margin: 0 0 .3em 1.5em;
+}
+
+.glemmenDrop {
+    display: none;
+}
+.glemmenDrop_show {
+    display: block;
+}
+.borgeDrop {
+    display: none;
+}
+.borgeDrop_show {
+    display: block;
+}
+.aarumDrop {
+    display: none;
+}
+.aarumDrop_show {
+    display: block;
+}
+
+
+
+main#work-experience {
+    align-self: flex-start;
+    margin: 1.5em 5em;
+}
+.work-jobs div {
+    margin-bottom: 1em;
+}
+.work-jobs button.header {
+    font-size: 1.6em;
+}
+.work-jobs p {
+    line-height: 1.5em;
+    margin-left: 1em;
+}
+.work-jobs ul {
+    list-style: none;
+    margin-left: 1.5em;
+}
+.work-jobs li {
+    line-height: 1.5em;
+}
+.work-jobs button {
+    line-height: 1.5em;
+    font-size: 1em;
+    background: transparent;
+}
+.work-jobs button:hover {
+    color: var(--text-color-hover);
+}
+
+
+.contact-me {
+    text-align: center;
+}
+.contact-me p.header {
+    font-size: 1.6em;
+}
+
+.contact-me form {
+    border-radius: 10px;
+    padding: .5em 1.4em;
+    margin: 0 auto;
+    background: var(--body-color);
+}
+.contact-me input, .contact-me textarea {
+    background: var(--body-color);
+}
+.contact-me input {
+    border: 3px solid var(--body-color-inverse);
+    border-radius: 10px;
+    width: 550px;
+    height: 35px;
+    text-align: center;
+    margin: .6em 0;
+}
+.contact-me textarea {
+    border: 3px solid var(--body-color-inverse);
+    border-radius: 10px;
+    width: 550px;
+    height: 200px;
+    text-align: center;
+    margin: .6em 0;
+    display: block;
+}
+.contact-me label {
+    display: block;
+    padding: 1.2em 0 .2em 0;
+    font-size: 1.3rem;
+}
+
+
+/* Ignore this */
+        /* .contact-me button {
+            background: var(--body-color);
+            border: 3px solid var(--body-color-inverse);
+            border-radius: 10px;
+            width: 550px;
+            height: 50px;
+            margin: .6em 0;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-me button::after {
+            content: url(../img/icons/email_send_48px.png);
+            filter: var(--icon-color-invert);
+            position: relative;
+            top: 4px;
+            left: 8px;
+        } */
 
 
 

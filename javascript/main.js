@@ -153,3 +153,20 @@ function theme_btn_dark() {
 
         //     localStorage.setItem("theme", theme);
         // };
+
+
+
+
+// Buttons for education page. Dropdowns for the schools.
+// Function for Glemmen VGS
+function glemmenBtn() {
+    document.getElementById("glemmenDrop").classList.toggle("glemmenDrop_show");
+}
+// function for Borge Middle School
+function borgeBtn() {
+    document.getElementById("borgeDrop").classList.toggle("borgeDrop_show");
+}
+// Function for Årum lower school
+function aarumBtn() {
+    document.getElementById("aarumDrop").classList.toggle("aarumDrop_show");
+}

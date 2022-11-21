@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes site look better on window sizes -->
+    <meta name="author" content="Kim Lukas Myrvold"> <!-- Name of the author who made this website -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <!-- Defines keywords for search engines -->
+    <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
+
+    <title>Kim Lukas Myrvold - CV</title> <!-- Changes the name of the website -->
+
+    <link rel="icon" type="image/x-icon" href="../favicon.ico"> <!-- Changes the icon for the website -->
+    <link rel="stylesheet" href="../css/main.css"> <!-- Stylesheet for website, make stuff look good -->
+</head>
+
+<body>
+    <navbar>
+        <nav class="topnav">
+            <header>
+                <a href="../html/contact.html" class="links" id="navHeader">Kontakt meg</a>
+            </header>
+
+            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
+                <img src="../img/icons/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+            </button>
+
+            <div class="topnav-links">
+                <a href="../index.html" class="links">Startside</a>
+                <a href="../html/education.html" class="links">Utdanning</a>
+                <a href="../html/work-experience.html" class="links">Arbeidserfaring</a>
+                <a href="../html/hobbies.html" class="links">Hobbyer</a>
+                <a href="../html/contact.html" class="links" id="navActive">Kontakt meg</a>
+            </div>
+        </nav>
+
+        <aside class="sidemenu-container">
+            <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
+
+            <article id="sidemenu" class="sidemenu">
+                <div class="navlinks">
+                    <a href="../index.html" class="top">Startside</a>
+                    <a href="../html/education.html">Utdanning</a>
+                    <a href="../html/work-experience.html">Arbeidserfaring</a>
+                    <a href="../html/hobbies.html">Hobbyer</a>
+                    <a href="../html/contact.html" id="navActive">Kontakt meg</a>
+
+                    <hr>
+                </div>
+
+                <div class="dropdowns">
+                    <div class="appearance">
+                        <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
+                            <span>Utseende</span>
+                        </button>
+
+                        <div id="appearance-drop" class="appearance-drop">
+                            <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
+                            <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
+                        </div>
+                    </div>
+
+                    <div class="language">
+                        <button id="language-btn" onclick="language_btn()" class="language-btn">
+                            <span>Språk</span>
+                        </button>
+
+                        <div id="language-drop" class="language-drop">
+                            <button id="english-btn" onclick="language_btn_english()">English</button>
+                            <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="social">
+                    <table>
+                        <tr>
+                            <td>
+                                <img class="github-logo" src="../img/icons/GitHub-Mark-Light-32px.png"
+                                    alt="github logo">
+                                <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                                    rel="noreferrer noopener">Github</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img class="youtube-logo" src="../img/icons/youtube-logo.png" alt="youtube logo">
+                                <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
+                                    rel="noreferrer noopener">Youtube</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </aside>
+    </navbar>
+
+    <main id="contact">
+        <section class="contact-me">
+            <p class="header">Send meg en email</p>
+
+            <br>
+
+            <form id="sendMeMail" action="mailto:kimlukasmyrvold06@gmail.com">
+                <label id="subjectTitle" for="subject">Emne</label>
+                <input id="subject" type="text" name="subject" placeholder="Skriv inn emne her..." required>
+
+                <label id="messageTitle" for="bio">Melding</label>
+                <textarea id="bio" name="body" placeholder="Skriv din melding her..." required></textarea>
+
+                <input type="submit" name="submit" id="submit" value="submit the form">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <article class="footer-container">
+            <table>
+                <tr>
+                    <td id="icon">
+                        <img src="../favicon.ico" alt="Picture of me">
+                    </td>
+                    <td>
+                        <p>Kim Lukas Myrvold</p>
+                        <hr>
+                        <a class="links" href="../html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
+                        <br>
+                        <a class="links" href="tel: +4748426624">Telefon: +47 484 26 624</a>
+                        <br>
+                        <a class="links" href="../html/contact.html">Lokasjon: Fredrikstad, Norge</a>
+                    </td>
+                </tr>
+            </table>
+        </article>
+    </footer>
+
+    <script type="text/javascript" src="../javascript/main.js"></script>
+</body>
+
+</html>
