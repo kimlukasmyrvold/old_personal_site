@@ -23,6 +23,9 @@ body {
     /* Icon color */
     --icon-color: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
     --icon-color-invert: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
+
+    /* Skillbar color */
+    --skillbar-color: rgba(255, 255, 255, .2);
 }
 
 /* Light theme */
@@ -49,6 +52,9 @@ body.light-theme {
     /* Icon color */
     --icon-color: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
     --icon-color-invert: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
+    
+    /* Skillbar color */
+    --skillbar-color: rgba(50, 50, 50, .35);
 }
 
 
@@ -87,13 +93,10 @@ body {
     position: relative;
     top: 3px;
     left: 2px;
+    z-index: -1;
 }
 .dropRightUp::after {
     content: url(../img/icons/dropdown_up.png);
-    filter: var(--icon-color-invert);
-    position: relative;
-    top: 3px;
-    left: 2px;
 }
 .dropLeft::before {
     content: url(../img/icons/dropdown_down.png);
@@ -101,13 +104,10 @@ body {
     position: relative;
     top: 3px;
     right: 2px;
+    z-index: -1;
 }
 .dropLeftUp::before {
     content: url(../img/icons/dropdown_up.png);
-    filter: var(--icon-color-invert);
-    position: relative;
-    top: 3px;
-    right: 2px;
 }
 
 .dropRight2::after {
@@ -116,13 +116,10 @@ body {
     position: relative;
     top: 6px;
     left: 2px;
+    z-index: -1;
 }
 .dropRightUp2::after {
     content: url(../img/icons/dropdown_up.png);
-    filter: var(--icon-color-invert);
-    position: relative;
-    top: 6px;
-    left: 2px;
 }
 .dropLeft2::before {
     content: url(../img/icons/dropdown_down.png);
@@ -130,13 +127,10 @@ body {
     position: relative;
     top: 6px;
     right: 2px;
+    z-index: -1;
 }
 .dropLeftUp2::before {
     content: url(../img/icons/dropdown_up.png);
-    filter: var(--icon-color-invert);
-    position: relative;
-    top: 6px;
-    right: 2px;
 }
 
 
@@ -229,10 +223,10 @@ navbar {
     width: 35px;
 }
 
+
 .sidemenu {
     display: none;
 }
-
 .sidemenu-show {
     min-height: 69px;
     width: 160px;
@@ -246,18 +240,9 @@ navbar {
     border-radius: 1em;
     display: block;
 }
-
 .sidemenu-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    height: 100vh;
-    z-index: 901;
     display: none;
 }
-
 .sidemenu-overlay-show {
     position: absolute;
     top: 0;
@@ -268,7 +253,6 @@ navbar {
     z-index: 901;
     display: block;
 }
-
 .sidemenu-show hr {
     border: 1px solid var(--body-color-inverse);
     border-radius: 1em;
@@ -276,11 +260,9 @@ navbar {
     margin: 4px 5px;
     opacity: 0.06;
 }
-
 .navlinks {
     display: none;
 }
-
 .navlinks a.top {
     background: var(--nav-color);
     text-align: left;
@@ -289,12 +271,11 @@ navbar {
     font-size: 18px;
     display: block;
     border: none;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-top-left-radius: .8em;
+    border-top-right-radius: .8em;
     z-index: 999;
     position: relative;
 }
-
 .navlinks a {
     background: var(--nav-color);
     text-align: left;
@@ -306,23 +287,19 @@ navbar {
     z-index: 999;
     position: relative;
 }
-
 .navlinks a:hover {
     background-color: var(--nav-color-hover);
     color: var(--text-color-inverse);
 }
-
 @media all and (max-width: 844px) {
     .navlinks {
         display: block;
     }
 }
 
-
 .dropdowns {
     margin-bottom: .6em;
 }
-
 .appearance-btn {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -331,7 +308,6 @@ navbar {
     font-size: 18px;
     margin: .5em .2em;
 }
-
 .appearance-btn::before {
     content: url(../img/icons/appearance.png);
     filter: var(--icon-color-invert);
@@ -343,15 +319,12 @@ navbar {
     top: 5px;
     left: 2px;
 }
-
 .appearance-drop {
     display: none;
 }
-
 .appearance-drop-show {
     display: block;
 }
-
 .appearance-drop-show button {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -361,7 +334,6 @@ navbar {
     margin: .15em 1.1em;
 }
 
-
 .language-btn {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -370,7 +342,6 @@ navbar {
     font-size: 18px;
     margin: .5em .2em;
 }
-
 .language-btn::before {
     content: url(../img/icons/language.png);
     filter: var(--icon-color-invert);
@@ -382,15 +353,12 @@ navbar {
     top: 5px;
     left: 2px;
 }
-
 .language-drop {
     display: none;
 }
-
 .language-drop-show {
     display: block;
 }
-
 .language-drop-show button {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -400,22 +368,18 @@ navbar {
     margin: .15em 1.1em;
 }
 
-
 .social {
     margin: 10px 0 10px 3px;
     line-height: 1.7rem;
 }
-
 .social a {
     display: inline-block;
     font-size: 18px;
     text-decoration: underline;
 }
-
 .social a:hover {
     color: var(--text-color-hover);
 }
-
 img.github-logo {
     filter: var(--icon-color-invert);
     height: 19px;
@@ -426,7 +390,6 @@ img.github-logo {
     top: 3px;
     left: 2px;
 }
-
 img.youtube-logo {
     height: 19px;
     width: auto;
@@ -436,7 +399,6 @@ img.youtube-logo {
     top: 3px;
     left: 2px;
 }
-
 
 
 
@@ -503,7 +465,6 @@ main hr {
 #homepage section {
     margin-bottom: 1.5em;
 }
-
 #homepage section h2 {
     margin-bottom: .5em;
 }
@@ -522,6 +483,92 @@ main hr {
 }
 
 
+.skill {
+    display: flex;
+    flex-direction: row;
+}
+.skillbar {
+    background: var(--skillbar-color);
+    width: 12em;
+    height: 1.3em;
+    align-self: center;
+    margin-left: .3em;
+    border-radius: 1em;
+    text-align: right;
+}
+.skill9 {
+    background: rgb(25, 100, 255);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 95%;
+    height: 100%;
+}
+.skill8 {
+    background: rgb(0, 140, 150);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 85%;
+    height: 100%;
+}
+.skill7 {
+    background: rgb(24, 172, 120);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 75%;
+    height: 100%;
+}
+.skill6 {
+    background: rgb(30, 200, 80);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 65%;
+    height: 100%;
+}
+.skill5 {
+    background: rgb(30, 200, 0);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 55%;
+    height: 100%;
+}
+.skill4 {
+    background: rgb(120, 200, 0);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 45%;
+    height: 100%;
+}
+.skill3 {
+    background: rgb(230, 180, 0);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 35%;
+    height: 100%;
+}
+.skill2 {
+    background: rgb(255, 120, 0);
+    padding-right: .3em;
+    border-radius: 1em;
+    width: 25%;
+    height: 100%;
+}
+.skill1 {
+    background: rgb(255, 50, 0);
+    padding-left: .2em;
+    border-radius: 1em;
+    width: 15%;
+    height: 100%;
+}
+.skill0 {
+    background: rgb(255, 0, 0);
+    padding-left: .2em;
+    border-radius: 1em;
+    width: 10%;
+    height: 100%;
+}
+
+
+
 main#education {
     align-self: flex-start;
 }
@@ -535,7 +582,6 @@ main#education {
 .edu-intro p {
     line-height: 1.5em;
 }
-
 
 .edu-schools p {
     font-size: 1.6em;
@@ -644,11 +690,23 @@ main#work-experience {
 
 
 
+#hobbies p.header {
+    font-size: 1.6em;
+}
+
+
+
+main#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .contact-me {
     text-align: center;
 }
 .contact-me p.header {
-    font-size: 1.6em;
+    font-size: 2em;
 }
 
 .contact-me form {
@@ -657,53 +715,43 @@ main#work-experience {
     margin: 1em auto;
     background: var(--body-color);
 }
+.contact-me label {
+    display: block;
+    padding: .4em 0 .2em 0;
+    font-size: 1.5rem;
+}
 .contact-me input, .contact-me textarea {
     background: var(--body-color);
+    font-size: 1.1em;
 }
 .contact-me input {
     border: 3px solid var(--body-color-inverse);
     border-radius: 10px;
     width: 550px;
     height: 35px;
-    text-align: center;
+    text-align: left;
+    padding: .1em .2em;
     margin: .6em 0;
+}
+.contact-me input#submit {
+    height: 50px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-align: center;
 }
 .contact-me textarea {
     border: 3px solid var(--body-color-inverse);
     border-radius: 10px;
     width: 550px;
     height: 200px;
-    text-align: center;
+    text-align: left;
+    padding: .1em .2em;
     margin: .6em 0;
     display: block;
-}
-.contact-me label {
-    display: block;
-    padding: .4em 0 .2em 0;
-    font-size: 1.3rem;
 }
 
-.contact-me input#submit {
-    background: var(--body-color);
-    border: 3px solid var(--body-color-inverse);
-    border-radius: 10px;
-    width: 550px;
-    height: 50px;
-    margin: .6em 0;
-    font-size: 1.4rem;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.contact-me input#submit::after {
-    content: url(../img/icons/email_send_48px.png);
-    filter: var(--icon-color-invert);
-    position: relative;
-    top: 4px;
-    left: 8px;
-}
+
+
 
 
 
@@ -738,20 +786,10 @@ footer {
 /* Styling footer p */
 .footer-container p {
     font-size: 28px;
-    padding: 0;
-    margin: 0;
-}
-
-/* Styling footer links */
-.footer-container a {
-    font-size: 16px;
-    padding: 0;
-    margin: 0;
 }
 
 /* Styling footer table */
 .footer-container td {
-    margin: 0;
     padding: 0 15px;
 }
 

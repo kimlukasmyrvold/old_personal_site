@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 
 <head>
     <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
@@ -22,45 +22,49 @@
             <header>
                 <a class="links" id="navHeader" href="../en/index.html">Homepage</a>
             </header>
-            
+
             <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <img src="../img/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+                <img src="../img/icons/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
             </button>
 
-            <section class="topnav-links">
+            <div class="topnav-links">
                 <a class="links" id="navActive" href="../en/index.html">Homepage</a>
-                <a class="links" href="../en/html/contact.html">Contact me</a>
-            </section>
+                <a class="links" href="../en/html/education.html">Utdanning</a>
+                <a class="links" href="../en/html/work-experience.html">Arbeidserfaring</a>
+                <a class="links" href="../en/html/hobbies.html">Hobbyer</a>
+                <a class="links" href="../en/html/contact.html">Kontakt meg</a>
+            </div>
         </nav>
 
         <aside class="sidemenu-container">
             <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
 
-            <articel id="sidemenu" class="sidemenu">
-                <section class="navlinks">
+            <article id="sidemenu" class="sidemenu">
+                <div class="navlinks">
                     <a class="top" id="navActive" href="../en/index.html">Homepage</a>
-                    <a href="../en/html/contact.html">Contact me</a>
+                    <a href="../en/html/education.html">Utdanning</a>
+                    <a href="../en/html/work-experience.html">Arbeidserfaring</a>
+                    <a href="../en/html/hobbies.html">Hobbyer</a>
+                    <a href="../en/html/contact.html">Kontakt meg</a>
 
                     <hr>
-                </section>
+                </div>
 
-                <section class="dropdowns">
-                    <div class="appearance">
+                <div class="dropdowns">
+                    <div>
                         <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
-                            <span>Appearance</span>
+                            <span>Utseende</span>
                         </button>
 
                         <div id="appearance-drop" class="appearance-drop">
-                            <!-- <button id="device-theme-btn" onclick="theme_btn_device()">Device theme</button> -->
-                            <!-- ^^^^^^ will be added in future, maybe... -->
-                            <button id="light-theme-btn" onclick="theme_btn_light()">Light thme</button>
-                            <button id="dark-theme-btn" onclick="theme_btn_dark()">Dark theme</button>
+                            <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
+                            <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
                         </div>
                     </div>
 
-                    <div class="language">
+                    <div>
                         <button id="language-btn" onclick="language_btn()" class="language-btn">
-                            <span>Language</span>
+                            <span>Språk</span>
                         </button>
 
                         <div id="language-drop" class="language-drop">
@@ -68,83 +72,106 @@
                             <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
                         </div>
                     </div>
-                </section>
+                </div>
 
                 <hr>
 
-                <section class="social">
+                <div class="social">
                     <table>
                         <tr>
                             <td>
-                                <img class="github-logo" src="../img/GitHub-Mark-Light-32px.png" alt="github logo">
+                                <img class="github-logo" src="../img/icons/github-logo.png">
                                 <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
                                     rel="noreferrer noopener">Github</a>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <img class="youtube-logo" src="../img/youtube-logo.png" alt="youtube logo">
+                                <img class="youtube-logo" src="../img/icons/youtube-logo.png">
                                 <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
                                     rel="noreferrer noopener">Youtube</a>
                             </td>
                         </tr>
                     </table>
-                </section>
+                </div>
             </article>
         </aside>
     </navbar>
 
-    <main>
-        <article class="intro" id="intro">
-            <table>
-                <tr>
-                    <td>
-                        <img src="../img/kimlukasmyrvold.png" alt="Picture of me">
-                    </td>
-                    <td>
-                        <h2>Kim Lukas Myrvold</h2>
-                        <p id="intro-age">16 years old</p>
-                        <p id="intro-cake">Born: 21. Mai. 2006</p>
-                        <p>Årum, Fredrikstad</p>
-                        <a href="../en/html/contact.html">
-                            <p id="intro-email">kimlukasmyrvold06@gmail.com</p>
-                        </a>
-                    </td>
-                </tr>
-            </table>
+    <main id="homepage">
+        <article class="intro">
+            <div>
+                <img src="../img/kimlukasmyrvold.png" alt="Bilde av meg">
+            </div>
+            <div id="text">
+                <h2>Kim Lukas Myrvold</h2>
+                <p>2006, 16 år gammel</p>
+                <p>Fredrikstad, Norge</p>
+                <a href="../en/html/contact.html">
+                    <p>kimlukasmyrvold06@gmail.com</p>
+                </a>
+            </div>
         </article>
 
         <hr>
 
-        <article>
-            <section>
-                <h2>More about me</h2>
-            </section>
+        <section class="about-me">
+            <h2>Litt om meg</h2>
 
-            <section>
-                <p>I am a responsible, orderly and kind boy at 16 years old. I can learn quite quick when I have an interese for it.</p>
-            </section>
-        </article>
+            <p>Jeg er en <span>ansvarlig, ryddig og snill</span> gutt på 16 år. Jeg lærer raskt og gjør mitt beste. Jeg
+                tenker mer logisk og pleier å tenke en del gjennom ting før jeg gjør det. Pluss jeg er også ganske
+                <span>selvstendig</span> når jeg er sikker på hva jeg skal gjøre.
+            </p>
+        </section>
 
-        <!-- <a class="links" href="mailto:kimlukasmyrvold06@gmail.com">Email</a><br>
-        <a class="links" href="tel: 48426624">Phone</a> -->
+        <section id="interests">
+            <h2>Interesser</h2>
+
+            <p>
+                Jeg har interesse for <a href="../en/html/hobbies.html"><span>datamaskiner, programmering, nettverk og
+                        gaming.</span></a>
+
+            </p>
+
+            <a href="../en/html/hobbies.html" id="moreInfo"><span>Mer info på hobby siden..</span></a>
+        </section>
+
+        <section id="coding">
+            <h2>Koding</h2>
+
+            <p>HTML:</p>
+            <p>CSS:</p>
+            <p>JavaScript:</p>
+            <p>Python:</p>
+        </section>
+
+        <section id="language">
+            <h2>Språk</h2>
+        </section>
+
+        <section id="otherSkills">
+            <h2>Andre ferdigheter</h2>
+
+            <p>Bygge PC:</p>
+
+        </section>
     </main>
 
     <footer>
         <article class="footer-container">
             <table>
                 <tr>
-                    <td>
-                        <img src="../favicon.ico" alt="Picture of me">
+                    <td id="icon">
+                        <img src="../favicon.ico" alt="Bilde av meg">
                     </td>
                     <td>
                         <p>Kim Lukas Myrvold</p>
                         <hr>
-                        <a class="links" href="../en/html/contact.html">Email: kimlukasmyrvold06@gmail.com</a>
+                        <a class="links" href="../en/html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
                         <br>
-                        <a class="links" href="../en/html/contact.html">Phone: +47 48426624</a>
+                        <a class="links" href="tel: +4748426624">Telefon: +47 484 26 624</a>
                         <br>
-                        <a class="links" href="../en/html/contact.html">Location: Fredrikstad, Norway</a>
+                        <a class="links" href="../en/html/contact.html">Lokasjon: Fredrikstad, Norge</a>
                     </td>
                 </tr>
             </table>
