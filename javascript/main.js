@@ -195,3 +195,14 @@ function jobsMyRoomBtn() {
     document.getElementById("jobsMyRoomDrop").classList.toggle("jobsMyRoomDrop_show");
     document.getElementById("jobsMyRoomBtn").classList.toggle("dropRightUp");
 }
+
+function gameSatisfactoryBtn() {
+    document.getElementById("gameSatisfactoryDrop").classList.toggle("gameSatisfactoryDrop_show");
+    document.getElementById("gameSatisfactoryBtn").classList.toggle("dropRightUp2");
+}
+
+function horny() {
+    var sex = "horny";
+    var simp = "tier3sub";
+    var simp2 = "siggurd";
+}
