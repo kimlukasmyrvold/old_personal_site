@@ -760,6 +760,9 @@ span.spanLight {
     text-decoration: underline;
     font-weight: lighter;
 }
+span.spanLight2 {
+    font-weight: lighter;
+}
 span:hover.spanLight {
     color: var(--text-color-hover);
 }
