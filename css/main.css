@@ -471,28 +471,15 @@ main hr {
 #homepage section p {
     line-height: 1.5em;
 }
-#homepage section span {
-    font-weight: 600;
-}
-#interests #moreInfo span {
-    font-weight: lighter;
-    text-decoration: underline;
-}
-#interests #moreInfo span:hover {
-    color: var(--text-color-hover);
-}
 
 
-.skill {
-    display: flex;
-    flex-direction: row;
-}
 .skillbar {
     background: var(--skillbar-color);
     width: 12em;
     height: 1.3em;
     align-self: center;
-    margin-left: .3em;
+    margin-left: .2em;
+    margin-bottom: .16em;
     border-radius: 1em;
     text-align: right;
 }
@@ -554,14 +541,14 @@ main hr {
 }
 .skill1 {
     background: rgb(255, 50, 0);
-    padding-left: .2em;
+    padding-right: .12em;
     border-radius: 1em;
     width: 15%;
     height: 100%;
 }
 .skill0 {
     background: rgb(255, 0, 0);
-    padding-left: .2em;
+    padding-right: .12em;
     border-radius: 1em;
     width: 10%;
     height: 100%;
@@ -582,24 +569,15 @@ main#education {
 .edu-intro p {
     line-height: 1.5em;
 }
-
-.edu-schools p {
-    font-size: 1.6em;
-}
 .edu-schools #dropdowns button {
-    font-size: 1.2em;
-    background: none;
     margin: .2em 0;
     height: 50px;
-}
-.edu-schools #dropdowns button:hover {
-    color: var(--text-color-hover);
 }
 .edu-schools #dropdowns button::before {
     content: '- ';
 }
 .edu-schools #dropdowns p {
-    font-size: 1.09em;
+    font-size: 1.1em;
     margin: 0 0 .3em 1.5em;
 }
 
@@ -630,10 +608,8 @@ main#work-experience {
 .work-jobs div {
     margin-bottom: 1em;
 }
-.work-jobs button.header {
-    font-size: 1.6em;
-}
 .work-jobs p {
+    font-size: 1.2em;
     line-height: 1.5em;
     margin-left: 1em;
 }
@@ -646,7 +622,7 @@ main#work-experience {
 }
 .work-jobs button {
     line-height: 1.5em;
-    font-size: 1em;
+    font-size: 1.8em;
     background: transparent;
 }
 .work-jobs button:hover {
@@ -690,8 +666,32 @@ main#work-experience {
 
 
 
+#hobbies section {
+    margin-bottom: 1em;
+}
 #hobbies p.header {
-    font-size: 1.6em;
+    font-size: 2em;
+    margin-bottom: .2em;
+}
+#hobbies p {
+    font-size: 1.1em;
+}
+#hobbies .gameSatisfactoryDrop {
+    display: none;
+}
+#hobbies .gameSatisfactoryDrop_show {
+    display: block;
+}
+#hobbies button {
+    margin-left: .8em;
+    height: 40px;
+}
+#hobbies button::before {
+    content: '- ';
+}
+#hobbies #dropdowns p {
+    font-size: 1.1em;
+    margin: 0 0 1.3em 1.8em;
 }
 
 
@@ -752,6 +752,29 @@ main#contact {
 
 
 
+
+span {
+    font-weight: 600;
+}
+span.spanLight {
+    text-decoration: underline;
+    font-weight: lighter;
+}
+span:hover.spanLight {
+    color: var(--text-color-hover);
+}
+
+button {
+    background: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+button.header {
+    font-size: 1.4em;
+}
+button:hover {
+    color: var(--text-color-hover);
+}
 
 
 
