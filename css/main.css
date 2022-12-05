@@ -750,6 +750,25 @@ main#work-experience {
     display: block;
 }
 
+
+#hobbies .gameDysonSphereProgramDrop {
+    display: none;
+}
+
+#hobbies .gameDysonSphereProgramDrop_show {
+    display: block;
+}
+
+
+#hobbies .gameSpaceEngineersDrop {
+    display: none;
+}
+
+#hobbies .gameSpaceEngineersDrop_show {
+    display: block;
+}
+
+
 #hobbies button {
     margin-left: .8em;
     height: 40px;

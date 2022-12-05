@@ -200,3 +200,11 @@ function gameSatisfactoryBtn() {
     document.getElementById("gameSatisfactoryDrop").classList.toggle("gameSatisfactoryDrop_show");
     document.getElementById("gameSatisfactoryBtn").classList.toggle("dropRightUp2");
 }
+function gameDysonSphereProgramBtn() {
+    document.getElementById("gameDysonSphereProgramDrop").classList.toggle("gameDysonSphereProgramDrop_show");
+    document.getElementById("gameDysonSphereProgramBtn").classList.toggle("dropRightUp2");
+}
+function gameSpaceEngineersBtn() {
+    document.getElementById("gameSpaceEngineersDrop").classList.toggle("gameSpaceEngineersDrop_show");
+    document.getElementById("gameSpaceEngineersBtn").classList.toggle("dropRightUp2");
+}
