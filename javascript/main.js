@@ -61,7 +61,7 @@ else {
 // Then it lets lang to equal english and saves lang to localstorage
 function language_btn_english() {
     if (lang == "norsk") {
-        window.location.pathname = "/cv/en" + window.location.pathname.replace('/cv','');
+        window.location.pathname = "/cv/en" + window.location.pathname.replace('/cv', '');
         let lang = "english";
 
         localStorage.setItem("lang", lang);
@@ -75,7 +75,7 @@ function language_btn_english() {
 // Then it lets lang to equal norsk and saves lang to localstorage
 function language_btn_norwegian() {
     if (lang == "english") {
-        window.location.pathname = window.location.pathname.replace('en/','');
+        window.location.pathname = window.location.pathname.replace('en/', '');
         let lang = "norsk";
 
         localStorage.setItem("lang", lang);
@@ -128,31 +128,31 @@ function theme_btn_dark() {
 
 
 // Ignore this
-        //  line under is supposed to enable site to detect device theme of users.
-        // window.matchMedia('(prefers-color-scheme: dark)')
-        //       .addEventListener('change',({ matches }) => {
-        //   if (matches) {
-        //     console.log("change to dark mode!")
-        //   } else {
-        //     console.log("change to light mode!")
-        //   }
-        // })
+//  line under is supposed to enable site to detect device theme of users.
+// window.matchMedia('(prefers-color-scheme: dark)')
+//       .addEventListener('change',({ matches }) => {
+//   if (matches) {
+//     console.log("change to dark mode!")
+//   } else {
+//     console.log("change to light mode!")
+//   }
+// })
 
 
-        // let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+// let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        // if(matched) {
-        //     document.body.classList.remove("light-theme");
-        //     let theme = "dark";
+// if(matched) {
+//     document.body.classList.remove("light-theme");
+//     let theme = "dark";
 
-        //     localStorage.setItem("theme", theme);
-        // }
-        // else {
-        //     document.body.classList.add("light-theme");
-        //     let theme = "light";
+//     localStorage.setItem("theme", theme);
+// }
+// else {
+//     document.body.classList.add("light-theme");
+//     let theme = "light";
 
-        //     localStorage.setItem("theme", theme);
-        // };
+//     localStorage.setItem("theme", theme);
+// };
 
 
 
@@ -199,10 +199,4 @@ function jobsMyRoomBtn() {
 function gameSatisfactoryBtn() {
     document.getElementById("gameSatisfactoryDrop").classList.toggle("gameSatisfactoryDrop_show");
     document.getElementById("gameSatisfactoryBtn").classList.toggle("dropRightUp2");
-}
-
-function horny() {
-    var sex = "horny";
-    var simp = "tier3sub";
-    var simp2 = "siggurd";
 }
