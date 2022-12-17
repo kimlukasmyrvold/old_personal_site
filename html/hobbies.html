@@ -2,72 +2,79 @@
 <html lang="no">
 
 <head>
-    <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the character encoding for the website -->
+    <meta charset="UTF-8">
     <!-- Makes site look better on window sizes -->
-    <meta name="author" content="Kim Lukas Myrvold"> <!-- Name of the author who made this website -->
-    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Name of the author who made this website -->
+    <meta name="author" content="Kim Lukas Myrvold">
     <!-- Defines keywords for search engines -->
-    <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <!-- Give the website a description -->
+    <meta name="description" content="Kim Lukas Myrvold's CV">
 
-    <title>Kim Lukas Myrvold - CV</title> <!-- Changes the name of the website -->
+    <!-- Changes the name of the website -->
+    <title>Kim Lukas Myrvold - CV</title>
+    <!-- Changes the icon for the website -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
-    <link rel="icon" type="image/x-icon" href="../favicon.ico"> <!-- Changes the icon for the website -->
-    <link rel="stylesheet" href="../css/main.css"> <!-- Stylesheet for website, make stuff look good -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Stylesheet for website, make stuff look good -->
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
     <navbar>
         <nav class="topnav">
             <header>
-                <a href="../html/hobbies.html" class="links" id="navHeader">Hobbyer</a>
+                <a class="links" id="navHeader" href="../html/hobbies.html">Hobbyer</a>
             </header>
 
             <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <img src="../img/icons/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+                <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
             </button>
 
             <div class="topnav-links">
-                <a href="../index.html" class="links">Startside</a>
-                <a href="../html/education.html" class="links">Utdanning</a>
-                <a href="../html/work-experience.html" class="links">Arbeidserfaring</a>
-                <a href="../html/hobbies.html" class="links" id="navActive">Hobbyer</a>
-                <a href="../html/contact.html" class="links">Kontakt meg</a>
+                <a class="links" href="../index.html">Startside</a>
+                <a class="links" href="../html/education.html">Utdanning</a>
+                <a class="links" href="../html/work-experience.html">Arbeidserfaring</a>
+                <a class="links" id="navActive" href="../html/hobbies.html">Hobbyer</a>
             </div>
         </nav>
 
         <aside class="sidemenu-container">
-            <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
+            <div id="sidemenu-overlay" class="hidden" onclick="sidemenu_overlay()"></div>
 
-            <article id="sidemenu" class="sidemenu">
+            <article id="sidemenu" class="hidden">
                 <div class="navlinks">
-                    <a href="../index.html" class="top">Startside</a>
+                    <a class="top" href="../index.html">Startside</a>
                     <a href="../html/education.html">Utdanning</a>
                     <a href="../html/work-experience.html">Arbeidserfaring</a>
-                    <a href="../html/hobbies.html" id="navActive">Hobbyer</a>
-                    <a href="../html/contact.html">Kontakt meg</a>
+                    <a id="navActive" href="../html/hobbies.html">Hobbyer</a>
 
                     <hr>
                 </div>
 
                 <div class="dropdowns">
-                    <div class="appearance">
+                    <div>
                         <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
-                            <span class="spanLight2">Utseende</span>
+                            <span class="spanLight">Utseende</span>
                         </button>
 
-                        <div id="appearance-drop" class="appearance-drop">
+                        <div id="appearance-drop" class="hidden">
                             <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
                             <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
                         </div>
                     </div>
 
-                    <div class="language">
+                    <div>
                         <button id="language-btn" onclick="language_btn()" class="language-btn">
-                            <span class="spanLight2">Språk</span>
+                            <span class="spanLight">Språk</span>
                         </button>
 
-                        <div id="language-drop" class="language-drop">
+                        <div id="language-drop" class="hidden">
                             <button id="english-btn" onclick="language_btn_english()">English</button>
                             <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
                         </div>
@@ -77,22 +84,10 @@
                 <hr>
 
                 <div class="social">
-                    <table>
-                        <tr>
-                            <td>
-                                <img class="github-logo" src="../img/icons/github-logo.png">
-                                <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
-                                    rel="noreferrer noopener">Github</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="youtube-logo" src="../img/icons/youtube-logo.png">
-                                <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
-                                    rel="noreferrer noopener">Youtube</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                        rel="noreferrer noopener">
+                        <span class="spanLight"><i class="fa-brands fa-github"></i>Github</span>
+                    </a>
                 </div>
             </article>
         </aside>
@@ -102,23 +97,24 @@
         <section>
             <p class="header">Mine hobbyer</p>
 
-            <p>Jeg har ikke mange hobbyer, men de jeg har er <span>Gaming, datamaskiner, programmering og
-                    nettverk.</span> Jeg starta
-                å bli interesert i gaming og data rundt sånn 2017. Programmering kom noen få år etter, nettverk fikk jeg
-                mer interesse for i 2022. Innenfor gaming så liker jeg mer rolige spill og spill hvor du må tenke litt.
-                De spillene jeg liker er mest er fabrikk spill.</p>
+            <p>Jeg har ikke mange hobbyer, men de jeg har er <span><a href="#gaming">Gaming, </a><a
+                        href="#computers">datamaskiner, </a><a href="#programming">programmering </a>og <a
+                        href="#network">nettverk.</a></span> Jeg starta å bli interesert i gaming og data rundt sånn
+                2017. Programmering kom noen få år etter, nettverk fikk jeg mer interesse for i 2022. Innenfor gaming så
+                liker jeg mer rolige spill og spill hvor du må tenke litt. De spillene jeg liker er mest er fabrikk
+                spill.</p>
         </section>
 
-        <section>
+        <section id="gaming">
             <p class="header">Gaming</p>
 
-            <div id="dropdowns">
+            <div class="dropdowns">
                 <div id="gameSatisfactory">
                     <button id="gameSatisfactoryBtn" class="header dropRight2"
                         onclick="gameSatisfactoryBtn()">Satisfactory</button>
 
-                    <p id="gameSatisfactoryDrop" class="gameSatisfactoryDrop">
-                        Satisfactory er et bra spill. Jeg har over 800 timer i spillet.
+                    <p id="gameSatisfactoryDrop" class="hidden">
+                        Satisfactory er et bra spill. Jeg har over 800 timer i spillet. Kjøpt: 05.09.2020
                     </p>
                 </div>
 
@@ -126,8 +122,8 @@
                     <button id="gameDysonSphereProgramBtn" class="header dropRight2"
                         onclick="gameDysonSphereProgramBtn()">Dyson Sphere Program</button>
 
-                    <p id="gameDysonSphereProgramDrop" class="gameDysonSphereProgramDrop">
-                        Dyson Sphere Program er et bra spill.
+                    <p id="gameDysonSphereProgramDrop" class="hidden">
+                        Dyson Sphere Program er et bra spill. Kjøpt: 22.02.2021
                     </p>
                 </div>
 
@@ -135,37 +131,116 @@
                     <button id="gameSpaceEngineersBtn" class="header dropRight2" onclick="gameSpaceEngineersBtn()">Space
                         Engineers</button>
 
-                    <p id="gameSpaceEngineersDrop" class="gameSpaceEngineersDrop">
-                        Space Engineers er et bra spill.
+                    <p id="gameSpaceEngineersDrop" class="hidden">
+                        Space Engineers er et bra spill. Kjøpt: 02.08.2021
+                    </p>
+                </div>
+
+                <div id="gameEuroTruckSim">
+                    <button id="gameEuroTruckSimBtn" class="header dropRight2" onclick="gameEuroTruckSimBtn()">Euro
+                        Truck Simulator 2</button>
+
+                    <p id="gameEuroTruckSimDrop" class="hidden">
+                        Euro Truck Simulator 2 er et bra spill. Kjøpt: 30.05.2022
                     </p>
                 </div>
             </div>
+        </section>
 
+        <section id="computers">
+            <p class="header">Datamaskiner</p>
+
+            <div class="dropdowns">
+                <div id="computerObsidian">
+                    <button id="computerObsidianBtn" class="header dropRight2" onclick="computerObsidianBtn()">Obsidian
+                        Computer</button>
+
+                    <table id="computerObsidianDrop" class="hidden">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    test
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <article class="footer-container">
-            <table>
-                <tr>
-                    <td id="icon">
-                        <img src="../favicon.ico" alt="Picture of me">
-                    </td>
-                    <td>
-                        <p>Kim Lukas Myrvold</p>
-                        <hr>
-                        <a class="links" href="../html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
-                        <br>
-                        <a class="links" href="tel: +4748426624">Telefon: +47 484 26 624</a>
-                        <br>
-                        <a class="links" href="../html/contact.html">Lokasjon: Fredrikstad, Norge</a>
-                    </td>
-                </tr>
-            </table>
-        </article>
-    </footer>
+    <!-- Start of footer -->
+    <footer class="pt-2 pb-3 px-3">
+        <div class="container text-start position-relative">
+            <!-- Start of row -->
+            <div class="row">
+                <!-- Name, socials and contact-info -->
+                <div class="col-md-5 col-lg-5 col-xl-auto mx-auto mt-3">
+                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Kim Lukas Myrvold</h3>
 
+                    <p><a href="https://github.com/kimlukasmyrvold" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-github"></i>Github</a></p>
+                    <p><a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-youtube"></i>Youtube</a></p>
+                    <p><a href="https://steamcommunity.com/id/SOLOnerves" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-steam"></i>Steam</a></p>
+
+                    <h4 class="mb- mt-3 font-weight-bold text-decoration-underline">Kontaktinformasjon</h4>
+
+                    <p><a href="tel: +4748426624"><i class="fa-solid fa-phone"></i>+47 484 26 624</a></p>
+                    <p><a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-discord"></i>SoloNerves#4666</a></p>
+                    <p class="d-block"><a href="mailto:kimlukasmyrvold06@gmail.com"><i
+                                class="fa-solid fa-envelope"></i>kimlukasmyrvold06@gmail.com</a></p>
+                </div>
+                <!-- End of name, socials and contact-info -->
+
+                <!-- Location with google maps -->
+                <div class="col-md-5 col-lg-5 col-xl-4 mx-auto mt-3">
+                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Beliggenhet</h3>
+
+                    <!-- <section class="mx-auto" id="map-container"> -->
+                    <div id="map"></div>
+                    <!-- </section> -->
+                </div>
+                <!-- End of location with google maps -->
+
+                <!-- Email form -->
+                <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3" id="email-form">
+                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Send en e-post:</h3>
+
+                    <form class="contact-me" id="sendMeMail" action="mailto:kimlukasmyrvold06@gmail.com">
+                        <input id="subject" type="text" name="subject" placeholder="Skriv inn din e-post addresse..."
+                            required>
+
+                        <textarea id="body" name="body" placeholder="Skriv din melding her..." required></textarea>
+
+                        <input type="submit" name="submit" id="submit" value="Send e-post">
+                    </form>
+                </div>
+                <!-- End of email form -->
+            </div>
+            <!-- End of row -->
+
+            <hr>
+
+            <!-- Copyright -->
+            <div class="row copyright">
+                <div class="col-auto mx-auto mt-3 ">
+                    <p><i class="fa-regular fa-copyright"></i>2022 Copyright: Kim Lukas Myrvold</p>
+                </div>
+            </div>
+            <!-- End of copyright -->
+        </div>
+    </footer>
+    <!-- End of footer -->
+
+    <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map&v=weekly"></script>
+    <script type="text/javascript" src="../javascript/googleMaps.js"></script>
     <script type="text/javascript" src="../javascript/main.js"></script>
+    <script type="text/javascript" src="../javascript/hobbies.js"></script>
 </body>
 
 </html>

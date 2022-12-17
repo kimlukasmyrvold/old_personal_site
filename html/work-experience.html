@@ -2,72 +2,79 @@
 <html lang="no">
 
 <head>
-    <meta charset="UTF-8"> <!-- Sets the character encoding for the website -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the character encoding for the website -->
+    <meta charset="UTF-8">
     <!-- Makes site look better on window sizes -->
-    <meta name="author" content="Kim Lukas Myrvold"> <!-- Name of the author who made this website -->
-    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Name of the author who made this website -->
+    <meta name="author" content="Kim Lukas Myrvold">
     <!-- Defines keywords for search engines -->
-    <meta name="description" content="Kim Lukas Myrvold's CV"> <!-- Give the website a description -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <!-- Give the website a description -->
+    <meta name="description" content="Kim Lukas Myrvold's CV">
 
-    <title>Kim Lukas Myrvold - CV</title> <!-- Changes the name of the website -->
+    <!-- Changes the name of the website -->
+    <title>Kim Lukas Myrvold - CV</title>
+    <!-- Changes the icon for the website -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
-    <link rel="icon" type="image/x-icon" href="../favicon.ico"> <!-- Changes the icon for the website -->
-    <link rel="stylesheet" href="../css/main.css"> <!-- Stylesheet for website, make stuff look good -->
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Stylesheet for website, make stuff look good -->
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
     <navbar>
         <nav class="topnav">
             <header>
-                <a href="../html/work-experience.html" class="links" id="navHeader">Arbeidserfaring</a>
+                <a class="links" id="navHeader" href="../html/work-experience.html">Arbeidserfaring</a>
             </header>
 
             <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <img src="../img/icons/hamburger-menu.png" alt="Sidemenu button" id="sidemenu-btn-img">
+                <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
             </button>
 
             <div class="topnav-links">
-                <a href="../index.html" class="links">Startside</a>
-                <a href="../html/education.html" class="links">Utdanning</a>
-                <a href="../html/work-experience.html" class="links" id="navActive">Arbeidserfaring</a>
-                <a href="../html/hobbies.html" class="links">Hobbyer</a>
-                <a href="../html/contact.html" class="links">Kontakt meg</a>
+                <a class="links" href="../index.html">Startside</a>
+                <a class="links" href="../html/education.html">Utdanning</a>
+                <a class="links" id="navActive" href="../html/work-experience.html">Arbeidserfaring</a>
+                <a class="links" href="../html/hobbies.html">Hobbyer</a>
             </div>
         </nav>
 
         <aside class="sidemenu-container">
-            <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
+            <div id="sidemenu-overlay" class="hidden" onclick="sidemenu_overlay()"></div>
 
-            <article id="sidemenu" class="sidemenu">
+            <article id="sidemenu" class="hidden">
                 <div class="navlinks">
-                    <a href="../index.html" class="top">Startside</a>
+                    <a class="top" href="../index.html">Startside</a>
                     <a href="../html/education.html">Utdanning</a>
-                    <a href="../html/work-experience.html" id="navActive">Arbeidserfaring</a>
+                    <a id="navActive" href="../html/work-experience.html">Arbeidserfaring</a>
                     <a href="../html/hobbies.html">Hobbyer</a>
-                    <a href="../html/contact.html">Kontakt meg</a>
 
                     <hr>
                 </div>
 
                 <div class="dropdowns">
-                    <div class="appearance">
+                    <div>
                         <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
-                            <span class="spanLight2">Utseende</span>
+                            <span class="spanLight">Utseende</span>
                         </button>
 
-                        <div id="appearance-drop" class="appearance-drop">
+                        <div id="appearance-drop" class="hidden">
                             <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
                             <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
                         </div>
                     </div>
 
-                    <div class="language">
+                    <div>
                         <button id="language-btn" onclick="language_btn()" class="language-btn">
-                            <span class="spanLight2">Språk</span>
+                            <span class="spanLight">Språk</span>
                         </button>
 
-                        <div id="language-drop" class="language-drop">
+                        <div id="language-drop" class="hidden">
                             <button id="english-btn" onclick="language_btn_english()">English</button>
                             <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
                         </div>
@@ -77,22 +84,10 @@
                 <hr>
 
                 <div class="social">
-                    <table>
-                        <tr>
-                            <td>
-                                <img class="github-logo" src="../img/icons/github-logo.png" alt="github logo">
-                                <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
-                                    rel="noreferrer noopener">Github</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="youtube-logo" src="../img/icons/youtube-logo.png" alt="youtube logo">
-                                <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
-                                    rel="noreferrer noopener">Youtube</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                        rel="noreferrer noopener">
+                        <span class="spanLight"><i class="fa-brands fa-github"></i>Github</span>
+                    </a>
                 </div>
             </article>
         </aside>
@@ -103,21 +98,21 @@
             <div id="painthouse">
                 <button id="paintBtn" class="header dropRight" onclick="painthouseBtn()">Male hus</button>
 
-                <p id="paintDrop" class="paintDrop">I sommeren 2022 så hjalp jeg til med å male huset, jeg gjorde en god
+                <p id="paintDrop" class="hidden">I sommeren 2022 så hjalp jeg til med å male huset, jeg gjorde en god
                     jobb.</p>
             </div>
 
             <div id="vacuuming">
                 <button id="vacuumingBtn" class="header dropRight" onclick="vaccumingBtn()">Støvsuging</button>
 
-                <p id="vaccumDrop" class="vaccumDrop">Jeg støvsuger alltid rommet mitt når jeg ser det er støv, noen
+                <p id="vaccumDrop" class="hidden">Jeg støvsuger alltid rommet mitt når jeg ser det er støv, noen
                     ganger så støvsuger jeg også huset når jeg føler for det.</p>
             </div>
 
             <div id="takeOutTrash">
                 <button id="takeOutTrashBtn" class="header dropRight" onclick="takeOutTrashBtn()">Ta ut søppel</button>
 
-                <p id="takeOutTrashDrop" class="takeOutTrashDrop">Noen ganger så kaster jeg søppla vi har ute i søppel
+                <p id="takeOutTrashDrop" class="hidden">Noen ganger så kaster jeg søppla vi har ute i søppel
                     dunken, men jeg pleier oftest bare å gjøre det når jeg har en del søppel på rommet mitt som ikke har
                     plass inne.</p>
             </div>
@@ -126,7 +121,7 @@
                 <button id="otherJobsHomeBtn" class="header dropRight" onclick="otherJobsHomeBtn()">Andre jobber
                     hjemme</button>
 
-                <p id="otherJobsHomeDrop" class="otherJobsHomeDrop">Jeg pleier oftest å reparere og installere ting i
+                <p id="otherJobsHomeDrop" class="hidden">Jeg pleier oftest å reparere og installere ting i
                     huset, så langt har jeg fikset dører, lamper, datamaskiner internett og mer. Jeg har også installert
                     et vindu, røykvarsler, persienner, ovner og mer. <br> Jeg legger også ting ut og inn i
                     oppvaskmaskinen og legger ved i ovnen. Jeg klarer også lage ild.</p>
@@ -136,58 +131,85 @@
                 <button id="jobsMyRoomBtn" class="header dropRight" onclick="jobsMyRoomBtn()">Jobber inne på rommet
                     mitt</button>
 
-                <p id="jobsMyRoomDrop" class="jobsMyRoomDrop">Inne på rommet mitt sørger jeg alltid for at det er ryddig
+                <p id="jobsMyRoomDrop" class="hidden">Inne på rommet mitt sørger jeg alltid for at det er ryddig
                     og pent. Jeg rer opp senga, støvsuger, vasker bort støv, vanner blomster og legger klær inn i
                     skapet.</p>
             </div>
-
-            <!-- <ul>
-                <li>Male hus</li>
-                <li>Beise veranda</li>
-                <li>Støvsuge</li>
-                <li>Ta ut fra oppvaskmaskin</li>
-                <li>Legge ting inn i oppvaskmaskin</li>
-                <li>Reparere dører</li>
-                <li>Installering av røykvarsler</li>
-                <li>Fikse internett</li>
-                <li>Sette opp mesh rutere</li>
-                <li>Bygge datamaskiner</li>
-                <li>Fikse TV</li>
-                <li>Fikse DVD spiller</li>
-                <li>Installere vindu</li>
-                <li>Handle inn matvarer</li>
-                <li>Installere varmeovn</li>
-                <li>Installere persienner</li>
-                <li>Gå ut med søppla</li>
-                <li>Legge inn ved i ovnen</li>
-                <li>Ta fyr i ovnen</li>
-            </ul> -->
         </section>
-
     </main>
 
-    <footer>
-        <article class="footer-container">
-            <table>
-                <tr>
-                    <td id="icon">
-                        <img src="../favicon.ico" alt="Picture of me">
-                    </td>
-                    <td>
-                        <p>Kim Lukas Myrvold</p>
-                        <hr>
-                        <a class="links" href="../html/contact.html">E-post: kimlukasmyrvold06@gmail.com</a>
-                        <br>
-                        <a class="links" href="tel: +4748426624">Telefon: +47 484 26 624</a>
-                        <br>
-                        <a class="links" href="../html/contact.html">Lokasjon: Fredrikstad, Norge</a>
-                    </td>
-                </tr>
-            </table>
-        </article>
-    </footer>
+    <!-- Start of footer -->
+    <footer class="pt-2 pb-3 px-3">
+        <div class="container text-start position-relative">
+            <!-- Start of row -->
+            <div class="row">
+                <!-- Name, socials and contact-info -->
+                <div class="col-md-5 col-lg-5 col-xl-auto mx-auto mt-3">
+                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Kim Lukas Myrvold</h3>
 
+                    <p><a href="https://github.com/kimlukasmyrvold" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-github"></i>Github</a></p>
+                    <p><a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-youtube"></i>Youtube</a></p>
+                    <p><a href="https://steamcommunity.com/id/SOLOnerves" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-steam"></i>Steam</a></p>
+
+                    <h4 class="mb- mt-3 font-weight-bold text-decoration-underline">Kontaktinformasjon</h4>
+
+                    <p><a href="tel: +4748426624"><i class="fa-solid fa-phone"></i>+47 484 26 624</a></p>
+                    <p><a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><i
+                                class="fa-brands fa-discord"></i>SoloNerves#4666</a></p>
+                    <p class="d-block"><a href="mailto:kimlukasmyrvold06@gmail.com"><i
+                                class="fa-solid fa-envelope"></i>kimlukasmyrvold06@gmail.com</a></p>
+                </div>
+                <!-- End of name, socials and contact-info -->
+
+                <!-- Location with google maps -->
+                <div class="col-md-5 col-lg-5 col-xl-4 mx-auto mt-3">
+                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Beliggenhet</h3>
+
+                    <!-- <section class="mx-auto" id="map-container"> -->
+                    <div id="map"></div>
+                    <!-- </section> -->
+                </div>
+                <!-- End of location with google maps -->
+
+                <!-- Email form -->
+                <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3" id="email-form">
+                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Send en e-post:</h3>
+
+                    <form class="contact-me" id="sendMeMail" action="mailto:kimlukasmyrvold06@gmail.com">
+                        <input id="subject" type="text" name="subject" placeholder="Skriv inn din e-post addresse..."
+                            required>
+
+                        <textarea id="body" name="body" placeholder="Skriv din melding her..." required></textarea>
+
+                        <input type="submit" name="submit" id="submit" value="Send e-post">
+                    </form>
+                </div>
+                <!-- End of email form -->
+            </div>
+            <!-- End of row -->
+
+            <hr>
+
+            <!-- Copyright -->
+            <div class="row copyright">
+                <div class="col-auto mx-auto mt-3 ">
+                    <p><i class="fa-regular fa-copyright"></i>2022 Copyright: Kim Lukas Myrvold</p>
+                </div>
+            </div>
+            <!-- End of copyright -->
+        </div>
+    </footer>
+    <!-- End of footer -->
+
+    <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map&v=weekly"></script>
+    <script type="text/javascript" src="../javascript/googleMaps.js"></script>
     <script type="text/javascript" src="../javascript/main.js"></script>
+    <script type="text/javascript" src="../javascript/work-experience.js"></script>
 </body>
 
 </html>

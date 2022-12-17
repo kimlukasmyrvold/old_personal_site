@@ -22,6 +22,7 @@ body {
 
     /* Icon color */
     --icon-color: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
+    --icon-color-hover: invert(84%) sepia(0%) saturate(0%) hue-rotate(235deg) brightness(98%) contrast(89%);
     --icon-color-invert: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
 
     /* Skillbar color */
@@ -51,6 +52,7 @@ body.light-theme {
 
     /* Icon color */
     --icon-color: invert(0%) sepia(14%) saturate(42%) hue-rotate(212deg) brightness(103%) contrast(91%);
+    --icon-color-hover: invert(21%) sepia(0%) saturate(17%) hue-rotate(180deg) brightness(102%) contrast(92%);
     --icon-color-invert: invert(99%) sepia(3%) saturate(113%) hue-rotate(255deg) brightness(117%) contrast(88%);
 
     /* Skillbar color */
@@ -58,28 +60,151 @@ body.light-theme {
 }
 
 
-* {
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
-    color: var(--text-color);
-    text-decoration: none;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+/* Global styling */
 
+
+/* The body is the body of the website, it is where all of the visible parts of the website is. */
 body {
+    /* Set the minimum height of the entire page to be 100vh, which is 100% of the window page of the user. */
     min-height: 100vh;
+
+    min-width: 355px;
+    /* Changes the background of the website, I have two in because of compatibility with browsers that do not support gradients */
+    background: var(--body-color);
+    /* Changing the background of the page to a gradient */
     background: var(--body-color-gradient);
+    /* Changes the positon to relative */
     position: relative;
+    /* Overflow-x to hidden so that horizontal scrolling should be impossible */
     overflow-x: hidden;
+    line-height: 1.2;
+}
+
+@media all and (max-width: 355px) {
+    body {
+        overflow-x: scroll;
+    }
 }
 
 body {
+    /* Set the display of the page to flex */
     display: flex;
+    /* This changes the direction of flex elements to be on top of each other with column */
     flex-direction: column;
 }
 
+/* Importing google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+/* Applies to all elements */
+* {
+    /* Setting the font family to Nunito which is from google fonts */
+    font-family: 'Nunito', sans-serif;
+    /* Changing the color for all text to the variable text-color */
+    color: var(--text-color);
+    /* Removes underline from links and other effects on text */
+    text-decoration: none;
+    /* Sets the border for everything to none */
+    border: none;
+    /* Sets the outline for everything to none. Give it an outline of "1px solid red" for troubleshooting. */
+    outline: none;
+    /* Sets the padding for everything to zero */
+    padding: 0;
+    /* Sets the margin for everything to zero */
+    margin: 0;
+    /* Sets to box sizing for elements to shrink to fit border.
+    For example: you have a box that is 100px and a border that is 5px.
+    The total width will then be 105px, but with border-box, it will be 100px and the box will be 95px. */
+    box-sizing: border-box;
+}
+
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-color-hover);
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+
+
+/* Making class for hidden which you can add to any element to give it a display equal to none */
+.hidden {
+    display: none;
+}
+
+
+/* Styling for <hr> tag */
+hr {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    background-color: var(--body-color-inverse);
+    margin: 25px 0px;
+    opacity: 1;
+}
+
+
+/* Styling span tags */
+span {
+    font-weight: 600;
+}
+
+/* Styling for span when it has a class of spanLight */
+span.spanLight {
+    font-weight: lighter;
+}
+
+/* Styling for span when it has a class of spanLightUnderline */
+span.spanLightUnderline {
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+/* Styling span tag with class of spanLightSmall. This will be an even smaller span */
+span.spanLightSmall {
+    font-weight: lighter;
+    font-size: .6em;
+}
+
+/* Adding a margin to the right for <i> tags */
+i {
+    margin-right: .3em;
+}
+
+
+/* Styling for button */
+button {
+    background: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Styling for button with a class of header */
+button.header {
+    font-size: 1.4em;
+}
+
+/* Styling button and links when it is hovered over */
+button:hover,
+button:hover *,
+a:hover * {
+    color: var(--text-color-hover);
+}
+
+
+/* Class called links so you can give <a> tag an higher z-index. This is so you can click it when the sidemenu is open */
 .links {
     position: relative;
     z-index: 902;
@@ -87,6 +212,7 @@ body {
 
 
 
+/* Styling for dropdown icons */
 .dropRight::after {
     content: url(../img/icons/dropdown_down.png);
     filter: var(--icon-color-invert);
@@ -139,109 +265,250 @@ body {
     content: url(../img/icons/dropdown_up.png);
 }
 
+/* End of styling for dropdown icons */
 
 
+
+/* Styling for skillbar */
+.skillbar {
+    background: var(--skillbar-color);
+    width: 200px;
+    height: 20px;
+    margin-left: .2em;
+    margin-bottom: .16em;
+    border-radius: 1em;
+}
+
+/* Styling the text for the skillbar */
+.skillbar .skill2 span,
+.skillbar .skill3 span,
+.skillbar .skill4 span,
+.skillbar .skill5 span,
+.skillbar .skill6 span,
+.skillbar .skill7 span,
+.skillbar .skill8 span,
+.skillbar .skill9 span,
+.skillbar .skill10 span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: .2em;
+}
+
+/* Styling the text for the skillbar. Styling for skill1 seperatly because the width of skill1 is too small for text to fit inside. */
+.skillbar .skill1 span {
+    display: flex;
+    align-items: center;
+    padding-left: 1.4em;
+    height: 100%;
+}
+
+/* Styling for overlaying over skillbar to show percentage of skill.
+0%-10%, 10%-20%, 20%-30%, 30%-40%, 40%-50%, 50%-60%, 60%-70%, 70%-80%, 80%-90%, 90%-100% */
+.skill10 {
+    background: rgb(25, 100, 255);
+    border-radius: 1em;
+    width: 100%;
+    height: 100%;
+}
+
+.skill9 {
+    background: rgb(0, 140, 150);
+    border-radius: 1em;
+    width: 90%;
+    height: 100%;
+}
+
+.skill8 {
+    background: rgb(24, 172, 120);
+    border-radius: 1em;
+    width: 80%;
+    height: 100%;
+}
+
+.skill7 {
+    background: rgb(30, 200, 80);
+    border-radius: 1em;
+    width: 70%;
+    height: 100%;
+}
+
+.skill6 {
+    background: rgb(30, 200, 0);
+    border-radius: 1em;
+    width: 60%;
+    height: 100%;
+}
+
+.skill5 {
+    background: rgb(120, 200, 0);
+    border-radius: 1em;
+    width: 50%;
+    height: 100%;
+}
+
+.skill4 {
+    background: rgb(230, 180, 0);
+    border-radius: 1em;
+    width: 40%;
+    height: 100%;
+}
+
+.skill3 {
+    background: rgb(255, 120, 0);
+    border-radius: 1em;
+    width: 30%;
+    height: 100%;
+}
+
+.skill2 {
+    background: rgb(255, 50, 0);
+    border-radius: 1em;
+    width: 20%;
+    height: 100%;
+}
+
+.skill1 {
+    background: rgb(255, 0, 0);
+    border-radius: 1em;
+    width: 10%;
+    height: 100%;
+}
+
+/* End of skillbar styling */
+
+/* End of global classes styling */
+
+
+
+
+
+/* Styling for navbar */
 navbar {
+    /* Setting background to --nav-color */
     background: var(--nav-color);
+    /* Setting the height of the navbar */
     height: 50px;
+    /* Setting position to sticky so it is always at top */
     position: sticky;
+    /* Adding top so it is always at the top of the page */
     top: 0;
-}
-
-.topnav {
-    height: 50px;
+    /* Giving it a high z-index so it is above other elements */
     z-index: 900;
-    margin: 0;
-    padding: 0;
-    border: none;
 }
 
-.topnav a {
-    float: right;
-    background: var(--nav-color);
-    text-align: center;
-    padding: 14.7px 16px;
-    font-size: 17px;
-}
+/* Styling for topnav */
 
-.topnav a:hover {
-    /* Gave background color so it's easier to see when text over header */
-    background-color: var(--nav-color-hover);
-    color: var(--text-color-inverse);
-}
-
-.topnav-links a {
-    float: right;
-    background: var(--nav-color);
-    text-align: center;
-    padding: 14.7px 16px;
-    font-size: 17px;
+/* Styling for the class topnav */
+.topnav {
+    /* Giving it a height of 50px, makes sidemenu behave properly */
     height: 50px;
 }
 
-.topnav-links a:hover {
-    /* Gave background color so it's easier to see when text over header */
-    background-color: var(--nav-color-hover);
-    color: var(--text-color-inverse);
+/* Styling topnav links */
+.topnav .topnav-links a {
+    /* Giving it a display equal to flex in order to align the items to the center verticaly */
+    display: flex;
+    /* Aligning the links to the center along the y axis */
+    align-items: center;
+    /* Making it float to the right of the screen */
+    float: right;
+    /* Giving it padding to right and left of element to space the links appart  */
+    padding: 0 16px;
+    /* Changing font size */
+    font-size: 1.05em;
+    font-weight: 400;
+    /* Giving the links a height of 50px */
+    height: 50px;
 }
 
-@media all and (max-width: 844px) {
-    .topnav-links {
+/* Styling topnav links on hover */
+.topnav .topnav-links a::after {
+    content: '';
+    position: absolute;
+    width: 102%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: -1.5px;
+    background-color: var(--body-color-inverse);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+
+.topnav .topnav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+/* Changing display to none when screen width is 859px */
+@media all and (max-width: 859px) {
+    .topnav .topnav-links {
         display: none;
     }
 }
 
-
-
-#navHeader {
+.topnav #navHeader {
+    display: flex;
+    align-items: center;
     float: left;
-    padding: 5px 0 0 12px;
-    margin: 0;
-    background: none;
-    color: var(--text-color);
-    text-decoration: none;
+    height: 50px;
     font-size: 32px;
-    text-align: center;
+    margin-left: .5em;
 }
 
-#navActive {
+.topnav .topnav-links a#navActive::after {
+    content: '';
+    position: absolute;
+    width: 102%;
+    height: 2px;
+    transform: scaleX(1);
+    bottom: 0;
+    left: -1.5px;
+    background-color: var(--body-color-inverse);
+}
+
+.sidemenu .navlinks #navActive {
     background-color: var(--nav-color-active);
     color: rgb(240, 240, 240);
 }
 
 
+/* Styling for sidemenu button */
+
 #sidemenu-btn {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
     float: right;
-    border: none;
-    background: transparent;
     /* Makes it show the pointer when you hover over it. This way it looks clickable */
     cursor: pointer;
-    padding: 0;
-    margin: -5px 6px 0 6px;
+    position: relative;
     z-index: 950;
 }
 
-#sidemenu-btn-img {
-    /* Using filter to change the color of the image from black to white depending on the theme */
-    filter: var(--icon-color);
-    height: 60px;
-    width: 35px;
+i#sidemenu-btn-img {
+    margin-right: 0 !important;
 }
 
+/* End of styling for topnav */
+
+
+
+
+/* Styling for sidemenu */
 
 .sidemenu {
-    display: none;
-}
-
-.sidemenu-show {
     min-height: 69px;
     width: 160px;
     background: var(--nav-color-menu);
     position: absolute;
     right: 0;
     z-index: 999;
-    margin: .5em 1.4em 0 0;
+    margin: .5em 1em 0 0;
     padding: 0;
     border: none;
     border-radius: 1em;
@@ -249,10 +516,6 @@ navbar {
 }
 
 .sidemenu-overlay {
-    display: none;
-}
-
-.sidemenu-overlay-show {
     position: absolute;
     top: 0;
     right: 0;
@@ -263,7 +526,7 @@ navbar {
     display: block;
 }
 
-.sidemenu-show hr {
+.sidemenu hr {
     border: 1px solid var(--body-color-inverse);
     border-radius: 1em;
     padding: 0;
@@ -306,7 +569,8 @@ navbar {
     color: var(--text-color-inverse);
 }
 
-@media all and (max-width: 844px) {
+/* Shows the navlinks inside the sidemenu when screen is small enough */
+@media all and (max-width: 859px) {
     .navlinks {
         display: block;
     }
@@ -316,6 +580,7 @@ navbar {
     margin-bottom: .6em;
 }
 
+/* Styling for appearance button */
 .appearance-btn {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -330,22 +595,16 @@ navbar {
     filter: var(--icon-color-invert);
     height: 19px;
     width: 19px;
-    padding: 0;
-    margin: 0;
     position: relative;
     top: 5px;
     left: 2px;
 }
 
 .appearance-drop {
-    display: none;
-}
-
-.appearance-drop-show {
     display: block;
 }
 
-.appearance-drop-show button {
+.appearance-drop button {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
@@ -354,6 +613,7 @@ navbar {
     margin: .15em 1.1em;
 }
 
+/* Styling for language button */
 .language-btn {
     background: var(--nav-color-menu);
     color: var(--text-color);
@@ -376,14 +636,10 @@ navbar {
 }
 
 .language-drop {
-    display: none;
-}
-
-.language-drop-show {
     display: block;
 }
 
-.language-drop-show button {
+.language-drop button {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
@@ -392,11 +648,13 @@ navbar {
     margin: .15em 1.1em;
 }
 
+/* Styling for social class in sidemenu */
 .social {
     margin: 10px 0 10px 3px;
     line-height: 1.7rem;
 }
 
+/* Styling for the links when parent has a class of social */
 .social a {
     display: inline-block;
     font-size: 18px;
@@ -407,6 +665,7 @@ navbar {
     color: var(--text-color-hover);
 }
 
+/* Styling the logos inside the sidemenu */
 img.github-logo {
     filter: var(--icon-color-invert);
     height: 19px;
@@ -418,80 +677,72 @@ img.github-logo {
     left: 2px;
 }
 
-img.youtube-logo {
-    height: 19px;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    top: 3px;
-    left: 2px;
-}
+/* End of styling for sidemenu */
 
 
 
 
+/* Styling for main tag */
 main {
+    /* Setting the flex to 1 so that it takes up the entire window height, this makes it so the footer is always at the bottom */
     flex: 1;
-    margin: 1.5em 5em;
-    align-self: center;
+    /* Setting margin to offset it from the x and y axis */
+    margin: 1.5em 1em;
 }
 
-@media all and (max-width: 1150px) {
-    main {
-        margin: 1.5em 1em;
-    }
-}
+/* End of styling main tag */
 
-main hr {
-    border: 1px solid var(--body-color-inverse);
-    border-radius: 10px;
-    background-color: var(--body-color-inverse);
-    margin: 25px 0px;
-}
 
-.intro {
+
+
+/* Styling for home page */
+
+/* Styling for introduction part of the home page */
+#homepage .intro {
     display: inline-flex;
     align-self: center;
 }
 
-.intro img {
+#homepage .intro img {
     border-radius: 10em;
     width: 300px;
     height: auto;
 }
 
-.intro #text {
+#homepage .intro #text {
     height: 50%;
     align-self: center;
     margin-left: 1.6em;
 }
 
-.intro #text h2 {
-    font-size: 36px;
+#homepage .intro #text h2 {
+    font-size: 2.2em;
+    font-weight: 600;
     text-decoration: underline 2px;
     padding: 0;
     margin: 0 0 16px 0;
 }
 
-.intro #text p {
-    font-size: 20px;
+#homepage .intro #text p {
+    font-size: 1.3em;
     padding: 0;
     margin: 8px 0;
     font-weight: 600;
 }
 
+/* Using media to change the introduction part layout when on small screen */
 @media all and (max-width: 700px) {
-    .intro {
+    #homepage .intro {
         display: block;
     }
 
-    .intro #text {
+    #homepage .intro #text {
         margin: .6em 0;
         margin-bottom: 1.6em;
     }
 }
 
+/* Styling for sections inside home page */
 #homepage section {
     margin-bottom: 1.5em;
 }
@@ -504,160 +755,76 @@ main hr {
     line-height: 1.5em;
 }
 
-
-.skillbar {
-    background: var(--skillbar-color);
-    width: 12em;
-    height: 1.3em;
-    align-self: center;
-    margin-left: .2em;
-    margin-bottom: .16em;
-    border-radius: 1em;
-    text-align: right;
-}
-
-.skill9 {
-    background: rgb(25, 100, 255);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 95%;
-    height: 100%;
-}
-
-.skill8 {
-    background: rgb(0, 140, 150);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 85%;
-    height: 100%;
-}
-
-.skill7 {
-    background: rgb(24, 172, 120);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 75%;
-    height: 100%;
-}
-
-.skill6 {
-    background: rgb(30, 200, 80);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 65%;
-    height: 100%;
-}
-
-.skill5 {
-    background: rgb(30, 200, 0);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 55%;
-    height: 100%;
-}
-
-.skill4 {
-    background: rgb(120, 200, 0);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 45%;
-    height: 100%;
-}
-
-.skill3 {
-    background: rgb(230, 180, 0);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 35%;
-    height: 100%;
-}
-
-.skill2 {
-    background: rgb(255, 120, 0);
-    padding-right: .3em;
-    border-radius: 1em;
-    width: 25%;
-    height: 100%;
-}
-
-.skill1 {
-    background: rgb(255, 50, 0);
-    padding-right: .12em;
-    border-radius: 1em;
-    width: 15%;
-    height: 100%;
-}
-
-.skill0 {
-    background: rgb(255, 0, 0);
-    padding-right: .12em;
-    border-radius: 1em;
-    width: 10%;
-    height: 100%;
-}
+/* End of home page styling */
 
 
 
-main#education {
-    align-self: flex-start;
-}
+/* Styling for education page */
 
-.edu-intro div {
-    margin-bottom: 1em;
-}
-
-.edu-intro p.header {
+/* Styling for <p> tag with class of header */
+#education p.header {
     font-size: 1.6em;
+}
+
+/* Styling for the introduction section */
+#education div {
+    margin-bottom: 1em;
 }
 
 .edu-intro p {
     line-height: 1.5em;
 }
 
+/* Styling for the schools section */
+/* Giving buttons inside an element with id of dropdowns and giving it a margin of .2em at the top and bottom. Also giving it a height of 50px */
 .edu-schools #dropdowns button {
-    margin: .2em 0;
+    /* margin: .2em 0; */
     height: 50px;
 }
 
+/* Adding a - before the buttons */
 .edu-schools #dropdowns button::before {
     content: '- ';
 }
 
+/* Setting the font size of p tags inside dropdowns and changing margin so <p> is more to the right */
 .edu-schools #dropdowns p {
     font-size: 1.1em;
     margin: 0 0 .3em 1.5em;
 }
 
+/* Styling for glemmen vgs section */
 .glemmenDrop {
-    display: none;
-}
-
-.glemmenDrop_show {
     display: block;
 }
 
+.glemmenDrop td {
+    padding-right: 1.2em;
+    vertical-align: top;
+}
+
+.glemmenDrop img {
+    border-radius: 3em;
+    box-shadow: 3px 3px 6px var(--body-color-inverse);
+    height: auto;
+    width: 500px;
+}
+
+/* Styling for borge ungdomskole section */
 .borgeDrop {
-    display: none;
-}
-
-.borgeDrop_show {
     display: block;
 }
 
+/* Styling for årum skole section */
 .aarumDrop {
-    display: none;
-}
-
-.aarumDrop_show {
     display: block;
 }
 
+/* End of education page styling */
 
 
-main#work-experience {
-    align-self: flex-start;
-}
 
+/* Start of work page styling */
 .work-jobs div {
     margin-bottom: 1em;
 }
@@ -688,47 +855,30 @@ main#work-experience {
 }
 
 .work-jobs .paintDrop {
-    display: none;
-}
-
-.work-jobs .paintDrop_show {
     display: block;
 }
 
 .work-jobs .vaccumDrop {
-    display: none;
-}
-
-.work-jobs .vaccumDrop_show {
     display: block;
 }
 
 .work-jobs .takeOutTrashDrop {
-    display: none;
-}
-
-.work-jobs .takeOutTrashDrop_show {
     display: block;
 }
 
 .work-jobs .otherJobsHomeDrop {
-    display: none;
-}
-
-.work-jobs .otherJobsHomeDrop_show {
     display: block;
 }
 
 .work-jobs .jobsMyRoomDrop {
-    display: none;
-}
-
-.work-jobs .jobsMyRoomDrop_show {
     display: block;
 }
 
+/* End of work page styling */
 
 
+
+/* Hobbies site styling */
 #hobbies section {
     margin-bottom: 1em;
 }
@@ -742,33 +892,6 @@ main#work-experience {
     font-size: 1.1em;
 }
 
-#hobbies .gameSatisfactoryDrop {
-    display: none;
-}
-
-#hobbies .gameSatisfactoryDrop_show {
-    display: block;
-}
-
-
-#hobbies .gameDysonSphereProgramDrop {
-    display: none;
-}
-
-#hobbies .gameDysonSphereProgramDrop_show {
-    display: block;
-}
-
-
-#hobbies .gameSpaceEngineersDrop {
-    display: none;
-}
-
-#hobbies .gameSpaceEngineersDrop_show {
-    display: block;
-}
-
-
 #hobbies button {
     margin-left: .8em;
     height: 40px;
@@ -778,149 +901,123 @@ main#work-experience {
     content: '- ';
 }
 
-#hobbies #dropdowns p {
+/* #hobbies .dropdowns p {
     font-size: 1.1em;
-    margin: 0 0 1.3em 1.8em;
+    margin: 0 0 1.3em 1.9em;
+} */
+
+#hobbies .dropdowns p,
+#hobbies .dropdowns table {
+    font-size: 1.1em;
+    margin-left: 1.8em;
+}
+
+#hobbies .gameSatisfactoryDrop {
+    display: block;
 }
 
 
-
-main#contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#hobbies .gameDysonSphereProgramDrop {
+    display: block;
 }
 
-.contact-me {
-    text-align: center;
+
+#hobbies .gameSpaceEngineersDrop {
+    display: block;
 }
 
-.contact-me p.header {
+
+#hobbies .gameEuroTruckSimDrop {
+    display: block;
+}
+
+
+#hobbies .computerObsidianDrop {
+    display: block;
+}
+
+/* End of hobbies site styling */
+
+
+
+
+
+/* Styling for the footer of the website */
+footer {
+    min-height: 50px;
+    background: var(--footer-color);
+}
+
+footer * {
+    position: relative;
+    z-index: 550;
+}
+
+
+footer p {
+    font-size: 1.3em;
+    padding: .1em 0;
+}
+
+footer .copyright p {
+    font-size: 1.05em;
+}
+
+footer h3 {
     font-size: 2em;
 }
 
-.contact-me form {
-    border-radius: 10px;
-    padding: .5em 1.4em .6em 1.4em;
-    margin: 1em auto;
-    background: var(--body-color);
+footer hr {
+    margin-top: 1.3em;
+    margin-bottom: .1em;
 }
 
-.contact-me label {
-    display: block;
-    padding: .4em 0 .2em 0;
-    font-size: 1.5rem;
+footer #map {
+    border: 1px solid var(--body-color-inverse);
+    border-radius: 10px;
+    width: 100%;
+    height: 226px;
+}
+
+footer .container {
+    max-width: 100%;
+}
+
+
+/* Email form */
+form.contact-me {
+    border-radius: 10px;
 }
 
 .contact-me input,
 .contact-me textarea {
     background: var(--body-color);
     font-size: 1.1em;
+    width: 100%;
+    /* border-radius: 10px; */
 }
 
 .contact-me input {
-    border: 3px solid var(--body-color-inverse);
-    border-radius: 10px;
-    width: 550px;
-    height: 35px;
+    /* border: 3px solid var(--body-color-inverse); */
+    height: 30px;
     text-align: left;
-    padding: .1em .2em;
-    margin: .6em 0;
+    /* padding: .1em .2em; */
+    margin: .2em 0;
 }
 
 .contact-me input#submit {
-    height: 50px;
     font-size: 1.4rem;
     cursor: pointer;
     text-align: center;
 }
 
 .contact-me textarea {
-    border: 3px solid var(--body-color-inverse);
-    border-radius: 10px;
-    width: 550px;
-    height: 200px;
+    /* border: 3px solid var(--body-color-inverse); */
     text-align: left;
-    padding: .1em .2em;
-    margin: .6em 0;
+    /* padding: .1em .2em; */
     display: block;
+    resize: vertical;
+    height: 150px;
 }
 
-
-
-span {
-    font-weight: 600;
-}
-
-span.spanLight {
-    text-decoration: underline;
-    font-weight: lighter;
-}
-
-span.spanLight2 {
-    font-weight: lighter;
-}
-
-span:hover.spanLight {
-    color: var(--text-color-hover);
-}
-
-button {
-    background: none;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-button.header {
-    font-size: 1.4em;
-}
-
-button:hover {
-    color: var(--text-color-hover);
-}
-
-
-
-footer {
-    min-height: 50px;
-    background: var(--footer-color);
-}
-
-/* Styling for stuff inside footer */
-.footer-container {
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Styling footer image */
-.footer-container img {
-    width: 120px;
-    height: auto;
-    border-radius: 50%;
-}
-
-/* Styling footer hr */
-.footer-container hr {
-    border: 1px solid var(--body-color-inverse);
-    border-radius: 10px;
-    background-color: var(--body-color-inverse);
-    margin: 15px 0;
-}
-
-/* Styling footer p */
-.footer-container p {
-    font-size: 28px;
-}
-
-/* Styling footer table */
-.footer-container td {
-    padding: 0 15px;
-}
-
-@media all and (max-width: 503px) {
-    .footer-container #icon {
-        display: none;
-    }
-}
+/* End of footer styling */

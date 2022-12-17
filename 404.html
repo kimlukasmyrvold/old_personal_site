@@ -15,9 +15,12 @@
 
     <!-- Name of the website -->
     <title>404 - Page Not Found</title>
-
     <!-- Changes the icon for the website -->
     <link rel="icon" type="image/x-icon" href="https://kimlukasmyrvold.github.io/cv/favicon.ico">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Stylesheet for website, make stuff look good -->
     <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/main.css">
     <!-- Stylesheet for website, make stuff look good -->
@@ -28,56 +31,53 @@
     <navbar>
         <nav class="topnav">
             <header>
-                <a href="https://kimlukasmyrvold.github.io/cv/" class="links" id="navHeader">Error 404</a>
+                <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/index.html">404- Page not found</a>
             </header>
 
-            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <img src="https://kimlukasmyrvold.github.io/cv/img/icons/hamburger-menu.png" alt="Sidemenu button"
-                    id="sidemenu-btn-img">
+            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn";>
+                <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
             </button>
 
             <div class="topnav-links">
-                <a href="https://kimlukasmyrvold.github.io/cv/" class="links">Startside</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/education.html" class="links">Utdanning</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html"
-                    class="links">Arbeidserfaring</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html" class="links">Hobbyer</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/contact.html" class="links">Kontakt meg</a>
+                <a class="links" id="navActive" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+                <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
+                <a class="links"
+                    href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
+                <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
             </div>
         </nav>
 
         <aside class="sidemenu-container">
-            <div id="sidemenu-overlay" onclick="sidemenu_overlay()"></div>
+            <div id="sidemenu-overlay" class="hidden" onclick="sidemenu_overlay()"></div>
 
-            <article id="sidemenu" class="sidemenu">
+            <article id="sidemenu" class="hidden">
                 <div class="navlinks">
-                    <a href="https://kimlukasmyrvold.github.io/cv/index.html" class="top">Startside</a>
+                    <a class="top" id="navActive" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
-                    <a href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Kontakt meg</a>
 
                     <hr>
                 </div>
 
                 <div class="dropdowns">
-                    <div class="appearance">
+                    <div>
                         <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
-                            <span>Utseende</span>
+                            <span class="spanLight">Utseende</span>
                         </button>
 
-                        <div id="appearance-drop" class="appearance-drop">
+                        <div id="appearance-drop" class="hidden">
                             <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
                             <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
                         </div>
                     </div>
 
-                    <div class="language">
+                    <div>
                         <button id="language-btn" onclick="language_btn()" class="language-btn">
-                            <span>Språk</span>
+                            <span class="spanLight">Språk</span>
                         </button>
 
-                        <div id="language-drop" class="language-drop">
+                        <div id="language-drop" class="hidden">
                             <button id="english-btn" onclick="language_btn_english()">English</button>
                             <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
                         </div>
@@ -87,26 +87,10 @@
                 <hr>
 
                 <div class="social">
-                    <table>
-                        <tr>
-                            <td>
-                                <img class="github-logo"
-                                    src="https://kimlukasmyrvold.github.io/cv/img/icons/github-logo.png"
-                                    alt="github logo">
-                                <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
-                                    rel="noreferrer noopener">Github</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img class="youtube-logo"
-                                    src="https://kimlukasmyrvold.github.io/cv/img/icons/youtube-logo.png"
-                                    alt="youtube logo">
-                                <a href="https://www.youtube.com/channel/UCF52b0GDygCoP9kdBLnud-w" target="_blank"
-                                    rel="noreferrer noopener">Youtube</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
+                        rel="noreferrer noopener">
+                        <span class="spanLight"><i class="fa-brands fa-github"></i>Github</span>
+                    </a>
                 </div>
             </article>
         </aside>
@@ -147,6 +131,7 @@
         </article>
     </footer>
 
+    <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://kimlukasmyrvold.github.io/cv/javascript/main.js"></script>
 </body>
 

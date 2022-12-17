@@ -2,33 +2,33 @@
 
 // Opens and closes sidemenu when clicking on the hamburger icon
 function sidemenu_btn() {
-    document.getElementById("sidemenu").classList.toggle("sidemenu-show");
-    document.getElementById("sidemenu-overlay").classList.toggle("sidemenu-overlay-show");
-    document.getElementById("appearance-drop").classList.remove("appearance-drop-show");
+    document.getElementById("sidemenu").classList.toggle("sidemenu");
+    document.getElementById("sidemenu-overlay").classList.toggle("sidemenu-overlay");
+    document.getElementById("appearance-drop").classList.remove("appearance-drop");
     document.getElementById("appearance-btn").classList.remove("appearance-btn-clicked");
-    document.getElementById("language-drop").classList.remove("language-drop-show");
+    document.getElementById("language-drop").classList.remove("language-drop");
     document.getElementById("language-btn").classList.remove("language-btn-clicked");
 }
 
 // Opens and closes sidemenu and dropdown menues when clicking outside of sidemenu
 function sidemenu_overlay() {
-    document.getElementById("sidemenu-overlay").className = "sidemenu-overlay";
-    document.getElementById("sidemenu").className = "sidemenu";
-    document.getElementById("appearance-drop").classList.remove("appearance-drop-show");
+    document.getElementById("sidemenu-overlay").classList.remove("sidemenu-overlay");
+    document.getElementById("sidemenu").classList.remove("sidemenu");
+    document.getElementById("appearance-drop").classList.remove("appearance-drop");
     document.getElementById("appearance-btn").classList.remove("appearance-btn-clicked");
-    document.getElementById("language-drop").classList.remove("language-drop-show");
+    document.getElementById("language-drop").classList.remove("language-drop");
     document.getElementById("language-btn").classList.remove("language-btn-clicked");
 }
 
 // Opens and closes the appearance dropdown menu when is clicked
 function appearance_btn() {
-    document.getElementById("appearance-drop").classList.toggle("appearance-drop-show");
+    document.getElementById("appearance-drop").classList.toggle("appearance-drop");
     document.getElementById("appearance-btn").classList.toggle("appearance-btn-clicked");
 }
 
 // Opens and closes the language dropdown menue when is clicked
 function language_btn() {
-    document.getElementById("language-drop").classList.toggle("language-drop-show");
+    document.getElementById("language-drop").classList.toggle("language-drop");
     document.getElementById("language-btn").classList.toggle("language-btn-clicked");
 }
 
@@ -121,90 +121,4 @@ function theme_btn_dark() {
     let theme = "dark";
 
     localStorage.setItem("theme", theme);
-}
-
-
-
-
-
-// Ignore this
-//  line under is supposed to enable site to detect device theme of users.
-// window.matchMedia('(prefers-color-scheme: dark)')
-//       .addEventListener('change',({ matches }) => {
-//   if (matches) {
-//     console.log("change to dark mode!")
-//   } else {
-//     console.log("change to light mode!")
-//   }
-// })
-
-
-// let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-// if(matched) {
-//     document.body.classList.remove("light-theme");
-//     let theme = "dark";
-
-//     localStorage.setItem("theme", theme);
-// }
-// else {
-//     document.body.classList.add("light-theme");
-//     let theme = "light";
-
-//     localStorage.setItem("theme", theme);
-// };
-
-
-
-
-// Buttons for education page. Dropdowns for the schools.
-// Function for Glemmen VGS
-function glemmenBtn() {
-    document.getElementById("glemmenDrop").classList.toggle("glemmenDrop_show");
-    document.getElementById("glemmenBtn").classList.toggle("dropRightUp2");
-}
-// function for Borge Middle School
-function borgeBtn() {
-    document.getElementById("borgeDrop").classList.toggle("borgeDrop_show");
-    document.getElementById("borgeBtn").classList.toggle("dropRightUp2");
-}
-// Function for Årum lower school
-function aarumBtn() {
-    document.getElementById("aarumDrop").classList.toggle("aarumDrop_show");
-    document.getElementById("aarumBtn").classList.toggle("dropRightUp2");
-}
-
-
-function painthouseBtn() {
-    document.getElementById("paintDrop").classList.toggle("paintDrop_show");
-    document.getElementById("paintBtn").classList.toggle("dropRightUp");
-}
-function vaccumingBtn() {
-    document.getElementById("vaccumDrop").classList.toggle("vaccumDrop_show");
-    document.getElementById("vacuumingBtn").classList.toggle("dropRightUp");
-}
-function takeOutTrashBtn() {
-    document.getElementById("takeOutTrashDrop").classList.toggle("takeOutTrashDrop_show");
-    document.getElementById("takeOutTrashBtn").classList.toggle("dropRightUp");
-}
-function otherJobsHomeBtn() {
-    document.getElementById("otherJobsHomeDrop").classList.toggle("otherJobsHomeDrop_show");
-    document.getElementById("otherJobsHomeBtn").classList.toggle("dropRightUp");
-}
-function jobsMyRoomBtn() {
-    document.getElementById("jobsMyRoomDrop").classList.toggle("jobsMyRoomDrop_show");
-    document.getElementById("jobsMyRoomBtn").classList.toggle("dropRightUp");
-}
-
-function gameSatisfactoryBtn() {
-    document.getElementById("gameSatisfactoryDrop").classList.toggle("gameSatisfactoryDrop_show");
-    document.getElementById("gameSatisfactoryBtn").classList.toggle("dropRightUp2");
-}
-function gameDysonSphereProgramBtn() {
-    document.getElementById("gameDysonSphereProgramDrop").classList.toggle("gameDysonSphereProgramDrop_show");
-    document.getElementById("gameDysonSphereProgramBtn").classList.toggle("dropRightUp2");
-}
-function gameSpaceEngineersBtn() {
-    document.getElementById("gameSpaceEngineersDrop").classList.toggle("gameSpaceEngineersDrop_show");
-    document.getElementById("gameSpaceEngineersBtn").classList.toggle("dropRightUp2");
 }
