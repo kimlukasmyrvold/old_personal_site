@@ -22,13 +22,13 @@ function sidemenu_overlay() {
 
 // Opens and closes the appearance dropdown menu when is clicked
 function appearance_btn() {
-    document.getElementById("appearance-drop").classList.toggle("appearance-drop");
+    document.getElementById("appearance-drop").classList.toggle("block");
     document.getElementById("appearance-btn").classList.toggle("appearance-btn-clicked");
 }
 
 // Opens and closes the language dropdown menue when is clicked
 function language_btn() {
-    document.getElementById("language-drop").classList.toggle("language-drop");
+    document.getElementById("language-drop").classList.toggle("block");
     document.getElementById("language-btn").classList.toggle("language-btn-clicked");
 }
 
@@ -39,53 +39,61 @@ function language_btn() {
 
 // Creating variable for getting the current URL, uses window.location.pathname in order to get what the current URL is.
 // The .pathname is part of the URL after for example: "www.google.com" The pathname is what comes after.
-// Then I add .substring(0, 4) in order to only get the first four letters in the URL
-// The reason why it should only select the 4 first letters is because that is the only information I need in order to check if website is english or not.
-var currentURL = window.location.pathname.substring(0, 7);
+// Then I add .substring(0, 7) in order to only get the first seven letters in the URL
+// The reason why it should only select the 7 first letters is because that is the only information the code needs in order to check if website is english or not.
+var currentURL = window.location.pathname.substring(0, 7).toLowerCase();
 
-// Checks if the varible currentURL is equal to /en/
-// If it is, then it sets the variable lang to english and saves it to localstorage
-// If it is not, then it set the variable lang to norsk and saves it to localstorage
-if (currentURL == "/cv/en/") {
+
+// Checks if the varible currentURL is equal to /cv/en/
+// If it is, then it sets the variable lang to english
+// If it is not, then it set the variable lang to norsk
+if (currentURL === "/cv/en/") {
     var lang = "english";
-    localStorage.setItem("lang", lang);
 }
-else {
-    var lang = "norsk";
-    localStorage.setItem("lang", lang);
+else if (currentURL.substring(0, 4) === "/cv/" && currentURL.substring(4, 7) !== "en/") {
+    var lang = "norsk"
+}
+else if (currentURL.substring(0, 4) === "/en/") {
+    var lang = "english_dev";
+}
+else if (currentURL.substring(0, 4) !== "/cv/" && currentURL.substring(0, 4) !== "/en/") {
+    var lang = "norsk_dev";
 }
 
 // Function for when the english button is pressed.
 // Checks if the variable lang equals norsk
 // if it does, then it changes the pathname of the currenturl and adds /en to the starts of it, thus changing the language of the website to english 
-// Then it lets lang to equal english and saves lang to localstorage
+// Then it lets lang to equal english
 function language_btn_english() {
-    if (lang == "norsk") {
+    if (lang === "norsk") {
         window.location.pathname = "/cv/en" + window.location.pathname.replace('/cv', '');
         let lang = "english";
-
-        localStorage.setItem("lang", lang);
+    }
+    else if (lang === "norsk_dev") {
+        window.location.pathname = "/en" + window.location.pathname;
+        let lang = "english_dev";
     }
 }
 
 // Function for when the norsk button is pressed.
 // Checks if the variable lang equals english
 // if it does, then it changes the pathname of the currenturl and removes /en to the starts of it, thus changing the language of the website to norsk 
-//      Here I used the .slice(3) method in order to remove /en.
-// Then it lets lang to equal norsk and saves lang to localstorage
+// Then it lets lang equal norsk
 function language_btn_norwegian() {
-    if (lang == "english") {
+    if (lang === "english") {
         window.location.pathname = window.location.pathname.replace('en/', '');
         let lang = "norsk";
-
-        localStorage.setItem("lang", lang);
+    }
+    else if (lang === "english_dev") {
+        window.location.pathname = window.location.pathname.slice(3);
+        let lang = "norsk_dev";
     }
 }
 
 
 
 
-// dark and light theme script
+// dark and light theme
 
 // Here it reads what the theme currently is, it reads from the localstorage.
 const currentTheme = localStorage.getItem("theme");

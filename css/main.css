@@ -65,32 +65,22 @@ body.light-theme {
 
 /* The body is the body of the website, it is where all of the visible parts of the website is. */
 body {
-    /* Set the minimum height of the entire page to be 100vh, which is 100% of the window page of the user. */
-    min-height: 100vh;
-
-    min-width: 355px;
-    /* Changes the background of the website, I have two in because of compatibility with browsers that do not support gradients */
-    background: var(--body-color);
-    /* Changing the background of the page to a gradient */
-    background: var(--body-color-gradient);
-    /* Changes the positon to relative */
-    position: relative;
-    /* Overflow-x to hidden so that horizontal scrolling should be impossible */
-    overflow-x: hidden;
-    line-height: 1.2;
-}
-
-@media all and (max-width: 355px) {
-    body {
-        overflow-x: scroll;
-    }
-}
-
-body {
     /* Set the display of the page to flex */
     display: flex;
     /* This changes the direction of flex elements to be on top of each other with column */
     flex-direction: column;
+    /* Set the minimum height of the entire page to be 100vh, which is 100% of the window page of the user. */
+    min-height: 100vh;
+    /* Min-width of 377px so that page shouldn't be smaller than 377px */
+    min-width: 377px;
+    /* Changes the background of the website if gradient not supported */
+    background: var(--body-color);
+    /* Changing the background of the page to a gradient */
+    background: var(--body-color-gradient);
+    /* Setting positon to relative instead of static which is default */
+    position: relative;
+    /* Defining line height because bootstrap changes to bad value */
+    line-height: 1.2;
 }
 
 /* Importing google font */
@@ -112,9 +102,7 @@ body {
     padding: 0;
     /* Sets the margin for everything to zero */
     margin: 0;
-    /* Sets to box sizing for elements to shrink to fit border.
-    For example: you have a box that is 100px and a border that is 5px.
-    The total width will then be 105px, but with border-box, it will be 100px and the box will be 95px. */
+    /* Setting box-sizing to border-box */
     box-sizing: border-box;
 }
 
@@ -140,10 +128,17 @@ h2 {
 
 
 
-/* Making class for hidden which you can add to any element to give it a display equal to none */
+/* Making class for display which you can add to any element to give it a display equal to none */
 .hidden {
     display: none;
 }
+.block {
+    display: block;
+}
+.flex {
+    display: flex;
+}
+
 
 
 /* Styling for <hr> tag */
@@ -443,7 +438,7 @@ navbar {
 }
 
 /* Changing display to none when screen width is 859px */
-@media all and (max-width: 859px) {
+@media (max-width: 859px) {
     .topnav .topnav-links {
         display: none;
     }
@@ -531,7 +526,7 @@ i#sidemenu-btn-img {
     border-radius: 1em;
     padding: 0;
     margin: 4px 5px;
-    opacity: 0.06;
+    opacity: .2;
 }
 
 .navlinks {
@@ -570,7 +565,7 @@ i#sidemenu-btn-img {
 }
 
 /* Shows the navlinks inside the sidemenu when screen is small enough */
-@media all and (max-width: 859px) {
+@media (max-width: 859px) {
     .navlinks {
         display: block;
     }
@@ -600,11 +595,8 @@ i#sidemenu-btn-img {
     left: 2px;
 }
 
-.appearance-drop {
-    display: block;
-}
 
-.appearance-drop button {
+#appearance-drop button {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
@@ -635,11 +627,8 @@ i#sidemenu-btn-img {
     left: 2px;
 }
 
-.language-drop {
-    display: block;
-}
 
-.language-drop button {
+#language-drop button {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
@@ -682,15 +671,24 @@ img.github-logo {
 
 
 
-/* Styling for main tag */
+/* Styling for <main> */
 main {
     /* Setting the flex to 1 so that it takes up the entire window height, this makes it so the footer is always at the bottom */
     flex: 1;
     /* Setting margin to offset it from the x and y axis */
-    margin: 1.5em 1em;
+    margin: 1.5em 5em;
+    /* Making a transiton for margin left and right, so it changes the margin smoothly */
+    transition: margin-left .5s, margin-right .5s;
 }
 
-/* End of styling main tag */
+/* When screen with is 859px, change the margin of <main> */
+@media (max-width: 859px) {
+    main {
+        margin: 1.5em 1em;
+    }
+}
+
+/* End of styling <main> */
 
 
 
@@ -731,7 +729,7 @@ main {
 }
 
 /* Using media to change the introduction part layout when on small screen */
-@media all and (max-width: 700px) {
+@media (max-width: 700px) {
     #homepage .intro {
         display: block;
     }
@@ -794,16 +792,13 @@ main {
 }
 
 /* Styling for glemmen vgs section */
-.glemmenDrop {
-    display: block;
-}
 
-.glemmenDrop td {
+#glemmenDrop td {
     padding-right: 1.2em;
     vertical-align: top;
 }
 
-.glemmenDrop img {
+#glemmenDrop img {
     border-radius: 3em;
     box-shadow: 3px 3px 6px var(--body-color-inverse);
     height: auto;
@@ -811,14 +806,10 @@ main {
 }
 
 /* Styling for borge ungdomskole section */
-.borgeDrop {
-    display: block;
-}
+
 
 /* Styling for årum skole section */
-.aarumDrop {
-    display: block;
-}
+
 
 /* End of education page styling */
 
@@ -852,26 +843,6 @@ main {
 
 .work-jobs button:hover {
     color: var(--text-color-hover);
-}
-
-.work-jobs .paintDrop {
-    display: block;
-}
-
-.work-jobs .vaccumDrop {
-    display: block;
-}
-
-.work-jobs .takeOutTrashDrop {
-    display: block;
-}
-
-.work-jobs .otherJobsHomeDrop {
-    display: block;
-}
-
-.work-jobs .jobsMyRoomDrop {
-    display: block;
 }
 
 /* End of work page styling */
@@ -909,31 +880,7 @@ main {
 #hobbies .dropdowns p,
 #hobbies .dropdowns table {
     font-size: 1.1em;
-    margin-left: 1.8em;
-}
-
-#hobbies .gameSatisfactoryDrop {
-    display: block;
-}
-
-
-#hobbies .gameDysonSphereProgramDrop {
-    display: block;
-}
-
-
-#hobbies .gameSpaceEngineersDrop {
-    display: block;
-}
-
-
-#hobbies .gameEuroTruckSimDrop {
-    display: block;
-}
-
-
-#hobbies .computerObsidianDrop {
-    display: block;
+    margin-left: 2.5em;
 }
 
 /* End of hobbies site styling */
@@ -951,8 +898,13 @@ footer {
 footer * {
     position: relative;
     z-index: 550;
+    transition: width .5s;
 }
 
+
+footer .container {
+    max-width: 100%;
+}
 
 footer p {
     font-size: 1.3em;
@@ -979,45 +931,34 @@ footer #map {
     height: 226px;
 }
 
-footer .container {
-    max-width: 100%;
-}
-
 
 /* Email form */
-form.contact-me {
-    border-radius: 10px;
-}
-
-.contact-me input,
-.contact-me textarea {
+.email-form input,
+.email-form textarea {
     background: var(--body-color);
     font-size: 1.1em;
     width: 100%;
-    /* border-radius: 10px; */
+    border-radius: 10px;
 }
 
-.contact-me input {
-    /* border: 3px solid var(--body-color-inverse); */
+.email-form input {
     height: 30px;
     text-align: left;
-    /* padding: .1em .2em; */
+    padding: .3em .3em;
     margin: .2em 0;
 }
 
-.contact-me input#submit {
+.email-form input#submit {
+    padding: 0;
     font-size: 1.4rem;
     cursor: pointer;
     text-align: center;
 }
 
-.contact-me textarea {
-    /* border: 3px solid var(--body-color-inverse); */
-    text-align: left;
-    /* padding: .1em .2em; */
-    display: block;
+.email-form textarea {
+    padding: .3em .3em;
     resize: vertical;
-    height: 150px;
+    min-height: 150px;
 }
 
 /* End of footer styling */

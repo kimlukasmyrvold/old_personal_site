@@ -24,22 +24,24 @@
     <!-- Stylesheet for website, make stuff look good -->
     <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/main.css">
     <!-- Stylesheet for website, make stuff look good -->
-    <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/404.css">
+    <!-- <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/404.css"> -->
+    <link rel="stylesheet" href="./css/404.css">
 </head>
 
 <body>
     <navbar>
         <nav class="topnav">
             <header>
-                <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/index.html">404- Page not found</a>
+                <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/index.html">404 - Page not
+                    found</a>
             </header>
 
-            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn";>
+            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
                 <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
             </button>
 
             <div class="topnav-links">
-                <a class="links" id="navActive" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+                <a class="links" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
                 <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
                 <a class="links"
                     href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
@@ -52,7 +54,7 @@
 
             <article id="sidemenu" class="hidden">
                 <div class="navlinks">
-                    <a class="top" id="navActive" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+                    <a class="top" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
                     <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
@@ -96,40 +98,32 @@
         </aside>
     </navbar>
 
-    <main>
-        <div class="error">
+    <main id="page404">
+        <!-- <div class="error">
             <h1 id="errorHeader">Error 404 - Page Not Found</h1>
             <h3 id="errorInfo">Siden du prøvde å nå, finnes ikke, lenken har enten blitt fjernet eller modifisert.</h3>
 
             <a id="errorHome" class="links" href="https://kimlukasmyrvold.github.io/cv/">
                 <p>Tilbake til hovedsiden</p>
             </a>
-        </div>
-    </main>
+        </div> -->
+        <section id="error404">
+            <h1>Denne siden finnes ikke</h1>
+            <p>Gå til en av disse sidene:</p>
 
-    <footer>
-        <article class="footer-container">
-            <table>
-                <tr>
-                    <td>
-                        <img src="https://kimlukasmyrvold.github.io/cv/favicon.ico" alt="Picture of me">
-                    </td>
-                    <td>
-                        <p>Kim Lukas Myrvold</p>
-                        <hr>
-                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">E-post:
-                            kimlukasmyrvold06@gmail.com</a>
-                        <br>
-                        <a class="links" href="tel: +4748426624">Telefon:
-                            48426624</a>
-                        <br>
-                        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/contact.html">Lokasjon:
-                            Fredrikstad, Norway</a>
-                    </td>
-                </tr>
-            </table>
-        </article>
-    </footer>
+            <div id="error404links">
+                <a href="https://kimlukasmyrvold.github.io/cv/index.html" target="_blank"
+                    rel="noreferrer noopener">Startside</a>
+                <a href="https://kimlukasmyrvold.github.io/cv/html/education.html" target="_blank"
+                    rel="noreferrer noopener">Utdanning</a>
+                <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html" target="_blank"
+                    rel="noreferrer noopener">Arbeidserfaring</a>
+                <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html" target="_blank"
+                    rel="noreferrer noopener">Hobbyer</a>
+            </div>
+
+        </section>
+    </main>
 
     <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://kimlukasmyrvold.github.io/cv/javascript/main.js"></script>
