@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="no">
+<!-- Sets language of website -->
+
+<head>
+    <!-- Sets the character encoding for the website -->
+    <meta charset="UTF-8">
+    <!-- Makes site look better on window sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Name of the author who made this website -->
+    <meta name="author" content="Kim Lukas Myrvold">
+    <!-- Defines keywords for search engines -->
+    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
+    <!-- Give the website a description -->
+    <meta name="description" content="Kim Lukas Myrvold's CV">
+
+    <!-- Changes the name of the website -->
+    <title>Kim Lukas Myrvold - CV</title>
+    <!-- Changes the icon for the website -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- Stylesheet for website, make stuff look good -->
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <!-- Start of navbar -->
+    <header class="navbar">
+        <nav class="navbar-container">
+            <ul class="navigation">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Work experience</a></li>
+                <li><a href="#">Hobbies</a></li>
+                <li><a href="#" class="active">Portfolio</a></li>
+            </ul>
+
+            <ul class="navigation-buttons">
+                <li>
+                    <button class="language">
+                        <svg class="svg-icon"
+                            style="width: 1.25em; height: 1.25em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M689 320C660 141.4 591.6 16 512 16s-148 125.4-177 304h354zM320 512c0 44.4 2.4 87 6.6 128h370.6c4.2-41 6.6-83.6 6.6-128s-2.4-87-6.6-128H326.6c-4.2 41-6.6 83.6-6.6 128z m649.4-192c-57.2-135.8-173-240.8-316-283.2 48.8 67.6 82.4 169.4 100 283.2h216zM370.4 36.8C227.6 79.2 111.6 184.2 54.6 320h216c17.4-113.8 51-215.6 99.8-283.2zM990.8 384H761.4c4.2 42 6.6 85 6.6 128s-2.4 86-6.6 128h229.2c11-41 17.2-83.6 17.2-128s-6.2-87-17-128zM256 512c0-43 2.4-86 6.6-128H33.2C22.4 425 16 467.6 16 512s6.4 87 17.2 128h229.2c-4-42-6.4-85-6.4-128z m79 192c29 178.6 97.4 304 177 304s148-125.4 177-304h-354z m318.6 283.2c142.8-42.4 258.8-147.4 316-283.2h-216c-17.6 113.8-51.2 215.6-100 283.2zM54.6 704c57.2 135.8 173 240.8 316 283.2-48.8-67.6-82.4-169.4-100-283.2h-216z" />
+                        </svg>
+                    </button>
+
+                    <div class="language-drop hidden">
+                        <button id="english-btn" onclick="language_btn_english()">
+                            English
+                        </button>
+                        <button id="norwegian-btn" onclick="language_btn_norwegian()">
+                            Norsk
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <button class="appearance">
+                        <svg class="svg-icon"
+                            style="width: 1.4em; height: 1.4em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+                            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M833.706667 216.746667A452.693333 452.693333 0 0 0 508.16 85.333333a426.666667 426.666667 0 0 0-2.133333 853.333334 110.08 110.08 0 0 0 107.946666-80.64 107.52 107.52 0 0 0-24.32-97.28 21.333333 21.333333 0 0 1 15.786667-35.413334h70.4A262.4 262.4 0 0 0 938.666667 483.413333a361.813333 361.813333 0 0 0-104.96-266.666666zM677.546667 640h-70.4a106.24 106.24 0 0 0-79.786667 177.066667 20.906667 20.906667 0 0 1 5.12 20.906666c-2.133333 8.96-11.946667 14.506667-25.173333 15.36a341.333333 341.333333 0 0 1-333.653334-388.693333A345.6 345.6 0 0 1 508.586667 170.666667H512a361.386667 361.386667 0 0 1 260.266667 105.813333 277.333333 277.333333 0 0 1 81.066666 203.52A177.92 177.92 0 0 1 677.546667 640z" />
+                            <path d="M512 277.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" />
+                            <path
+                                d="M650.666667 307.2a64 64 0 1 0 87.466666 23.466667 64 64 0 0 0-87.466666-23.466667zM373.333333 307.2a64 64 0 1 0 23.466667 87.466667 64 64 0 0 0-23.466667-87.466667zM262.826667 480.426667a64 64 0 1 0 88.746666 17.066666 63.573333 63.573333 0 0 0-88.746666-17.066666z" />
+                        </svg>
+                    </button>
+
+                    <div class="appearance-drop hidden">
+                        <button id="light-theme-btn" onclick="theme_btn_light()">Light mode</button>
+                        <button id="dark-theme-btn" onclick="theme_btn_dark()">Dark mode</button>
+                    </div>
+                </li>
+
+                <button class="hamburger hidden" aria-label="hamburger button">
+                    <div class="bar"></div>
+                </button>
+            </ul>
+        </nav>
+    </header>
+    <!-- End of navbar -->
+
+    <!-- Start of main part of website -->
+    <main id="portfolio">
+        <!-- <section class="basic-grid">
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <div class="card">4</div>
+            <div class="card">5</div>
+            <div class="card">6</div>
+            <div class="card">7</div>
+            <div class="card">8</div>
+            <div class="card">9</div>
+            <div class="card">10</div>
+            <div class="card">11</div>
+            <div class="card">12</div>
+        </section> -->
+
+        <!-- <section class="photo-grid">
+            <div class="card card-tall"
+                style="background-image:url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')">
+                1
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80')">
+                2
+            </div>
+            <div class="card card-tall card-wide"
+                style="background-image:url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80')">
+                3
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80')">
+                4
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                5
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                6
+            </div>
+            <div class="card card-wide"
+                style="background-image:url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80')">
+                7
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')">
+                8
+            </div>
+            <div class="card card-wide"
+                style="background-image:url('https://images.unsplash.com/photo-1583468323330-9032ad490fed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80')">
+                9
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')">
+                10
+            </div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583425423320-2386622cd2e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
+                11
+            </div>
+            <div class="card card-wide"
+                style="background-image:url('https://images.unsplash.com/photo-1583518257225-f9a8081f6a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                12
+            </div>
+        </section> -->
+
+        <!-- <section class="animated-grid">
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')">
+                a</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80')">
+                b</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80')">
+                c</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80')">
+                d</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583532452513-a02186582ccd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                e</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583445013765-46c20c4a6772?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                f</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583562835057-a62d1beffbf3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=949&q=80')">
+                g</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583483425010-c566431a7710?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80')">
+                h</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583500557349-fb5238f8d946?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80')">
+                i</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583468323330-9032ad490fed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80')">
+                j</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583425423320-2386622cd2e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
+                k</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1583518257225-f9a8081f6a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')">
+                l</div>
+            <div class="card"
+                style="background-image:url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1170&q=80')">
+                main</div>
+        </section> -->
+    </main>
+    <!-- End of main part of website -->
+
+    <!-- Start of footer -->
+    <footer id="footer">
+        <div class="container">
+            <!-- Start of row -->
+            <div class="row">
+                <!-- Name, socials and contact-info -->
+                <div id="information">
+                    <div id="socials">
+                        <h3>Kim Lukas Myrvold</h3>
+
+                        <p><a href="https://github.com/kimlukasmyrvold/cv" target="_blank" rel="noreferrer noopener"><i
+                                    class="fa-brands fa-github"></i>Github</a></p>
+                        <p><a href="https://steamcommunity.com/id/solonerves" target="_blank"
+                                rel="noreferrer noopener"><i class="fa-brands fa-steam"></i>Steam</a></p>
+                        <p><a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener"><i
+                                    class="fa-brands fa-youtube"></i>Youtube</a></p>
+                    </div>
+                    <div id="contact">
+                        <h4>Kontaktinformasjon</h4>
+
+                        <p><a href="tel: +4748426624"><i class="fa-solid fa-phone"></i>+47 484 26 624</a></p>
+                        <p><a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><i
+                                    class="fa-brands fa-discord"></i>SoloNerves#4666</a></p>
+                        <p class="d-block"><a href="mailto:kimlukasmyrvold06@gmail.com"><i
+                                    class="fa-solid fa-envelope"></i>kimlukasmyrvold06@gmail.com</a></p>
+                    </div>
+                </div>
+                <!-- End of name, socials and contact-info -->
+
+                <!-- Location with google maps -->
+                <div id="location">
+                    <h3>Beliggenhet</h3>
+
+                    <div id="map"></div>
+                </div>
+                <!-- End of location with google maps -->
+
+                <!-- Email form -->
+                <!-- <div id="email">
+                    <h3>Send en e-post:</h3>
+
+                    <form class="email-form" id="sendMeMail" action="mailto:kimlukasmyrvold06@gmail.com">
+                        <input id="subject" type="text" name="subject" placeholder="Skriv ditt emne her..." required>
+
+                        <textarea id="body" name="body" placeholder="Skriv din melding her..." required></textarea>
+
+                        <input type="submit" name="submit" id="submit" value="Send e-post">
+                    </form>
+                </div> -->
+                <!-- End of email form -->
+            </div>
+            <!-- End of row -->
+
+            <hr>
+
+            <!-- Copyright -->
+            <div class="copyright">
+                <p><i class="fa-regular fa-copyright"></i>2022 Copyright: Kim Lukas Myrvold</p>
+            </div>
+            <!-- End of copyright -->
+        </div>
+    </footer>
+    <!-- End of footer -->
+
+
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map&v=weekly"></script>
+    <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../javascript/main.js"></script>
+</body>
+
+</html>

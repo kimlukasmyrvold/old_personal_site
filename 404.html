@@ -2,131 +2,131 @@
 <html lang="no">
 
 <head>
-    <!-- Sets the character encoding for the website -->
-    <meta charset="UTF-8">
-    <!-- Makes site look better on window sizes -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Name of the author who made this website -->
-    <meta name="author" content="Kim Lukas Myrvold">
-    <!-- Defines keywords for search engines -->
-    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
-    <!-- Give the website a description -->
-    <meta name="description" content="Kim Lukas Myrvold's CV">
+  <!-- Sets the character encoding for the website -->
+  <meta charset="UTF-8" />
+  <!-- Makes site look better on window sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Name of the author who made this website -->
+  <meta name="author" content="Kim Lukas Myrvold" />
+  <!-- Defines keywords for search engines -->
+  <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js" />
+  <!-- Give the website a description -->
+  <meta name="description" content="Kim Lukas Myrvold's CV" />
 
-    <!-- Name of the website -->
-    <title>404 - Page Not Found</title>
-    <!-- Changes the icon for the website -->
-    <link rel="icon" type="image/x-icon" href="https://kimlukasmyrvold.github.io/cv/favicon.ico">
+  <!-- Name of the website -->
+  <title>404 - Page Not Found</title>
+  <!-- Changes the icon for the website -->
+  <link rel="icon" type="image/x-icon" href="https://kimlukasmyrvold.github.io/cv/favicon.ico" />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Stylesheet for website, make stuff look good -->
-    <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/main.css">
-    <!-- Stylesheet for website, make stuff look good -->
-    <!-- <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/404.css"> -->
-    <link rel="stylesheet" href="./css/404.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- Stylesheet for website, make stuff look good -->
+  <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/main.css" />
+  <!-- Stylesheet for website, make stuff look good -->
+  <!-- <link rel="stylesheet" href="https://kimlukasmyrvold.github.io/cv/css/404.css"> -->
+  <link rel="stylesheet" href="./css/404.css" />
 </head>
 
 <body>
-    <navbar>
-        <nav class="topnav">
-            <header>
-                <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/index.html">404 - Page not
-                    found</a>
-            </header>
+  <navbar>
+    <nav class="topnav">
+      <header>
+        <a class="links" id="navHeader" href="https://kimlukasmyrvold.github.io/cv/index.html">404 - Page not found</a>
+      </header>
 
-            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
+      <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
+        <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
+      </button>
+
+      <div class="topnav-links">
+        <a class="links" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
+        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
+        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
+        <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/portfolio.html">Portfolio</a>
+      </div>
+    </nav>
+
+    <aside class="sidemenu-container">
+      <div id="sidemenu-overlay" class="hidden" onclick="sidemenu_overlay()"></div>
+
+      <article id="sidemenu" class="hidden">
+        <div class="navlinks">
+          <a class="top" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
+          <a href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
+          <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
+          <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
+          <a href="https://kimlukasmyrvold.github.io/cv/html/portfolio.html">Portfolio</a>
+
+          <hr />
+        </div>
+
+        <div class="dropdowns">
+          <div>
+            <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
+              <span class="spanLight">Utseende</span>
             </button>
 
-            <div class="topnav-links">
-                <a class="links" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
-                <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
-                <a class="links"
-                    href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
-                <a class="links" href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
+            <div id="appearance-drop" class="hidden">
+              <button id="light-theme-btn" onclick="theme_btn_light()">
+                Lys modus
+              </button>
+              <button id="dark-theme-btn" onclick="theme_btn_dark()">
+                Mørke modus
+              </button>
             </div>
-        </nav>
+          </div>
 
-        <aside class="sidemenu-container">
-            <div id="sidemenu-overlay" class="hidden" onclick="sidemenu_overlay()"></div>
+          <div>
+            <button id="language-btn" onclick="language_btn()" class="language-btn">
+              <span class="spanLight">Språk</span>
+            </button>
 
-            <article id="sidemenu" class="hidden">
-                <div class="navlinks">
-                    <a class="top" href="https://kimlukasmyrvold.github.io/cv/index.html">Startside</a>
-                    <a href="https://kimlukasmyrvold.github.io/cv/html/education.html">Utdanning</a>
-                    <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html">Arbeidserfaring</a>
-                    <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html">Hobbyer</a>
-
-                    <hr>
-                </div>
-
-                <div class="dropdowns">
-                    <div>
-                        <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
-                            <span class="spanLight">Utseende</span>
-                        </button>
-
-                        <div id="appearance-drop" class="hidden">
-                            <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
-                            <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <button id="language-btn" onclick="language_btn()" class="language-btn">
-                            <span class="spanLight">Språk</span>
-                        </button>
-
-                        <div id="language-drop" class="hidden">
-                            <button id="english-btn" onclick="language_btn_english()">English</button>
-                            <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="social">
-                    <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
-                        rel="noreferrer noopener">
-                        <span class="spanLight"><i class="fa-brands fa-github"></i>Github</span>
-                    </a>
-                </div>
-            </article>
-        </aside>
-    </navbar>
-
-    <main id="page404">
-        <!-- <div class="error">
-            <h1 id="errorHeader">Error 404 - Page Not Found</h1>
-            <h3 id="errorInfo">Siden du prøvde å nå, finnes ikke, lenken har enten blitt fjernet eller modifisert.</h3>
-
-            <a id="errorHome" class="links" href="https://kimlukasmyrvold.github.io/cv/">
-                <p>Tilbake til hovedsiden</p>
-            </a>
-        </div> -->
-        <section id="error404">
-            <h1>Denne siden finnes ikke</h1>
-            <p>Gå til en av disse sidene:</p>
-
-            <div id="error404links">
-                <a href="https://kimlukasmyrvold.github.io/cv/index.html" target="_blank"
-                    rel="noreferrer noopener">Startside</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/education.html" target="_blank"
-                    rel="noreferrer noopener">Utdanning</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html" target="_blank"
-                    rel="noreferrer noopener">Arbeidserfaring</a>
-                <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html" target="_blank"
-                    rel="noreferrer noopener">Hobbyer</a>
+            <div id="language-drop" class="hidden">
+              <button id="english-btn" onclick="language_btn_english()">
+                English
+              </button>
+              <button id="norwegian-btn" onclick="language_btn_norwegian()">
+                Norsk
+              </button>
             </div>
+          </div>
+        </div>
 
-        </section>
-    </main>
+        <hr />
 
-    <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://kimlukasmyrvold.github.io/cv/javascript/main.js"></script>
+        <div class="social">
+          <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank" rel="noreferrer noopener">
+            <span class="spanLight"><i class="fa-brands fa-github"></i>Github</span>
+          </a>
+        </div>
+      </article>
+    </aside>
+  </navbar>
+
+  <main id="page404">
+    <section id="error404">
+      <h1>Denne siden finnes ikke</h1>
+      <p>Gå til en av disse sidene:</p>
+
+      <div id="error404links">
+        <a href="https://kimlukasmyrvold.github.io/cv/index.html" rel="noreferrer noopener">Startside</a>
+
+        <a href="https://kimlukasmyrvold.github.io/cv/html/education.html" rel="noreferrer noopener">Utdanning</a>
+
+        <a href="https://kimlukasmyrvold.github.io/cv/html/work-experience.html"
+          rel="noreferrer noopener">Arbeidserfaring</a>
+
+        <a href="https://kimlukasmyrvold.github.io/cv/html/hobbies.html" rel="noreferrer noopener">Hobbyer</a>
+
+        <a href="https://kimlukasmyrvold.github.io/cv/html/portfolio.html" rel="noreferrer noopener">Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://kimlukasmyrvold.github.io/cv/javascript/main.js"></script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@ body {
     --body-color-inverse: rgba(240, 240, 240, 1);
 
     /* Text colors */
-    --text-color: rgb(240, 240, 240);
+    --text-color: rgb(255, 255, 255);
     --text-color-inverse: rgb(12, 12, 12);
     --text-color-hover: rgb(200, 200, 200);
 
@@ -104,6 +104,25 @@ body {
     margin: 0;
     /* Setting box-sizing to border-box */
     box-sizing: border-box;
+    /* Setting appearance to none */
+    appearance: none;
+}
+
+/* Scrolling styling */
+
+/* Changing scroll behavior */
+/* scroll-behavior: smooth; */
+
+/* Set on parent */
+/* scroll-snap-type: x mandatory; */
+
+/* On children */
+/* scroll-snap-align: center; */
+
+
+
+*::selection {
+    background: rgb(0, 140, 170);
 }
 
 
@@ -118,7 +137,16 @@ a:hover {
 }
 
 p {
-    margin-bottom: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 .3rem 0;
 }
 
 h2 {
@@ -130,15 +158,26 @@ h2 {
 
 /* Making class for display which you can add to any element to give it a display equal to none */
 .hidden {
-    display: none;
-}
-.block {
-    display: block;
-}
-.flex {
-    display: flex;
+    display: none !important;
 }
 
+.block {
+    display: block !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
+
+table {
+    border-collapse: separate;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
 
 
 /* Styling for <hr> tag */
@@ -161,17 +200,18 @@ span.spanLight {
     font-weight: lighter;
 }
 
+/* Styling span tag with class of spanLightSmall. This will be an even smaller span */
+span.spanLightSmall {
+    font-weight: lighter;
+    font-size: .6em;
+}
+
 /* Styling for span when it has a class of spanLightUnderline */
 span.spanLightUnderline {
     text-decoration: underline;
     font-weight: lighter;
 }
 
-/* Styling span tag with class of spanLightSmall. This will be an even smaller span */
-span.spanLightSmall {
-    font-weight: lighter;
-    font-size: .6em;
-}
 
 /* Adding a margin to the right for <i> tags */
 i {
@@ -184,11 +224,6 @@ button {
     background: none;
     font-size: 1.2em;
     cursor: pointer;
-}
-
-/* Styling for button with a class of header */
-button.header {
-    font-size: 1.4em;
 }
 
 /* Styling button and links when it is hovered over */
@@ -289,14 +324,21 @@ a:hover * {
     justify-content: flex-end;
     height: 100%;
     padding-right: .2em;
+    color: rgba(240, 240, 240, 1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, .6) 100%);
+    border-radius: inherit;
 }
 
 /* Styling the text for the skillbar. Styling for skill1 seperatly because the width of skill1 is too small for text to fit inside. */
 .skillbar .skill1 span {
     display: flex;
     align-items: center;
-    padding-left: 1.4em;
     height: 100%;
+    width: 250%;
+    border-radius: inherit;
+    padding-left: 1.4em;
+    color: rgba(240, 240, 240, 1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, .2) 100%);
 }
 
 /* Styling for overlaying over skillbar to show percentage of skill.
@@ -412,10 +454,13 @@ navbar {
     /* Giving it padding to right and left of element to space the links appart  */
     padding: 0 16px;
     /* Changing font size */
-    font-size: 1.05em;
-    font-weight: 400;
+    font-size: 1.1rem;
     /* Giving the links a height of 50px */
     height: 50px;
+    /* Positon relative so absoulute on a::after doesn't take up entire html  */
+    position: relative;
+    /* Giving z-index so user can click when sidemenu is open */
+    z-index: 902;
 }
 
 /* Styling topnav links on hover */
@@ -449,7 +494,7 @@ navbar {
     align-items: center;
     float: left;
     height: 50px;
-    font-size: 32px;
+    font-size: 2.3rem;
     margin-left: .5em;
 }
 
@@ -688,6 +733,10 @@ main {
     }
 }
 
+main section {
+    margin-bottom: 1.5em;
+}
+
 /* End of styling <main> */
 
 
@@ -741,12 +790,8 @@ main {
 }
 
 /* Styling for sections inside home page */
-#homepage section {
-    margin-bottom: 1.5em;
-}
-
 #homepage section h2 {
-    margin-bottom: .5em;
+    margin-bottom: .2em;
 }
 
 #homepage section p {
@@ -850,9 +895,9 @@ main {
 
 
 /* Hobbies site styling */
-#hobbies section {
+/* #hobbies section {
     margin-bottom: 1em;
-}
+} */
 
 #hobbies p.header {
     font-size: 2em;
@@ -891,6 +936,9 @@ main {
 
 /* Styling for the footer of the website */
 footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     min-height: 50px;
     background: var(--footer-color);
 }
@@ -898,12 +946,29 @@ footer {
 footer * {
     position: relative;
     z-index: 550;
-    transition: width .5s;
+    transition: all .5s;
 }
+
+/* @media (min-width: 1200px) {
+    .col-xl-3 {
+        width: 25%;
+    }
+} */
+/* @media (min-width: 992px) {
+    .col-md-5 {
+        width: 42%;
+    }
+} */
+/* @media (min-width: 768px) {
+    .col-md-5 {
+        width: 42%;
+    }
+} */
 
 
 footer .container {
-    max-width: 100%;
+    margin: 1.5em 5em;
+    width: 100vw;
 }
 
 footer p {
@@ -912,25 +977,40 @@ footer p {
 }
 
 footer .copyright p {
-    font-size: 1.05em;
+    font-size: 1.05rem;
 }
 
 footer h3 {
-    font-size: 2em;
+    font-size: 1.9rem;
+}
+
+footer h4 {
+    font-size: 1.6rem;
 }
 
 footer hr {
-    margin-top: 1.3em;
-    margin-bottom: .1em;
+    border-radius: 5px;
+    height: 3px;
 }
 
+/* Styling for map */
 footer #map {
     border: 1px solid var(--body-color-inverse);
     border-radius: 10px;
     width: 100%;
-    height: 226px;
+    min-height: 226px;
+    resize: vertical;
 }
 
+footer #map * {
+    transition: none;
+}
+
+footer #map .gm-style-mtc * {
+    color: #0a0a0a;
+}
+
+/* End of styling for map */
 
 /* Email form */
 .email-form input,
@@ -961,4 +1041,301 @@ footer #map {
     min-height: 150px;
 }
 
+/* End of email styling */
+
 /* End of footer styling */
+
+
+
+/* Styling for grid */
+
+main#portfolio section {
+    margin-bottom: 3.5em;
+}
+
+.basic-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.photo-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
+}
+
+.animated-grid {
+    height: 85vh;
+
+    display: grid;
+    gap: 1rem;
+
+    grid-template-areas:
+        'a  b  c  d'
+        'l  🌟 🌟 e'
+        'k  🌟 🌟 f'
+        'j  i  h  g';
+
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: 240px auto auto 240px;
+
+    --stagger-delay: 90ms;
+}
+
+@keyframes cardAnimation {
+    from {
+        opacity: 0;
+        transform: scale(.3);
+        filter: hue-rotate(180deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-color);
+    font-size: 2rem;
+    box-shadow: rgba(3, 8, 20, .4) 0px .5rem .5rem, rgba(2, 8, 20, .4) 0px .075rem .175rem;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    transition: all 300ms;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: cardAnimation 700ms ease-out;
+    animation-fill-mode: backwards;
+}
+
+.card:hover {
+    box-shadow: rgba(3, 8, 20, .5) 0px .35rem .175rem, rgba(2, 8, 20, .5) 0px .175rem .5rem;
+    transform: translateY(-3px) scale(1.05);
+}
+
+@media (min-width: 600px) {
+    .card-tall {
+        grid-row: span 2 / auto;
+    }
+
+    .card-wide {
+        grid-column: span 2 / auto;
+    }
+}
+
+.animated-grid .card:nth-child(1) {
+    grid-area: a;
+    animation-delay: calc(1 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(2) {
+    grid-area: b;
+    animation-delay: calc(2 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(3) {
+    grid-area: c;
+    animation-delay: calc(3 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(4) {
+    grid-area: d;
+    animation-delay: calc(4 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(5) {
+    grid-area: e;
+    animation-delay: calc(5 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(6) {
+    grid-area: f;
+    animation-delay: calc(6 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(7) {
+    grid-area: g;
+    animation-delay: calc(7 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(8) {
+    grid-area: h;
+    animation-delay: calc(8 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(9) {
+    grid-area: i;
+    animation-delay: calc(9 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(10) {
+    grid-area: j;
+    animation-delay: calc(10 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(11) {
+    grid-area: k;
+    animation-delay: calc(11 * var(--stagger-delay));
+}
+
+.animated-grid .card:nth-child(12) {
+    grid-area: l;
+    animation-delay: calc(12 * var(--stagger-delay));
+}
+
+.animated-grid .card:last-child {
+    grid-area: 🌟;
+    animation-delay: calc(13 * var(--stagger-delay));
+}
+
+
+/* Navbar styling */
+
+.navbar {
+    background: var(--nav-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, .5);
+}
+
+.navbar .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .6em;
+    height: 50px;
+    width: 100vw;
+}
+
+.navbar .navbar-container .navigation {
+    display: flex;
+}
+
+.navbar .navbar-container .navigation a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.2rem;
+    height: 50px;
+    padding: 0 .6em;
+}
+
+.navbar .navbar-container .navigation a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: var(--body-color-inverse);
+    transform: scaleX(0);
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar .navbar-container .navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+.navbar .navbar-container .navigation a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: var(--body-color-inverse);
+    transform: scaleX(1);
+}
+
+.navbar .navbar-container .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .navbar-container .navigation-buttons li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.1rem;
+    height: 50px;
+    padding: 0 .6em;
+}
+
+.navbar .navbar-container .navigation-buttons i {
+    margin: 0;
+}
+
+.navbar .navbar-container .navigation-buttons .appearance-drop,
+.navbar .navbar-container .navigation-buttons .language-drop {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--nav-color-menu);
+    width: 169px;
+    margin: .2em 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: .5em .5em;
+    box-shadow: 5px 5px 23px 1px rgba(0, 0, 0, .67);
+}
+
+.navbar .navbar-container .navigation-buttons .appearance-drop button,
+.navbar .navbar-container .navigation-buttons .language-drop button {
+    padding: .3em 0;
+}
+
+
+
+/* Styling hamburger button */
+.hamburger {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+    float: right;
+    margin: 0 .6em;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--body-color-inverse);
+    margin: 6px 0px;
+    border-radius: 3px;
+    transition: 300ms;
+}
+
+.hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active::after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
