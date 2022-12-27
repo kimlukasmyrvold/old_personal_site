@@ -188,7 +188,5 @@ window.onload = function () {
         language_drop.classList.toggle('hidden');
         appearance_drop.classList.add('hidden');
     })
-
-
 }
 
