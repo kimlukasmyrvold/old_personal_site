@@ -1,58 +1,21 @@
 // Code for changing language of 404 page
 
+// Getting lang from localstorage
 const currentLang = localStorage.getItem("lang");
-console.log(lang);
 
-
+// Making constants that gets the ID's norwegian and english from document
 const norwegian = document.querySelector('#norwegian');
 const english = document.querySelector('#english');
 
-if (lang === 'norsk') {
+// If statements to remove and add the class of hidden when lang is english or not
+if (lang === 'norsk' || lang === 'norsk_dev') {
     norwegian.classList.remove('hidden');
     english.classList.add('hidden');
-
-    console.log('it worked! - norsk');
-}
-else if (lang === 'english') {
-    norwegian.classList.add('hidden');
-    english.classList.remove('hidden');
-
-    console.log('it worked! - english');
-}
-else if (lang === 'norsk_dev') {
-    norwegian.classList.remove('hidden');
-    english.classList.add('hidden');
-
-    console.log('it worked! - norsk_dev');
 }
 else {
     norwegian.classList.add('hidden');
     english.classList.remove('hidden');
-
-    console.log('it worked! - english_dev');
 };
-
-
-window.onload = function () {
-
-    const currentPathname = window.location.pathname;
-    const currentLang = localStorage.getItem('lang');
-
-    if (currentLang === 'norsk_dev' || currentLang === 'english_dev') {
-        if (!currentPathname === '404.html') {
-            window.location.pathname = '404.html';
-        }
-        else {
-            console.log('hello2');
-        };
-    }
-    else {
-        console.log('hello');
-    };
-};
-
-
-
 
 
 // Sidemenu functions for 404 page

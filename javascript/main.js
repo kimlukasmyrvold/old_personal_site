@@ -184,39 +184,39 @@ function Map() {
 
 
 
-// window.onload = function () {
-//     const overlay = document.querySelector('.overlay');
+window.onload = function () {
+    const overlay = document.querySelector('.overlay');
 
-//     const menu_btn = document.querySelector('.hamburger');
-//     const appearance_btn = document.querySelector('.appearance');
-//     const language_btn = document.querySelector('.language');
+    const menu_btn = document.querySelector('.hamburger');
+    const appearance_btn = document.querySelector('.appearance');
+    const language_btn = document.querySelector('.language');
 
-//     const appearance_drop = document.querySelector('.appearance-drop');
-//     const language_drop = document.querySelector('.language-drop');
+    const appearance_drop = document.querySelector('.appearance-drop');
+    const language_drop = document.querySelector('.language-drop');
 
 
-//     overlay.addEventListener('click', function () {
-//         language_drop.classList.add('hidden');
-//         appearance_drop.classList.add('hidden');
+    overlay.addEventListener('click', function () {
+        language_drop.classList.add('hidden');
+        appearance_drop.classList.add('hidden');
 
-//         overlay.classList.add('hidden');
-//     });
+        overlay.classList.add('hidden');
+    });
 
-//     menu_btn.addEventListener('click', function () {
-//         menu_btn.classList.toggle('is-active');
-//     });
+    menu_btn.addEventListener('click', function () {
+        menu_btn.classList.toggle('is-active');
+    });
 
-//     appearance_btn.addEventListener('click', function () {
-//         appearance_drop.classList.toggle('hidden');
-//         language_drop.classList.add('hidden');
+    appearance_btn.addEventListener('click', function () {
+        appearance_drop.classList.toggle('hidden');
+        language_drop.classList.add('hidden');
 
-//         overlay.classList.toggle('hidden');
-//     });
+        overlay.classList.toggle('hidden');
+    });
 
-//     language_btn.addEventListener('click', function () {
-//         language_drop.classList.toggle('hidden');
-//         appearance_drop.classList.add('hidden');
+    language_btn.addEventListener('click', function () {
+        language_drop.classList.toggle('hidden');
+        appearance_drop.classList.add('hidden');
 
-//         overlay.classList.toggle('hidden');
-//     });
-// };
+        overlay.classList.toggle('hidden');
+    });
+};
