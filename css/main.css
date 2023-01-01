@@ -8,8 +8,8 @@ body {
 
     /* Text colors */
     --text-color: rgb(255, 255, 255);
-    --text-color-inverse: rgb(12, 12, 12);
-    --text-color-hover: rgb(200, 200, 200);
+    --text-color-inverse: rgb(0, 0, 0);
+    --text-color-hover: rgb(210, 210, 210);
 
     /* Nav colors */
     --nav-color: rgba(2, 14, 23, 0.94);
@@ -37,9 +37,9 @@ body.light-theme {
     --body-color-inverse: rgba(12, 24, 33, 1);
 
     /* Text colors */
-    --text-color: rgb(12, 12, 12);
-    --text-color-inverse: rgb(240, 240, 240);
-    --text-color-hover: rgb(60, 60, 60);
+    --text-color: rgb(0, 0, 0);
+    --text-color-inverse: rgb(255, 255, 255);
+    --text-color-hover: rgb(70, 70, 70);
 
     /* Nav colors */
     --nav-color: rgba(255, 255, 255, 0.96);
@@ -641,7 +641,8 @@ i#sidemenu-btn-img {
 }
 
 
-#appearance-drop button {
+#appearance-drop button,
+#appearance-drop2 button {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
@@ -672,8 +673,8 @@ i#sidemenu-btn-img {
     left: 2px;
 }
 
-
-#language-drop button {
+#language-drop button,
+#language-drop2 button {
     background: var(--nav-color-menu);
     color: var(--text-color);
     border: none;
@@ -935,19 +936,6 @@ main section {
 
 
 /* Styling for the footer of the website */
-footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    min-height: 50px;
-    background: var(--footer-color);
-}
-
-footer * {
-    position: relative;
-    z-index: 550;
-    transition: all .5s;
-}
 
 /* @media (min-width: 1200px) {
     .col-xl-3 {
@@ -962,55 +950,102 @@ footer * {
 /* @media (min-width: 768px) {
     .col-md-5 {
         width: 42%;
-    }
+    }    
 } */
 
 
+/* * {
+    outline: 1px solid red;
+} */
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.5em 5em .5em;
+    min-height: 50px;
+    background: var(--footer-color);
+}
+
 footer .container {
-    margin: 1.5em 5em;
-    width: 100vw;
+    max-width: 100%;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+footer .footer-container .footer-section {
+    width: 33%;
 }
 
 footer p {
     font-size: 1.3em;
-    padding: .1em 0;
+    margin: .5em 0;
+}
+
+footer h3 {
+    margin: 0 0 .5em 0;
+    font-size: 1.9rem;
+}
+
+
+/* Styling for copyright sections */
+#footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 1.5em 0 .5em;
+    width: 100%;
+}
+
+#footer .copyright::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--body-color-inverse);
+    border-radius: 10px;
+}
+
+#footer .copyright p {
+    font-size: 1.05rem;
+    margin: 1.5em 0 0;
 }
 
 footer .copyright p {
     font-size: 1.05rem;
 }
 
-footer h3 {
-    font-size: 1.9rem;
-}
-
-footer h4 {
-    font-size: 1.6rem;
-}
-
 footer hr {
-    border-radius: 5px;
-    height: 3px;
+    margin: 1.3em 0 .1em;
 }
+
+/* End of styling for copyright */
+
 
 /* Styling for map */
 footer #map {
     border: 1px solid var(--body-color-inverse);
     border-radius: 10px;
     width: 100%;
-    min-height: 226px;
+    min-height: 250px;
     resize: vertical;
 }
 
 footer #map * {
     transition: none;
-}
-
-footer #map .gm-style-mtc * {
     color: #0a0a0a;
 }
 
 /* End of styling for map */
+
 
 /* Email form */
 .email-form input,
@@ -1038,10 +1073,11 @@ footer #map .gm-style-mtc * {
 .email-form textarea {
     padding: .3em .3em;
     resize: vertical;
-    min-height: 150px;
+    min-height: 180px;
 }
 
 /* End of email styling */
+
 
 /* End of footer styling */
 
@@ -1201,6 +1237,22 @@ main#portfolio section {
 }
 
 
+
+
+
+
+.overlay {
+    background: rgba(255, 0, 0, 0.03);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+
+
 /* Navbar styling */
 
 .navbar {
@@ -1217,7 +1269,6 @@ main#portfolio section {
     align-items: center;
     padding: 0 .6em;
     height: 50px;
-    width: 100vw;
 }
 
 .navbar .navbar-container .navigation {
@@ -1266,6 +1317,7 @@ main#portfolio section {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
 }
 
 .navbar .navbar-container .navigation-buttons li {
@@ -1274,12 +1326,16 @@ main#portfolio section {
     justify-content: center;
     position: relative;
     font-size: 1.1rem;
-    height: 50px;
-    padding: 0 .6em;
 }
 
 .navbar .navbar-container .navigation-buttons i {
     margin: 0;
+}
+
+.navbar .navbar-container .navigation-buttons li>button {
+    height: 50px;
+    width: 50px;
+    margin: 0 .3em;
 }
 
 .navbar .navbar-container .navigation-buttons .appearance-drop,
@@ -1302,8 +1358,15 @@ main#portfolio section {
 .navbar .navbar-container .navigation-buttons .appearance-drop button,
 .navbar .navbar-container .navigation-buttons .language-drop button {
     padding: .3em 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
+.navbar .navbar-container .navigation-buttons .language-drop button#english-btn {
+    background: orange;
+    width: 100%;
+}
 
 
 /* Styling hamburger button */
@@ -1311,9 +1374,12 @@ main#portfolio section {
     position: relative;
     display: block;
     width: 35px;
+    height: 50px;
+    width: 50px;
+    margin: 0 .3em;
     cursor: pointer;
     float: right;
-    margin: 0 .6em;
+    padding: 0 7.5px;
 }
 
 .hamburger .bar,

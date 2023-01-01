@@ -12,7 +12,7 @@ if (currentTheme == "light") {
 }
 else {
     document.body.classList.remove("light-theme");
-}
+};
 
 // function for when light theme button is pressed
 // when clicked, it will add the "light-theme" class to the body of the site
@@ -23,7 +23,7 @@ function theme_btn_light() {
     let theme = "light";
 
     localStorage.setItem("theme", theme);
-}
+};
 
 // function for when dark theme button is pressed
 // when clicked, it removes the "light-theme" class from the body of the site
@@ -34,9 +34,12 @@ function theme_btn_dark() {
     let theme = "dark";
 
     localStorage.setItem("theme", theme);
-}
+};
 
 // End of dark / light mode code
+
+
+
 
 
 
@@ -53,44 +56,58 @@ let lang;
 // Conditions to check what lang should be, with help from currentURL. If currentURL = /cv/en/ -> lang = english, etc...
 if (currentURL === '/cv/en/') {
     lang = 'english';
+
+    localStorage.setItem(lang, 'lang');
 }
 else if (currentURL.startsWith('/cv/') && !currentURL.endsWith('en/')) {
     lang = 'norsk';
+
+    localStorage.setItem(lang, 'lang');
 }
 else if (currentURL.substring(0, 4) === '/en/') {
     lang = 'english_dev';
+
+    localStorage.setItem(lang, 'lang');
 }
 else {
     lang = 'norsk_dev';
-}
+
+    localStorage.setItem(lang, 'lang');
+};
 
 // Function for when the english button is pressed.
 function language_btn_english() {
     if (lang === 'norsk') {
         window.location.pathname = `/cv/en${window.location.pathname.replace('/cv', '')}`;
         lang = 'english';
+
+        localStorage.setItem(lang, 'lang');
     }
     else if (lang === 'norsk_dev') {
         window.location.pathname = `/en${window.location.pathname}`;
         lang = 'english_dev';
-    }
-}
+
+        localStorage.setItem(lang, 'lang');
+    };
+};
 
 // Function for when the norsk button is pressed.
 function language_btn_norwegian() {
     if (lang === 'english') {
         window.location.pathname = window.location.pathname.replace('en/', '');
         lang = 'norsk';
+
+        localStorage.setItem(lang, 'lang');
     }
     else if (lang === 'english_dev') {
         window.location.pathname = window.location.pathname.slice(3);
         lang = 'norsk_dev';
-    }
-}
+
+        localStorage.setItem(lang, 'lang');
+    };
+};
 
 // End of Language code
-
-
 
 
 
@@ -108,7 +125,7 @@ function sidemenu_btn() {
     document.getElementById("language-drop").classList.remove("block");
     document.getElementById("language-drop").classList.add("hidden");
     document.getElementById("language-btn").classList.remove("language-btn-clicked");
-}
+};
 
 // Opens and closes sidemenu and dropdown menues when clicking outside of sidemenu
 function sidemenu_overlay() {
@@ -122,21 +139,21 @@ function sidemenu_overlay() {
     document.getElementById("language-drop").classList.remove("block");
     document.getElementById("language-drop").classList.add("hidden");
     document.getElementById("language-btn").classList.remove("language-btn-clicked");
-}
+};
 
 // Opens and closes the appearance dropdown menu when is clicked
 function appearance_btn() {
     document.getElementById("appearance-drop").classList.toggle("block");
     document.getElementById("appearance-drop").classList.toggle("hidden");
     document.getElementById("appearance-btn").classList.toggle("appearance-btn-clicked");
-}
+};
 
 // Opens and closes the language dropdown menue when is clicked
 function language_btn() {
     document.getElementById("language-drop").classList.toggle("block");
     document.getElementById("language-drop").classList.toggle("hidden");
     document.getElementById("language-btn").classList.toggle("language-btn-clicked");
-}
+};
 
 // End of sidemenu functions
 
@@ -163,30 +180,43 @@ function Map() {
         position: location,
         map: map
     });
-}
+};
 
 
 
-window.onload = function () {
-    const menu_btn = document.querySelector('.hamburger');
-    const appearance_btn = document.querySelector('.appearance');
-    const language_btn = document.querySelector('.language');
+// window.onload = function () {
+//     const overlay = document.querySelector('.overlay');
 
-    const appearance_drop = document.querySelector('.appearance-drop');
-    const language_drop = document.querySelector('.language-drop');
+//     const menu_btn = document.querySelector('.hamburger');
+//     const appearance_btn = document.querySelector('.appearance');
+//     const language_btn = document.querySelector('.language');
 
-    menu_btn.addEventListener('click', function () {
-        menu_btn.classList.toggle('is-active');
-    });
+//     const appearance_drop = document.querySelector('.appearance-drop');
+//     const language_drop = document.querySelector('.language-drop');
 
-    appearance_btn.addEventListener('click', function () {
-        appearance_drop.classList.toggle('hidden');
-        language_drop.classList.add('hidden');
-    })
 
-    language_btn.addEventListener('click', function () {
-        language_drop.classList.toggle('hidden');
-        appearance_drop.classList.add('hidden');
-    })
-}
+//     overlay.addEventListener('click', function () {
+//         language_drop.classList.add('hidden');
+//         appearance_drop.classList.add('hidden');
 
+//         overlay.classList.add('hidden');
+//     });
+
+//     menu_btn.addEventListener('click', function () {
+//         menu_btn.classList.toggle('is-active');
+//     });
+
+//     appearance_btn.addEventListener('click', function () {
+//         appearance_drop.classList.toggle('hidden');
+//         language_drop.classList.add('hidden');
+
+//         overlay.classList.toggle('hidden');
+//     });
+
+//     language_btn.addEventListener('click', function () {
+//         language_drop.classList.toggle('hidden');
+//         appearance_drop.classList.add('hidden');
+
+//         overlay.classList.toggle('hidden');
+//     });
+// };
