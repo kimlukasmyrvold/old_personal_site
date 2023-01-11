@@ -21,81 +21,90 @@
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- Stylesheet for website, make stuff look good -->
     <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
-    <navbar>
-        <nav class="topnav">
-            <header>
-                <a class="links" id="navHeader" href="../html/education.html">Utdanning</a>
-            </header>
+    <!-- Start of navbar -->
+    <header class="navbar">
+        <!-- overlay for detecting clicks outside of elements -->
+        <div class="overlay hidden"></div>
+        <!-- end of overlay -->
 
-            <button id="sidemenu-btn" onclick="sidemenu_btn()" class="sidemenu_btn" ;>
-                <i id="sidemenu-btn-img" class="fas fa-bars fa-2x" alt="Sidemenu button"></i>
-            </button>
+        <nav class="navbar-container">
+            <ul class="navigation">
+                <li><a href="../index.html">Startside</a></li>
+                <li><a href="#" class="active">Utdanning</a></li>
+                <li><a href="../html/work-experience.html">Jobberfaring</a></li>
+                <li><a href="../html/hobbies.html">Hobbyer</a></li>
+                <li><a href="../html/portfolio.html">Portfolio</a></li>
+            </ul>
 
-            <div class="topnav-links">
-                <a class="links" href="../index.html">Startside</a>
-                <a class="links" id="navActive" href="../html/education.html">Utdanning</a>
-                <a class="links" href="../html/work-experience.html">Arbeidserfaring</a>
-                <a class="links" href="../html/hobbies.html">Hobbyer</a>
-                <a class="links" href="../html/portfolio.html">Portfolio</a>
-            </div>
+            <ul class="navigation-buttons">
+                <li>
+                    <button class="language">
+                        <svg style="width: 28px; height: 28px;" viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M689 320C660 141.4 591.6 16 512 16s-148 125.4-177 304h354zM320 512c0 44.4 2.4 87 6.6 128h370.6c4.2-41 6.6-83.6 6.6-128s-2.4-87-6.6-128H326.6c-4.2 41-6.6 83.6-6.6 128z m649.4-192c-57.2-135.8-173-240.8-316-283.2 48.8 67.6 82.4 169.4 100 283.2h216zM370.4 36.8C227.6 79.2 111.6 184.2 54.6 320h216c17.4-113.8 51-215.6 99.8-283.2zM990.8 384H761.4c4.2 42 6.6 85 6.6 128s-2.4 86-6.6 128h229.2c11-41 17.2-83.6 17.2-128s-6.2-87-17-128zM256 512c0-43 2.4-86 6.6-128H33.2C22.4 425 16 467.6 16 512s6.4 87 17.2 128h229.2c-4-42-6.4-85-6.4-128z m79 192c29 178.6 97.4 304 177 304s148-125.4 177-304h-354z m318.6 283.2c142.8-42.4 258.8-147.4 316-283.2h-216c-17.6 113.8-51.2 215.6-100 283.2zM54.6 704c57.2 135.8 173 240.8 316 283.2-48.8-67.6-82.4-169.4-100-283.2h-216z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="language-drop hidden">
+                        <button id="english-btn" onclick="language_btn_english()">
+                            English
+                        </button>
+                        <button id="norwegian-btn" onclick="language_btn_norwegian()">
+                            Norsk
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <button class="appearance">
+                        <svg style="width: 31px; height: 31px;" viewBox="0 0 1024 1024"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M833.706667 216.746667A452.693333 452.693333 0 0 0 508.16 85.333333a426.666667 426.666667 0 0 0-2.133333 853.333334 110.08 110.08 0 0 0 107.946666-80.64 107.52 107.52 0 0 0-24.32-97.28 21.333333 21.333333 0 0 1 15.786667-35.413334h70.4A262.4 262.4 0 0 0 938.666667 483.413333a361.813333 361.813333 0 0 0-104.96-266.666666zM677.546667 640h-70.4a106.24 106.24 0 0 0-79.786667 177.066667 20.906667 20.906667 0 0 1 5.12 20.906666c-2.133333 8.96-11.946667 14.506667-25.173333 15.36a341.333333 341.333333 0 0 1-333.653334-388.693333A345.6 345.6 0 0 1 508.586667 170.666667H512a361.386667 361.386667 0 0 1 260.266667 105.813333 277.333333 277.333333 0 0 1 81.066666 203.52A177.92 177.92 0 0 1 677.546667 640z" />
+                            <path d="M512 277.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" />
+                            <path
+                                d="M650.666667 307.2a64 64 0 1 0 87.466666 23.466667 64 64 0 0 0-87.466666-23.466667zM373.333333 307.2a64 64 0 1 0 23.466667 87.466667 64 64 0 0 0-23.466667-87.466667zM262.826667 480.426667a64 64 0 1 0 88.746666 17.066666 63.573333 63.573333 0 0 0-88.746666-17.066666z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <div class="appearance-drop hidden">
+                        <button id="light-theme-btn" onclick="theme_btn_light()">
+                            <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 64 64">
+                                <path
+                                    d="M32 19c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13S24.82 19 32 19zM32 41c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9S27.029 41 32 41zM34 8c0 .366 0 5.634 0 6 0 1.105-.895 2-2 2s-2-.895-2-2c0-.366 0-5.634 0-6 0-1.105.895-2 2-2S34 6.895 34 8zM50.385 16.444c-.259.259-3.984 3.984-4.243 4.243-.781.781-2.047.781-2.828 0-.781-.781-.781-2.047 0-2.828.259-.259 3.984-3.984 4.243-4.243.781-.781 2.047-.781 2.828 0S51.166 15.663 50.385 16.444zM56 34c-.366 0-5.634 0-6 0-1.105 0-2-.895-2-2s.895-2 2-2c.366 0 5.634 0 6 0 1.105 0 2 .895 2 2S57.105 34 56 34zM47.556 50.385c-.259-.259-3.984-3.984-4.243-4.243-.781-.781-.781-2.047 0-2.828s2.047-.781 2.828 0c.259.259 3.984 3.984 4.243 4.243.781.781.781 2.047 0 2.828S48.337 51.166 47.556 50.385zM30 56c0-.366 0-5.634 0-6 0-1.105.895-2 2-2s2 .895 2 2c0 .366 0 5.634 0 6 0 1.105-.895 2-2 2S30 57.105 30 56zM13.615 47.556c.259-.259 3.984-3.984 4.243-4.243.781-.781 2.047-.781 2.828 0 .781.781.781 2.047 0 2.828-.259.259-3.984 3.984-4.243 4.243-.781.781-2.047.781-2.828 0S12.834 48.337 13.615 47.556zM8 30c.366 0 5.634 0 6 0 1.105 0 2 .895 2 2s-.895 2-2 2c-.366 0-5.634 0-6 0-1.105 0-2-.895-2-2S6.895 30 8 30zM16.444 13.615c.259.259 3.984 3.984 4.243 4.243.781.781.781 2.047 0 2.828-.781.781-2.047.781-2.828 0-.259-.259-3.984-3.984-4.243-4.243-.781-.781-.781-2.047 0-2.828S15.663 12.834 16.444 13.615z">
+                                </path>
+                            </svg>
+                            Lys
+                        </button>
+                        <button id="dark-theme-btn" onclick="theme_btn_dark()">
+                            <svg style="width: 22px; height: 22px;" viewBox="0 0 32 32"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M29.684 23.984l-0.021-0.055c-0.193-0.456-0.638-0.771-1.155-0.771-0.172 0-0.336 0.035-0.486 0.098l0.008-0.003c-1.219 0.521-2.638 0.824-4.127 0.824-5.937 0-10.751-4.813-10.751-10.751 0-4.458 2.713-8.282 6.579-9.911l0.071-0.026 0.221-0.093c0.444-0.199 0.747-0.636 0.747-1.145 0-0.625-0.458-1.142-1.057-1.235l-0.007-0.001c-0.676-0.106-1.455-0.167-2.249-0.167-8.421 0-15.248 6.827-15.248 15.248s6.827 15.248 15.248 15.248c4.91 0 9.278-2.321 12.067-5.925l0.026-0.035c0.161-0.208 0.258-0.473 0.258-0.76 0-0.197-0.046-0.383-0.127-0.548l0.003 0.007zM22.326 27.779c-1.44 0.612-3.115 0.968-4.873 0.968-7.041 0-12.75-5.708-12.75-12.75 0-6.189 4.41-11.349 10.26-12.507l0.081-0.013c-2.694 2.435-4.379 5.942-4.379 9.843 0 7.319 5.933 13.252 13.252 13.252 0.242 0 0.482-0.006 0.72-0.019l-0.033 0.001c-0.655 0.45-1.404 0.86-2.194 1.193l-0.084 0.031z">
+                                </path>
+                            </svg>
+                            Mørk
+                        </button>
+                    </div>
+                </li>
+
+                <button class="hamburger" aria-label="hamburger button">
+                    <div class="bar"></div>
+                </button>
+            </ul>
         </nav>
-
-        <aside class="sidemenu-container">
-            <div id="sidemenu-overlay" class="hidden" onclick="sidemenu_overlay()"></div>
-
-            <article id="sidemenu" class="hidden">
-                <div class="navlinks">
-                    <a class="top" href="../index.html">Startside</a>
-                    <a id="navActive" href="../html/education.html">Utdanning</a>
-                    <a href="../html/work-experience.html">Arbeidserfaring</a>
-                    <a href="../html/hobbies.html">Hobbyer</a>
-                    <a href="../html/portfolio.html">Portfolio</a>
-
-                    <hr>
-                </div>
-
-                <div class="dropdowns">
-                    <div>
-                        <button id="appearance-btn" onclick="appearance_btn()" class="appearance-btn">
-                            <span class="spanLight">Utseende</span>
-                        </button>
-
-                        <div id="appearance-drop" class="hidden">
-                            <button id="light-theme-btn" onclick="theme_btn_light()">Lys modus</button>
-                            <button id="dark-theme-btn" onclick="theme_btn_dark()">Mørke modus</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <button id="language-btn" onclick="language_btn()" class="language-btn">
-                            <span class="spanLight">Språk</span>
-                        </button>
-
-                        <div id="language-drop" class="hidden">
-                            <button id="english-btn" onclick="language_btn_english()">English</button>
-                            <button id="norwegian-btn" onclick="language_btn_norwegian()">Norsk</button>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="social">
-                    <a id="githubLink" href="https://github.com/kimlukasmyrvold/cv" target="_blank"
-                        rel="noreferrer noopener">
-                        <span class="spanLight"><i class="fa-brands fa-github"></i>Github</span>
-                    </a>
-                </div>
-            </article>
-        </aside>
-    </navbar>
+    </header>
+    <!-- End of navbar -->
 
     <main id="education">
         <section class="edu-intro">
@@ -141,7 +150,7 @@
                                             <p>Utdanning: Informasjonsteknologi og medieproduksjon.</p>
                                             <a href="https://viken.no/glemmen-vgs/" target="_blank"
                                                 rel="noreferrer noopener">
-                                                <p><span class="spanLightUnderline fst-italic">Link til skolen</span>
+                                                <p><span class="underline italic">Link til skolen</span>
                                                 </p>
                                             </a>
                                         </td>
@@ -163,7 +172,7 @@
                             <p>Utdanning: Grunnskole.</p>
                             <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
                                 rel="noreferrer noopener">
-                                <p><span class="spanLightUnderline">Link til skolen</span></p>
+                                <p><span class="underline italic">Link til skolen</span></p>
                             </a>
                         </div>
                     </div>
@@ -178,7 +187,7 @@
                             <p>Utdanning: Grunnskole.</p>
                             <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank"
                                 rel="noreferrer noopener">
-                                <p><span class="spanLightUnderline">Link til skolen</span></p>
+                                <p><span class="underline italic">Link til skolen</span></p>
                             </a>
                         </div>
                     </div>
@@ -188,66 +197,54 @@
     </main>
 
     <!-- Start of footer -->
-    <footer class="pt-2 pb-3 px-3">
-        <div class="container text-start position-relative">
-            <!-- Start of row -->
-            <div class="row">
-                <!-- Name, socials and contact-info -->
-                <div class="col-md-5 col-lg-5 col-xl-auto mx-auto mt-3" id="information">
-                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Kim Lukas Myrvold</h3>
+    <footer id="footer">
+        <div class="footer-container">
+            <!-- Start of socials and information -->
+            <div class="footer-section" id="socials">
+                <!-- Socials -->
+                <div id="socials">
+                    <h3>Kim Lukas Myrvold</h3>
 
-                    <p><a href="https://github.com/kimlukasmyrvold/cv" target="_blank" rel="noreferrer noopener"><i
-                                class="fa-brands fa-github"></i>Github</a></p>
-                    <p><a href="https://steamcommunity.com/id/solonerves" target="_blank" rel="noreferrer noopener"><i
-                                class="fa-brands fa-steam"></i>Steam</a></p>
-                    <p><a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener"><i
-                                class="fa-brands fa-youtube"></i>Youtube</a></p>
+                    <p>
+                        <a href="https://github.com/kimlukasmyrvold/cv" target="_blank" rel="noreferrer noopener">
+                            <i class="fa-brands fa-github"></i>Github</a>
+                    </p>
+                    <p>
+                        <a href="https://steamcommunity.com/id/solonerves" target="_blank" rel="noreferrer noopener">
+                            <i class="fa-brands fa-steam"></i>Steam</a>
+                    </p>
+                    <p>
+                        <a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener">
+                            <i class="fa-brands fa-youtube"></i>Youtube</a>
+                    </p>
+                </div>
+                <!-- End of socials -->
 
-                    <h4 class="mb- mt-3 font-weight-bold text-decoration-underline">Kontaktinformasjon</h4>
+                <!-- Contact information -->
+                <div id="contact">
+                    <h3>Kontaktinformasjon</h3>
 
                     <p><a href="tel: +4748426624"><i class="fa-solid fa-phone"></i>+47 484 26 624</a></p>
-                    <p><a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><i
-                                class="fa-brands fa-discord"></i>SoloNerves#4666</a></p>
-                    <p class="d-block"><a href="mailto:kimlukasmyrvold06@gmail.com"><i
-                                class="fa-solid fa-envelope"></i>kimlukasmyrvold06@gmail.com</a></p>
+                    <p><a href="https://discord.com/" target="_blank" rel="noreferrer noopener">
+                            <i class="fa-brands fa-discord"></i>SoloNerves#4666</a></p>
+                    <p><a href="mailto:kimlukasmyrvold06@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>kimlukasmyrvold06@gmail.com</a></p>
                 </div>
-                <!-- End of name, socials and contact-info -->
-
-                <!-- Location with google maps -->
-                <div class="col-md-5 col-lg-5 col-xl-4 mx-auto mt-3" id="location">
-                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Beliggenhet</h3>
-
-                    <!-- <section class="mx-auto" id="map-container"> -->
-                    <div id="map"></div>
-                    <!-- </section> -->
-                </div>
-                <!-- End of location with google maps -->
-
-                <!-- Email form -->
-                <div class="col-md-5 col-lg-5 col-xl-3 mx-auto mt-3" id="email">
-                    <h3 class="mb-2 font-weight-bold text-decoration-underline">Send en e-post:</h3>
-
-                    <form class="email-form" id="sendMeMail" action="mailto:kimlukasmyrvold06@gmail.com">
-                        <input id="subject" type="text" name="subject" placeholder="Skriv ditt emne her..." required>
-
-                        <textarea id="body" name="body" placeholder="Skriv din melding her..." required></textarea>
-
-                        <input type="submit" name="submit" id="submit" value="Send e-post">
-                    </form>
-                </div>
-                <!-- End of email form -->
+                <!-- End of contact-info -->
             </div>
-            <!-- End of row -->
+            <!-- End of socials and information -->
 
-            <hr>
+            <!-- Location with google maps -->
+            <div class="footer-section" id="location">
+                <h3>Beliggenhet</h3>
 
-            <!-- Copyright -->
-            <div class="row copyright">
-                <div class="col-auto mx-auto mt-3 ">
-                    <p><i class="fa-regular fa-copyright"></i>2022 Copyright: Kim Lukas Myrvold</p>
-                </div>
+                <div id="map"></div>
             </div>
-            <!-- End of copyright -->
+            <!-- End of location with google maps -->
+        </div>
+
+        <div class="copyright">
+            <p><i class="fa-regular fa-copyright"></i>2023 Copyright: Kim Lukas Myrvold</p>
         </div>
     </footer>
     <!-- End of footer -->
@@ -255,8 +252,8 @@
     <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map&v=weekly"></script>
-    <script type="text/javascript" src="../javascript/main.js"></script>
-    <script type="text/javascript" src="../javascript/education.js"></script>
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/education.js"></script>
 </body>
 
 </html>

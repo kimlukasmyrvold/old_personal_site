@@ -1,3 +1,7 @@
+/* Importing google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+
 /* Variables for dark theme and light theme */
 /* Dark theme (default) */
 body {
@@ -9,13 +13,14 @@ body {
     /* Text colors */
     --text-color: rgb(255, 255, 255);
     --text-color-inverse: rgb(0, 0, 0);
-    --text-color-hover: rgb(210, 210, 210);
+    --text-color-hover: rgb(215, 215, 215);
 
     /* Nav colors */
     --nav-color: rgba(2, 14, 23, 0.94);
     --nav-color-active: rgba(27, 42, 65, 1);
     --nav-color-hover: rgba(240, 240, 240, 1);
     --nav-color-menu: rgba(2, 14, 23, 1);
+    --nav-color-menu-2: rgba(2, 13, 20, 1);
 
     /* footer color */
     --footer-color: rgba(2, 14, 23, 0.94);
@@ -46,6 +51,7 @@ body.light-theme {
     --nav-color-active: rgba(27, 42, 65, 1);
     --nav-color-hover: rgba(12, 12, 12, 1);
     --nav-color-menu: rgba(255, 255, 255, 1);
+    --nav-color-menu-2: rgba(200, 200, 200, 1);
 
     /* footer color */
     --footer-color: rgba(255, 255, 255, 0.70);
@@ -71,68 +77,45 @@ body {
     flex-direction: column;
     /* Set the minimum height of the entire page to be 100vh, which is 100% of the window page of the user. */
     min-height: 100vh;
-    /* Min-width of 377px so that page shouldn't be smaller than 377px */
-    min-width: 377px;
     /* Changes the background of the website if gradient not supported */
     background: var(--body-color);
     /* Changing the background of the page to a gradient */
     background: var(--body-color-gradient);
     /* Setting positon to relative instead of static which is default */
     position: relative;
-    /* Defining line height because bootstrap changes to bad value */
-    line-height: 1.2;
 }
 
-/* Importing google font */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
 /* Applies to all elements */
 * {
-    /* Setting the font family to Nunito which is from google fonts */
+    /* Changing font family, line height, color and text-decoration for text */
     font-family: 'Nunito', sans-serif;
-    /* Changing the color for all text to the variable text-color */
+    line-height: 1.2;
     color: var(--text-color);
-    /* Removes underline from links and other effects on text */
     text-decoration: none;
-    /* Sets the border for everything to none */
+
+    /* Setting border, outline and appearance to none */
     border: none;
-    /* Sets the outline for everything to none. Give it an outline of "1px solid red" for troubleshooting. */
     outline: none;
-    /* Sets the padding for everything to zero */
+    appearance: none;
+
+    /* Changing padding and margin to 0 */
     padding: 0;
-    /* Sets the margin for everything to zero */
     margin: 0;
+
     /* Setting box-sizing to border-box */
     box-sizing: border-box;
-    /* Setting appearance to none */
-    appearance: none;
+    /* Makes words break apart when they can't fit on screen */
+    word-break: break-all;
 }
-
-/* Scrolling styling */
-
-/* Changing scroll behavior */
-/* scroll-behavior: smooth; */
-
-/* Set on parent */
-/* scroll-snap-type: x mandatory; */
-
-/* On children */
-/* scroll-snap-align: center; */
-
 
 
 *::selection {
     background: rgb(0, 140, 170);
 }
 
-
 a {
     color: var(--text-color);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--text-color-hover);
     text-decoration: none;
 }
 
@@ -150,11 +133,15 @@ h6 {
 }
 
 h2 {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-weight: 600;
 }
 
-
+/* Styling for svg */
+svg {
+    fill: currentColor;
+    vertical-align: middle;
+}
 
 /* Making class for display which you can add to any element to give it a display equal to none */
 .hidden {
@@ -190,26 +177,29 @@ hr {
 }
 
 
-/* Styling span tags */
-span {
-    font-weight: 600;
+/* Adds underline to text */
+.underline {
+    text-decoration: underline;
 }
 
-/* Styling for span when it has a class of spanLight */
-span.spanLight {
-    font-weight: lighter;
+/* light font weight */
+.light {
+    font-weight: 200;
 }
 
-/* Styling span tag with class of spanLightSmall. This will be an even smaller span */
-span.spanLightSmall {
-    font-weight: lighter;
+/* Bold font weight */
+.bold {
+    font-weight: 800;
+}
+
+/* Small font size */
+.small {
     font-size: .6em;
 }
 
-/* Styling for span when it has a class of spanLightUnderline */
-span.spanLightUnderline {
-    text-decoration: underline;
-    font-weight: lighter;
+/* italic font style */
+.italic {
+    font-style: italic;
 }
 
 
@@ -229,8 +219,10 @@ button {
 /* Styling button and links when it is hovered over */
 button:hover,
 button:hover *,
-a:hover * {
+a:hover,
+a:hover *:not(i) {
     color: var(--text-color-hover);
+    text-decoration: underline;
 }
 
 
@@ -415,304 +407,254 @@ a:hover * {
 
 /* End of skillbar styling */
 
+/* Animations */
+@keyframes animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 /* End of global classes styling */
 
 
 
 
-
-/* Styling for navbar */
-navbar {
-    /* Setting background to --nav-color */
+/* Navbar */
+.navbar {
     background: var(--nav-color);
-    /* Setting the height of the navbar */
-    height: 50px;
-    /* Setting position to sticky so it is always at top */
+    width: 100%;
     position: sticky;
-    /* Adding top so it is always at the top of the page */
     top: 0;
-    /* Giving it a high z-index so it is above other elements */
-    z-index: 900;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, .5);
 }
 
-/* Styling for topnav */
+.navbar .overlay {
+    display: block;
+    height: 100vh;
 
-/* Styling for the class topnav */
-.topnav {
-    /* Giving it a height of 50px, makes sidemenu behave properly */
-    height: 50px;
-}
-
-/* Styling topnav links */
-.topnav .topnav-links a {
-    /* Giving it a display equal to flex in order to align the items to the center verticaly */
-    display: flex;
-    /* Aligning the links to the center along the y axis */
-    align-items: center;
-    /* Making it float to the right of the screen */
-    float: right;
-    /* Giving it padding to right and left of element to space the links appart  */
-    padding: 0 16px;
-    /* Changing font size */
-    font-size: 1.1rem;
-    /* Giving the links a height of 50px */
-    height: 50px;
-    /* Positon relative so absoulute on a::after doesn't take up entire html  */
-    position: relative;
-    /* Giving z-index so user can click when sidemenu is open */
-    z-index: 902;
-}
-
-/* Styling topnav links on hover */
-.topnav .topnav-links a::after {
-    content: '';
     position: absolute;
-    width: 102%;
-    transform: scaleX(0);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 999;
+}
+
+.navbar .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 .6em;
+    height: 50px;
+
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar .navbar-container .navigation {
+    display: flex;
+    animation: animation 400ms ease-out;
+}
+
+.navbar .navbar-container .navigation a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+
+    padding: 0 .6em;
+    font-size: 1.2rem;
+
+    position: relative;
+    white-space: nowrap;
+}
+
+.navbar .navbar-container .navigation a:hover {
+    text-decoration: none;
+}
+
+.navbar .navbar-container .navigation a::after {
+    content: '';
+    background-color: var(--body-color-inverse);
+
+    position: absolute;
+    width: 100%;
     height: 2px;
     bottom: 0;
-    left: -1.5px;
-    background-color: var(--body-color-inverse);
+
+    transform: scaleX(0);
     transform-origin: bottom center;
     transition: transform 0.25s ease-out;
 }
 
-.topnav .topnav-links a:hover::after {
+.navbar .navbar-container .navigation a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom center;
 }
 
-/* Changing display to none when screen width is 859px */
-@media (max-width: 859px) {
-    .topnav .topnav-links {
+.navbar .navbar-container .navigation a.active::after {
+    content: '';
+    background-color: var(--body-color-inverse);
+
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+
+    transform: scaleX(1);
+}
+
+@media (max-width: 750px) {
+    .navbar .navbar-container .navigation {
         display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background: var(--nav-color-menu);
+        padding: 0 .6em;
+        height: 100vh;
+
+        animation: animation 400ms ease-out;
+        animation-fill-mode: backwards;
+    }
+
+    .navbar .navbar-container .navigation-buttons {
+        position: absolute;
+        right: 0;
     }
 }
 
-.topnav #navHeader {
-    display: flex;
-    align-items: center;
-    float: left;
-    height: 50px;
-    font-size: 2.3rem;
-    margin-left: .5em;
-}
-
-.topnav .topnav-links a#navActive::after {
-    content: '';
-    position: absolute;
-    width: 102%;
-    height: 2px;
-    transform: scaleX(1);
-    bottom: 0;
-    left: -1.5px;
-    background-color: var(--body-color-inverse);
-}
-
-.sidemenu .navlinks #navActive {
-    background-color: var(--nav-color-active);
-    color: rgb(240, 240, 240);
-}
-
-
-/* Styling for sidemenu button */
-
-#sidemenu-btn {
+.navbar .navbar-container .navigation-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 50px;
-    float: right;
-    /* Makes it show the pointer when you hover over it. This way it looks clickable */
-    cursor: pointer;
+}
+
+.navbar .navbar-container .navigation-buttons li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
-    z-index: 950;
+    font-size: 1.1rem;
 }
 
-i#sidemenu-btn-img {
-    margin-right: 0 !important;
+.navbar .navbar-container .navigation-buttons i {
+    margin: 0;
 }
 
-/* End of styling for topnav */
+.navbar .navbar-container .navigation-buttons li>button {
+    height: 50px;
+    width: 50px;
 
+    margin: 0 .3em;
+}
 
+.navbar .navbar-container .navigation-buttons .appearance-drop,
+.navbar .navbar-container .navigation-buttons .language-drop {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 169px;
 
-/* Styling for sidemenu */
+    margin: .2em 0;
+    padding: .5em .5em;
+    border-radius: 10px;
 
-.sidemenu {
-    min-height: 69px;
-    width: 160px;
     background: var(--nav-color-menu);
-    position: absolute;
-    right: 0;
-    z-index: 999;
-    margin: .5em 1em 0 0;
-    padding: 0;
-    border: none;
-    border-radius: 1em;
-    display: block;
+    box-shadow: 5px 5px 23px 1px rgba(0, 0, 0, .67);
+
+    animation: animation 400ms ease-out;
 }
 
-.sidemenu-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    height: 100vh;
-    z-index: 901;
-    display: block;
+.navbar .navbar-container .navigation-buttons .appearance-drop button,
+.navbar .navbar-container .navigation-buttons .language-drop button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    padding: .3em 0;
 }
 
-.sidemenu hr {
-    border: 1px solid var(--body-color-inverse);
-    border-radius: 1em;
-    padding: 0;
-    margin: 4px 5px;
-    opacity: .2;
+.navbar .navbar-container .navigation-buttons .appearance-drop button svg,
+.navbar .navbar-container .navigation-buttons .language-drop button svg {
+    margin-right: .4em;
 }
 
-.navlinks {
+.navbar .navbar-container .navigation-buttons .appearance-drop button#dark-theme-btn svg {
+    margin-left: 4.5px;
+    margin-right: 12px;
+}
+
+
+/* Styling hamburger button */
+.navbar .navbar-container .navigation-buttons .hamburger {
     display: none;
 }
 
-.navlinks a.top {
-    background: var(--nav-color);
-    text-align: left;
-    padding: .7em .4em;
-    margin: 0;
-    font-size: 18px;
-    display: block;
-    border: none;
-    border-top-left-radius: .8em;
-    border-top-right-radius: .8em;
-    z-index: 999;
-    position: relative;
-}
-
-.navlinks a {
-    background: var(--nav-color);
-    text-align: left;
-    padding: .7em .4em;
-    margin: 0;
-    font-size: 18px;
-    display: block;
-    border: none;
-    z-index: 999;
-    position: relative;
-}
-
-.navlinks a:hover {
-    background-color: var(--nav-color-hover);
-    color: var(--text-color-inverse);
-}
-
-/* Shows the navlinks inside the sidemenu when screen is small enough */
-@media (max-width: 859px) {
-    .navlinks {
+@media (width <=750px) {
+    .navbar .navbar-container .navigation-buttons .hamburger {
         display: block;
+
+        position: relative;
+        height: 50px;
+        width: 50px;
+
+        margin: 0 .3em;
+        padding: 0 7.5px;
+        cursor: pointer;
+    }
+
+    .navbar .navbar-container .navigation-buttons .hamburger .bar,
+    .navbar .navbar-container .navigation-buttons .hamburger:after,
+    .navbar .navbar-container .navigation-buttons .hamburger::before {
+        content: '';
+        background-color: var(--body-color-inverse);
+
+        display: block;
+        width: 100%;
+        height: 5px;
+
+        margin: 6px 0px;
+        border-radius: 3px;
+
+        transition: 300ms;
+    }
+
+    .navbar .navbar-container .navigation-buttons .hamburger.is-active::before {
+        transform: rotate(-45deg) translate(-8px, 6px);
+    }
+
+    .navbar .navbar-container .navigation-buttons .hamburger.is-active::after {
+        transform: rotate(45deg) translate(-9px, -8px);
+    }
+
+    .navbar .navbar-container .navigation-buttons .hamburger.is-active .bar {
+        opacity: 0;
     }
 }
 
-.dropdowns {
-    margin-bottom: .6em;
-}
-
-/* Styling for appearance button */
-.appearance-btn {
-    background: var(--nav-color-menu);
-    color: var(--text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin: .5em .2em;
-}
-
-.appearance-btn::before {
-    content: url(../img/icons/appearance.png);
-    filter: var(--icon-color-invert);
-    height: 19px;
-    width: 19px;
-    position: relative;
-    top: 5px;
-    left: 2px;
-}
-
-
-#appearance-drop button,
-#appearance-drop2 button {
-    background: var(--nav-color-menu);
-    color: var(--text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    margin: .15em 1.1em;
-}
-
-/* Styling for language button */
-.language-btn {
-    background: var(--nav-color-menu);
-    color: var(--text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin: .5em .2em;
-}
-
-.language-btn::before {
-    content: url(../img/icons/language.png);
-    filter: var(--icon-color-invert);
-    height: 19px;
-    width: 19px;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    top: 5px;
-    left: 2px;
-}
-
-#language-drop button,
-#language-drop2 button {
-    background: var(--nav-color-menu);
-    color: var(--text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    margin: .15em 1.1em;
-}
-
-/* Styling for social class in sidemenu */
-.social {
-    margin: 10px 0 10px 3px;
-    line-height: 1.7rem;
-}
-
-/* Styling for the links when parent has a class of social */
-.social a {
-    display: inline-block;
-    font-size: 18px;
-    text-decoration: underline;
-}
-
-.social a:hover {
-    color: var(--text-color-hover);
-}
-
-/* Styling the logos inside the sidemenu */
-img.github-logo {
-    filter: var(--icon-color-invert);
-    height: 19px;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    top: 3px;
-    left: 2px;
-}
-
-/* End of styling for sidemenu */
+/* End of navbar styling */
 
 
 
@@ -820,9 +762,7 @@ main section {
 }
 
 /* Styling for the schools section */
-/* Giving buttons inside an element with id of dropdowns and giving it a margin of .2em at the top and bottom. Also giving it a height of 50px */
 .edu-schools #dropdowns button {
-    /* margin: .2em 0; */
     height: 50px;
 }
 
@@ -838,7 +778,6 @@ main section {
 }
 
 /* Styling for glemmen vgs section */
-
 #glemmenDrop td {
     padding-right: 1.2em;
     vertical-align: top;
@@ -850,12 +789,6 @@ main section {
     height: auto;
     width: 500px;
 }
-
-/* Styling for borge ungdomskole section */
-
-
-/* Styling for årum skole section */
-
 
 /* End of education page styling */
 
@@ -896,10 +829,6 @@ main section {
 
 
 /* Hobbies site styling */
-/* #hobbies section {
-    margin-bottom: 1em;
-} */
-
 #hobbies p.header {
     font-size: 2em;
     margin-bottom: .2em;
@@ -918,11 +847,6 @@ main section {
     content: '- ';
 }
 
-/* #hobbies .dropdowns p {
-    font-size: 1.1em;
-    margin: 0 0 1.3em 1.9em;
-} */
-
 #hobbies .dropdowns p,
 #hobbies .dropdowns table {
     font-size: 1.1em;
@@ -930,33 +854,6 @@ main section {
 }
 
 /* End of hobbies site styling */
-
-
-
-
-
-/* Styling for the footer of the website */
-
-/* @media (min-width: 1200px) {
-    .col-xl-3 {
-        width: 25%;
-    }
-} */
-/* @media (min-width: 992px) {
-    .col-md-5 {
-        width: 42%;
-    }
-} */
-/* @media (min-width: 768px) {
-    .col-md-5 {
-        width: 42%;
-    }    
-} */
-
-
-/* * {
-    outline: 1px solid red;
-} */
 
 
 footer {
@@ -967,6 +864,8 @@ footer {
     padding: 1.5em 5em .5em;
     min-height: 50px;
     background: var(--footer-color);
+
+    transition: padding 500ms;
 }
 
 footer .container {
@@ -980,19 +879,50 @@ footer .footer-container {
 }
 
 footer .footer-container .footer-section {
-    width: 33%;
+    margin: 0 .6em;
+    width: 50%;
+}
+
+@media (width < 900px) {
+    footer {
+        padding: 1.5em 1em .5em;
+    }
+}
+
+@media (width < 800px) {
+    footer .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .footer-container .footer-section {
+        margin: 0 .6em;
+        width: 100%;
+    }
+
+    footer .footer-container #location {
+        margin: 2em 0 0;
+    }
+}
+
+@media (width < 320px) {
+    footer {
+        padding: 1.5em .3em .5em;
+    }
 }
 
 footer p {
-    font-size: 1.3em;
+    font-size: clamp(1.1rem, -1rem + 10vw, 1.3rem);
     margin: .5em 0;
 }
 
 footer h3 {
     margin: 0 0 .5em 0;
-    font-size: 1.9rem;
+    font-size: clamp(1.5rem, -1rem + 14vw, 1.9rem);
+    /* font-size: 1.9rem; */
 }
-
 
 /* Styling for copyright sections */
 #footer .copyright {
@@ -1015,7 +945,8 @@ footer h3 {
 }
 
 #footer .copyright p {
-    font-size: 1.05rem;
+    /* font-size: clamp(.94rem, -1rem + 10vw, 1.05rem); */
+    font-size: 1rem;
     margin: 1.5em 0 0;
 }
 
@@ -1078,46 +1009,17 @@ footer #map * {
 
 /* End of email styling */
 
-
 /* End of footer styling */
 
 
 
+
 /* Styling for grid */
-
-main#portfolio section {
-    margin-bottom: 3.5em;
-}
-
-.basic-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
 .photo-grid {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-auto-rows: 240px;
-}
-
-.animated-grid {
-    height: 85vh;
-
-    display: grid;
-    gap: 1rem;
-
-    grid-template-areas:
-        'a  b  c  d'
-        'l  🌟 🌟 e'
-        'k  🌟 🌟 f'
-        'j  i  h  g';
-
-    grid-template-rows: repeat(4, 25%);
-    grid-template-columns: 240px auto auto 240px;
-
-    --stagger-delay: 90ms;
 }
 
 @keyframes cardAnimation {
@@ -1152,7 +1054,7 @@ main#portfolio section {
     background-position: center;
     background-repeat: no-repeat;
 
-    animation: cardAnimation 700ms ease-out;
+    animation: cardAnimation 400ms ease-out;
     animation-fill-mode: backwards;
 }
 
@@ -1169,240 +1071,4 @@ main#portfolio section {
     .card-wide {
         grid-column: span 2 / auto;
     }
-}
-
-.animated-grid .card:nth-child(1) {
-    grid-area: a;
-    animation-delay: calc(1 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(2) {
-    grid-area: b;
-    animation-delay: calc(2 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(3) {
-    grid-area: c;
-    animation-delay: calc(3 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(4) {
-    grid-area: d;
-    animation-delay: calc(4 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(5) {
-    grid-area: e;
-    animation-delay: calc(5 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(6) {
-    grid-area: f;
-    animation-delay: calc(6 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(7) {
-    grid-area: g;
-    animation-delay: calc(7 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(8) {
-    grid-area: h;
-    animation-delay: calc(8 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(9) {
-    grid-area: i;
-    animation-delay: calc(9 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(10) {
-    grid-area: j;
-    animation-delay: calc(10 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(11) {
-    grid-area: k;
-    animation-delay: calc(11 * var(--stagger-delay));
-}
-
-.animated-grid .card:nth-child(12) {
-    grid-area: l;
-    animation-delay: calc(12 * var(--stagger-delay));
-}
-
-.animated-grid .card:last-child {
-    grid-area: 🌟;
-    animation-delay: calc(13 * var(--stagger-delay));
-}
-
-
-
-
-
-
-.overlay {
-    background: rgba(255, 0, 0, 0.03);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-}
-
-
-
-/* Navbar styling */
-
-.navbar {
-    background: var(--nav-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, .5);
-}
-
-.navbar .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 .6em;
-    height: 50px;
-}
-
-.navbar .navbar-container .navigation {
-    display: flex;
-}
-
-.navbar .navbar-container .navigation a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    font-size: 1.2rem;
-    height: 50px;
-    padding: 0 .6em;
-    white-space: nowrap;
-}
-
-.navbar .navbar-container .navigation a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    background-color: var(--body-color-inverse);
-    transform: scaleX(0);
-    transform-origin: bottom center;
-    transition: transform 0.25s ease-out;
-}
-
-.navbar .navbar-container .navigation a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom center;
-}
-
-.navbar .navbar-container .navigation a.active::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    background-color: var(--body-color-inverse);
-    transform: scaleX(1);
-}
-
-.navbar .navbar-container .navigation-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-}
-
-.navbar .navbar-container .navigation-buttons li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    font-size: 1.1rem;
-}
-
-.navbar .navbar-container .navigation-buttons i {
-    margin: 0;
-}
-
-.navbar .navbar-container .navigation-buttons li>button {
-    height: 50px;
-    width: 50px;
-    margin: 0 .3em;
-}
-
-.navbar .navbar-container .navigation-buttons .appearance-drop,
-.navbar .navbar-container .navigation-buttons .language-drop {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background: var(--nav-color-menu);
-    width: 169px;
-    margin: .2em 0;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: .5em .5em;
-    box-shadow: 5px 5px 23px 1px rgba(0, 0, 0, .67);
-}
-
-.navbar .navbar-container .navigation-buttons .appearance-drop button,
-.navbar .navbar-container .navigation-buttons .language-drop button {
-    padding: .3em 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.navbar .navbar-container .navigation-buttons .language-drop button#english-btn {
-    background: orange;
-    width: 100%;
-}
-
-
-/* Styling hamburger button */
-.hamburger {
-    position: relative;
-    display: block;
-    width: 35px;
-    height: 50px;
-    width: 50px;
-    margin: 0 .3em;
-    cursor: pointer;
-    float: right;
-    padding: 0 7.5px;
-}
-
-.hamburger .bar,
-.hamburger:after,
-.hamburger::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: var(--body-color-inverse);
-    margin: 6px 0px;
-    border-radius: 3px;
-    transition: 300ms;
-}
-
-.hamburger.is-active::before {
-    transform: rotate(-45deg) translate(-8px, 6px);
-}
-
-.hamburger.is-active::after {
-    transform: rotate(45deg) translate(-9px, -8px);
-}
-
-.hamburger.is-active .bar {
-    opacity: 0;
 }

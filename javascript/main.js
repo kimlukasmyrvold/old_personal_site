@@ -3,44 +3,37 @@
 // Here it reads what the theme currently is, it reads from the localstorage.
 const currentTheme = localStorage.getItem("theme");
 
-// Here it checks if the currentTheme is light or not.
-// If it is equal to light then it adds the light-theme class to the body of the site
-// If it does not equal to light-theme, then it removes the light-theme class
-// Then it is dark mode.
+// Changes the theme when the page loads
 if (currentTheme == "light") {
     document.body.classList.add("light-theme");
+    document.getElementById("light-theme-btn").classList.add("underline");
 }
 else {
     document.body.classList.remove("light-theme");
+    document.getElementById("dark-theme-btn").classList.add("underline");
 };
 
-// function for when light theme button is pressed
-// when clicked, it will add the "light-theme" class to the body of the site
-// then it lets the variabel "theme" equal "light"
-// after that, the "theme" then gets localy stored with the "localStorage.setItem("theme", theme);" 
+// Changes the theme of the site to light when user clicks button, and saves theme to localstorage
 function theme_btn_light() {
     document.body.classList.add("light-theme");
-    let theme = "light";
+    document.getElementById("light-theme-btn").classList.add("underline");
+    document.getElementById("dark-theme-btn").classList.remove("underline");
 
+    let theme = "light";
     localStorage.setItem("theme", theme);
 };
 
-// function for when dark theme button is pressed
-// when clicked, it removes the "light-theme" class from the body of the site
-// then it lets the variabel "theme" equal "dark"
-// after that, the "theme" then gets localy stored with the "localStorage.setItem("theme", theme);" 
+// Changes the theme of the site to dark when user clicks button, and saves theme to localstorage
 function theme_btn_dark() {
     document.body.classList.remove("light-theme");
-    let theme = "dark";
+    document.getElementById("dark-theme-btn").classList.add("underline");
+    document.getElementById("light-theme-btn").classList.remove("underline");
 
+    let theme = "dark";
     localStorage.setItem("theme", theme);
 };
 
 // End of dark / light mode code
-
-
-
-
 
 
 
@@ -55,23 +48,31 @@ let lang;
 
 // Conditions to check what lang should be, with help from currentURL. If currentURL = /cv/en/ -> lang = english, etc...
 if (currentURL === '/cv/en/') {
-    lang = 'english';
+    document.getElementById("english-btn").classList.add("underline");
+    document.getElementById("norwegian-btn").classList.remove("underline");
 
+    lang = 'english';
     localStorage.setItem(lang, 'lang');
 }
 else if (currentURL.startsWith('/cv/') && !currentURL.endsWith('en/')) {
-    lang = 'norsk';
+    document.getElementById("norwegian-btn").classList.add("underline");
+    document.getElementById("english-btn").classList.remove("underline");
 
+    lang = 'norsk';
     localStorage.setItem(lang, 'lang');
 }
 else if (currentURL.substring(0, 4) === '/en/') {
-    lang = 'english_dev';
+    document.getElementById("english-btn").classList.add("underline");
+    document.getElementById("norwegian-btn").classList.remove("underline");
 
-    localStorage.setItem(lang, 'lang');
+    lang = 'english_dev';
+    localStorage.setItem(lang, 'lang')
 }
 else {
-    lang = 'norsk_dev';
+    document.getElementById("norwegian-btn").classList.add("underline");
+    document.getElementById("english-btn").classList.remove("underline");
 
+    lang = 'norsk_dev';
     localStorage.setItem(lang, 'lang');
 };
 
@@ -79,14 +80,14 @@ else {
 function language_btn_english() {
     if (lang === 'norsk') {
         window.location.pathname = `/cv/en${window.location.pathname.replace('/cv', '')}`;
-        lang = 'english';
 
+        lang = 'english';
         localStorage.setItem(lang, 'lang');
     }
     else if (lang === 'norsk_dev') {
         window.location.pathname = `/en${window.location.pathname}`;
-        lang = 'english_dev';
 
+        lang = 'english_dev';
         localStorage.setItem(lang, 'lang');
     };
 };
@@ -95,69 +96,19 @@ function language_btn_english() {
 function language_btn_norwegian() {
     if (lang === 'english') {
         window.location.pathname = window.location.pathname.replace('en/', '');
-        lang = 'norsk';
 
+        lang = 'norsk';
         localStorage.setItem(lang, 'lang');
     }
     else if (lang === 'english_dev') {
         window.location.pathname = window.location.pathname.slice(3);
-        lang = 'norsk_dev';
 
+        lang = 'norsk_dev';
         localStorage.setItem(lang, 'lang');
     };
 };
 
 // End of Language code
-
-
-
-// Sidemenu functions
-
-// Opens and closes sidemenu when clicking on the hamburger icon
-function sidemenu_btn() {
-    document.getElementById("sidemenu").classList.toggle("sidemenu");
-    document.getElementById("sidemenu").classList.toggle("hidden");
-    document.getElementById("sidemenu-overlay").classList.toggle("sidemenu-overlay");
-    document.getElementById("sidemenu-overlay").classList.toggle("hidden");
-    document.getElementById("appearance-drop").classList.remove("block");
-    document.getElementById("appearance-drop").classList.add("hidden");
-    document.getElementById("appearance-btn").classList.remove("appearance-btn-clicked");
-    document.getElementById("language-drop").classList.remove("block");
-    document.getElementById("language-drop").classList.add("hidden");
-    document.getElementById("language-btn").classList.remove("language-btn-clicked");
-};
-
-// Opens and closes sidemenu and dropdown menues when clicking outside of sidemenu
-function sidemenu_overlay() {
-    document.getElementById("sidemenu-overlay").classList.remove("sidemenu-overlay");
-    document.getElementById("sidemenu-overlay").classList.toggle("hidden");
-    document.getElementById("sidemenu").classList.remove("sidemenu");
-    document.getElementById("sidemenu").classList.toggle("hidden");
-    document.getElementById("appearance-drop").classList.remove("block");
-    document.getElementById("appearance-drop").classList.add("hidden");
-    document.getElementById("appearance-btn").classList.remove("appearance-btn-clicked");
-    document.getElementById("language-drop").classList.remove("block");
-    document.getElementById("language-drop").classList.add("hidden");
-    document.getElementById("language-btn").classList.remove("language-btn-clicked");
-};
-
-// Opens and closes the appearance dropdown menu when is clicked
-function appearance_btn() {
-    document.getElementById("appearance-drop").classList.toggle("block");
-    document.getElementById("appearance-drop").classList.toggle("hidden");
-    document.getElementById("appearance-btn").classList.toggle("appearance-btn-clicked");
-};
-
-// Opens and closes the language dropdown menue when is clicked
-function language_btn() {
-    document.getElementById("language-drop").classList.toggle("block");
-    document.getElementById("language-drop").classList.toggle("hidden");
-    document.getElementById("language-btn").classList.toggle("language-btn-clicked");
-};
-
-// End of sidemenu functions
-
-
 
 
 
@@ -183,40 +134,101 @@ function Map() {
 };
 
 
+// Navbar
+const overlay = document.querySelector('.overlay');
 
-window.onload = function () {
-    const overlay = document.querySelector('.overlay');
+const menu_btn = document.querySelector('.hamburger');
+const appearance_btn = document.querySelector('.appearance');
+const language_btn = document.querySelector('.language');
 
-    const menu_btn = document.querySelector('.hamburger');
-    const appearance_btn = document.querySelector('.appearance');
-    const language_btn = document.querySelector('.language');
+const navigation = document.querySelector('.navigation');
 
-    const appearance_drop = document.querySelector('.appearance-drop');
-    const language_drop = document.querySelector('.language-drop');
+const appearance_drop = document.querySelector('.appearance-drop');
+const language_drop = document.querySelector('.language-drop');
 
 
-    overlay.addEventListener('click', function () {
+let navigation_open = false;
+let language_open = false;
+let appearance_open = false;
+
+
+overlay.addEventListener('click', function () {
+    language_drop.classList.add('hidden');
+    language_open = false;
+
+    appearance_drop.classList.add('hidden');
+    appearance_open = false;
+
+    overlay.classList.add('hidden');
+});
+
+
+appearance_btn.addEventListener('click', () => {
+    if (appearance_open === false) {
+        appearance_open = true;
+        appearance_drop.classList.remove('hidden');
+
+        language_open = false
         language_drop.classList.add('hidden');
+
+        menu_btn.classList.remove('is-active');
+        navigation.classList.remove('flex');
+
+        overlay.classList.remove('hidden');
+    }
+    else {
+        appearance_open = false
         appearance_drop.classList.add('hidden');
 
         overlay.classList.add('hidden');
-    });
+    };
+});
 
-    menu_btn.addEventListener('click', function () {
-        menu_btn.classList.toggle('is-active');
-    });
+language_btn.addEventListener('click', function () {
+    if (language_open === false) {
+        language_open = true;
+        language_drop.classList.remove('hidden');
 
-    appearance_btn.addEventListener('click', function () {
-        appearance_drop.classList.toggle('hidden');
-        language_drop.classList.add('hidden');
-
-        overlay.classList.toggle('hidden');
-    });
-
-    language_btn.addEventListener('click', function () {
-        language_drop.classList.toggle('hidden');
+        appearance_open = false
         appearance_drop.classList.add('hidden');
 
-        overlay.classList.toggle('hidden');
-    });
+        menu_btn.classList.remove('is-active');
+        navigation.classList.remove('flex');
+
+        overlay.classList.remove('hidden');
+    }
+    else {
+        language_open = false
+        language_drop.classList.add('hidden');
+
+        overlay.classList.add('hidden');
+    };
+});
+
+menu_btn.addEventListener('click', function () {
+    menu_btn.classList.toggle('is-active');
+    navigation.classList.toggle('flex');
+
+    appearance_open = false
+    appearance_drop.classList.add('hidden');
+
+    language_open = false
+    language_drop.classList.add('hidden');
+
+    overlay.classList.add('hidden');
+});
+
+// Checks if screen width is 750px or less and then removes is-active from menu_btn and removes flex class from navigation.
+var vw = window.matchMedia("(max-width: 750px)");
+vw.addEventListener('change', vwFunct);
+vwFunct(vw);
+
+function vwFunct(vw) {
+    if (vw.matches) {
+        menu_btn.classList.remove('is-active');
+        navigation.classList.remove('flex');
+    }
 };
+
+
+// End of navbar
