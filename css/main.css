@@ -785,7 +785,6 @@ main section {
 
 #glemmenDrop img {
     border-radius: 3em;
-    box-shadow: 3px 3px 6px var(--body-color-inverse);
     height: auto;
     width: 500px;
 }

@@ -30,7 +30,7 @@ window.onload = function () {
     var d = d2 - d1; // variable day is unused, but can be used in future
     var m = m2 - m1; // variable month is unused, but can be used in future
     var y = y2 - y1;
-
+    
     // Printing the text to a element with a id of 'age'
     document.getElementById('age').innerHTML = y;
 }
