@@ -105,8 +105,6 @@ body {
 
     /* Setting box-sizing to border-box */
     box-sizing: border-box;
-    /* Makes words break apart when they can't fit on screen */
-    word-break: break-all;
 }
 
 
@@ -455,12 +453,14 @@ a:hover *:not(i) {
     height: 50px;
 
     position: relative;
-    z-index: 1000;
 }
 
 .navbar .navbar-container .navigation {
     display: flex;
     animation: animation 400ms ease-out;
+
+    position: relative;
+    z-index: 1000;
 }
 
 .navbar .navbar-container .navigation a {
@@ -542,6 +542,8 @@ a:hover *:not(i) {
     justify-content: center;
     align-items: center;
     height: 50px;
+    position: relative;
+    z-index: 1000;
 }
 
 .navbar .navbar-container .navigation-buttons li {
