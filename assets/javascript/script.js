@@ -415,6 +415,8 @@ function changeLanguage(lang) {
     } catch (error) {
         console.error(`Could not translate page! ${error}`)
     }
+
+    age(21, 5, 2006);
 }
 
 

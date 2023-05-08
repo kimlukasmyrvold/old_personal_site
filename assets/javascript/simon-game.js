@@ -14,7 +14,7 @@ $(document).keypress(() => {
 })
 
 
-$(document).click(() => {
+$('#simon-game').click(() => {
     if (gameStarted === false) {
         gameStarted = true;
         nextSequence();
