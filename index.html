@@ -32,11 +32,11 @@
         <article id="home">
             <section class="profile-info flex-container">
                 <div class="flex-item">
-                    <img src="assets/images/kimlukasmyrvold.png" alt="Bilde av meg" class="round">
+                    <img src="assets/images/kimlukasmyrvold.png" alt="Picture of me smiling" class="round">
                 </div>
                 <div class="flex-item">
                     <h1 class="heading">Kim Lukas Myrvold</h1>
-                    <p>2006, <span id="age"></span> år gammel</p>
+                    <p id="homeAge">2006, <span id="age"></span> år gammel</p>
                     <p>Fredrikstad, Norge</p>
                     <a href="mailto: kimlukasmyrvold06@gmail.com">kimlukasmyrvold06@gmail.com</a>
                 </div>
@@ -45,9 +45,9 @@
             <hr>
 
             <section class="about-me">
-                <h3 class="subheading">Litt om meg</h3>
+                <h3 id="homeAboutHeading" class="subheading">Litt om meg</h3>
 
-                <p>Jeg er en <span class="fw-800">ansvarlig, ryddig og snill</span> gutt på <span id="age"></span> år.
+                <p id="homeAboutText">Jeg er en <span class="fw-800">ansvarlig, ryddig og snill</span> gutt på <span id="age"></span> år.
                     Jeg
                     lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske
                     <span class="fw-800">selvstendig</span>.
@@ -55,16 +55,16 @@
             </section>
 
             <section id="interests">
-                <h3 class="subheading">Interesser</h3>
+                <h3 id="homeInterestsHeading" class="subheading">Interesser</h3>
 
-                <p>Jeg har interesse for <span class="fw-800">datamaskiner, programmering, nettverk og gaming.</span>
+                <p id="homeInterestsText">Jeg har interesse for <span class="fw-800">datamaskiner, programmering, nettverk og gaming.</span>
                 </p>
 
-                <a href="#hobbies" id="moreInfo">Mer info på hobby siden...</a>
+                <a href="#hobbies" id="homeInterestsMoreInfo">Mer info på hobby siden...</a>
             </section>
 
             <section id="codingLanguages">
-                <h3 class="subheading" id="codingLanguagesHeading">Kodespråk jeg har jobbet med</h3>
+                <h3 class="subheading" id="homeCodingLanguagesHeading">Kodespråk jeg har jobbet med</h3>
 
                 <div class="codingLanguagesContainer">
                     <div class="codingLanguageItem">
@@ -171,9 +171,9 @@
         <article id="education">
             <section class="edu-intro">
                 <div>
-                    <p class="heading">Min utdanningsplan</p>
+                    <p id="educationHeading" class="heading">Min utdanningsplan</p>
 
-                    <p>
+                    <p id="educationText">
                         Planen min er å gå informasjonsteknologi og medieproduksjon på vg1, og så i vg2,
                         informasjonsteknologi. I vg3 så blir det IT-utviklerfaget. Hvis jeg ikke er førnøyd med valget
                         mitt
@@ -181,9 +181,9 @@
                     </p>
                 </div>
                 <div>
-                    <p class="subheading">Mine ambisjoner</p>
+                    <p id="educationAmbitions" class="subheading">Mine ambisjoner</p>
 
-                    <p>
+                    <p id="educationAmbitionsText">
                         Mine ambisjoner i livet er å få en godt betalt jobb hvor jeg trives og kan bidra på en positiv
                         måte.
                         Jeg ønsker også å utvikle mine ferdigheter innenfor programmering og teknologi.
@@ -193,7 +193,7 @@
 
             <section class="edu-schools">
                 <div>
-                    <p class="subheading">Skoler jeg har gått på</p>
+                    <p id="educationSchoolsHeading" class="subheading">Skoler jeg har gått på</p>
 
                     <div id="dropdowns">
                         <div id="glemmen">
@@ -208,12 +208,12 @@
                                                 alt="Bilde av Glemmen Videregående skole">
                                         </td>
                                         <td>
-                                            <p>Jeg startet på denne skolen i 2022 og går fortsatt her.</p>
-                                            <p>Denne skolen er ganske digg å gå på.</p>
-                                            <p>vg1 linje: Informasjonsteknologi og medieproduksjon.</p>
+                                            <p id="educationSchoolsGlemmenDuration">Jeg startet på denne skolen i 2022 og går fortsatt her.</p>
+                                            <p id="educationSchoolsGlemmenReview">Denne skolen er ganske digg å gå på.</p>
+                                            <p id="educationSchoolsGlemmenLine">vg1 linje: Informasjonsteknologi og medieproduksjon.</p>
                                             <a href="https://viken.no/glemmen-vgs/" target="_blank"
                                                 rel="noreferrer noopener">
-                                                <p><span class="underline italic">Link til skolen</span>
+                                                <p><span id="educationSchoolsGlemmenLink" class="underline italic">Link til skolen</span>
                                                 </p>
                                             </a>
                                         </td>
@@ -226,14 +226,14 @@
                             <button id="borgeBtn" class="dropRight2" onclick="borgeBtn()">Borge ungdomsskole</button>
 
                             <div id="borgeDrop" class="hidden">
-                                <p>Jeg startet på denne skolen i 2019 og slutta i 2022.</p>
-                                <p>I løpet av ungdomsskolen hadde interessen min for datamaskiner økt ganske mye og jeg
+                                <p id="educationSchoolsBorgeDuration">Jeg startet på denne skolen i 2019 og slutta i 2022.</p>
+                                <p id="educationSchoolsBorgeReview">I løpet av ungdomsskolen hadde interessen min for datamaskiner økt ganske mye og jeg
                                     begynte også å få interesse for koding, i 10. klasse så hadde jeg programmering som
                                     valgfag.</p>
-                                <p>Utdanning: Grunnskole.</p>
+                                <p id="educationSchoolsBorgeLine">Utdanning: Grunnskole.</p>
                                 <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
                                     rel="noreferrer noopener">
-                                    <p><span class="underline italic">Link til skolen</span></p>
+                                    <p><span id="educationSchoolsBorgeLink" class="underline italic">Link til skolen</span></p>
                                 </a>
                             </div>
                         </div>
@@ -242,13 +242,13 @@
                             <button id="aarumBtn" class="dropRight2" onclick="aarumBtn()">Årum skole</button>
 
                             <div id="aarumDrop" class="hidden">
-                                <p>Jeg startet på denne skolen i 2012 og slutta i 2019.</p>
-                                <p>Dette var den første skolen jeg gikk på, og det var i løpet av denne tiden jeg fikk
+                                <p id="educationSchoolsArumDuration">Jeg startet på denne skolen i 2012 og slutta i 2019.</p>
+                                <p id="educationSchoolsArumReview">Dette var den første skolen jeg gikk på, og det var i løpet av denne tiden jeg fikk
                                     interesse for datamaskiner.</p>
-                                <p>Utdanning: Grunnskole.</p>
+                                <p id="educationSchoolsArumLine">Utdanning: Grunnskole.</p>
                                 <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank"
                                     rel="noreferrer noopener">
-                                    <p><span class="underline italic">Link til skolen</span></p>
+                                    <p><span id="educationSchoolsArumLink" class="underline italic">Link til skolen</span></p>
                                 </a>
                             </div>
                         </div>
@@ -259,7 +259,7 @@
 
         <!-- workExperience page -->
         <article id="workExperience">
-            <h2 class="heading">Jobberfaringer</h2>
+            <h2 id="workExperienceHeading" class="heading">Jobberfaringer</h2>
 
             <section class="work-jobs">
                 <div id="painthouse">
@@ -311,9 +311,9 @@
         <!-- hobbies page -->
         <article id="hobbies">
             <section>
-                <p class="heading">Mine hobbyer</p>
+                <p id="hobbiesHeading" class="heading">Mine hobbyer</p>
 
-                <p>
+                <p id="hobbiesText">
                     Hobbiene mine er innenfor <span class="bold"><a href="#gaming">Gaming, </a>
                         <a href="#computers">datamaskiner, </a><a href="#programming">programmering.</a></span> Jeg
                     starta å
@@ -390,9 +390,9 @@
 
         <!-- games page -->
         <article id="games">
-            <h2 class="heading">Spill</h2>
+            <h2 id="gamesHeading" class="heading">Spill</h2>
 
-            <p>Her her er alle spillene jeg har lagd i HTML og JavaScript</p>
+            <p id="gamesText">Her her er alle spillene jeg har lagd i HTML og JavaScript</p>
 
             <section id="drum-kit">
                 <h3 class="subheading">Drum-kit</h3>

@@ -6,13 +6,11 @@
                 "locationText": "Beliggenhet",
                 "map-consent-text": "Google maps kan samle inn brukerdata, for å se kart må du godta.",
                 "map-consent-button": "Godta",
-
                 "deviceTheme": "Enhet",
                 "darkTheme": "Mørk",
                 "purpleTheme": "Lilla",
                 "lightTheme": "Lys",
                 "orangeTheme": "Oransje",
-
                 "homeLink": "Hjemmeside",
                 "educationLink": "Utdanning",
                 "workExperienceLink": "Jobberfaring",
@@ -22,7 +20,6 @@
             "404": {
                 "siteNotFound": "Denne siden finnes ikke",
                 "goToPage": "Gå til en av disse sidene:",
-
                 "home404": "Hjemmeside",
                 "education404": "Utdanning",
                 "workExperience404": "Jobberfaring",
@@ -30,19 +27,52 @@
                 "games404": "Spill"
             },
             "home": {
-                "goodDay": "God dag!",
-                "sunRising": "Det ser ut til at sola stiger oppover.",
-                "sunWithCloud": "I følge <a href=\"https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-33600/Norge/Viken/Fredrikstad/Fredrikstad\" target=\"_blank\">YR.no</a> så blir det sol med litt skyer.",
-                "degrees": "Det skal bli opp till 11 grader Celsius!",
-                "reminder": "Husk å være inne når det er sol.",
-
-                "aboutHeader": "Om oss",
-
-                "hobbiesHeader": "Mine hobbyer",
-
-                "socialHeader": "Sosial",
-
-                "contactHeader": "Kontakt oss"
+                "homeAge": "2006, <span id=\"age\"></span> år gammel",
+                "homeAboutHeading": "Litt om meg",
+                "homeAboutText": "Jeg er en <span class=\"fw-800\">ansvarlig, ryddig og snill</span> gutt på <span id=\"age\"></span> år. Jeg lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske <span class=\"fw-800\">selvstendig</span>.",
+                "homeInterestsHeading": "Interesser",
+                "homeInterestsText": "Jeg har interesse for <span class=\"fw-800\">datamaskiner, programmering, nettverk og gaming.</span>",
+                "homeInterestsMoreInfo": "Mer info på hobby siden...",
+                "homeCodingLanguagesHeading": "Kodespråk jeg har jobbet med",
+                "educationHeading": "Min utdanningsplan",
+                "educationText": "Planen min er å gå informasjonsteknologi og medieproduksjon på vg1, og så i vg2, informasjonsteknologi. I vg3 så blir det IT-utviklerfaget. Hvis jeg ikke er førnøyd med valget mitt så skal jeg prøve å bytte over til IT-driftsfaget. Til vg1 så valgte jeg IT-utvikler for YFF.",
+                "educationAmbitions": "Mine ambisjoner",
+                "educationAmbitionsText": "Mine ambisjoner i livet er å få en godt betalt jobb hvor jeg trives og kan bidra på en positiv måte. Jeg ønsker også å utvikle mine ferdigheter innenfor programmering og teknologi.",
+                "educationSchoolsHeading": "Skoler jeg har gått på",
+                "glemmenBtn": "Glemmen videregående skole",
+                "educationSchoolsGlemmenDuration": "Jeg startet på denne skolen i 2022 og går fortsatt her.",
+                "educationSchoolsGlemmenReview": "Denne skolen er ganske digg å gå på.",
+                "educationSchoolsGlemmenLine": "vg1 linje: Informasjonsteknologi og medieproduksjon.",
+                "educationSchoolsGlemmenLink": "Link til skolen",
+                "borgeBtn": "Borge ungdomsskole",
+                "educationSchoolsBorgeDuration": "Jeg startet på denne skolen i 2019 og slutta i 2022.",
+                "educationSchoolsBorgeReview": "I løpet av ungdomsskolen hadde interessen min for datamaskiner økt ganske mye og jeg begynte også å få interesse for koding, i 10. klasse så hadde jeg programmering som valgfag.",
+                "educationSchoolsBorgeLine": "Utdanning: Grunnskole.",
+                "educationSchoolsBorgeLink": "Link til skolen",
+                "aarumBtn": "Årum skole",
+                "educationSchoolsArumDuration": "Jeg startet på denne skolen i 2012 og slutta i 2019.",
+                "educationSchoolsArumReview": "Dette var den første skolen jeg gikk på, og det var i løpet av denne tiden jeg fikk interesse for datamaskiner.",
+                "educationSchoolsArumLine": "Utdanning: Grunnskole.",
+                "educationSchoolsArumLink": "Link til skolen",
+                "workExperienceHeading": "Jobberfaringer",
+                "paintBtn": "Male hus",
+                "paintDrop": "I sommeren 2022 så hjalp jeg til med å male huset, jeg gjorde en god jobb.",
+                "vacuumingBtn": "Støvsuging",
+                "vaccumDrop": "Jeg støvsuger alltid rommet mitt når jeg ser det er støv, noen ganger så støvsuger jeg også huset når jeg føler for det.",
+                "takeOutTrashBtn": "Ta ut søppel",
+                "takeOutTrashDrop": "Noen ganger så kaster jeg søppla vi har ute i søppel dunken, men jeg pleier oftest bare å gjøre det når jeg har en del søppel på rommet mitt som ikke har plass inne.",
+                "otherJobsHomeBtn": "Andre jobber hjemme",
+                "otherJobsHomeDrop": "Jeg pleier oftest å reparere og installere ting i huset, så langt har jeg fikset dører, lamper, datamaskiner internett og mer. Jeg har også installert et vindu, røykvarsler, persienner, ovner og mer. <br> Jeg legger også ting ut og inn i oppvaskmaskinen og legger ved i ovnen. Jeg klarer også lage ild.",
+                "jobsMyRoomBtn": "Jobber inne på rommet mitt",
+                "jobsMyRoomDrop": "Inne på rommet mitt sørger jeg alltid for at det er ryddig og pent. Jeg rer opp senga, støvsuger, vasker bort støv, vanner blomster og legger klær inn i skapet.",
+                "hobbiesHeading": "Mine hobbyer",
+                "hobbiesText": "Hobbiene mine er innenfor <span class=\"bold\"><a href=\"#gaming\">Gaming, </a> <a href=\"#computers\">datamaskiner, </a><a href=\"#programming\">programmering.</a></span> Jeg starta å bli interesert i gaming og data rundt sånn 2017. Programmering kom noen få år etter. Innenfor gaming så liker jeg mer rolige spill og spill hvor du må tenke litt. De spillene jeg liker er mest er fabrikk spill.",
+                "gameSatisfactoryDrop": "Satisfactorexy er et veldig bra spill. Jeg har over 800 timer i spillet. Kjøpt: 05.09.2020",
+                "gameDysonSphereProgramDrop": "Dyson Sphere Program er et bra spill. Kjøpt: 22.02.2021",
+                "gameSpaceEngineersDrop": "Space Engineers er et bra spill. Kjøpt: 02.08.2021",
+                "gameEuroTruckSimDrop": "Euro Truck Simulator 2 er et bra spill. Kjøpt: 30.05.2022",
+                "gamesHeading": "Spill",
+                "gamesText": "Her her er alle spillene jeg har lagd i HTML og JavaScript"
             }
         },
         "en": {
@@ -51,13 +81,11 @@
                 "locationText": "Location",
                 "map-consent-text": "Google maps may collect user data, in order to view map you need to consent.",
                 "map-consent-button": "Accept",
-
                 "deviceTheme": "Device",
                 "darkTheme": "Dark",
                 "purpleTheme": "Purple",
                 "lightTheme": "Light",
                 "orangeTheme": "Orange",
-
                 "homeLink": "Home",
                 "educationLink": "Education",
                 "workExperienceLink": "Work experience",
@@ -67,7 +95,6 @@
             "404": {
                 "siteNotFound": "This site does not exist",
                 "goToPage": "Go to one of these pages:",
-
                 "home404": "Home",
                 "education404": "Education",
                 "workExperience404": "Work experience",
@@ -75,19 +102,52 @@
                 "games404": "Games"
             },
             "home": {
-                "goodDay": "Good morning!",
-                "sunRising": "It looks like the sun is rising.",
-                "sunWithCloud": "According to <a href=\"https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-33600/Norge/Viken/Fredrikstad/Fredrikstad\" target=\"_blank\">YR.no</a> will it be sunny with a bit of clouds.",
-                "degrees": "It will be upwards to 11 degrees celsius!",
-                "reminder": "Remember to stay inside when it is sunny.",
-
-                "aboutHeader": "About",
-
-                "hobbiesHeader": "My hobbies",
-
-                "socialHeader": "Social",
-
-                "contactHeader": "Contact Us"
+                "homeAge": "2006,<span id=\"age\"></span> years old",
+                "homeAboutHeading": "A bit about me",
+                "homeAboutText": "I am a <span class=\"fw-800\">responsible, tidy and kind</span> boy<span id=\"age\"></span> year. I learn quickly and do my best. I think things through thoroughly before I do it and I am quite <span class=\"fw-800\">independent</span> .",
+                "homeInterestsHeading": "Interests",
+                "homeInterestsText": "I have an interest in <span class=\"fw-800\">computers, programming, networking and gaming.</span>",
+                "homeInterestsMoreInfo": "More info on the hobby page...",
+                "homeCodingLanguagesHeading": "Code languages I have worked with",
+                "educationHeading": "My education plan",
+                "educationText": "My plan is to go to information technology and media production in year 1, and then in year 2, information technology. In vg3, it will be the IT developer subject. If I am not satisfied with my choice, I will try to switch to the IT operations subject. For vg1, I chose IT developer for YFF.",
+                "educationAmbitions": "My ambitions:",
+                "educationAmbitionsText": "My ambitions in life are to get a well-paid job where I enjoy myself and can contribute in a positive way. I also want to develop my skills in programming and technology.",
+                "educationSchoolsHeading": "Schools I have attended",
+                "glemmenBtn": "Glemmen high school",
+                "educationSchoolsGlemmenDuration": "I started at this school in 2022 and still go here.",
+                "educationSchoolsGlemmenReview": "This school is pretty cool to go to.",
+                "educationSchoolsGlemmenLine": "vg1 line: Information technology and media production.",
+                "educationSchoolsGlemmenLink": "Link to the school",
+                "borgeBtn": "Borge secondary school",
+                "educationSchoolsBorgeDuration": "I started at this school in 2019 and finished in 2022.",
+                "educationSchoolsBorgeReview": "During secondary school my interest in computers had increased quite a bit and I also started to get interested in coding, in the 10th grade I had programming as an elective.",
+                "educationSchoolsBorgeLine": "Education: Primary school.",
+                "educationSchoolsBorgeLink": "Link to the school",
+                "aarumBtn": "Årum school",
+                "educationSchoolsArumDuration": "I started at this school in 2012 and left in 2019.",
+                "educationSchoolsArumReview": "This was the first school I attended and it was during this time that I became interested in computers.",
+                "educationSchoolsArumLine": "Education: Primary school.",
+                "educationSchoolsArumLink": "Link to the school",
+                "workExperienceHeading": "Work experiences",
+                "paintBtn": "Paint a house",
+                "paintDrop": "In the summer of 2022, I helped paint the house, I did a good job.",
+                "vacuumingBtn": "Vacuuming",
+                "vaccumDrop": "I always vacuum my room when I see dust, sometimes I also vacuum the house when I feel like it.",
+                "takeOutTrashBtn": "Take out the trash",
+                "takeOutTrashDrop": "Sometimes I throw the rubbish we have outside into the rubbish bin, but I usually only do it when I have a lot of rubbish in my room that doesn&#39;t fit inside.",
+                "otherJobsHomeBtn": "Others work at home",
+                "otherJobsHomeDrop": "I usually repair and install things in the house, so far I have fixed doors, lamps, computers, internet and more. I have also installed a window, smoke alarms, blinds, heaters and more.&#10; I also put things in and out of the dishwasher and put wood in the oven. I can also make fire.",
+                "jobsMyRoomBtn": "Working in my room",
+                "jobsMyRoomDrop": "Inside my room, I always make sure it is neat and tidy. I make the bed, vacuum, wash away dust, water flowers and put clothes in the closet.",
+                "hobbiesHeading": "My hobbies",
+                "hobbiesText": "My hobbies are within <span class=\"bold\"><a href=\"#gaming\">Gaming,</a> <a href=\"#computers\">computers,</a> <a href=\"#programming\">programming.</a></span> I started getting interested in gaming and computers around 2017. Programming came a few years later. Within gaming, I like more quiet games and games where you have to think a bit. The games I like the most are factory games.",
+                "gameSatisfactoryDrop": "Satisfactorexy is a very good game. I have over 800 hours in the game. Purchased: 05/09/2020",
+                "gameDysonSphereProgramDrop": "The Dyson Sphere Program is a good game. Purchased: 22/02/2021",
+                "gameSpaceEngineersDrop": "Space Engineers is a good game. Purchased: 02/08/2021",
+                "gameEuroTruckSimDrop": "Euro Truck Simulator 2 is a good game. Purchased: 30/05/2022",
+                "gamesHeading": "Games",
+                "gamesText": "Here are all the games I have made in HTML and JavaScript"
             }
         }
     }
