@@ -1,0 +1,10 @@
+/* Font from https://fonts.google.com/specimen/Indie+Flower?query=Indie */
+/* Font downloaded from https://gwfh.mranftl.com/fonts/indie-flower?subsets=latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Indie Flower';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./indie-flower-v17-latin-regular.woff2') format('woff2'),
+        url('./indie-flower-v17-latin-regular.woff') format('woff');
+}

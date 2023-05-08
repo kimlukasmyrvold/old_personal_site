@@ -1,0 +1,37 @@
+/* Font from https://fonts.google.com/specimen/Arvo */
+/* Font downloaded from https://gwfh.mranftl.com/fonts/arvo?subsets=latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./arvo-v20-latin-regular.woff2') format('woff2'),
+        url('./arvo-v20-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Arvo';
+    font-style: italic;
+    font-weight: 400;
+    src: url('./arvo-v20-latin-italic.woff2') format('woff2'),
+        url('./arvo-v20-latin-italic.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./arvo-v20-latin-700.woff2') format('woff2'),
+        url('./arvo-v20-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Arvo';
+    font-style: italic;
+    font-weight: 700;
+    src: url('./arvo-v20-latin-700italic.woff2') format('woff2'),
+        url('./arvo-v20-latin-700italic.woff') format('woff');
+}

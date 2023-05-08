@@ -1,0 +1,10 @@
+/* Font from https://fonts.google.com/specimen/Lobster?query=lobs */
+/* Font downloaded from https://gwfh.mranftl.com/fonts/lobster?subsets=latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./lobster-v28-latin-regular.woff2') format('woff2'),
+        url('./lobster-v28-latin-regular.woff') format('woff');
+}

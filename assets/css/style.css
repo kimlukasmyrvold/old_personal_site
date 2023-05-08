@@ -1,0 +1,545 @@
+/* Importing other css files*/
+@import url(../fonts/nunito/nunito.css);
+
+
+
+/* ************************************************ */
+/* *   Variables for dark theme and light theme   * */
+/* ************************************************ */
+
+/* Dark theme */
+body {
+    /* Background colors */
+    /* --bg-color: #000c1f; */
+    --bg-color: #001525;
+    --bg-gradient: linear-gradient(150deg, #001525 20%, #0c2438 59%, #17003b 70%);
+    --bg-inverse: #fff;
+
+    /* Text colors */
+    --text-color: #fff;
+    --text-inverse: #000;
+
+    /* Nav colors */
+    --navbar-color: #000c1f;
+
+    /* footer color */
+    --footer-color: #000c1f;
+
+    /* Accent colors */
+    --accent-color: #ffad29;
+}
+
+body.purple {
+    /* Background colors */
+    --bg-color: #210030;
+    --bg-gradient: linear-gradient(100deg, #002324 6%, #240030 46%, #001230 77%, #120016 800%);
+
+    /* Nav colors */
+    --navbar-color: linear-gradient(6deg, #020e17 20%, #2a0038);
+
+    /* footer color */
+    --footer-color: linear-gradient(183deg, #020e17, #1f002b 80%);
+}
+
+/* Light theme */
+body.light {
+    /* Background colors */
+    --bg-color: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #e7e7e7, #fff9f3, #fafafa);
+    --bg-inverse: #162221;
+
+    /* Text colors */
+    --text-color: #000;
+    --text-inverse: #fff;
+
+    /* Nav colors */
+    --navbar-color: #e9e9e9;
+
+    /* footer colors */
+    --footer-color: #e9e9e9;
+
+    /* Accent colors */
+    --accent-color: #9c02a1;
+}
+
+/* Orange theme */
+body.orange {
+    /* Background colors */
+    --bg-color: #ffcd8a;
+    --bg-gradient: linear-gradient(145deg, #fff 7%, #ffb95c, #d4aeff 90%);
+    --bg-inverse: #001016;
+
+    /* Text colors */
+    --text-color: #000;
+    --text-inverse: #fff;
+
+    /* Nav colors */
+    --navbar-color: linear-gradient(20deg, #ffd8ab, #ffc068 70%);
+
+    /* footer colors */
+    --footer-color: linear-gradient(173deg, #ffd8ab, #ffc068 80%);
+
+    /* Accent colors */
+    --accent-color: #9c02a1;
+}
+
+
+:root {
+    --border-radius: 25px;
+    --black-blur: #0000004d;
+    --separator-color: #53535385;
+}
+
+:target {
+    scroll-margin-top: 50px;
+}
+
+*,
+*::before,
+*::after {
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    border: none;
+    color: var(--text-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg-color);
+    background: var(--bg-gradient);
+    background-size: 300% 300%;
+    backdrop-filter: blur(2000px);
+
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+    overflow: auto;
+    animation: gradientAnimation 30s ease infinite;
+}
+
+@media (width <=740px) {
+    body {
+        animation-duration: 15s;
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+/* *************************************** */
+/* *           Utility styling           * */
+/* *************************************** */
+
+button,
+a {
+    display: inline-flex;
+    position: relative;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    text-decoration: underline;
+}
+
+/* Styling underline for all buttons and <a> elements inside main part of document */
+.custom-underline a {
+    text-decoration: none;
+}
+
+.custom-underline a:hover,
+.custom-underline button:hover {
+    scale: .99;
+}
+
+.custom-underline a:not(.underline):after,
+.custom-underline button::after,
+.custom-underline button:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -.0001em;
+
+    width: 100%;
+    height: .1em;
+
+    background: var(--accent-color);
+    border-radius: var(--border-radius);
+
+    transition: scale 200ms ease-in;
+    scale: 1;
+}
+
+.custom-underline button::after {
+    scale: 0 1;
+}
+
+
+
+.round {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+svg {
+    fill: currentColor;
+}
+
+hr {
+    width: 98%;
+    height: 3px;
+    background: var(--separator-color);
+    border-radius: var(--border-radius);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.flex {
+    display: flex;
+}
+
+
+/* heading classes */
+.heading {
+    margin: .3em 0 .8em;
+    font-size: 2.1rem;
+    font-weight: 700;
+}
+
+.subheading {
+    margin: .5em 0;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+
+/* Font weights */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+
+
+/* ********************************************** */
+/* *        Styling Main content of page        * */
+/* ********************************************** */
+
+main {
+    flex: 1;
+    padding: 1em 5em;
+    transition: padding 400ms ease-in;
+    overflow: auto;
+}
+
+@media (width <=950px) {
+    main {
+        padding: 1em 3em;
+    }
+}
+
+@media (width <=800px) {
+    main {
+        padding: 1em 2em;
+    }
+}
+
+@media (width <=500px) {
+    main {
+        padding: 1em .5em;
+    }
+}
+
+article {
+    padding: .1em 0 1.9em;
+}
+
+article:not(:last-child)::after {
+    content: '';
+    display: block;
+
+    width: 98%;
+    height: 3px;
+
+    margin: 1.9em auto 0;
+
+    border-radius: var(--border-radius);
+    background: var(--separator-color);
+}
+
+section {
+    margin: 1.8em 0;
+}
+
+
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile-info div:first-child {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 2em;
+}
+
+@media (width <=420px) {
+    .profile-info div:first-child {
+        margin-right: 0;
+    }
+}
+
+.profile-info img {
+    width: 100%;
+}
+
+.profile-info div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info p,
+.profile-info a {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1.4rem;
+}
+
+.profile-info .heading {
+    margin-bottom: .4em;
+}
+
+
+
+
+/* ************************************** */
+/* *     Styling for codingLanguges     * */
+/* ************************************** */
+
+#codingLanguages {
+    overflow: auto hidden;
+}
+
+.codingLanguagesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.codingLanguageItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 1.3rem;
+    line-height: 2;
+    padding: .4em;
+    box-sizing: content-box;
+
+    width: 56px;
+
+    transition-property: width, transform, padding;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.codingLanguageItem span {
+    transition: opacity 300ms ease-in;
+}
+
+.codingLanguageItem svg {
+    height: 56px;
+}
+
+/* Transition in hovered elements */
+.codingLanguageItem:hover {
+    padding: .7em;
+    transform: scale(1.1) translateY(10px);
+}
+
+.codingLanguageItem:hover span {
+    opacity: 1 !important;
+}
+
+
+
+
+
+
+
+
+/* ************************************************ */
+/* *          Styling for education page          * */
+/* ************************************************ */
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+
+/* Styling for the introduction section */
+#education div {
+    margin-bottom: 1em;
+}
+
+.edu-intro p {
+    line-height: 1.5em;
+}
+
+/* Styling for the schools section */
+.edu-schools #dropdowns button {
+    height: 50px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Adding a - before the buttons */
+.edu-schools #dropdowns button::before {
+    content: '- ';
+}
+
+/* Setting the font size of p tags inside dropdowns and changing margin so <p> is more to the right */
+.edu-schools #dropdowns p {
+    font-size: 1.1em;
+    margin: 0 0 .3em 1.5em;
+}
+
+/* Styling for glemmen vgs section */
+#glemmenDrop td {
+    padding-right: 1.2em;
+    vertical-align: top;
+}
+
+#glemmenDrop img {
+    border-radius: 3em;
+    height: auto;
+    width: 500px;
+}
+
+
+
+
+
+/* Start of work page styling */
+.work-jobs div {
+    margin-bottom: 1em;
+}
+
+.work-jobs p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-left: 1em;
+}
+
+.work-jobs ul {
+    list-style: none;
+    margin-left: 1.5em;
+}
+
+.work-jobs li {
+    line-height: 1.5em;
+}
+
+.work-jobs button {
+    line-height: 1.5em;
+    font-size: 1.8em;
+    background: transparent;
+}
+
+.work-jobs button:hover {
+    color: var(--text-color-hover);
+}
+
+
+
+
+
+
+
+
+
+
+/* Hobbies site styling */
+#hobbies button {
+    margin-left: .8em;
+    height: 40px;
+}
+
+#hobbies button::before {
+    content: '- ';
+}
+
+#hobbies .dropdowns p,
+#hobbies .dropdowns table {
+    font-size: 1.1em;
+    margin-left: 2.5em;
+}
+
+.hobbiesDrop {
+    font-size: 1.4rem;
+}

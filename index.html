@@ -1,290 +1,461 @@
 <!DOCTYPE html>
-<html lang="no">
-<!-- Sets language of website -->
+<html lang="no" data-pagename="home">
 
 <head>
-    <!-- Sets the character encoding for the website -->
     <meta charset="UTF-8">
-    <!-- Makes site look better on window sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Name of the author who made this website -->
-    <meta name="author" content="Kim Lukas Myrvold">
-    <!-- Defines keywords for search engines -->
-    <meta name="keywords" content="kim, lukas, myrvold, cv, website, html, css, js">
-    <!-- Give the website a description -->
-    <meta name="description" content="Kim Lukas Myrvold's CV">
-    <!-- Image that shows when sharing link -->
-    <meta property="og:image" content="https://kimlukasmyrvold.github.io/cv/img/kimlukasmyrvold.png">
+    <title>Header & footer include test</title>
+    <link rel="icon" href="https://kimlukasmyrvold.github.io/cv/favicon.ico">
 
-    <!-- Changes the name of the website -->
-    <title>Kim Lukas Myrvold - CV</title>
-    <!-- Changes the icon for the website -->
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/games.css">
 
-    <!-- Stylesheet for website, make stuff look good -->
-    <link rel="stylesheet" href="./css/main.css">
+    <script defer src="assets/javascript/script.js"></script>
+    <script defer src="assets/javascript/ageCalc.js"></script>
+
+    <script defer src="assets/javascript/drum-kit.js"></script>
+
+    <script defer src="assets/javascript/jquery-3.6.4.min.js"></script>
+    <script defer src="assets/javascript/simon-game.js"></script>
+
+    <script defer src="assets/javascript/dice-game.js"></script>
 </head>
 
 <body>
-    <!-- Start of navbar -->
-    <header class="navbar">
-        <!-- overlay for detecting clicks outside of elements -->
-        <div class="overlay hidden"></div>
-        <!-- end of overlay -->
+    <!-- Navbar -->
+    <custom-navbar></custom-navbar>
 
-        <nav class="navbar-container">
-            <ul class="navigation">
-                <li><a href="#" class="active">Startside</a></li>
-                <li><a href="./html/education.html">Utdanning</a></li>
-                <li><a href="./html/work-experience.html">Jobberfaring</a></li>
-                <li><a href="./html/hobbies.html">Hobbyer</a></li>
-                <li><a href="./html/portfolio.html">Portfolio</a></li>
-            </ul>
+    <!-- Main part of website -->
+    <main aria-label="Main part of website">
+        <!-- Home Page -->
+        <article id="home">
+            <section class="profile-info flex-container">
+                <div class="flex-item">
+                    <img src="./.old files/img/kimlukasmyrvold.png" alt="Bilde av meg" class="round">
+                </div>
+                <div class="flex-item">
+                    <h1 class="heading">Kim Lukas Myrvold</h1>
+                    <p>2006, <span id="age"></span> år gammel</p>
+                    <p>Fredrikstad, Norge</p>
+                    <a href="mailto: kimlukasmyrvold06@gmail.com">kimlukasmyrvold06@gmail.com</a>
+                </div>
+            </section>
 
-            <ul class="navigation-buttons">
-                <li>
-                    <button class="language">
-                        <svg style="width: 28px; height: 28px;" viewBox="0 0 1024 1024"
-                            xmlns="http://www.w3.org/2000/svg">
+            <hr>
+
+            <section class="about-me">
+                <h3 class="subheading">Litt om meg</h3>
+
+                <p>Jeg er en <span class="fw-800">ansvarlig, ryddig og snill</span> gutt på <span id="age"></span> år.
+                    Jeg
+                    lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske
+                    <span class="fw-800">selvstendig</span>.
+                </p>
+            </section>
+
+            <section id="interests">
+                <h3 class="subheading">Interesser</h3>
+
+                <p>Jeg har interesse for <span class="fw-800">datamaskiner, programmering, nettverk og gaming.</span>
+                </p>
+
+                <a href="#hobbies" id="moreInfo">Mer info på hobby siden...</a>
+            </section>
+
+            <section id="codingLanguages">
+                <h3 class="subheading" id="codingLanguagesHeading">Kodespråk jeg har jobbet med</h3>
+
+                <div class="codingLanguagesContainer">
+                    <div class="codingLanguageItem">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26"></path>
+                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"></path>
                             <path
-                                d="M689 320C660 141.4 591.6 16 512 16s-148 125.4-177 304h354zM320 512c0 44.4 2.4 87 6.6 128h370.6c4.2-41 6.6-83.6 6.6-128s-2.4-87-6.6-128H326.6c-4.2 41-6.6 83.6-6.6 128z m649.4-192c-57.2-135.8-173-240.8-316-283.2 48.8 67.6 82.4 169.4 100 283.2h216zM370.4 36.8C227.6 79.2 111.6 184.2 54.6 320h216c17.4-113.8 51-215.6 99.8-283.2zM990.8 384H761.4c4.2 42 6.6 85 6.6 128s-2.4 86-6.6 128h229.2c11-41 17.2-83.6 17.2-128s-6.2-87-17-128zM256 512c0-43 2.4-86 6.6-128H33.2C22.4 425 16 467.6 16 512s6.4 87 17.2 128h229.2c-4-42-6.4-85-6.4-128z m79 192c29 178.6 97.4 304 177 304s148-125.4 177-304h-354z m318.6 283.2c142.8-42.4 258.8-147.4 316-283.2h-216c-17.6 113.8-51.2 215.6-100 283.2zM54.6 704c57.2 135.8 173 240.8 316 283.2-48.8-67.6-82.4-169.4-100-283.2h-216z">
+                                d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z"
+                                fill="white"></path>
+                        </svg>
+                        <span style="opacity: 0;">HTML</span>
+                    </div>
+
+                    <div class="codingLanguageItem">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8"></path>
+                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD"></path>
+                            <path
+                                d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5Z"
+                                fill="white"></path>
+                        </svg>
+                        <span style="opacity: 0;">CSS</span>
+                    </div>
+
+                    <div class="codingLanguageItem">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="512" height="512" rx="15%" fill="#f7df1e"></rect>
+                            <path
+                                d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16 -13 -22 -35 -32l-12-5c-35-15 -58 -33 -58 -72c0-36 27 -64 70 -64c31 0 53 11 68 39l-37 24c-8-15 -17 -21 -31 -21c-14 0-23 9 -23 21c0 14 9 20 30 29l12 5c41 18 64 35 64 76c0 43-34 67 -80 67c-45 0-74 -21 -88 -49zm-170 4c8 13 14 25 31 25c16 0 26-6 26 -30V203h48v164c0 50-29 72 -72 72c-39 0-61 -20 -72 -44z"
+                                fill="#000">
                             </path>
                         </svg>
-                    </button>
-
-                    <div class="language-drop hidden">
-                        <button id="english-btn" onclick="language_btn_english()">
-                            English
-                        </button>
-                        <button id="norwegian-btn" onclick="language_btn_norwegian()">
-                            Norsk
-                        </button>
+                        <span style="opacity: 0;">JavaScript</span>
                     </div>
-                </li>
-                <li>
-                    <button class="appearance">
-                        <svg style="width: 31px; height: 31px;" viewBox="0 0 1024 1024"
-                            xmlns="http://www.w3.org/2000/svg">
+
+                    <div class="codingLanguageItem">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M833.706667 216.746667A452.693333 452.693333 0 0 0 508.16 85.333333a426.666667 426.666667 0 0 0-2.133333 853.333334 110.08 110.08 0 0 0 107.946666-80.64 107.52 107.52 0 0 0-24.32-97.28 21.333333 21.333333 0 0 1 15.786667-35.413334h70.4A262.4 262.4 0 0 0 938.666667 483.413333a361.813333 361.813333 0 0 0-104.96-266.666666zM677.546667 640h-70.4a106.24 106.24 0 0 0-79.786667 177.066667 20.906667 20.906667 0 0 1 5.12 20.906666c-2.133333 8.96-11.946667 14.506667-25.173333 15.36a341.333333 341.333333 0 0 1-333.653334-388.693333A345.6 345.6 0 0 1 508.586667 170.666667H512a361.386667 361.386667 0 0 1 260.266667 105.813333 277.333333 277.333333 0 0 1 81.066666 203.52A177.92 177.92 0 0 1 677.546667 640z" />
-                            <path d="M512 277.333333m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z" />
+                                d="M27.6947 22.9999C27.883 22.6617 28 22.2807 28 21.9385V10.0613C28 9.71913 27.8831 9.33818 27.6947 9L16 16L27.6947 22.9999Z"
+                                fill="#7F3A86"></path>
                             <path
-                                d="M650.666667 307.2a64 64 0 1 0 87.466666 23.466667 64 64 0 0 0-87.466666-23.466667zM373.333333 307.2a64 64 0 1 0 23.466667 87.466667 64 64 0 0 0-23.466667-87.466667zM262.826667 480.426667a64 64 0 1 0 88.746666 17.066666 63.573333 63.573333 0 0 0-88.746666-17.066666z">
-                            </path>
+                                d="M17.0395 29.7433L26.9611 23.8047C27.2469 23.6336 27.5067 23.3382 27.695 23L16.0003 16L4.30566 23C4.49398 23.3382 4.75382 23.6337 5.03955 23.8047L14.9611 29.7433C15.5326 30.0855 16.468 30.0855 17.0395 29.7433Z"
+                                fill="#662579"></path>
+                            <path
+                                d="M27.6947 8.99996C27.5064 8.6617 27.2465 8.36629 26.9608 8.19521L17.0392 2.25662C16.4677 1.91446 15.5323 1.91446 14.9608 2.25662L5.03922 8.19521C4.46761 8.53729 4 9.37709 4 10.0613V21.9386C4 22.2807 4.11694 22.6618 4.30533 23L16 16L27.6947 8.99996Z"
+                                fill="#9A5196"></path>
+                            <path
+                                d="M16.0385 24C11.6061 24 8 20.4112 8 16C8 11.5888 11.6061 8 16.0385 8C18.8458 8 21.4674 9.47569 22.919 11.8618L19.4765 13.9265C18.7492 12.736 17.4399 12 16.0385 12C13.8222 12 12.0193 13.7944 12.0193 16C12.0193 18.2056 13.8222 20 16.0385 20C17.4362 20 18.7421 19.2681 19.4707 18.0832L22.9205 20.1359C21.4692 22.5234 18.8467 24 16.0385 24Z"
+                                fill="white"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M25.0001 13V13.9974H22.9999V13H22.0001V13.9974H21V15H22.0001V16.9948H21V18H22.0001V19H22.9999L23 18H25.0001V19H25.9999V18H27V17H25.9999V15H27V13.9974H25.9999V13H25.0001ZM25.0001 17V15H22.9999V16.9948L25.0001 17Z"
+                                fill="white"></path>
                         </svg>
-                    </button>
-
-                    <div class="appearance-drop hidden">
-                        <button id="light-theme-btn" onclick="theme_btn_light()">
-                            <svg style="width: 30px; height: 30px;" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 64 64">
-                                <path
-                                    d="M32 19c7.18 0 13 5.82 13 13s-5.82 13-13 13-13-5.82-13-13S24.82 19 32 19zM32 41c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9S27.029 41 32 41zM34 8c0 .366 0 5.634 0 6 0 1.105-.895 2-2 2s-2-.895-2-2c0-.366 0-5.634 0-6 0-1.105.895-2 2-2S34 6.895 34 8zM50.385 16.444c-.259.259-3.984 3.984-4.243 4.243-.781.781-2.047.781-2.828 0-.781-.781-.781-2.047 0-2.828.259-.259 3.984-3.984 4.243-4.243.781-.781 2.047-.781 2.828 0S51.166 15.663 50.385 16.444zM56 34c-.366 0-5.634 0-6 0-1.105 0-2-.895-2-2s.895-2 2-2c.366 0 5.634 0 6 0 1.105 0 2 .895 2 2S57.105 34 56 34zM47.556 50.385c-.259-.259-3.984-3.984-4.243-4.243-.781-.781-.781-2.047 0-2.828s2.047-.781 2.828 0c.259.259 3.984 3.984 4.243 4.243.781.781.781 2.047 0 2.828S48.337 51.166 47.556 50.385zM30 56c0-.366 0-5.634 0-6 0-1.105.895-2 2-2s2 .895 2 2c0 .366 0 5.634 0 6 0 1.105-.895 2-2 2S30 57.105 30 56zM13.615 47.556c.259-.259 3.984-3.984 4.243-4.243.781-.781 2.047-.781 2.828 0 .781.781.781 2.047 0 2.828-.259.259-3.984 3.984-4.243 4.243-.781.781-2.047.781-2.828 0S12.834 48.337 13.615 47.556zM8 30c.366 0 5.634 0 6 0 1.105 0 2 .895 2 2s-.895 2-2 2c-.366 0-5.634 0-6 0-1.105 0-2-.895-2-2S6.895 30 8 30zM16.444 13.615c.259.259 3.984 3.984 4.243 4.243.781.781.781 2.047 0 2.828-.781.781-2.047.781-2.828 0-.259-.259-3.984-3.984-4.243-4.243-.781-.781-.781-2.047 0-2.828S15.663 12.834 16.444 13.615z">
-                                </path>
-                            </svg>
-                            Lys
-                        </button>
-                        <button id="dark-theme-btn" onclick="theme_btn_dark()">
-                            <svg style="width: 22px; height: 22px;" viewBox="0 0 32 32"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M29.684 23.984l-0.021-0.055c-0.193-0.456-0.638-0.771-1.155-0.771-0.172 0-0.336 0.035-0.486 0.098l0.008-0.003c-1.219 0.521-2.638 0.824-4.127 0.824-5.937 0-10.751-4.813-10.751-10.751 0-4.458 2.713-8.282 6.579-9.911l0.071-0.026 0.221-0.093c0.444-0.199 0.747-0.636 0.747-1.145 0-0.625-0.458-1.142-1.057-1.235l-0.007-0.001c-0.676-0.106-1.455-0.167-2.249-0.167-8.421 0-15.248 6.827-15.248 15.248s6.827 15.248 15.248 15.248c4.91 0 9.278-2.321 12.067-5.925l0.026-0.035c0.161-0.208 0.258-0.473 0.258-0.76 0-0.197-0.046-0.383-0.127-0.548l0.003 0.007zM22.326 27.779c-1.44 0.612-3.115 0.968-4.873 0.968-7.041 0-12.75-5.708-12.75-12.75 0-6.189 4.41-11.349 10.26-12.507l0.081-0.013c-2.694 2.435-4.379 5.942-4.379 9.843 0 7.319 5.933 13.252 13.252 13.252 0.242 0 0.482-0.006 0.72-0.019l-0.033 0.001c-0.655 0.45-1.404 0.86-2.194 1.193l-0.084 0.031z">
-                                </path>
-                            </svg>
-                            Mørk
-                        </button>
+                        <span style="opacity: 0;">C-sharp</span>
                     </div>
-                </li>
 
-                <button class="hamburger" aria-label="hamburger button">
-                    <div class="bar"></div>
-                </button>
-            </ul>
-        </nav>
-    </header>
-    <!-- End of navbar -->
+                    <div class="codingLanguageItem">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="#004482"
+                                d="M270.3 445l141.1-81.4c4.1-2.3 7.8-6.4 10.4-11l-166.3-96-166.3 96c2.7 4.6 6.4 8.7 10.4 11L240.8 445c8.1 4.7 21.4 4.7 29.5 0z">
+                            </path>
+                            <path fill="#659AD2"
+                                d="M421.8 160.5c-2.7-4.6-6.4-8.7-10.4-11L270.3 68c-8.1-4.7-21.4-4.7-29.6 0l-141 81.5c-8.1 4.7-14.8 16.2-14.8 25.6V338c0 4.7 1.7 9.9 4.3 14.6l166.3-96 166.3-96.1z">
+                            </path>
+                            <circle cx="256" cy="256" r="86" fill="none" stroke="#ffffff" stroke-width="57"></circle>
+                            <path fill="#00599C"
+                                d="M421.8 352.6c2.7-4.6 4.3-9.9 4.3-14.6V175.2c0-4.7-1.7-10-4.3-14.7l-166.3 96.1 166.3 96z">
+                            </path>
+                            <path stroke="#ffffff" stroke-width="13"
+                                d="M350.5 237 v39 M331,257 h39 M397.5 237 v39 M378,257 h39"></path>
+                        </svg>
+                        <span style="opacity: 0;">C++</span>
+                    </div>
 
-    <!-- Start of main part of website -->
-    <main id="homepage">
-        <article class="intro">
-            <div>
-                <img src="./img/kimlukasmyrvold.png" alt="Bilde av meg">
-            </div>
-            <div id="text">
-                <h2>Kim Lukas Myrvold</h2>
-                <p>2006, <span id="age"></span> år gammel</p>
-                <p>Fredrikstad, Norge</p>
-                <a href="mailto: kimlukasmyrvold06@gmail.com">
-                    <p>kimlukasmyrvold06@gmail.com</p>
-                </a>
-            </div>
+                    <div class="codingLanguageItem">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z"
+                                fill="url(#paint0_linear_87_8204)"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M18.9834 30C21.1805 30 22.9616 28.2755 22.9616 26.1482V23.4815L16.0763 23.4815L16.0763 22.7408L26.0217 22.7408C28.2188 22.7408 29.9998 21.0162 29.9998 18.8889V13.1111C29.9998 10.9838 28.2188 9.25928 26.0217 9.25928L23.7266 9.25928V12.5185C23.7266 14.6459 21.9455 16.3704 19.7485 16.3704L12.4042 16.3704C10.5451 16.3704 9.03809 17.8296 9.03809 19.6296L9.03809 26.1482C9.03809 28.2755 10.8192 30 13.0162 30H18.9834ZM19.9015 25.2593C19.1409 25.2593 18.5244 25.8562 18.5244 26.5926C18.5244 27.329 19.1409 27.9259 19.9015 27.9259C20.662 27.9259 21.2785 27.329 21.2785 26.5926C21.2785 25.8562 20.662 25.2593 19.9015 25.2593Z"
+                                fill="url(#paint1_linear_87_8204)"></path>
+                            <defs>
+                                <linearGradient id="paint0_linear_87_8204" x1="12.4809" y1="2" x2="12.4809" y2="22.7407"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#327EBD"></stop>
+                                    <stop offset="1" stop-color="#1565A7"></stop>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_87_8204" x1="19.519" y1="9.25928" x2="19.519" y2="30"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FFDA4B"></stop>
+                                    <stop offset="1" stop-color="#F9C600"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span style="opacity: 0;">Python</span>
+                    </div>
+                </div>
+            </section>
         </article>
 
-        <hr>
 
-        <section class="about-me">
-            <h2>Litt om meg</h2>
+        <!-- education page -->
+        <article id="education">
+            <section class="edu-intro">
+                <div>
+                    <p class="heading">Min utdanningsplan</p>
 
-            <p>Jeg er en <span class="bold">ansvarlig, ryddig og snill</span> gutt på 16 år. Jeg lærer raskt og gjør
-                mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske <span
-                    class="bold">selvstendig</span>.
-            </p>
-        </section>
+                    <p>
+                        Planen min er å gå informasjonsteknologi og medieproduksjon på vg1, og så i vg2,
+                        informasjonsteknologi. I vg3 så blir det IT-utviklerfaget. Hvis jeg ikke er førnøyd med valget
+                        mitt
+                        så skal jeg prøve å bytte over til IT-driftsfaget. Til vg1 så valgte jeg IT-utvikler for YFF.
+                    </p>
+                </div>
+                <div>
+                    <p class="subheading">Mine ambisjoner</p>
 
-        <section id="interests">
-            <h2>Interesser</h2>
+                    <p>
+                        Mine ambisjoner i livet er å få en godt betalt jobb hvor jeg trives og kan bidra på en positiv
+                        måte.
+                        Jeg ønsker også å utvikle mine ferdigheter innenfor programmering og teknologi.
+                    </p>
+                </div>
+            </section>
 
-            <p>
-                Jeg har interesse for <span class="bold">datamaskiner, programmering, nettverk og gaming.</span>
+            <section class="edu-schools">
+                <div>
+                    <p class="subheading">Skoler jeg har gått på</p>
 
-            </p>
+                    <div id="dropdowns">
+                        <div id="glemmen">
+                            <button id="glemmenBtn" class="dropRight2" onclick="glemmenBtn()">Glemmen videregående
+                                skole</button>
 
-            <a href="./html/hobbies.html" id="moreInfo"><span class="underline">Mer info på hobby siden..</span></a>
-        </section>
-
-        <section id="coding">
-            <h2>Koding</h2>
-
-            <table>
-                <tbody>
-                    <tr>
-                        <td>HTML5:</td>
-                        <td>
-                            <div class="skillbar">
-                                <div class="skill9">
-                                    <span>86%</span>
-                                </div>
+                            <div id="glemmenDrop" class="hidden">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <img src="../.old files/img/glemmen vgs.jpg"
+                                                alt="Bilde av Glemmen Videregående skole">
+                                        </td>
+                                        <td>
+                                            <p>Jeg startet på denne skolen i 2022 og går fortsatt her.</p>
+                                            <p>Denne skolen er ganske digg å gå på.</p>
+                                            <p>vg1 linje: Informasjonsteknologi og medieproduksjon.</p>
+                                            <a href="https://viken.no/glemmen-vgs/" target="_blank"
+                                                rel="noreferrer noopener">
+                                                <p><span class="underline italic">Link til skolen</span>
+                                                </p>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
 
-                    <tr>
-                        <td>CSS3:</td>
-                        <td>
-                            <div class="skillbar">
-                                <div class="skill8">
-                                    <span>73%</span>
-                                </div>
+                        <div id="borge">
+                            <button id="borgeBtn" class="dropRight2" onclick="borgeBtn()">Borge ungdomsskole</button>
+
+                            <div id="borgeDrop" class="hidden">
+                                <p>Jeg startet på denne skolen i 2019 og slutta i 2022.</p>
+                                <p>I løpet av ungdomsskolen hadde interessen min for datamaskiner økt ganske mye og jeg
+                                    begynte også å få interesse for koding, i 10. klasse så hadde jeg programmering som
+                                    valgfag.</p>
+                                <p>Utdanning: Grunnskole.</p>
+                                <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
+                                    rel="noreferrer noopener">
+                                    <p><span class="underline italic">Link til skolen</span></p>
+                                </a>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
 
-                    <tr>
-                        <td>JavaScript:</td>
-                        <td>
-                            <div class="skillbar">
-                                <div class="skill6">
-                                    <span>51%</span>
-                                </div>
+                        <div id="aarum">
+                            <button id="aarumBtn" class="dropRight2" onclick="aarumBtn()">Årum skole</button>
+
+                            <div id="aarumDrop" class="hidden">
+                                <p>Jeg startet på denne skolen i 2012 og slutta i 2019.</p>
+                                <p>Dette var den første skolen jeg gikk på, og det var i løpet av denne tiden jeg fikk
+                                    interesse for datamaskiner.</p>
+                                <p>Utdanning: Grunnskole.</p>
+                                <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank"
+                                    rel="noreferrer noopener">
+                                    <p><span class="underline italic">Link til skolen</span></p>
+                                </a>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
 
-                    <tr>
-                        <td>Python:</td>
-                        <td>
-                            <div class="skillbar">
-                                <div class="skill5">
-                                    <span>48%</span>
-                                </div>
+        <!-- workExperience page -->
+        <article id="workExperience">
+            <h2 class="heading">Jobberfaringer</h2>
+
+            <section class="work-jobs">
+                <div id="painthouse">
+                    <button id="paintBtn" class="header dropRight" onclick="painthouseBtn()">Male hus</button>
+
+                    <p id="paintDrop" class="hidden">I sommeren 2022 så hjalp jeg til med å male huset, jeg gjorde en
+                        god jobb.</p>
+                </div>
+
+                <div id="vacuuming">
+                    <button id="vacuumingBtn" class="header dropRight" onclick="vaccumingBtn()">Støvsuging</button>
+
+                    <p id="vaccumDrop" class="hidden">Jeg støvsuger alltid rommet mitt når jeg ser det er støv, noen
+                        ganger så støvsuger jeg også huset når jeg føler for det.</p>
+                </div>
+
+                <div id="takeOutTrash">
+                    <button id="takeOutTrashBtn" class="header dropRight" onclick="takeOutTrashBtn()">Ta ut
+                        søppel</button>
+
+                    <p id="takeOutTrashDrop" class="hidden">Noen ganger så kaster jeg søppla vi har ute i søppel
+                        dunken, men jeg pleier oftest bare å gjøre det når jeg har en del søppel på rommet mitt som ikke
+                        har
+                        plass inne.</p>
+                </div>
+
+                <div id="otherJobsHome">
+                    <button id="otherJobsHomeBtn" class="header dropRight" onclick="otherJobsHomeBtn()">Andre jobber
+                        hjemme</button>
+
+                    <p id="otherJobsHomeDrop" class="hidden">Jeg pleier oftest å reparere og installere ting i
+                        huset, så langt har jeg fikset dører, lamper, datamaskiner internett og mer. Jeg har også
+                        installert
+                        et vindu, røykvarsler, persienner, ovner og mer. <br> Jeg legger også ting ut og inn i
+                        oppvaskmaskinen og legger ved i ovnen. Jeg klarer også lage ild.</p>
+                </div>
+
+                <div id="jobsMyRoom">
+                    <button id="jobsMyRoomBtn" class="header dropRight" onclick="jobsMyRoomBtn()">Jobber inne på rommet
+                        mitt</button>
+
+                    <p id="jobsMyRoomDrop" class="hidden">Inne på rommet mitt sørger jeg alltid for at det er ryddig
+                        og pent. Jeg rer opp senga, støvsuger, vasker bort støv, vanner blomster og legger klær inn i
+                        skapet.</p>
+                </div>
+            </section>
+        </article>
+
+        <!-- hobbies page -->
+        <article id="hobbies">
+            <section>
+                <p class="heading">Mine hobbyer</p>
+
+                <p>
+                    Hobbiene mine er innenfor <span class="bold"><a href="#gaming">Gaming, </a>
+                        <a href="#computers">datamaskiner, </a><a href="#programming">programmering.</a></span> Jeg
+                    starta å
+                    bli interesert i gaming og data rundt sånn
+                    2017. Programmering kom noen få år etter. Innenfor gaming så liker jeg mer rolige spill og spill
+                    hvor du
+                    må tenke litt. De spillene jeg liker er mest er fabrikk spill.
+                </p>
+            </section>
+
+            <section id="gaming">
+                <p class="subheading">Gaming</p>
+
+                <div class="dropdowns">
+                    <div id="gameSatisfactory">
+                        <button id="gameSatisfactoryBtn" class="hobbiesDrop dropRight2"
+                            onclick="gameSatisfactoryBtn()">Satisfactory</button>
+
+                        <p id="gameSatisfactoryDrop" class="hidden">
+                            Satisfactory er et veldig bra spill. Jeg har over 800 timer i spillet. Kjøpt: 05.09.2020
+                        </p>
+                    </div>
+
+                    <div id="gameDysonSphereProgram">
+                        <button id="gameDysonSphereProgramBtn" class="hobbiesDrop dropRight2"
+                            onclick="gameDysonSphereProgramBtn()">Dyson Sphere Program</button>
+
+                        <p id="gameDysonSphereProgramDrop" class="hidden">
+                            Dyson Sphere Program er et bra spill. Kjøpt: 22.02.2021
+                        </p>
+                    </div>
+
+                    <div id="gameSpaceEngineers">
+                        <button id="gameSpaceEngineersBtn" class="hobbiesDrop dropRight2"
+                            onclick="gameSpaceEngineersBtn()">Space
+                            Engineers</button>
+
+                        <p id="gameSpaceEngineersDrop" class="hidden">
+                            Space Engineers er et bra spill. Kjøpt: 02.08.2021
+                        </p>
+                    </div>
+
+                    <div id="gameEuroTruckSim">
+                        <button id="gameEuroTruckSimBtn" class="hobbiesDrop dropRight2"
+                            onclick="gameEuroTruckSimBtn()">Euro
+                            Truck Simulator 2</button>
+
+                        <p id="gameEuroTruckSimDrop" class="hidden">
+                            Euro Truck Simulator 2 er et bra spill. Kjøpt: 30.05.2022
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="computers">
+                <p class="subheading">Datamaskiner</p>
+
+                <div class="dropdowns">
+                    <div id="computerObsidian">
+                        <button id="computerObsidianBtn" class="hobbiesDrop dropRight2"
+                            onclick="computerObsidianBtn()">Obsidian Computer</button>
+
+                        <table id="computerObsidianDrop" class="hidden">
+                            <tr>
+                                <td>
+                                    test
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- games page -->
+        <article id="games">
+            <h2 class="heading">Spill</h2>
+
+            <p>Her her er alle spillene jeg har lagd i HTML og JavaScript</p>
+
+            <section id="drum-kit">
+                <h3 class="subheading">Drum-kit</h3>
+
+                <div class="game-container">
+                    <h1 id="title">Drum 🥁 Kit</h1>
+                    <div class="set">
+                        <button class="w drum">w</button>
+                        <button class="a drum">a</button>
+                        <button class="s drum">s</button>
+                        <button class="d drum">d</button>
+                        <button class="j drum">j</button>
+                        <button class="k drum">k</button>
+                        <button class="l drum">l</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="simon-game">
+                <h3 class="subheading">Simon game</h3>
+
+                <div class="game-container">
+                    <h1 id="level-title">Press A Key to Start</h1>
+                    <div class="container">
+                        <div class="row">
+                            <span type="button" id="green" class="btn green"></span>
+                            <span type="button" id="red" class="btn red"></span>
+                        </div>
+                        <div class="row">
+                            <span type="button" id="yellow" class="btn yellow"></span>
+                            <span type="button" id="blue" class="btn blue"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dice-game">
+                <h3 class="subheading">Dice game</h3>
+
+                <div class="game-container">
+                    <div class="container">
+                        <h1>Click below to roll dice</h1>
+                        <button onclick="rollDicee()">Click me!</button>
+
+                        <div class="dicees">
+                            <div class="dice">
+                                <p>Player 1</p>
+                                <img class="img1" src="./assets/images/dice-game/dice6.png">
                             </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
 
-        <section id="languageSkills">
-            <h2>Språk</h2>
-
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Norsk (morsmål):</td>
-                        <td>
-                            <div class="skillbar">
-                                <div class="skill8">
-                                    <span>74%</span>
-                                </div>
+                            <div class="dice">
+                                <p>Player 2</p>
+                                <img class="img2" src="./assets/images/dice-game/dice6.png">
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
 
-                    <tr>
-                        <td>Engelsk:</td>
-                        <td>
-                            <div class="skillbar">
-                                <div class="skill7">
-                                    <span>69%</span>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
     </main>
-    <!-- End of main part of website -->
 
-    <!-- Start of footer -->
-    <footer id="footer">
-        <div class="footer-container">
-            <!-- Start of socials and information -->
-            <div class="footer-section" id="socials">
-                <!-- Socials -->
-                <div id="socials">
-                    <h3>Kim Lukas Myrvold</h3>
-
-                    <p>
-                        <a href="https://github.com/kimlukasmyrvold/cv" target="_blank" rel="noreferrer noopener">
-                            <i class="fa-brands fa-github"></i>Github</a>
-                    </p>
-                    <p>
-                        <a href="https://steamcommunity.com/id/solonerves" target="_blank" rel="noreferrer noopener">
-                            <i class="fa-brands fa-steam"></i>Steam</a>
-                    </p>
-                    <p>
-                        <a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener">
-                            <i class="fa-brands fa-youtube"></i>Youtube</a>
-                    </p>
-                </div>
-                <!-- End of socials -->
-
-                <!-- Contact information -->
-                <div id="contact">
-                    <h3>Kontaktinformasjon</h3>
-
-                    <p><a href="tel: +4748426624"><i class="fa-solid fa-phone"></i>+47 484 26 624</a></p>
-                    <p><a href="https://discord.com/" target="_blank" rel="noreferrer noopener">
-                            <i class="fa-brands fa-discord"></i>SoloNerves#4666</a></p>
-                    <p><a href="mailto:kimlukasmyrvold06@gmail.com">
-                            <i class="fa-solid fa-envelope"></i>kimlukasmyrvold06@gmail.com</a></p>
-                </div>
-                <!-- End of contact-info -->
-            </div>
-            <!-- End of socials and information -->
-
-            <!-- Location with google maps -->
-            <div class="footer-section" id="location">
-                <h3>Beliggenhet</h3>
-
-                <div id="map"></div>
-            </div>
-            <!-- End of location with google maps -->
-        </div>
-
-        <div class="copyright">
-            <p><i class="fa-regular fa-copyright"></i>2023 Copyright: Kim Lukas Myrvold</p>
-        </div>
-    </footer>
-    <!-- End of footer -->
-
-
-    <script src="https://kit.fontawesome.com/8ea9135fb4.js" crossorigin="anonymous"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map&v=weekly"></script>
-    <script src="./javascript/main.js"></script>
-    <script src="./javascript/age.js"></script>
+    <!-- Footer -->
+    <custom-footer></custom-footer>
 </body>
 
 </html>

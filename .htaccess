@@ -1,5 +1,8 @@
 # custom 404 page
 ErrorDocument 404 /404.html
 
-# Removes the extensions on the url. For example, "www.example.com/index.html" becomes "www.example.com/index"
-Options +MultiViews
+# Removing the need for .html extension in url
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]

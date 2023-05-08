@@ -1,0 +1,94 @@
+{
+    "language": {
+        "no": {
+            "NavbarFooter": {
+                "contactInformation": "Kontaktinformasjon",
+                "locationText": "Beliggenhet",
+                "map-consent-text": "Google maps kan samle inn brukerdata, for å se kart må du godta.",
+                "map-consent-button": "Godta",
+
+                "deviceTheme": "Enhet",
+                "darkTheme": "Mørk",
+                "purpleTheme": "Lilla",
+                "lightTheme": "Lys",
+                "orangeTheme": "Oransje",
+
+                "homeLink": "Hjemmeside",
+                "educationLink": "Utdanning",
+                "workExperienceLink": "Jobberfaring",
+                "hobbiesLink": "Hobbyer",
+                "gamesLink": "Spill"
+            },
+            "404": {
+                "siteNotFound": "Denne siden finnes ikke",
+                "goToPage": "Gå til en av disse sidene:",
+
+                "home404": "Hjemmeside",
+                "education404": "Utdanning",
+                "workExperience404": "Jobberfaring",
+                "hobbies404": "Hobbyer",
+                "games404": "Spill"
+            },
+            "home": {
+                "goodDay": "God dag!",
+                "sunRising": "Det ser ut til at sola stiger oppover.",
+                "sunWithCloud": "I følge <a href=\"https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-33600/Norge/Viken/Fredrikstad/Fredrikstad\" target=\"_blank\">YR.no</a> så blir det sol med litt skyer.",
+                "degrees": "Det skal bli opp till 11 grader Celsius!",
+                "reminder": "Husk å være inne når det er sol.",
+
+                "aboutHeader": "Om oss",
+
+                "hobbiesHeader": "Mine hobbyer",
+
+                "socialHeader": "Sosial",
+
+                "contactHeader": "Kontakt oss"
+            }
+        },
+        "en": {
+            "NavbarFooter": {
+                "contactInformation": "Contact Information",
+                "locationText": "Location",
+                "map-consent-text": "Google maps may collect user data, in order to view map you need to consent.",
+                "map-consent-button": "Accept",
+
+                "deviceTheme": "Device",
+                "darkTheme": "Dark",
+                "purpleTheme": "Purple",
+                "lightTheme": "Light",
+                "orangeTheme": "Orange",
+
+                "homeLink": "Home",
+                "educationLink": "Education",
+                "workExperienceLink": "Work experience",
+                "hobbiesLink": "Hobbies",
+                "gamesLink": "Games"
+            },
+            "404": {
+                "siteNotFound": "This site does not exist",
+                "goToPage": "Go to one of these pages:",
+
+                "home404": "Home",
+                "education404": "Education",
+                "workExperience404": "Work experience",
+                "hobbies404": "Hobbies",
+                "games404": "Games"
+            },
+            "home": {
+                "goodDay": "Good morning!",
+                "sunRising": "It looks like the sun is rising.",
+                "sunWithCloud": "According to <a href=\"https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-33600/Norge/Viken/Fredrikstad/Fredrikstad\" target=\"_blank\">YR.no</a> will it be sunny with a bit of clouds.",
+                "degrees": "It will be upwards to 11 degrees celsius!",
+                "reminder": "Remember to stay inside when it is sunny.",
+
+                "aboutHeader": "About",
+
+                "hobbiesHeader": "My hobbies",
+
+                "socialHeader": "Social",
+
+                "contactHeader": "Contact Us"
+            }
+        }
+    }
+}

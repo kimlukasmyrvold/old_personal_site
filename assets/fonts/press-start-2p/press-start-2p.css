@@ -1,0 +1,10 @@
+/* Font from https://fonts.google.com/specimen/Press+Start+2P */
+/* Font downloaded from https://gwfh.mranftl.com/fonts/press-start-2p?subsets=latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./press-start-2p-v14-latin-regular.woff2') format('woff2'),
+        url('./press-start-2p-v14-latin-regular.woff') format('woff');
+}
