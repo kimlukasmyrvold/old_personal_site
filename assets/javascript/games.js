@@ -159,7 +159,7 @@ simonGame();
 // *               Dice game               *
 // *****************************************
 
-function diceGame_rollDicee() {
+function rollDicee() {
     const title = document.querySelector('#dice-game h1');
 
     var randomNumber1 = Math.floor(Math.random() * 6) + 1;
