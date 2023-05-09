@@ -104,7 +104,7 @@
             "home": {
                 "homeAge": "2006, <span id=\"age\"></span> years old",
                 "homeAboutHeading": "A bit about me",
-                "homeAboutText": "I am a <span class=\"fw-800\">responsible, tidy and kind</span> boy <span id=\"age\"></span> year. I learn quickly and do my best. I think things through thoroughly before I do it and I am quite <span class=\"fw-800\">independent</span> .",
+                "homeAboutText": "I am a <span class=\"fw-800\">responsible, tidy and kind</span> <span id=\"age\"></span>-year-old boy. I learn quickly and do my best. I think things through thoroughly before I do it, and I am quite <span class=\"fw-800\">independent</span>.",
                 "homeInterestsHeading": "Interests",
                 "homeInterestsText": "I have an interest in <span class=\"fw-800\">computers, programming, networking and gaming.</span>",
                 "homeInterestsMoreInfo": "More info on the hobby page...",

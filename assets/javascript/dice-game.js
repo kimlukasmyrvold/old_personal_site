@@ -1,5 +1,5 @@
-function rollDicee() {
-    const title = document.querySelector('h1');
+export function rollDicee() {
+    const title = document.querySelector('#dice-game h1');
 
     var randomNumber1 = Math.floor(Math.random() * 6) + 1;
     var randomNumber2 = Math.floor(Math.random() * 6) + 1;
