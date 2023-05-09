@@ -1,7 +1,5 @@
-// Self invoking function to calculate age
+// function to calculate age
 function age(birthDay, birthMonth, birthYear) {
-    // setTimeout(() => {
-
         // Using Date object to get current data
         const currentDate = new Date();
         let [currentDay, currentMonth, currentYear] = [currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear()];
@@ -49,8 +47,7 @@ function age(birthDay, birthMonth, birthYear) {
         // Printing age in years to a elements with an id of 'age'
         // document.querySelectorAll('#age').forEach((item) => item.innerHTML = y + " years, " + m + " months and " + d + " days.");  // For testing
         document.querySelectorAll('#age').forEach((item) => item.innerHTML = y);
-
-    // }, 2000);
 }
 
+// Calling age function
 age(21, 5, 2006);
