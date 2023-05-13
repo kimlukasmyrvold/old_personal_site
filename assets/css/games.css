@@ -47,6 +47,10 @@
     background-image: url('../images/drum-kit/tom4.png');
 }
 
+#drum-kit .f {
+    background-image: url('../images/drum-kit/metal-pipe.png');
+}
+
 #drum-kit .j {
     background-image: url('../images/drum-kit/snare.png');
 }
@@ -104,8 +108,10 @@
 
 
 
+/* ************************************** */
+/* *             Simon game             * */
+/* ************************************** */
 
-/* Simon game */
 #simon-game .game-container {
     display: flex;
     flex-direction: column;
@@ -121,37 +127,25 @@
 }
 
 #simon-game .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     user-select: none;
 }
 
 #simon-game .btn {
-    margin: 25px;
+    --inner-border-radius: 30%;
+    --outer-border-radius: 50%;
+
+    margin: 0px;
     display: inline-block;
     width: 200px;
     aspect-ratio: 1 / 1;
-    border: 10px solid black;
-    border-radius: 20%;
+    border: 6px solid black;
+    border-radius: var(--inner-border-radius);
     cursor: pointer;
 
-    transition: margin 500ms, width 250ms;
-}
-
-@media (width <=560px) {
-    #simon-game .btn {
-        margin: 2px;
-    }
-}
-
-@media (width <=470px) {
-    #simon-game .container {
-        margin: 2.2em 0 0;
-    }
-
-    #simon-game .btn {
-        width: 36%;
-    }
+    transition: margin 500ms ease-in-out, width 250ms ease-in-out;
 }
 
 #simon-game .game-over {
@@ -161,18 +155,22 @@
 
 #simon-game .red {
     background-color: red;
+    border-top-right-radius: var(--outer-border-radius);
 }
 
 #simon-game .green {
     background-color: green;
+    border-top-left-radius: var(--outer-border-radius);
 }
 
 #simon-game .blue {
     background-color: blue;
+    border-bottom-right-radius: var(--outer-border-radius);
 }
 
 #simon-game .yellow {
     background-color: yellow;
+    border-bottom-left-radius: var(--outer-border-radius);
 }
 
 #simon-game .pressed {
@@ -181,10 +179,28 @@
 }
 
 
+@media (width <= 450px) {
+    #simon-game .container {
+        gap: 6px;
+    }
+
+    #simon-game .row {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    #simon-game .btn {
+        border-radius: var(--inner-border-radius);
+    }
+}
 
 
 
-/* Dice game */
+
+/* ******************************* */
+/* *          Dice game          * */
+/* ******************************* */
 
 #dice-game .game-container  {
     background-color: #393E46;

@@ -11,7 +11,7 @@ function drumKit() {
     }
 
     document.addEventListener('keydown', function (keyboard) {
-        if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyJ', 'KeyK', 'KeyL'].includes(keyboard.code)) {
+        if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyJ', 'KeyK', 'KeyL,', 'KeyF'].includes(keyboard.code)) {
             drumKit_playSound(keyboard.key.toLowerCase());
             drumKit_playAnimation(keyboard.key.toLowerCase());
         }
@@ -30,6 +30,9 @@ function drumKit() {
                 break;
             case 'd':
                 new Audio(pathname + 'assets/sounds/drum-kit/tom-4.mp3').play();
+                break;
+            case 'f':
+                new Audio(pathname + 'assets/sounds/drum-kit/metal-pipe-falling.mp3').play();
                 break;
             case 'j':
                 new Audio(pathname + 'assets/sounds/drum-kit/snare.mp3').play();
