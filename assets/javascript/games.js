@@ -3,6 +3,7 @@
 // ******************************************
 
 function drumKit() {
+    // Playing sound and animation on click
     for (var i = 0; i < document.querySelectorAll('#drum-kit .drum').length; i++) {
         document.querySelectorAll('#drum-kit .drum')[i].addEventListener('click', function () {
             drumKit_playSound(this.innerHTML);
@@ -10,10 +11,12 @@ function drumKit() {
         });
     }
 
+    // Playing sound and animation on keypress
     document.addEventListener('keydown', function (keyboard) {
-        if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyJ', 'KeyK', 'KeyL,', 'KeyF'].includes(keyboard.code)) {
+        if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyJ', 'KeyK', 'KeyL', 'KeyF'].includes(keyboard.code)) {
             drumKit_playSound(keyboard.key.toLowerCase());
             drumKit_playAnimation(keyboard.key.toLowerCase());
+            console.log(keyboard.code)
         }
     });
 
