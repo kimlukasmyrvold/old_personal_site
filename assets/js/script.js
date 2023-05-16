@@ -7,9 +7,6 @@
 // Creating constant to store the name of current page
 const currentPage = document.documentElement.dataset.pagename;
 
-// Checking if the website is viewed on github or localy and storing a value to repoName constant
-const pathname = location.hostname === 'kimlukasmyrvold.github.io' ? 'https://kimlukasmyrvold.github.io/' : '/';
-
 
 
 
@@ -35,7 +32,7 @@ function addCss(fileName) {
 class CustomNavbar extends HTMLElement {
     connectedCallback() {
         // Adding css file to head of document
-        addCss(`${pathname}assets/css/navbar.css`);
+        addCss('/assets/css/navbar.css');
 
         // Making navbar hidden until css takes over, this is to stop the navbar from flashing whilst loading css
         this.style.visibility = 'hidden';
@@ -48,11 +45,11 @@ class CustomNavbar extends HTMLElement {
             <div class="navbar-menuButton"><button class="bar"></button></div>
             <nav class="navbar-links" aria-label="Navigation Links">
                 <ul>
-                    <li><a id="homeLink" href="${pathname}#" class="navbar-link">Home</a></li>
-                    <li><a id="educationLink" href="${pathname}#education" class="navbar-link">Education</a></li>
-                    <li><a id="workExperienceLink" href="${pathname}#workExperience" class="navbar-link">Work experience</a></li>
-                    <li><a id="hobbiesLink" href="${pathname}#hobbies" class="navbar-link">Hobbies</a></li>
-                    <li><a id="gamesLink" href="${pathname}#games" class="navbar-link">Games</a></li>
+                    <li><a id="homeLink" href="/#" class="navbar-link">Home</a></li>
+                    <li><a id="educationLink" href="/#education" class="navbar-link">Education</a></li>
+                    <li><a id="workExperienceLink" href="/#workExperience" class="navbar-link">Work experience</a></li>
+                    <li><a id="hobbiesLink" href="/#hobbies" class="navbar-link">Hobbies</a></li>
+                    <li><a id="gamesLink" href="/#games" class="navbar-link">Games</a></li>
                 </ul>
             </nav>
             <div class="navbar-buttons">
@@ -267,7 +264,7 @@ function navbarDrop(input) {
 class CustomFooter extends HTMLElement {
     connectedCallback() {
         // Adding css file to head of document
-        addCss(`${pathname}assets/css/footer.css`);
+        addCss('/assets/css/footer.css');
 
         // Making footer hidden until css takes over, this is to stop the footer from flashing whilst loading css
         this.style.visibility = 'hidden';
@@ -367,8 +364,7 @@ let languageJSON;
 
 try {
     // Fetching language.json
-    // fetch(`${pathname}assets/json/language.json`)
-    fetch(`${pathname}assets/json/language.json`)
+    fetch('/assets/json/language.json')
         .then(response => response.json())
         .then(data => {
             // setting data.language to language
