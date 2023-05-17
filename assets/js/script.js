@@ -16,7 +16,7 @@ const currentPage = document.documentElement.dataset.pagename;
 
 // Function for adding css to head of document
 function addCss(fileName) {
-    var link = document.createElement("link");
+    let link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = fileName;
     document.head.appendChild(link);
@@ -35,7 +35,7 @@ class CustomNavbar extends HTMLElement {
         addCss('/assets/css/navbar.css');
 
         // Making navbar hidden until css takes over, this is to stop the navbar from flashing whilst loading css
-        this.style.visibility = 'hidden';
+        this.style.display = 'none';
 
         // Adding class, aria-label and innerHTML to <custom-navbar>
         this.classList.add('navbar');
@@ -267,7 +267,7 @@ class CustomFooter extends HTMLElement {
         addCss('/assets/css/footer.css');
 
         // Making footer hidden until css takes over, this is to stop the footer from flashing whilst loading css
-        this.style.visibility = 'hidden';
+        this.style.display = 'none';
 
         // Adding id, aria-label and innerHTML to <custom-footer>
         this.setAttribute('id', 'footer');
@@ -309,7 +309,7 @@ class CustomFooter extends HTMLElement {
                 <div class="grid-item" id="location" aria-label="Location section">
                     <p id="locationText" class="header">Beliggenhet</p>
                     <div id="map" style="padding: 0 .5em 1em;">
-                        <p style="font-size: 2rem; font-weight: 500; color: var(--text-inverse);">Fredrikstad, Årum.</p>
+                        <p id="map-consent-location">Fredrikstad, Årum.</p>
                         <p id="map-consent-text">Google maps may collect user data, in order to view map you need to consent.</p>
                         <button id="map-consent-button">Accept</button>
                     </div>

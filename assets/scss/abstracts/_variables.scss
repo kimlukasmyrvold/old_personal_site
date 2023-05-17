@@ -1,0 +1,52 @@
+/* Dark theme */
+$bg-color: #001525 !default;
+$bg-gradient: linear-gradient(150deg, #001525 20%, #0c2438 59%, #17003b 70%) !default;
+$bg-inverse: #fff !default;
+
+$navbar-color: #000c1f !default;
+$footer-color: #000c1f !default;
+
+$text-color: #fff !default;
+$text-inverse: #000 !default;
+$accent-color: #ffad29 !default;
+
+/* Purple theme */
+$bg-color-purple: #210030 !default;
+$bg-gradient-purple: linear-gradient(100deg, #002324 6%, #240030 46%, #001230 77%, #120016 800%) !default;
+$bg-inverse-purple: #fff !default;
+
+$navbar-color-purple: linear-gradient(6deg, #020e17 20%, #2a0038) !default;
+$footer-color-purple: linear-gradient(183deg, #020e17, #1f002b 80%) !default;
+
+$text-color-purple: #fff !default;
+$text-inverse-purple: #000 !default;
+$accent-color-purple: #ffad29 !default;
+
+/* Light theme */
+$bg-color-light: #ffffff !default;
+$bg-gradient-light: linear-gradient(135deg, #e7e7e7, #fff9f3, #fafafa) !default;
+$bg-inverse-light: #162221 !default;
+
+$navbar-color-light: #e9e9e9 !default;
+$footer-color-light: #e9e9e9 !default;
+
+$text-color-light: #000 !default;
+$text-inverse-light: #fff !default;
+$accent-color-light: #9c02a1 !default;
+
+/* Orange theme */
+$bg-color-orange: #ffcd8a !default;
+$bg-gradient-orange: linear-gradient(145deg, #fff 7%, #ffb95c, #d4aeff 90%) !default;
+$bg-inverse-orange: #162221 !default;
+
+$navbar-color-orange: linear-gradient(20deg, #ffd8ab, #ffc068 70%) !default;
+$footer-color-orange: linear-gradient(173deg, #ffd8ab, #ffc068 80%) !default;
+
+$text-color-orange: #000 !default;
+$text-inverse-orange: #fff !default;
+$accent-color-orange: #9c02a1 !default;
+
+/* Root */
+$border-radius: 25px !default;
+$black-blur: #0000004d !default;
+$separator-color: #53535385 !default;

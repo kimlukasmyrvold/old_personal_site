@@ -1,460 +1,535 @@
 @import url(../fonts/arvo/arvo.css);
-
 @import url(../fonts/press-start-2p/press-start-2p.css);
-
 @import url(../fonts/indie-flower/indie-flower.css);
 @import url(../fonts/lobster/lobster.css);
+/* Dark theme */
+body {
+  --bg-color: #001525;
+  --bg-gradient: linear-gradient(150deg, #001525 20%, #0c2438 59%, #17003b 70%);
+  --bg-inverse: #fff;
+  --navbar-color: #000c1f;
+  --footer-color: #000c1f;
+  --text-color: #fff;
+  --text-inverse: #000;
+  --accent-color: #ffad29;
+}
 
+/* Purple theme */
+body.purple {
+  --bg-color: #210030;
+  --bg-gradient: linear-gradient(100deg, #002324 6%, #240030 46%, #001230 77%, #120016 800%);
+  --bg-inverse: #fff;
+  --navbar-color: linear-gradient(6deg, #020e17 20%, #2a0038);
+  --footer-color: linear-gradient(183deg, #020e17, #1f002b 80%);
+  --text-color: #fff;
+  --text-inverse: #000;
+  --accent-color: #ffad29;
+}
+
+/* Light theme */
+body.light {
+  --bg-color: #ffffff;
+  --bg-gradient: linear-gradient(135deg, #e7e7e7, #fff9f3, #fafafa);
+  --bg-inverse: #162221;
+  --navbar-color: #e9e9e9;
+  --footer-color: #e9e9e9;
+  --text-color: #000;
+  --text-inverse: #fff;
+  --accent-color: #9c02a1;
+}
+
+/* Orange theme */
+body.orange {
+  --bg-color: #ffcd8a;
+  --bg-gradient: linear-gradient(145deg, #fff 7%, #ffb95c, #d4aeff 90%);
+  --bg-inverse: #162221;
+  --navbar-color: linear-gradient(20deg, #ffd8ab, #ffc068 70%);
+  --footer-color: linear-gradient(173deg, #ffd8ab, #ffc068 80%);
+  --text-color: #000;
+  --text-inverse: #fff;
+  --accent-color: #9c02a1;
+}
+
+:root {
+  --border-radius: 25px;
+  --black-blur: #0000004d;
+  --separator-color: #53535385;
+}
 
 .profile-info div:first-child {
-    max-width: 300px;
-    width: 100%;
-    margin-right: 2em;
+  max-width: 300px;
+  width: 100%;
+  margin-right: 2em;
 }
 
-@media (width <=420px) {
-    .profile-info div:first-child {
-        margin-right: 0;
-    }
+@media (width <= 420px) {
+  .profile-info div:first-child {
+    margin-right: 0;
+  }
 }
-
 .profile-info img {
-    width: 100%;
+  width: 100%;
 }
 
 .profile-info div:last-child {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-info p,
 .profile-info a {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.4;
+  font-size: 1.4rem;
 }
 
 .profile-info .heading {
-    margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
-
-
-
 
 /* ************************************** */
 /* *     Styling for codingLanguges     * */
 /* ************************************** */
-
 #codingLanguages {
-    overflow: auto hidden;
+  overflow: auto hidden;
 }
 
 .codingLanguagesContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .codingLanguageItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-size: 1.3rem;
-    line-height: 2;
-    padding: .4em;
-    box-sizing: content-box;
-
-    width: 56px;
-
-    transition-property: width, transform, padding;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3rem;
+  line-height: 2;
+  padding: 0.4em;
+  box-sizing: content-box;
+  width: 56px;
+  transition-property: width, transform, padding;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 .codingLanguageItem span {
-    transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in;
 }
 
 .codingLanguageItem svg {
-    height: 56px;
+  height: 56px;
 }
 
 /* Transition in hovered elements */
 .codingLanguageItem:hover {
-    padding: .7em;
-    transform: scale(1.1) translateY(10px);
+  padding: 0.7em;
+  transform: scale(1.1) translateY(10px);
 }
 
 .codingLanguageItem:hover span {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
-
-
-
 
 .hidden {
-    display: none;
+  display: none;
 }
-
-
-
-
 
 /* ************************************************ */
 /* *          Styling for education page          * */
 /* ************************************************ */
-
-
 /* Styling for the introduction section */
 #education tr {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 #education td {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 1.2em;
-    max-width: 100ch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1.2em;
+  max-width: 100ch;
 }
 
 #education .schoolTitle {
-    font-size: 2.125rem;
-    font-weight: 600;
+  font-size: 2.125rem;
+  font-weight: 600;
 }
 
 #education table p,
 #education table a {
-    margin: .3em 0;
-    line-height: 1.5;
-    font-size: 1.2rem;
+  margin: 0.3em 0;
+  line-height: 1.5;
+  font-size: 1.2rem;
 }
-
 
 #education img {
-    border-radius: var(--border-radius);
-    box-shadow: -6px 8px 3px 0 var(--black-blur);
-    height: auto;
-    max-width: 500px;
-    width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: -6px 8px 3px 0 var(--black-blur);
+  height: auto;
+  max-width: 500px;
+  width: 100%;
 }
 
-
-
-
 /* Work experience section styling */
-
 .work-jobs div {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .work-jobs p {
-    font-size: 1.2em;
-    line-height: 1.5em;
-    margin-left: 1em;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-left: 1em;
 }
 
 .work-jobs ul {
-    list-style: none;
-    margin-left: 1.5em;
+  list-style: none;
+  margin-left: 1.5em;
 }
 
 .work-jobs li {
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 .work-jobs button {
-    line-height: 1.5em;
-    font-size: 1.8em;
-    background: transparent;
+  line-height: 1.5em;
+  font-size: 1.8em;
+  background: transparent;
 }
-
-.work-jobs button:hover {
-    color: var(--text-color-hover);
-}
-
-
-
 
 /* Hobbies section styling */
-
 #hobbies button {
-    margin-left: .8em;
-    height: 40px;
+  margin-left: 0.8em;
+  height: 40px;
 }
 
 #hobbies button::before {
-    content: '- ';
+  content: "- ";
 }
 
 #hobbies .dropdowns p,
 #hobbies .dropdowns table {
-    font-size: 1.1em;
-    margin-left: 2.5em;
+  font-size: 1.1em;
+  margin-left: 2.5em;
 }
 
 .hobbiesDrop {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
-
-
-
 
 /* ******************************************* */
 /* *        Styling for games section        * */
 /* ******************************************* */
-
 .game-container {
-    border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #EE8434;
+  border-radius: var(--border-radius);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
+.game-start,
+.game-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background: var(--black-blur);
+  z-index: 1;
+}
+
+.game-start button {
+  font-size: 7rem;
+  padding: 0.1em 0.3em;
+  border-radius: calc(var(--border-radius) * 2);
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+}
+
+/* Game loading screen */
+.game-loading {
+  display: grid;
+  font-size: 6rem;
+}
+
+/* Game content */
+.game-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #02394A;
+  min-height: 70vh;
+  width: 100%;
+  margin: 0;
+}
+
+.game-content #title {
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #EE8434;
+}
+
+.game-content .w {
+  background-image: url("../images/drum-kit/tom1.png");
+}
+
+.game-content .a {
+  background-image: url("../images/drum-kit/tom2.png");
+}
+
+.game-content .s {
+  background-image: url("../images/drum-kit/tom3.png");
+}
+
+.game-content .d {
+  background-image: url("../images/drum-kit/tom4.png");
+}
+
+.game-content .f {
+  background-image: url("../images/drum-kit/metal-pipe.png");
+}
+
+.game-content .j {
+  background-image: url("../images/drum-kit/snare.png");
+}
+
+.game-content .k {
+  background-image: url("../images/drum-kit/crash.png");
+}
+
+.game-content .l {
+  background-image: url("../images/drum-kit/kick.png");
+}
+
+.game-content .set {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10% auto;
+}
+
+.game-content .drum {
+  display: flex;
+  justify-content: center;
+  border: 10px solid #404B69;
+  border-radius: 15px;
+  font-family: "Arvo", cursive;
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 2;
+  color: #EE8434;
+  text-shadow: 3px 0 #DBEDF3;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  background-color: #03284E;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
 
 /* Drum-kit */
-
 #drum-kit .game-container {
-    text-align: center;
-    background-color: #02394A;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+  text-align: center;
+  background-color: #02394A;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
-
 #drum-kit #title {
-    font-size: 5rem;
-    color: #DBEDF3;
-    font-family: "Arvo", cursive;
-    text-shadow: 3px 0 #EE8434;
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #EE8434;
 }
-
 #drum-kit .w {
-    background-image: url('../images/drum-kit/tom1.png');
+  background-image: url("../images/drum-kit/tom1.png");
 }
-
 #drum-kit .a {
-    background-image: url('../images/drum-kit/tom2.png');
+  background-image: url("../images/drum-kit/tom2.png");
 }
-
 #drum-kit .s {
-    background-image: url('../images/drum-kit/tom3.png');
+  background-image: url("../images/drum-kit/tom3.png");
 }
-
 #drum-kit .d {
-    background-image: url('../images/drum-kit/tom4.png');
+  background-image: url("../images/drum-kit/tom4.png");
 }
-
 #drum-kit .f {
-    background-image: url('../images/drum-kit/metal-pipe.png');
+  background-image: url("../images/drum-kit/metal-pipe.png");
 }
-
 #drum-kit .j {
-    background-image: url('../images/drum-kit/snare.png');
+  background-image: url("../images/drum-kit/snare.png");
 }
-
 #drum-kit .k {
-    background-image: url('../images/drum-kit/crash.png');
+  background-image: url("../images/drum-kit/crash.png");
 }
-
 #drum-kit .l {
-    background-image: url('../images/drum-kit/kick.png');
+  background-image: url("../images/drum-kit/kick.png");
 }
-
 #drum-kit .set {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    margin: 10% auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10% auto;
 }
-
 #drum-kit .drum {
-    display: flex;
-    justify-content: center;
-
-    border: 10px solid #404B69;
-    border-radius: 15px;
-
-    font-family: 'Arvo', cursive;
-    font-weight: 900;
-    font-size: 5rem;
-    line-height: 2;
-
-    color: #EE8434;
-    text-shadow: 3px 0 #DBEDF3;
-
-    width: 150px;
-    height: 150px;
-
-    margin: 10px;
-
-    background-color: #03284E;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: 10px solid #404B69;
+  border-radius: 15px;
+  font-family: "Arvo", cursive;
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 2;
+  color: #EE8434;
+  text-shadow: 3px 0 #DBEDF3;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  background-color: #03284E;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
 }
-
 #drum-kit .pressed {
-    box-shadow: 0 3px 4px 0 #DBEDF3;
-    opacity: 0.5;
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
 }
-
-
-
 
 /* ************************************** */
 /* *             Simon game             * */
 /* ************************************** */
-
 #simon-game .game-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #011F3F;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #011F3F;
 }
-
 #simon-game #level-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: clamp(.94rem, -1rem + 20vw, 3rem);
-    margin: 5%;
-    color: #FEF2BF;
+  font-family: "Press Start 2P", cursive;
+  font-size: clamp(0.94rem, -1rem + 20vw, 3rem);
+  margin: 5%;
+  color: #FEF2BF;
 }
-
 #simon-game .container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  user-select: none;
+}
+#simon-game .btn {
+  margin: 0px;
+  display: inline-block;
+  width: 200px;
+  aspect-ratio: 1/1;
+  border: 6px solid black;
+  border-radius: 30%;
+  cursor: pointer;
+  transition: margin 500ms ease-in-out, width 250ms ease-in-out;
+}
+#simon-game .game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+#simon-game .red {
+  background-color: red;
+  border-top-right-radius: 50%;
+}
+#simon-game .green {
+  background-color: green;
+  border-top-left-radius: 50%;
+}
+#simon-game .blue {
+  background-color: blue;
+  border-bottom-right-radius: 50%;
+}
+#simon-game .yellow {
+  background-color: yellow;
+  border-bottom-left-radius: 50%;
+}
+#simon-game .pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+@media (width <= 450px) {
+  #simon-game .container {
+    gap: 6px;
+  }
+  #simon-game .row {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    user-select: none;
+    gap: 6px;
+  }
+  #simon-game .btn {
+    border-radius: 30%;
+  }
 }
-
-#simon-game .btn {
-    --inner-border-radius: 30%;
-    --outer-border-radius: 50%;
-
-    margin: 0px;
-    display: inline-block;
-    width: 200px;
-    aspect-ratio: 1 / 1;
-    border: 6px solid black;
-    border-radius: var(--inner-border-radius);
-    cursor: pointer;
-
-    transition: margin 500ms ease-in-out, width 250ms ease-in-out;
-}
-
-#simon-game .game-over {
-    background-color: red;
-    opacity: 0.8;
-}
-
-#simon-game .red {
-    background-color: red;
-    border-top-right-radius: var(--outer-border-radius);
-}
-
-#simon-game .green {
-    background-color: green;
-    border-top-left-radius: var(--outer-border-radius);
-}
-
-#simon-game .blue {
-    background-color: blue;
-    border-bottom-right-radius: var(--outer-border-radius);
-}
-
-#simon-game .yellow {
-    background-color: yellow;
-    border-bottom-left-radius: var(--outer-border-radius);
-}
-
-#simon-game .pressed {
-    box-shadow: 0 0 20px white;
-    background-color: grey;
-}
-
-
-@media (width <= 450px) {
-    #simon-game .container {
-        gap: 6px;
-    }
-
-    #simon-game .row {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    #simon-game .btn {
-        border-radius: var(--inner-border-radius);
-    }
-}
-
-
-
 
 /* ******************************* */
 /* *          Dice game          * */
 /* ******************************* */
-
-#dice-game .game-container  {
-    background-color: #393E46;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+#dice-game .game-container {
+  background-color: #393E46;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
-
 #dice-game h1 {
-    margin: 30px 0 0;
-    font-family: 'Lobster', cursive;
-    text-shadow: 5px 0 #232931;
-    font-size: 8rem;
-    color: #4ECCA3;
+  margin: 30px 0 0;
+  font-family: "Lobster", cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 8rem;
+  color: #4ECCA3;
 }
-
 #dice-game button {
-    margin: 30px;
-    font-family: 'Lobster', cursive;
-    text-shadow: 5px 0 #232931;
-    font-size: 4rem;
-    color: #4ECCA3;
-    background: #0a865d70;
-    border: none;
-    border-radius: 30px;
-    padding: .05em .4em;
-    cursor: pointer;
+  margin: 30px;
+  font-family: "Lobster", cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 4rem;
+  color: #4ECCA3;
+  background: rgba(10, 134, 93, 0.4392156863);
+  border: none;
+  border-radius: 30px;
+  padding: 0.05em 0.4em;
+  cursor: pointer;
 }
-
 #dice-game p {
-    font-size: 2.3rem;
-    color: #4ECCA3;
-    font-family: 'Indie Flower', cursive;
-    margin: 0;
+  font-size: 2.3rem;
+  color: #4ECCA3;
+  font-family: "Indie Flower", cursive;
+  margin: 0;
 }
-
 #dice-game img {
-    /* width: 100%; */
-    width: 300px;
-    aspect-ratio: 1 / 1;
+  height: 300px;
+  aspect-ratio: 1/1;
 }
-
 #dice-game .container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
 #dice-game .dicees {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+#dice-game .dice {
+  text-align: center;
 }
 
-#dice-game .dice {
-    text-align: center;
-}
+/*# sourceMappingURL=index.css.map */

@@ -1,184 +1,153 @@
 /* *********************************************** */
 /* *           Start of footer styling           * */
 /* *********************************************** */
-
+/* Dark theme */
+/* Purple theme */
+/* Light theme */
+/* Orange theme */
+/* Root */
 #footer {
-    display: flex;
-    flex-direction: column;
-    background: var(--footer-color);
-
-    min-height: 50px;
-    padding: .5em 5em .5em;
-    transition: padding 500ms;
-
-    box-shadow: 0 0 30px 3px #000;
-    visibility: visible !important;
-    overflow: auto;
+  display: flex !important;
+  flex-direction: column;
+  background: var(--footer-color);
+  min-height: 50px;
+  padding: 0.5em 5em 0.5em;
+  transition: padding 500ms;
+  box-shadow: 0 0 30px 3px #000;
+  overflow: auto;
+  /* Styling for text and svg in footer */
+  /* Styling for map */
+  /* Styling for copyright sections */
 }
-
-.grid-item {
-    display: flex;
-    flex-direction: column;
+#footer .grid-item {
+  display: flex;
+  flex-direction: column;
+}
+#footer .header {
+  font-size: clamp(1.5rem, 10vw, 1.9rem);
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+#footer p {
+  font-size: clamp(1.05rem, -0.9rem + 10vw, 1.3rem);
+  margin: 0.3em 0;
+}
+#footer a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+  /* Custom underline on hover */
+}
+#footer a span {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#footer a:hover span::after {
+  content: "";
+  position: absolute;
+  bottom: -0.07em;
+  width: 103%;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: var(--border-radius);
+}
+#footer svg {
+  fill: currentColor;
+  height: 28px;
+  margin-right: 0.3em;
+}
+#footer #map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background: var(--bg-inverse);
+  border: 1px solid var(--bg-inverse);
+  border-radius: 10px;
+  width: 100%;
+  min-height: 250px;
+}
+#footer #map * {
+  color: #000;
+}
+#footer #map #map-consent-text {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--text-inverse) !important;
+}
+#footer #map #map-consent-button {
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  border: none;
+  margin: 0.4em 0 0;
+  padding: 0.5em 1em;
+  color: var(--text-color) !important;
+  font-size: 1.7rem;
+}
+#footer #map #map-consent-location {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-inverse);
+}
+#footer .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 1.5em 0 0.5em;
+  width: 100%;
+}
+#footer .copyright::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--bg-inverse);
+  border-radius: 10px;
+}
+#footer .copyright p {
+  display: flex;
+  align-items: center;
+  margin: 1.5em 0 0;
+  font-size: clamp(0.7rem, -0.85rem + 10vw, 1rem);
+}
+#footer .copyright svg {
+  height: 22px;
 }
 
 /* Responsive footer */
-@media (min-width: 800px) {
-    #footer {
-        padding: .5em 5em .5em;
-    }
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: .3em;
-    }
-
-    #location {
-        grid-column-start: 2;
-        grid-row: 1 / 3;
-    }
+@media (width >= 800px) {
+  #footer {
+    padding: 0.5em 5em 0.5em;
+  }
+  #footer .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3em;
+  }
+  #footer #location {
+    grid-column-start: 2;
+    grid-row: 1/3;
+  }
 }
-
 @media (width <= 1250px) {
-    #footer {
-        padding: .5em 2em .5em;
-    }
+  #footer {
+    padding: 0.5em 2em 0.5em;
+  }
 }
-
 @media (width <= 800px) {
-    #footer {
-        padding: .5em 2em .5em;
-    }
+  #footer {
+    padding: 0.5em 2em 0.5em;
+  }
 }
-
 @media (width <= 500px) {
-    #footer {
-        padding: .5em .5em .5em;
-    }
+  #footer {
+    padding: 0.5em 0.5em 0.5em;
+  }
 }
 
-
-/* Styling for text and svg in footer */
-
-#footer .header {
-    font-size: clamp(1.5rem, 10vw, 1.9rem);
-    font-weight: 600;
-    margin-bottom: .3em;
-}
-
-#footer p {
-    font-size: clamp(1.05rem, -.9rem + 10vw, 1.3rem);
-    margin: .3em 0;
-}
-
-#footer a {
-    display: inline-flex;
-    align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-#footer a span {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-/* Custom underline on hover */
-#footer a:hover span::after {
-    content: '';
-    position: absolute;
-    bottom: -.07em;
-
-    width: 103%;
-    height: 2px;
-
-    background: var(--accent-color);
-    border-radius: var(--border-radius);
-}
-
-#footer svg {
-    fill: currentColor;
-    height: 28px;
-    margin-right: .3em;
-}
-
-
-
-/* Styling for map */
-
-#map {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-
-    background: var(--bg-inverse);
-    border: 1px solid var(--bg-inverse);
-    border-radius: 10px;
-
-    width: 100%;
-    min-height: 250px;
-}
-
-#map * {
-    color: #000;
-}
-
-#map-consent-text {
-    font-size: 1.3rem;
-    text-align: center;
-    color: var(--text-inverse) !important;
-}
-
-#map-consent-button {
-    background: var(--bg-color);
-    border-radius: var(--border-radius);
-    border: none;
-
-    margin: .4em 0 0;
-    padding: .5em 1em;
-
-    color: var(--text-color) !important;
-    font-size: 1.7rem;
-}
-
-
-/* Styling for copyright sections */
-
-#footer .copyright {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-    margin: 1.5em 0 .5em;
-    width: 100%;
-}
-
-#footer .copyright::after {
-    content: '';
-    position: absolute;
-    top: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: var(--bg-inverse);
-    border-radius: 10px;
-}
-
-#footer .copyright p {
-    display: flex;
-    align-items: center;
-
-    margin: 1.5em 0 0;
-    font-size: clamp(.7rem, -0.85rem + 10vw, 1rem);
-}
-
-#footer .copyright svg {
-    fill: currentColor;
-    height: 22px;
-    margin-right: .3em;
-}
+/*# sourceMappingURL=footer.css.map */

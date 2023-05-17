@@ -1,3 +1,14 @@
+// *****************************************
+// *               Test game               *
+// *****************************************
+
+function testGame() {
+    alert('Test game started!');
+}
+
+
+
+
 // ******************************************
 // *                Drum-kit                *
 // ******************************************
@@ -22,28 +33,28 @@ function drumKit() {
     function drumKit_playSound(key) {
         switch (key) {
             case 'w':
-                new Audio(pathname + 'assets/sounds/drum-kit/tom-1.mp3').play();
+                new Audio('/assets/sounds/drum-kit/tom-1.mp3').play();
                 break;
             case 'a':
-                new Audio(pathname + 'assets/sounds/drum-kit/tom-2.mp3').play();
+                new Audio('/assets/sounds/drum-kit/tom-2.mp3').play();
                 break;
             case 's':
-                new Audio(pathname + 'assets/sounds/drum-kit/tom-3.mp3').play();
+                new Audio('/assets/sounds/drum-kit/tom-3.mp3').play();
                 break;
             case 'd':
-                new Audio(pathname + 'assets/sounds/drum-kit/tom-4.mp3').play();
+                new Audio('/assets/sounds/drum-kit/tom-4.mp3').play();
                 break;
             case 'f':
-                new Audio(pathname + 'assets/sounds/drum-kit/metal-pipe-falling.mp3').play();
+                new Audio('/assets/sounds/drum-kit/metal-pipe-falling.mp3').play();
                 break;
             case 'j':
-                new Audio(pathname + 'assets/sounds/drum-kit/snare.mp3').play();
+                new Audio('/assets/sounds/drum-kit/snare.mp3').play();
                 break;
             case 'k':
-                new Audio(pathname + 'assets/sounds/drum-kit/crash.mp3').play();
+                new Audio('/assets/sounds/drum-kit/crash.mp3').play();
                 break;
             case 'l':
-                new Audio(pathname + 'assets/sounds/drum-kit/kick-bass.mp3').play();
+                new Audio('/assets/sounds/drum-kit/kick-bass.mp3').play();
                 break;
         }
     }
@@ -107,7 +118,7 @@ function simonGame() {
             }
         }
         else {
-            new Audio(pathname + 'assets/sounds/simon-game/wrong.mp3').play();
+            new Audio('/assets/sounds/simon-game/wrong.mp3').play();
             $('#simon-game .game-container').addClass('game-over');
             $('#simon-game #level-title').text('Game Over, Press Any Key to Restart');
 
@@ -143,7 +154,7 @@ function simonGame() {
     }
 
     function simonGame_playSound(name) {
-        new Audio(`${pathname}assets/sounds/simon-game/${name}.mp3`).play();
+        new Audio(`/assets/sounds/simon-game/${name}.mp3`).play();
     }
 
     function simonGame_animatePress(currentColor) {
@@ -170,8 +181,8 @@ function rollDicee() {
     const randomNumber1 = Math.floor(Math.random() * 6) + 1;
     const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-    document.querySelector('#dice-game .img1').setAttribute('src', `${pathname}assets/images/dice-game/dice${randomNumber1}.svg`);
-    document.querySelector('#dice-game .img2').setAttribute('src', `${pathname}assets/images/dice-game/dice${randomNumber2}.svg`);
+    document.querySelector('#dice-game .img1').setAttribute('src', `/assets/images/dice-game/dice${randomNumber1}.svg`);
+    document.querySelector('#dice-game .img2').setAttribute('src', `/assets/images/dice-game/dice${randomNumber2}.svg`);
 
     if (randomNumber1 > randomNumber2) {
         title.innerHTML = 'Player 1 won!';
