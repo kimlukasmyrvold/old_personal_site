@@ -1,9 +1,3 @@
-/* *********************************************** */
-/* *           Start of footer styling           * */
-/* *********************************************** */
-
-@import "abstracts/variables";
-
 #footer {
     display: flex !important;
     flex-direction: column;
@@ -22,7 +16,6 @@
     }
 
     /* Styling for text and svg in footer */
-
     .header {
         font-size: clamp(1.5rem, 10vw, 1.9rem);
         font-weight: 600;
@@ -44,6 +37,7 @@
             display: flex;
             justify-content: center;
             position: relative;
+            margin-inline: .4em .1em;
         }
 
         /* Custom underline on hover */
@@ -58,12 +52,6 @@
             background: var(--accent-color);
             border-radius: var(--border-radius);
         }
-    }
-
-    svg {
-        fill: currentColor;
-        height: 28px;
-        margin-right: 0.3em;
     }
 
     /* Styling for map */
@@ -109,7 +97,6 @@
             color: var(--text-inverse);
         }
     }
-
 
     /* Styling for copyright sections */
     .copyright {

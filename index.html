@@ -24,10 +24,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/index.css">
 
-    <script defer src="assets/js/script.js"></script>
+    <script defer src="assets/js/index.js"></script>
     <script defer src="assets/js/ageCalc.js"></script>
 
     <script defer src="assets/js/jquery-3.6.4.min.js"></script>
+    <script defer src="assets/js/loadAssets.js"></script>
     <script defer src="assets/js/games.js"></script>
 </head>
 
@@ -38,7 +39,7 @@
     <custom-navbar></custom-navbar>
 
     <!-- Main part of website -->
-    <main aria-label="Main part of website">
+    <main id="main" aria-label="Main part of website">
         <!-- Home Page -->
         <article id="home">
             <section class="profile-info flex-container">
@@ -81,109 +82,42 @@
                 <div class="codingLanguagesContainer">
                     <!-- HTML coding langauge -->
                     <div class="codingLanguageItem">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="64px">
-                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#E44D26"></path>
-                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#F16529"></path>
-                            <path
-                                d="M9.5 17.5L8.5 8H24L23.5 11H11.5L12 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5H9.5Z"
-                                fill="white"></path>
-                        </svg>
+                        <svg class="icon-html"></svg>
                         <span style="opacity: 0;">HTML</span>
                     </div>
 
                     <!-- CSS coding language -->
                     <div class="codingLanguageItem">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="64px">
-                            <path d="M6 28L4 3H28L26 28L16 31L6 28Z" fill="#1172B8"></path>
-                            <path d="M26 5H16V29.5L24 27L26 5Z" fill="#33AADD"></path>
-                            <path
-                                d="M19.5 17.5H9.5L9 14L17 11.5H9L8.5 8.5H24L23.5 12L17 14.5H23L22 24L16 26L10 24L9.5 19H12.5L13 21.5L16 22.5L19 21.5L19.5 17.5Z"
-                                fill="white"></path>
-                        </svg>
+                        <svg class="icon-css"></svg>
                         <span style="opacity: 0;">CSS</span>
                     </div>
 
                     <!-- JavaScript coding language -->
                     <div class="codingLanguageItem">
-                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" height="64px">
-                            <rect width="512" height="512" rx="15%" fill="#f7df1e"></rect>
-                            <path
-                                d="M324 370c10 17 24 29 47 29c20 0 33-10 33 -24c0-16 -13 -22 -35 -32l-12-5c-35-15 -58 -33 -58 -72c0-36 27 -64 70 -64c31 0 53 11 68 39l-37 24c-8-15 -17 -21 -31 -21c-14 0-23 9 -23 21c0 14 9 20 30 29l12 5c41 18 64 35 64 76c0 43-34 67 -80 67c-45 0-74 -21 -88 -49zm-170 4c8 13 14 25 31 25c16 0 26-6 26 -30V203h48v164c0 50-29 72 -72 72c-39 0-61 -20 -72 -44z"
-                                fill="#000">
-                            </path>
-                        </svg>
+                        <svg class="icon-js"></svg>
                         <span style="opacity: 0;">JavaScript</span>
                     </div>
 
                     <!-- C-sharp coding language -->
                     <div class="codingLanguageItem">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="64px">
-                            <path
-                                d="M27.6947 22.9999C27.883 22.6617 28 22.2807 28 21.9385V10.0613C28 9.71913 27.8831 9.33818 27.6947 9L16 16L27.6947 22.9999Z"
-                                fill="#7F3A86"></path>
-                            <path
-                                d="M17.0395 29.7433L26.9611 23.8047C27.2469 23.6336 27.5067 23.3382 27.695 23L16.0003 16L4.30566 23C4.49398 23.3382 4.75382 23.6337 5.03955 23.8047L14.9611 29.7433C15.5326 30.0855 16.468 30.0855 17.0395 29.7433Z"
-                                fill="#662579"></path>
-                            <path
-                                d="M27.6947 8.99996C27.5064 8.6617 27.2465 8.36629 26.9608 8.19521L17.0392 2.25662C16.4677 1.91446 15.5323 1.91446 14.9608 2.25662L5.03922 8.19521C4.46761 8.53729 4 9.37709 4 10.0613V21.9386C4 22.2807 4.11694 22.6618 4.30533 23L16 16L27.6947 8.99996Z"
-                                fill="#9A5196"></path>
-                            <path
-                                d="M16.0385 24C11.6061 24 8 20.4112 8 16C8 11.5888 11.6061 8 16.0385 8C18.8458 8 21.4674 9.47569 22.919 11.8618L19.4765 13.9265C18.7492 12.736 17.4399 12 16.0385 12C13.8222 12 12.0193 13.7944 12.0193 16C12.0193 18.2056 13.8222 20 16.0385 20C17.4362 20 18.7421 19.2681 19.4707 18.0832L22.9205 20.1359C21.4692 22.5234 18.8467 24 16.0385 24Z"
-                                fill="white"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M25.0001 13V13.9974H22.9999V13H22.0001V13.9974H21V15H22.0001V16.9948H21V18H22.0001V19H22.9999L23 18H25.0001V19H25.9999V18H27V17H25.9999V15H27V13.9974H25.9999V13H25.0001ZM25.0001 17V15H22.9999V16.9948L25.0001 17Z"
-                                fill="white"></path>
-                        </svg>
+                        <svg class="icon-cs"></svg>
                         <span style="opacity: 0;">C-sharp</span>
                     </div>
 
                     <!-- C++ coding language -->
                     <div class="codingLanguageItem">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="64px">
-                            <path fill="#004482"
-                                d="M270.3 445l141.1-81.4c4.1-2.3 7.8-6.4 10.4-11l-166.3-96-166.3 96c2.7 4.6 6.4 8.7 10.4 11L240.8 445c8.1 4.7 21.4 4.7 29.5 0z">
-                            </path>
-                            <path fill="#659AD2"
-                                d="M421.8 160.5c-2.7-4.6-6.4-8.7-10.4-11L270.3 68c-8.1-4.7-21.4-4.7-29.6 0l-141 81.5c-8.1 4.7-14.8 16.2-14.8 25.6V338c0 4.7 1.7 9.9 4.3 14.6l166.3-96 166.3-96.1z">
-                            </path>
-                            <circle cx="256" cy="256" r="86" fill="none" stroke="#ffffff" stroke-width="57"></circle>
-                            <path fill="#00599C"
-                                d="M421.8 352.6c2.7-4.6 4.3-9.9 4.3-14.6V175.2c0-4.7-1.7-10-4.3-14.7l-166.3 96.1 166.3 96z">
-                            </path>
-                            <path stroke="#ffffff" stroke-width="13"
-                                d="M350.5 237 v39 M331,257 h39 M397.5 237 v39 M378,257 h39"></path>
-                        </svg>
+                        <svg class="icon-cpp"></svg>
                         <span style="opacity: 0;">C++</span>
                     </div>
 
                     <!-- Python coding language -->
                     <div class="codingLanguageItem">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" height="64px">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M13.0164 2C10.8193 2 9.03825 3.72453 9.03825 5.85185V8.51852H15.9235V9.25926H5.97814C3.78107 9.25926 2 10.9838 2 13.1111L2 18.8889C2 21.0162 3.78107 22.7407 5.97814 22.7407H8.27322V19.4815C8.27322 17.3542 10.0543 15.6296 12.2514 15.6296H19.5956C21.4547 15.6296 22.9617 14.1704 22.9617 12.3704V5.85185C22.9617 3.72453 21.1807 2 18.9836 2H13.0164ZM12.0984 6.74074C12.8589 6.74074 13.4754 6.14378 13.4754 5.40741C13.4754 4.67103 12.8589 4.07407 12.0984 4.07407C11.3378 4.07407 10.7213 4.67103 10.7213 5.40741C10.7213 6.14378 11.3378 6.74074 12.0984 6.74074Z"
-                                fill="url(#paint0_linear_87_8204)"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M18.9834 30C21.1805 30 22.9616 28.2755 22.9616 26.1482V23.4815L16.0763 23.4815L16.0763 22.7408L26.0217 22.7408C28.2188 22.7408 29.9998 21.0162 29.9998 18.8889V13.1111C29.9998 10.9838 28.2188 9.25928 26.0217 9.25928L23.7266 9.25928V12.5185C23.7266 14.6459 21.9455 16.3704 19.7485 16.3704L12.4042 16.3704C10.5451 16.3704 9.03809 17.8296 9.03809 19.6296L9.03809 26.1482C9.03809 28.2755 10.8192 30 13.0162 30H18.9834ZM19.9015 25.2593C19.1409 25.2593 18.5244 25.8562 18.5244 26.5926C18.5244 27.329 19.1409 27.9259 19.9015 27.9259C20.662 27.9259 21.2785 27.329 21.2785 26.5926C21.2785 25.8562 20.662 25.2593 19.9015 25.2593Z"
-                                fill="url(#paint1_linear_87_8204)"></path>
-                            <defs>
-                                <linearGradient id="paint0_linear_87_8204" x1="12.4809" y1="2" x2="12.4809" y2="22.7407"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#327EBD"></stop>
-                                    <stop offset="1" stop-color="#1565A7"></stop>
-                                </linearGradient>
-                                <linearGradient id="paint1_linear_87_8204" x1="19.519" y1="9.25928" x2="19.519" y2="30"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FFDA4B"></stop>
-                                    <stop offset="1" stop-color="#F9C600"></stop>
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                        <svg class="icon-py"></svg>
                         <span style="opacity: 0;">Python</span>
                     </div>
                 </div>
             </section>
         </article>
-
 
         <!-- education page -->
         <article id="education">
@@ -214,54 +148,67 @@
                 <table>
                     <tr>
                         <td>
-                            <img src="assets/images/education/glemmen-vgs.webp"
-                                alt="Bilde av Glemmen Videregående skole">
+                            <a href="https://viken.no/glemmen-vgs/" target="_blank" tabindex="-1">
+                                <img src="assets/images/education/glemmen.webp"
+                                    alt="Bilde av Glemmen Videregående skole">
+                            </a>
                         </td>
                         <td>
-                            <p id="educationSchoolsGlemmenTitle" class="schoolTitle">Glemmen videregående skole</p>
+                            <p id="educationSchoolsGlemmenTitle" class="subheading schoolTitle">Glemmen videregående
+                                skole <span class="time">2022 → nå</span></p>
 
-                            <p id="educationSchoolsGlemmenDuration">2022 til nå</p>
                             <p id="educationSchoolsGlemmenReview">Denne skolen er ganske digg å gå på.</p>
-                            <p id="educationSchoolsGlemmenLine">vg1 linje: Informasjonsteknologi og
+                            <p id="educationSchoolsGlemmenLine">VG1 linje: Informasjonsteknologi og
                                 medieproduksjon.</p>
-                            <a href="https://viken.no/glemmen-vgs/" target="_blank"
-                                id="educationSchoolsGlemmenLink">Link til skolen</a>
+                            <a href="https://viken.no/glemmen-vgs/" target="_blank">
+                                <span id="educationLinkToSchool">Link til skolen</span>
+                                <svg class="icon-redirect"></svg>
+                            </a>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <p id="educationSchoolsBorgeTitle" class="schoolTitle">Borge ungdomsskole</p>
+                            <p id="educationSchoolsBorgeTitle" class="subheading schoolTitle">Borge ungdomsskole <span
+                                    class="time">2019 → 2022</span></p>
 
-                            <p id="educationSchoolsBorgeDuration">2019 til 2022</p>
-                            <p id="educationSchoolsBorgeReview">I løpet av ungdomsskolen hadde interessen min for
-                                datamaskiner økt ganske mye og jeg
-                                begynte også å få interesse for koding, i 10. klasse så hadde jeg programmering som
-                                valgfag.</p>
-                            <p id="educationSchoolsBorgeLine">Utdanning: Grunnskole.</p>
-                            <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
-                                id="educationSchoolsBorgeLink">Link til skolen</a>
+                            <p id="educationSchoolsBorgeReview">
+                                I løpet av ungdomsskolen så hadde interessen min for datamaskiner blitt til en hobby. På
+                                denne tiden kunne jeg allerede mye om datamaskiner, men jeg kunne ikke så mye om
+                                programmering. I 10. klasse så valgte jeg programmering som valgfag og det var da jeg
+                                fikk en god smak for koding. Der så lærte jeg å kode i Python og Scratch.
+                            </p>
+                            <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank">
+                                <span id="educationLinkToSchool">Link til skolen</span>
+                                <svg class="icon-redirect"></svg>
+                            </a>
                         </td>
                         <td>
-                            <img src="assets/images/education/borge-ungdom-skole.webp"
-                                alt="Image of Borge Ungdom Skole">
+                            <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank" tabindex="-1">
+                                <img src="assets/images/education/borge-skole.webp" alt="Image of Borge Ungdom Skole">
+                            </a>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <img src="assets/images/education/arum-skole.webp" alt="Image of Årum skole">
+                            <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank" tabindex="-1">
+                                <img src="assets/images/education/arum-skole.webp" alt="Image of Årum skole">
+                            </a>
                         </td>
                         <td>
-                            <p id="educationSchoolsArumTitle" class="schoolTitle">Årum skole</p>
+                            <p id="educationSchoolsArumTitle" class="subheading schoolTitle">Årum skole <span
+                                    class="time">2012 → 2019</span></p>
 
-                            <p id="educationSchoolsArumDuration">2012 til 2019</p>
-                            <p id="educationSchoolsArumReview">Dette var den første skolen jeg gikk på, og det var i
-                                løpet av denne tiden jeg fikk
-                                interesse for datamaskiner.</p>
-                            <p id="educationSchoolsArumLine">Utdanning: Grunnskole.</p>
-                            <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank"
-                                id="educationSchoolsArumLink">Link til skolen</a>
+                            <p id="educationSchoolsArumReview">
+                                Dette var den første skolen jeg gikk på, det var i løpet av denne tiden jeg fikk en
+                                interesse innenfor datamaskiner og programmering.
+                            </p>
+
+                            <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank">
+                                <span id="educationLinkToSchool">Link til skolen</span>
+                                <svg class="icon-redirect"></svg>
+                            </a>
                         </td>
                     </tr>
                 </table>
@@ -401,26 +348,27 @@
             </section>
         </article>
 
-
         <!-- games page -->
         <article id="games">
             <h2 id="gamesHeading" class="heading">Spill</h2>
 
             <p id="gamesText">Her her er alle spillene jeg har lagd i HTML og JavaScript</p>
 
-            <!-- Test game -->
-            <!-- <section id="test-game">
-                <h3 class="subheading">Test game</h3>
+            <!-- Drum kit -->
+            <section id="drum-kit">
+                <h3 class="subheading">Drum kit</h3>
 
                 <div class="game-container">
-                    <div class="game-start">
-                        <button onclick="testGame()">Start game!</button>
+                    <div class="screen game-loading">
+                        <p id="gamesLoading" class="loading">Laster inn</p>
                     </div>
-                    <div class="game-loading">
-                        <p class="loading">Loading<span class="loading-dots">...</span></p>
+
+                    <div class="screen game-start" style="display: none;">
+                        <button id="gameStart" onclick="drumKit()">Start spill!</button>
                     </div>
+
                     <div class="game-content">
-                        <h1 id="title">Drum 🥁 Kit</h1>
+                        <p class="title">Drum 🥁 Kit</p>
                         <div class="set">
                             <button class="w drum">w</button>
                             <button class="a drum">a</button>
@@ -433,25 +381,6 @@
                         </div>
                     </div>
                 </div>
-            </section> -->
-
-            <!-- Drum kit -->
-            <section id="drum-kit">
-                <h3 class="subheading">Drum-kit</h3>
-
-                <div class="game-container">
-                    <h1 id="title">Drum 🥁 Kit</h1>
-                    <div class="set">
-                        <button class="w drum">w</button>
-                        <button class="a drum">a</button>
-                        <button class="s drum">s</button>
-                        <button class="d drum">d</button>
-                        <button class="f drum">f</button>
-                        <button class="j drum">j</button>
-                        <button class="k drum">k</button>
-                        <button class="l drum">l</button>
-                    </div>
-                </div>
             </section>
 
             <!-- Simon game -->
@@ -459,15 +388,25 @@
                 <h3 class="subheading">Simon game</h3>
 
                 <div class="game-container">
-                    <h1 id="level-title">Press A Key to Start</h1>
-                    <div class="container">
-                        <div class="row">
-                            <span type="button" id="green" class="btn green"></span>
-                            <span type="button" id="red" class="btn red"></span>
-                        </div>
-                        <div class="row">
-                            <span type="button" id="yellow" class="btn yellow"></span>
-                            <span type="button" id="blue" class="btn blue"></span>
+                    <div class="screen game-loading">
+                        <p id="gamesLoading" class="loading">Laster inn</p>
+                    </div>
+
+                    <div class="screen game-start" style="display: none;">
+                        <button id="gameStart" onclick="simonGame()">Start spill!</button>
+                    </div>
+
+                    <div class="game-content">
+                        <p class="title">Click me to start</p>
+                        <div class="container">
+                            <div class="row">
+                                <span type="button" id="green" class="btn green"></span>
+                                <span type="button" id="red" class="btn red"></span>
+                            </div>
+                            <div class="row">
+                                <span type="button" id="yellow" class="btn yellow"></span>
+                                <span type="button" id="blue" class="btn blue"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -478,20 +417,22 @@
                 <h3 class="subheading">Dice game</h3>
 
                 <div class="game-container">
-                    <div class="container">
-                        <h1>Click below to roll dice</h1>
-                        <button onclick="rollDicee()">Click me!</button>
+                    <p class="title">Click anywhere to roll dice</p>
+                    <div class="dicees">
+                        <div class="dice">
+                            <p>
+                                <span contentEditable="true" spellcheck="false" class="player1">Player1</span>
+                                <svg class="icon-edit"></svg>
+                            </p>
+                            <svg id="dice1" class="icon-dice-6"></svg>
+                        </div>
 
-                        <div class="dicees">
-                            <div class="dice">
-                                <p>Player 1</p>
-                                <img class="img1" src="./assets/images/dice-game/dice6.svg" height="128px">
-                            </div>
-
-                            <div class="dice">
-                                <p>Player 2</p>
-                                <img class="img2" src="./assets/images/dice-game/dice6.svg" height="128px">
-                            </div>
+                        <div class="dice">
+                            <p>
+                                <span contentEditable="true" spellcheck="false" class="player2">Player2</span>
+                                <svg class="icon-edit"></svg>
+                            </p>
+                            <svg id="dice2" class="icon-dice-6"></svg>
                         </div>
                     </div>
                 </div>

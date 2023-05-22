@@ -10,7 +10,8 @@
 
     position: sticky;
     top: 0;
-    z-index: 999;
+    isolation: isolate;
+    z-index: 1;
 }
 
 /* Underline styling */
@@ -35,6 +36,32 @@
 
     background: var(--accent-color);
     border-radius: var(--border-radius);
+}
+
+// Skip to main content link
+.skip-to-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--bg-inverse);
+
+    height: 50px;
+    padding: 0 1em;
+
+    position: absolute;
+    left: 0;
+    z-index: 9;
+
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in;
+
+    &:focus {
+        transform: translateX(0%);
+        outline: none;
+    }
 }
 
 /* ******************************************* */
@@ -137,6 +164,14 @@
 
         color: var(--text-color);
         fill: currentColor;
+
+        svg {
+            height: 28px;
+        }
+    }
+
+    .navbar-buttons .navbar-appearance > button svg {
+        height: 31px;
     }
 
     .navbar-buttons > div > button span {
@@ -187,17 +222,24 @@
         margin: 0.6em 0.2em;
         padding: 0;
         color: var(--text-color);
-        font-size: 1.33rem;
+        font-size: 1.2rem;
         font-weight: 500;
     }
 
     .navbar-drop button svg {
-        width: 30px;
+        height: 26px;
         margin-right: 0.3em;
     }
 
     .navbar-buttons > .active .navbar-drop {
         display: flex;
+    }
+
+    .navbar-appearance {
+        .navbar-drop svg {
+            height: 24px;
+            border-radius: 50%;
+        }
     }
 }
 
@@ -300,7 +342,7 @@
                 color: var(--text-color);
             }
 
-            .navbar-buttons > div > button svg {
+            .navbar-buttons > div > button {
                 display: none;
             }
 
@@ -379,15 +421,15 @@
             transition: transform 300ms ease, opacity 300ms ease;
         }
 
-        .navbar.active .navbar-menuButton::before {
+        &.active .navbar-menuButton::before {
             transform: rotate(-45deg) translate(-8px, 6px);
         }
 
-        .navbar.active .navbar-menuButton::after {
+        &.active .navbar-menuButton::after {
             transform: rotate(45deg) translate(-9px, -8px);
         }
 
-        .navbar.active .navbar-menuButton .bar {
+        &.active .navbar-menuButton .bar {
             opacity: 0;
         }
     }

@@ -1,100 +1,27 @@
 <!DOCTYPE html>
 <html lang="no" data-pagename="404">
-
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 	<title>404 - Page Not Found</title>
-	<link rel="icon" type="image/x-icon"
-		href="https://kimlukasmyrvold.github.io/assets/images/favicons/favicon.ico" />
-
-	<link rel="stylesheet" href="assets/css/style.css"
-		onerror="this.onerror=null;this.href='https:/\/kimlukasmyrvold.github.io/assets/css/style.css';" />
+	<link rel="icon" href="https://kimlukasmyrvold.github.io/assets/images/favicons/favicon.ico" />
+	<link rel="stylesheet" href="https://kimlukasmyrvold.github.io/assets/css/style.css" />
 	<script defer src="https://kimlukasmyrvold.github.io/assets/js/script.js"></script>
-
-	<style>
-		main {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			align-self: center;
-			margin: 0 0 2em;
-			padding: 0;
-		}
-
-		#errorTitle {
-			font-size: clamp(4rem, -0.85rem + 40vw, 14rem);
-			font-weight: lighter;
-		}
-
-		#siteNotFound {
-			font-size: clamp(1.5rem, -0.85rem + 10vw, 3rem);
-			font-weight: 300;
-			margin: .4em 0;
-		}
-
-		#goToPage {
-			font-size: clamp(1.2rem, -0.85rem + 8vw, 2rem);
-			font-weight: 300;
-			margin: 0;
-		}
-
-		.errorLinks {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			align-self: center;
-		}
-
-		.errorLinks a {
-			font-size: 1.3rem;
-			text-decoration: underline;
-			margin: .2em 0;
-		}
-
-		@media (min-width: 600px) {
-			.errorLinks {
-				flex-direction: row;
-				justify-content: center;
-				margin: 0;
-			}
-
-			.errorLinks a:not(:first-child)::before {
-				content: "|";
-				padding: 0 10px;
-				opacity: .7;
-			}
-		}
-	</style>
+	<style>main{display:flex;flex-direction:column;justify-content:center;align-items:center;align-self:center;margin:0 0 2em;padding:0}#errorTitle{font-size:clamp(4rem,-0.85rem + 40vw,14rem);font-weight:lighter}#siteNotFound{font-size:clamp(1.5rem,-0.85rem + 10vw,3rem);font-weight:300;margin:.4em 0}#goToPage{font-size:clamp(1.2rem,-0.85rem + 8vw,2rem);font-weight:300;margin:0}.errorLinks{display:flex;flex-direction:column;align-items:flex-start;align-self:center}.errorLinks a{font-size:1.3rem;text-decoration:underline;margin:.2em 0}@media(min-width: 600px){.errorLinks{flex-direction:row;justify-content:center;margin:0}.errorLinks a:not(:first-child)::before{content:"|";padding:0 10px;opacity:.7}}</style>
 </head>
-
 <body>
 	<custom-navbar></custom-navbar>
-
 	<main>
 		<span id="errorTitle">404</span>
-
 		<h1 id="siteNotFound">Denne siden finnes ikke</h1>
 		<h2 id="goToPage">Gå til en av disse sidene:</h2>
-
 		<nav class="errorLinks" aria-label="Secondary navbar">
 			<a id="home404" href="https://kimlukasmyrvold.github.io/#" rel="noreferrer noopener">Home</a>
-
-			<a id="education404" href="https://kimlukasmyrvold.github.io/#education"
-				rel="noreferrer noopener">Education</a>
-
-			<a id="workExperience404" href="https://kimlukasmyrvold.github.io/#workExperience"
-				rel="no404referrer noopener">Work experience</a>
-
-			<a id="hobbies404" href="https://kimlukasmyrvold.github.io/#hobbies"
-				rel="noreferrer noopener">Hobbies</a>
-
-			<a id="games404" href="https://kimlukasmyrvold.github.io/#games"
-				rel="noreferrer noopener">Games</a>
+			<a id="education404" href="https://kimlukasmyrvold.github.io/#education">Education</a>
+			<a id="workExperience404" href="https://kimlukasmyrvold.github.io/#workExperience">Work experience</a>
+			<a id="hobbies404" href="https://kimlukasmyrvold.github.io/#hobbies">Hobbies</a>
+			<a id="games404" href="https://kimlukasmyrvold.github.io/#games">Games</a>
 		</nav>
 	</main>
 </body>
-
 </html>

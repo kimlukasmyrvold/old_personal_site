@@ -1,17 +1,18 @@
-@use '../css/themes.css';
+@use "../css/themes.css";
+@use "abstracts/vars" as *;
 @import url(../fonts/nunito/nunito.css);
 
 *,
 *::before,
 *::after {
-    font-family: "Nunito", sans-serif;
+    font-family: $font-family;
     box-sizing: border-box;
     border: none;
-    color: var(--text-color);
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 50px;
 }
 
 body {
@@ -25,18 +26,12 @@ body {
 
     margin: 0;
     padding: 0;
+    font-size: 1.125rem;
+    color: var(--text-color);
 
-    min-height: 100vh;
     overflow: auto;
     animation: gradientAnimation 50s ease infinite;
 }
-
-:target {
-    scroll-margin-top: 50px;
-}
-
-
-
 
 // **********************************
 // *           Animations           *
@@ -56,9 +51,6 @@ body {
     }
 }
 
-
-
-
 /* *************************************** */
 /* *           Utility styling           * */
 /* *************************************** */
@@ -67,50 +59,55 @@ button,
 a {
     display: inline-flex;
     position: relative;
+    color: var(--text-color);
 }
 
 button {
     background: none;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
 }
 
 a {
     text-decoration: underline;
 }
 
-
 /* Styling underline for all buttons and <a> elements inside main part of document */
-.custom-underline a {
-    text-decoration: none;
+.custom-underline {
+    @mixin underlineAfter {
+        content: "";
+        position: absolute;
+        bottom: -0.0001em;
+
+        width: 100%;
+        height: 0.1em;
+
+        background: var(--accent-color);
+        border-radius: var(--border-radius);
+
+        transition: scale 200ms ease-in;
+        scale: 1;
+    }
+
+    a:not(.underline) {
+        text-decoration: none;
+
+        &:after {
+            @include underlineAfter;
+        }
+    }
+
+    button {
+        &::after,
+        &:hover::after {
+            @include underlineAfter;
+        }
+
+        &::after {
+            scale: 0 1;
+        }
+    }
 }
-
-.custom-underline a:hover,
-.custom-underline button:hover {
-    scale: 0.99;
-}
-
-.custom-underline a:not(.underline):after,
-.custom-underline button::after,
-.custom-underline button:hover::after {
-    content: "";
-    position: absolute;
-    bottom: -0.0001em;
-
-    width: 100%;
-    height: 0.1em;
-
-    background: var(--accent-color);
-    border-radius: var(--border-radius);
-
-    transition: scale 200ms ease-in;
-    scale: 1;
-}
-
-.custom-underline button::after {
-    scale: 0 1;
-}
-
 
 .round {
     border-radius: 50%;
@@ -136,20 +133,22 @@ hr {
     display: flex;
 }
 
+.hidden {
+    display: none;
+}
 
 /* heading classes */
 .heading {
     margin: 0.3em 0 0.8em;
-    font-size: 2.1rem;
+    font-size: 2.15rem;
     font-weight: 700;
 }
 
 .subheading {
-    margin: 0.5em 0;
-    font-size: 1.6rem;
+    margin: 1.2em 0 0.4em;
+    font-size: 1.75rem;
     font-weight: 600;
 }
-
 
 /* Font weights */
 .fw-100 {
@@ -188,8 +187,12 @@ hr {
     font-weight: 900;
 }
 
-
-
+// Icon sizes
+.icon-redirect,
+.icon-edit {
+    height: 0.8em;
+    align-self: flex-start;
+}
 
 /* ********************************************** */
 /* *        Styling Main content of page        * */
@@ -197,32 +200,24 @@ hr {
 
 main {
     flex: 1;
-    padding: 1em 5em;
+    padding: 1.5em 5em calc(1.5em * 2);
     transition: padding 400ms ease-in;
     overflow: auto;
-}
 
-@media (width <=950px) {
-    main {
-        padding: 1em 3em;
+    @media (width <= 950px) {
+        padding-left: 3em;
+        padding-right: 3em;
     }
-}
 
-@media (width <=800px) {
-    main {
-        padding: 1em 2em;
+    @media (width <= 800px) {
+        padding-left: 2em;
+        padding-right: 2em;
     }
-}
 
-@media (width <=500px) {
-    main {
-        padding: 1em 0.5em;
+    @media (width <= 500px) {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
-}
-
-
-article {
-    padding: 0.1em 0 1.9em;
 }
 
 article:not(:last-child)::after {
@@ -232,17 +227,11 @@ article:not(:last-child)::after {
     width: 98%;
     height: 3px;
 
-    margin: 1.9em auto 0;
+    margin: 2.5em auto;
 
     border-radius: var(--border-radius);
     background: var(--separator-color);
 }
-
-
-section {
-    margin: 1.8em 0;
-}
-
 
 .flex-container {
     display: flex;
