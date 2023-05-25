@@ -68,6 +68,11 @@ class CustomNavbar extends HTMLElement {
                             <svg class="icon-flag-en"></svg>
                             <span>English</span>
                         </button>
+                        <hr>
+                        <button onclick="changeLanguage('de')" data-lang="de" aria-label="English translation button">
+                            <svg class="icon-flag-de"></svg>
+                            <span>German</span>
+                        </button>
                     </div>
                 </div>
                 <div class="navbar-appearance">

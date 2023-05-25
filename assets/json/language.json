@@ -28,6 +28,7 @@
             },
             "home": {
                 "homeAge": "2006, <span id=\"age\"></span> år gammel",
+                "location": "Fredrikstad, Norge",
                 "homeAboutHeading": "Litt om meg",
                 "homeAboutText": "Jeg er en <span class=\"fw-800\">ansvarlig, ryddig og snill</span> gutt på <span id=\"age\"></span> år. Jeg lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske <span class=\"fw-800\">selvstendig</span>.",
                 "homeInterestsHeading": "Interesser",
@@ -99,6 +100,7 @@
             },
             "home": {
                 "homeAge": "2006, <span id=\"age\"></span> years old",
+                "location": "Fredrikstad, Norway",
                 "homeAboutHeading": "A bit about me",
                 "homeAboutText": "I am a <span class=\"fw-800\">responsible, tidy and kind</span> <span id=\"age\"></span>-year-old boy. I learn quickly and do my best. I think things through thoroughly before I do it, and I am quite <span class=\"fw-800\">independent</span>.",
                 "homeInterestsHeading": "Interests",
@@ -141,6 +143,77 @@
                 "gamesLoading": "Loading",
                 "gameStart": "Start game!"
             }
+        },
+        "de": {
+          "404": {
+            "siteNotFound": "Diese Seite existiert nicht !",
+            "goToPage": "Gehen Sie zu einer dieser Seiten:",
+            "home404": "Webseite",
+            "education404": "Erziehung und Ausbildung",
+            "workExperience404": "Arbeitserfahrung",
+            "hobbies404": "Hobbys",
+            "games404": "Spiele"
+          },
+          "NavbarFooter": {
+            "contactInformation": "Kontaktinformationen",
+            "locationText": "Ort. Sicherheit.",
+            "map-consent-text": "Google Maps kann Benutzerdaten sammeln. Um Karten anzuzeigen, müssen Sie diese akzeptieren.",
+            "map-consent-button": "Akzeptieren",
+            "deviceTheme": "Einheit",
+            "darkTheme": "Schwarz.",
+            "purpleTheme": "Violett",
+            "lightTheme": "Licht",
+            "orangeTheme": "Orange",
+            "homeLink": "Webseite",
+            "educationLink": "Erziehung und Ausbildung",
+            "workExperienceLink": "Arbeitserfahrung",
+            "hobbiesLink": "Hobbys",
+            "gamesLink": "Spiele"
+          },
+          "home": {
+            "homeAge": "2006, <span id=\"age\"></span> Jahre alt",
+            "location": "Fredrikstad, Norwegen",
+            "homeAboutHeading": "Etwas über mich",
+            "homeAboutText": "Ich bin ein <span class=\"fw-800\">verantwortungsbewusster, ordentlicher und freundlicher</span> Junge <span id=\"age\"></span> Jahr. Ich lerne schnell und gebe mein Bestes. Ich denke die Dinge gründlich durch, bevor ich sie tue, und bin ziemlich <span class=\"fw-800\">unabhängig</span> .",
+            "homeInterestsHeading": "Meine Hobbys...",
+            "homeInterestsText": "Ich interessiere mich für <span class=\"fw-800\">Computer, Programmierung, Netzwerke und Spiele.</span>",
+            "homeInterestsMoreInfo": "Weitere Infos auf der Hobbyseite...",
+            "homeCodingLanguagesHeading": "Codesprache, mit der ich gearbeitet habe",
+            "educationHeading": "Mein Bildungsplan",
+            "educationText": "Mein Plan ist es, im ersten Jahr Informationstechnologie und Medienproduktion zu studieren und dann im zweiten Jahr Informationstechnologie. In vg3 wird es das Fach IT-Entwickler sein. Sollte ich mit meiner Wahl nicht zufrieden sein, werde ich versuchen, in das Fach IT-Betrieb zu wechseln. Für vg1 habe ich mich für einen IT-Entwickler für YFF entschieden.",
+            "educationAmbitions": "Meine Ambitionen",
+            "educationAmbitionsText": "Mein Lebensziel ist es, einen gut bezahlten Job zu bekommen, bei dem ich Spaß habe und einen positiven Beitrag leisten kann. Ich möchte auch meine Fähigkeiten in Programmierung und Technologie weiterentwickeln.",
+            "educationSchoolsHeading": "Schulen, die ich besucht habe",
+            "educationSchoolsGlemmenTitle": "Glemmen-Oberschule <span class=\"time\">2022 → jetzt</span>",
+            "educationSchoolsGlemmenReview": "Es ist ziemlich cool, diese Schule zu besuchen.",
+            "educationSchoolsGlemmenLine": "vg1-Linie: Informationstechnologie und Medienproduktion.",
+            "educationSchoolsBorgeTitle": "Borge-Oberschule <span class=\"time\">2019 → 2022</span>",
+            "educationSchoolsBorgeReview": "Während der weiterführenden Schule hatte sich mein Interesse an Computern zu einem Hobby entwickelt. Zu diesem Zeitpunkt wusste ich bereits viel über Computer, aber nicht viel über Programmierung. In der 10. Klasse habe ich Programmieren als Wahlfach gewählt und da habe ich einen guten Geschmack für das Programmieren bekommen. Dort habe ich gelernt, in Python und Scratch zu programmieren.",
+            "educationSchoolsArumTitle": "Årum-Schule <span class=\"time\">2012 → 2019</span>",
+            "educationSchoolsArumReview": "Dies war die erste Schule, die ich besuchte. In dieser Zeit begann ich, mich für Computer und Programmierung zu interessieren.",
+            "educationLinkToSchool": "Link zur Schule",
+            "workExperienceHeading": "Arbeitserfahrungen",
+            "paintBtn": "Malen Sie ein Haus",
+            "paintDrop": "Im Sommer 2022 habe ich beim Streichen des Hauses mitgeholfen, ich habe gute Arbeit geleistet.",
+            "vacuumingBtn": "Staubsaugen",
+            "vaccumDrop": "Ich sauge mein Zimmer immer, wenn ich Staub sehe, manchmal sauge ich auch das Haus, wenn mir danach ist.",
+            "takeOutTrashBtn": "Bring den Müll raus",
+            "takeOutTrashDrop": "Manchmal werfe ich den Müll, den wir draußen haben, in den Mülleimer, aber normalerweise mache ich das nur, wenn ich viel Müll in meinem Zimmer habe, der nicht hineinpasst.",
+            "otherJobsHomeBtn": "Andere arbeiten zu Hause",
+            "otherJobsHomeDrop": "Normalerweise repariere und installiere ich Dinge im Haus, bisher habe ich feste Türen, Lampen, Computer, Internet und mehr. Außerdem habe ich ein Fenster, Rauchmelder, Jalousien, Heizungen und mehr eingebaut.&#10; Ich räume auch Sachen in die Spülmaschine und wieder heraus und lege Holz in den Ofen. Ich kann auch Feuer machen.",
+            "jobsMyRoomBtn": "Ich arbeite in meinem Zimmer",
+            "jobsMyRoomDrop": "In meinem Zimmer achte ich immer darauf, dass es ordentlich und ordentlich ist. Ich mache das Bett, staubsauge, wasche Staub, gieße Blumen und lege Kleidung in den Schrank.",
+            "hobbiesHeading": "Meine Hobbys",
+            "hobbiesText": "Meine Hobbys sind <span class=\"bold\"><a href=\"#gaming\">Gaming,</a> <a href=\"#computers\">Computer und</a> <a href=\"#programming\">Programmieren.</a></span> Etwa 2017 begann ich, mich für Spiele und Computer zu interessieren. Das Programmieren kam ein paar Jahre später. Im Gaming-Bereich mag ich eher ruhige Spiele und Spiele, bei denen man ein wenig nachdenken muss. Die Spiele, die mir am besten gefallen, sind Fabrikspiele.",
+            "gameSatisfactoryDrop": "Satisfactory ist ein sehr gutes Spiel. Ich habe über 800 Stunden im Spiel. Gekauft: 09.05.2020",
+            "gameDysonSphereProgramDrop": "Das Dyson Sphere Program ist ein gutes Spiel. Gekauft: 22.02.2021",
+            "gameSpaceEngineersDrop": "Space Engineers ist ein gutes Spiel. Gekauft: 08.02.2021",
+            "gameEuroTruckSimDrop": "Euro Truck Simulator 2 ist ein gutes Spiel. Gekauft: 30.05.2022",
+            "gamesHeading": "Spiele",
+            "gamesText": "Hier sind alle Spiele, die ich in HTML und JavaScript erstellt habe",
+            "gamesLoading": "Wird gestartet.",
+            "gameStart": "Spiel starten"
+          }
         }
     }
 }
