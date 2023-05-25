@@ -312,7 +312,7 @@ class CustomFooter extends HTMLElement {
                         <a href="mailto:kimlukasmyrvold06@gmail.com"><svg class="icon-mail"></svg><span>kimlukasmyrvold06@gmail.com</span></a>
                     </p>
                 </div>
-                <div class="grid-item" id="mapLocation" aria-label="Location section">
+                <div class="grid-item" id="location" aria-label="Location section">
                     <p id="locationText" class="header">Beliggenhet</p>
                     <div id="map" style="padding: 0 .5em 1em;">
                         <p id="map-consent-location">Fredrikstad, Årum.</p>
