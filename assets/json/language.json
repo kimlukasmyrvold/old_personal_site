@@ -28,7 +28,7 @@
             },
             "home": {
                 "homeAge": "2006, <span id=\"age\"></span> år gammel",
-                "location": "Fredrikstad, Norge",
+                "mapLocation": "Fredrikstad, Norge",
                 "homeAboutHeading": "Litt om meg",
                 "homeAboutText": "Jeg er en <span class=\"fw-800\">ansvarlig, ryddig og snill</span> gutt på <span id=\"age\"></span> år. Jeg lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske <span class=\"fw-800\">selvstendig</span>.",
                 "homeInterestsHeading": "Interesser",
@@ -100,7 +100,7 @@
             },
             "home": {
                 "homeAge": "2006, <span id=\"age\"></span> years old",
-                "location": "Fredrikstad, Norway",
+                "mapLocation": "Fredrikstad, Norway",
                 "homeAboutHeading": "A bit about me",
                 "homeAboutText": "I am a <span class=\"fw-800\">responsible, tidy and kind</span> <span id=\"age\"></span>-year-old boy. I learn quickly and do my best. I think things through thoroughly before I do it, and I am quite <span class=\"fw-800\">independent</span>.",
                 "homeInterestsHeading": "Interests",
@@ -172,7 +172,7 @@
           },
           "home": {
             "homeAge": "2006, <span id=\"age\"></span> Jahre alt",
-            "location": "Fredrikstad, Norwegen",
+            "mapLocation": "Fredrikstad, Norwegen",
             "homeAboutHeading": "Etwas über mich",
             "homeAboutText": "Ich bin ein <span class=\"fw-800\">verantwortungsbewusster, ordentlicher und freundlicher</span> Junge <span id=\"age\"></span> Jahr. Ich lerne schnell und gebe mein Bestes. Ich denke die Dinge gründlich durch, bevor ich sie tue, und bin ziemlich <span class=\"fw-800\">unabhängig</span> .",
             "homeInterestsHeading": "Meine Hobbys...",
