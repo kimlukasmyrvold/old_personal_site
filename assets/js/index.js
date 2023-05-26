@@ -78,7 +78,7 @@ class CustomNavbar extends HTMLElement {
                         <hr>
                         <button onclick="changeLanguage('de')" data-lang="de" aria-label="English translation button">
                             <svg class="icon-flag-de"></svg>
-                            <span>German</span>
+                            <span>Deutsch</span>
                         </button>
                     </div>
                 </div>
