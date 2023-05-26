@@ -245,20 +245,6 @@
 		C21.1,17.7,23.5,15.1,20.4,14z" />
     </symbol>
 
-    <!-- Color circles -->
-    <symbol id="icon-circle-black">
-        <circle fill="black" cx="12" cy="12" r="12" />
-    </symbol>
-    <symbol id="icon-circle-white">
-        <circle fill="white" cx="12" cy="12" r="12" />
-    </symbol>
-    <symbol id="icon-circle-purple">
-        <circle fill="purple" cx="12" cy="12" r="12" />
-    </symbol>
-    <symbol id="icon-circle-orange">
-        <circle fill="orange" cx="12" cy="12" r="12" />
-    </symbol>
-
     <!-- Location -->
     <symbol id="icon-location">
         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
