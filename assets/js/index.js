@@ -510,4 +510,10 @@ function addIcons() {
     })
 }
 
+// Initiate addIcons function
 addIcons();
+
+// Call function if language changes
+document.addEventListener('changeLanguageCalled', () => {
+    addIcons();
+});
