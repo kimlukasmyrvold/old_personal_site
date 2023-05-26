@@ -133,6 +133,31 @@
         scale: 1;
     }
 
+    .gamesDropdown {
+        display: none;
+    }
+
+    #gamesLink:hover + .gamesDropdown,
+    .gamesDropdown:hover {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: .6em;
+
+        border-radius: 0 calc(var(--border-radius) / 1.5) calc(var(--border-radius) / 1.5) calc(var(--border-radius) / 1.5);
+        background: var(--navbar-color);
+
+        padding: .6em .7em;
+        box-shadow: -1px 2px 6px #000000a6;
+        translate: -8% -3px;
+
+        a {
+            width: min-content;
+            height: auto;
+            padding: .1em 0;
+        }
+    }
+
     /* ****************************************** */
     /* *             Navbar buttons             * */
     /* ****************************************** */

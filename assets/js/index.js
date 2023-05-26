@@ -50,7 +50,14 @@ class CustomNavbar extends HTMLElement {
                     <li><a id="educationLink" href="/#education" class="navbar-link">Education</a></li>
                     <li><a id="workExperienceLink" href="/#workExperience" class="navbar-link">Work experience</a></li>
                     <li><a id="hobbiesLink" href="/#hobbies" class="navbar-link">Hobbies</a></li>
-                    <li><a id="gamesLink" href="/#games" class="navbar-link">Games</a></li>
+                    <li>
+                        <a id="gamesLink" href="/#games" class="navbar-link">Games</a>
+                        <div class="gamesDropdown">
+                            <a id="drumKitLink" class="navbar-link" href="/#drum-kit">Drum kit</a>
+                            <a id="simonGameLink" class="navbar-link" href="/#simon-game">Simon game</a>
+                            <a id="diceGameLink" class="navbar-link" href="/#dice-game">Dice game</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="navbar-buttons">
