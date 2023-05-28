@@ -389,13 +389,17 @@
         flex-direction: column;
         text-align: center;
         background-color: #011f3f;
+
+        p,
+        li {
+            font-family: "Press Start 2P", $font-family;
+            color: #fef2bf;
+        }
     }
 
     .title {
-        font-family: "Press Start 2P", $font-family;
         font-size: clamp(0.94rem, calc(-1rem + 20vw), 3rem);
         margin: 5%;
-        color: #fef2bf;
     }
 
     .container {
@@ -404,6 +408,23 @@
         margin: auto;
         user-select: none;
         margin-bottom: 2em;
+    }
+
+    .score-container {
+        margin-bottom: 1.5em;
+
+        .score-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5em;
+        }
+
+        .score-table {
+            display: flex;
+            flex-direction: column;
+            gap: .7em;
+            padding: 0;
+            list-style: none;
+        }
     }
 
     .btn {

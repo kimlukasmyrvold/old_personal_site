@@ -101,15 +101,53 @@ function simonGame() {
 
     // The button colors
     const buttonColors = ['red', 'blue', 'green', 'yellow'];
+    const scoreTable = $('#simon-game .score-table');
 
     // Default values
     let gamePattern = [];
     let userClickedPattern = [];
     let started = false;
     let level = 0;
+    let scores = JSON.parse(localStorage.getItem('simonGameScores')) || [];
+
+    function addScores() {
+        // Reset score table
+        scoreTable.text('');
+
+        // scores.forEach(score => {
+        scores.forEach(score => {
+            const li = document.createElement('li');
+            const value = document.createTextNode('Level: ' + score);
+
+            li.append(value);
+            scoreTable.append(li);
+        });
+    }
+    addScores();
 
     // Restart function
     function simonGame_restart() {
+        // Push level to scores array
+        scores.push(--level);
+
+        // Sort numbers in array from highest to lowest number
+        scores = scores.sort((a, b) => b - a);
+
+        if (scores.length > 5) scores.length = 5;
+        localStorage.setItem('simonGameScores', JSON.stringify(scores));
+
+        addScores();
+
+        // Add game over to screen
+        $('#simon-game .game-content').addClass('game-over');
+        $('#simon-game .title').text('Game Over!, Click me to Restart');
+        simonGame_event('wrong')
+
+        setTimeout(() => {
+            $('#simon-game .game-content').removeClass('game-over');
+        }, 200);
+
+        // Reset values
         gamePattern = [];
         started = false;
         level = 0;
@@ -140,15 +178,6 @@ function simonGame() {
                 }, 1000);
             }
         } else {
-            // Add game over to screen
-            $('#simon-game .game-content').addClass('game-over');
-            $('#simon-game .title').text('Game Over!, Click me to Restart');
-            simonGame_event('wrong')
-
-            setTimeout(() => {
-                $('#simon-game .game-content').removeClass('game-over');
-            }, 200);
-
             // Restart the game
             simonGame_restart();
         };
