@@ -15,9 +15,9 @@
     <link rel="manifest" href="manifest.json">
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/home.css">
 
-    <script defer src="assets/js/index.js"></script>
+    <script defer src="assets/js/main.js"></script>
     <script defer src="assets/js/ageCalc.js"></script>
 
     <script defer src="assets/js/jquery-3.6.4.min.js"></script>
@@ -28,12 +28,9 @@
 <body>
     <noscript>To fully access and navigate this website, please ensure that JavaScript is enabled in your browser settings.</noscript>
 
-    <!-- Navbar -->
     <custom-navbar></custom-navbar>
 
-    <!-- Main part of website -->
     <main id="main" aria-label="Main part of website">
-        <!-- Home Page -->
         <article id="home">
             <section class="profile-info flex-container">
                 <div class="flex-item">
@@ -73,37 +70,31 @@
                 <h3 class="subheading" id="homeCodingLanguagesHeading">Kodespråk jeg har jobbet med</h3>
 
                 <div class="codingLanguagesContainer">
-                    <!-- HTML coding langauge -->
                     <div class="codingLanguageItem">
                         <svg class="icon-html"></svg>
                         <span style="opacity: 0;">HTML</span>
                     </div>
 
-                    <!-- CSS coding language -->
                     <div class="codingLanguageItem">
                         <svg class="icon-css"></svg>
                         <span style="opacity: 0;">CSS</span>
                     </div>
 
-                    <!-- JavaScript coding language -->
                     <div class="codingLanguageItem">
                         <svg class="icon-js"></svg>
                         <span style="opacity: 0;">JavaScript</span>
                     </div>
 
-                    <!-- C-sharp coding language -->
                     <div class="codingLanguageItem">
                         <svg class="icon-cs"></svg>
                         <span style="opacity: 0;">C-sharp</span>
                     </div>
 
-                    <!-- C++ coding language -->
                     <div class="codingLanguageItem">
                         <svg class="icon-cpp"></svg>
                         <span style="opacity: 0;">C++</span>
                     </div>
 
-                    <!-- Python coding language -->
                     <div class="codingLanguageItem">
                         <svg class="icon-py"></svg>
                         <span style="opacity: 0;">Python</span>
@@ -112,7 +103,6 @@
             </section>
         </article>
 
-        <!-- education page -->
         <article id="education">
             <section class="edu-intro">
                 <div>
@@ -208,7 +198,6 @@
             </section>
         </article>
 
-        <!-- workExperience page -->
         <article id="workExperience">
             <h2 id="workExperienceHeading" class="heading">Jobberfaringer</h2>
 
@@ -261,7 +250,6 @@
             </section>
         </article>
 
-        <!-- hobbies page -->
         <article id="hobbies">
             <section>
                 <p id="hobbiesHeading" class="heading">Mine hobbyer</p>
@@ -341,13 +329,11 @@
             </section>
         </article>
 
-        <!-- games page -->
         <article id="games">
             <h2 id="gamesHeading" class="heading">Spill</h2>
 
             <p id="gamesText">Her her er alle spillene jeg har lagd i HTML og JavaScript</p>
 
-            <!-- Drum kit -->
             <section id="drum-kit">
                 <h3 class="subheading">Drum kit</h3>
 
@@ -376,7 +362,6 @@
                 </div>
             </section>
 
-            <!-- Simon game -->
             <section id="simon-game">
                 <h3 class="subheading">Simon game</h3>
 
@@ -401,11 +386,15 @@
                                 <span type="button" id="blue" class="btn blue"></span>
                             </div>
                         </div>
+
+                        <div class="score-container">
+                            <p class="score-title">Score table</p>
+                            <ol class="score-table"></ol>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Dice game -->
             <section id="dice-game">
                 <h3 class="subheading">Dice game</h3>
 
@@ -434,7 +423,6 @@
 
     </main>
 
-    <!-- Footer -->
     <custom-footer></custom-footer>
 </body>
 
