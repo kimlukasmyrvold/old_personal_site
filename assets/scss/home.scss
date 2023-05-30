@@ -421,7 +421,7 @@
         .score-table {
             display: flex;
             flex-direction: column;
-            gap: .7em;
+            gap: 0.7em;
             padding: 0;
             list-style: none;
         }
@@ -438,7 +438,6 @@
 
         transition: margin 500ms ease-in-out, width 250ms ease-in-out;
     }
-
 
     .pressed {
         box-shadow: 0 0 20px white;
