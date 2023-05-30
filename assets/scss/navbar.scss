@@ -128,7 +128,6 @@
         transition: scale 300ms ease;
     }
 
-    .navbar-links a:hover::after,
     .navbar-links a.active::after {
         scale: 1;
     }
@@ -390,7 +389,7 @@
                 height: 28px;
             }
 
-            .navbar-drop::after {
+            .navbar-buttons div:not(:last-child) .navbar-drop::after {
                 content: "";
                 display: block;
 

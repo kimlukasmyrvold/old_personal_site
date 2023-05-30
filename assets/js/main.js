@@ -173,10 +173,11 @@ class CustomNavbar extends HTMLElement {
             const articles = document.querySelectorAll('article');
             const firstArticle = articles[0] || 0; // setting default value to avoid errors
             const lastArticle = articles[articles.length - 1] || 0; // setting default value to avoid errors
+            const offset = 50;
 
             document.querySelectorAll('article').forEach(article => {
                 // Defining the start and end of the article
-                const articleStart = article.offsetTop - 130;
+                const articleStart = article.offsetTop - offset;
                 const articleEnd = articleStart + article.offsetHeight;
 
                 // Checking if postition of screen is within an article and then setting activeArticle to be equal to article
@@ -199,13 +200,13 @@ class CustomNavbar extends HTMLElement {
             });
 
             // If too high on the screen, select the page name
-            if (currentPosition < firstArticle.offsetTop - 130) {
+            if (currentPosition < firstArticle.offsetTop - offset) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 navLinks.forEach(link => link.getAttribute('id').includes(currentPage) ? link.classList.add('active') : null);
             }
 
             // If too low, select the last article
-            if (currentPosition > lastArticle.offsetTop - 130 + lastArticle.offsetHeight) {
+            if (currentPosition > lastArticle.offsetTop - offset + lastArticle.offsetHeight) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 document.querySelector(`a[id="${lastArticle.id}Link"]`).classList.add('active');
             }
@@ -217,8 +218,11 @@ class CustomNavbar extends HTMLElement {
             if (event.target.matches('.navbar-link')) {
                 // Removing active class from all navbar links
                 navLinks.forEach(link => link.classList.remove('active'));
+
+                // event.target.classList.add('active')
+
                 // Checking if the event type was 'mouseout' and calls setActiveLink() if true
-                event.type === 'mouseout' ? setActiveLink() : null;
+                event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
             }
         }
 
@@ -481,6 +485,10 @@ function dropdownToggle(e) {
 
 // Add click listener to all dropdown buttons
 dropdownButtons.forEach((e) => {
+    // Add hidden class to all dropdowns
+    document.querySelector('#' + e.dataset.dropdown).classList.add('hidden');
+
+    // Check for click and call dropdownToggle()
     e.addEventListener('click', () => {
         dropdownToggle(e)
     })

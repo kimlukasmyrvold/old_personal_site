@@ -221,17 +221,25 @@ main {
     }
 }
 
-article:not(:last-child)::after {
-    content: "";
-    display: block;
+article {
+    overflow: auto;
 
-    width: 98%;
-    height: 3px;
+    &:not(:last-child)::after {
+        content: "";
+        display: block;
 
-    margin: 2.5em auto;
+        width: 98%;
+        height: 3px;
 
-    border-radius: var(--border-radius);
-    background: var(--separator-color);
+        margin: 2.5em auto;
+
+        border-radius: var(--border-radius);
+        background: var(--separator-color);
+    }
+}
+
+section {
+    overflow: auto;
 }
 
 .flex-container {
