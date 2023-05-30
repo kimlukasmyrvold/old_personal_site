@@ -439,21 +439,6 @@
         transition: margin 500ms ease-in-out, width 250ms ease-in-out;
     }
 
-    @media (width <= 450px) {
-        .container {
-            gap: 6px;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .btn {
-            border-radius: $inner-border-radius;
-        }
-    }
 
     .pressed {
         box-shadow: 0 0 20px white;
@@ -483,6 +468,22 @@
     .yellow {
         background-color: yellow;
         border-bottom-left-radius: $outer-border-radius;
+    }
+
+    @media (width <= 450px) {
+        .container {
+            gap: 6px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .btn {
+            border-radius: $inner-border-radius;
+        }
     }
 }
 
