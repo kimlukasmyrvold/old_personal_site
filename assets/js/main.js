@@ -214,14 +214,8 @@ class CustomNavbar extends HTMLElement {
 
         // Function for handling mouse events like mouseout and mouseout
         function handleMouseEvents(event) {
-            // Checking if the target matches '.navbar-link'
             if (event.target.matches('.navbar-link')) {
-                // Removing active class from all navbar links
                 navLinks.forEach(link => link.classList.remove('active'));
-
-                // event.target.classList.add('active')
-
-                // Checking if the event type was 'mouseout' and calls setActiveLink() if true
                 event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
             }
         }
@@ -278,16 +272,10 @@ function navbarDrop(input) {
 
 class CustomFooter extends HTMLElement {
     connectedCallback() {
-        // Adding css file to head of document
         addCss('/assets/css/footer.css');
-
-        // Making footer hidden until css takes over, this is to stop the footer from flashing whilst loading css
         this.style.display = 'none';
-
-        // Adding id, aria-label and innerHTML to <custom-footer>
         this.setAttribute('id', 'footer');
         this.setAttribute('aria-label', 'Primary footer.');
-
         this.innerHTML = /*html*/`
             <div class="grid-container">
                 <div class="grid-item" aria-label="Social information section">
