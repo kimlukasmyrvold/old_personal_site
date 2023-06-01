@@ -1,42 +1,45 @@
 @use "abstracts/vars" as *;
 
-@import url(../fonts/arvo/arvo.css);
 @import url(../fonts/press-start-2p/press-start-2p.css);
 
 .profile-info {
     margin-bottom: 2em;
-}
 
-.profile-info div:first-child {
-    max-width: 300px;
-    width: 100%;
-    margin-right: 2em;
-}
+    div {
+        &:first-child {
+            max-width: 300px;
+            width: 100%;
+            margin-right: 2em;
 
-@media (width <=420px) {
-    .profile-info div:first-child {
-        margin-right: 0;
+            @media (width <= 420px) {
+                margin-right: 0;
+            }
+        }
+
+        &:last-child {
+            display: flex;
+            flex-direction: column;
+        }
     }
-}
 
-.profile-info img {
-    width: 100%;
-}
+    img {
+        width: 100%;
+    }
 
-.profile-info div:last-child {
-    display: flex;
-    flex-direction: column;
-}
+    p,
+    a {
+        margin: 0;
+        line-height: 1.4;
+        font-size: 1.4rem;
+    }
 
-.profile-info p,
-.profile-info a {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 1.4rem;
-}
+    a {
+        font-size: clamp(1rem, 6vw, 1.4rem);
+    }
 
-.profile-info .heading {
-    margin-bottom: 0.4em;
+    .heading {
+        margin-bottom: 0.4em;
+    }
 }
 
 /* ************************************** */
@@ -140,13 +143,40 @@
         }
     }
 
+    .school-table {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        @media (width <= 1100px) {
+            gap: 2em;
+        }
+    }
+
+    .school-table-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5em;
+
+        @media (width <= 1100px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1em;
+        }
+
+        div {
+            max-width: 85ch;
+        }
+    }
+
     .schoolTitle {
         font-weight: 700;
         line-height: 0.9;
+        margin-top: 0;
 
         span {
             white-space: nowrap;
-            text-decoration: underline;
             opacity: 0.9;
             font-size: 1rem;
             font-weight: 400;
@@ -157,9 +187,11 @@
         border-radius: var(--border-radius);
         box-shadow: -6px 8px 3px 0 var(--black-blur);
         height: auto;
-        // max-width: 500px;
-        // width: 100%;
-        width: 450px;
+        max-width: 450px;
+
+        @media (width <= 1100px) {
+            width: 100%;
+        }
     }
 }
 
@@ -295,8 +327,7 @@
     .title {
         font-size: 5rem;
         color: #dbedf3;
-        font-family: "Arvo", $font-family;
-        text-shadow: 3px 0 #ee8434;
+        text-shadow: 3px 2px #ee8434;
         margin: 0.6em 0;
     }
 
@@ -349,13 +380,12 @@
         border: 10px solid #404b69;
         border-radius: 15px;
 
-        font-family: "Arvo", $font-family;
         font-weight: 900;
         font-size: 5rem;
         line-height: 2;
 
         color: #ee8434;
-        text-shadow: 3px 0 #dbedf3;
+        text-shadow: 3px 2px #dbedf3;
 
         width: 150px;
         height: 150px;
