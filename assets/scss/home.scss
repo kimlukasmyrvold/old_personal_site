@@ -48,6 +48,7 @@
 
 #codingLanguages {
     overflow: auto hidden;
+    margin-bottom: -1.5em;
 
     .codingLanguagesContainer {
         display: flex;
@@ -71,6 +72,10 @@
         transition-property: width, transform, padding;
         transition-duration: 300ms;
         transition-timing-function: ease-in-out;
+
+        [class*="icon-"] {
+            transition: transform 300ms linear;
+        }
     }
 
     .codingLanguageItem span {
@@ -85,7 +90,10 @@
     /* Transition in hovered elements */
     .codingLanguageItem:hover {
         padding: 0.7em;
-        transform: scale(1.1) translateY(10px);
+
+        [class*="icon-"] {
+            transform: scale(0.8);
+        }
     }
 
     .codingLanguageItem:hover span {
@@ -93,56 +101,16 @@
     }
 }
 
+// article::after {
+//     margin: 0;
+// }
+
 /* ************************************************ */
 /* *          Styling for education page          * */
 /* ************************************************ */
 
 /* Styling for the introduction section */
 #education {
-    table {
-        width: 100%;
-
-        tr {
-            display: flex;
-            flex-direction: row;
-
-            &:not(:last-child) {
-                margin-bottom: 1.5em;
-            }
-
-            &:nth-child(even) {
-                justify-content: flex-end;
-                text-align: right;
-
-                td a {
-                    align-self: flex-end;
-                }
-            }
-
-            td {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding-right: 1.2em;
-                max-width: 60ch;
-
-                &:last-child {
-                    padding-right: 0;
-                }
-
-                a span {
-                    white-space: nowrap;
-                    padding-right: 0.2em;
-                }
-            }
-        }
-
-        p,
-        a {
-            margin: 0.3em 0;
-        }
-    }
-
     .school-table {
         display: flex;
         flex-direction: column;
@@ -185,7 +153,7 @@
 
     img {
         border-radius: var(--border-radius);
-        box-shadow: -6px 8px 3px 0 var(--black-blur);
+        box-shadow: 6px 8px 3px 0 var(--black-blur);
         height: auto;
         max-width: 450px;
 

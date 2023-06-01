@@ -517,6 +517,16 @@ function addIcons() {
 addIcons();
 
 // Call function if language changes
-document.addEventListener('changeLanguageCalled', () => {
-    addIcons();
-});
+document.addEventListener('changeLanguageCalled', addIcons);
+
+
+
+
+// *****************************************
+// *       Code for coding languages       *
+// *****************************************
+
+// Make text invisible
+document.querySelectorAll('.codingLanguageItem span').forEach((e) => {
+    e.style.opacity = '0';
+})
