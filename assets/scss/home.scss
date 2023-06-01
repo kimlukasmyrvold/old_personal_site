@@ -87,23 +87,20 @@
         height: 56px;
     }
 
-    /* Transition in hovered elements */
-    .codingLanguageItem:hover {
+    /* Transition in hovered/focused elements */
+    .codingLanguageItem:hover,
+    .codingLanguageItem:focus {
         padding: 0.7em;
 
-        [class*="icon-"] {
+        [class^="icon-"] {
             transform: scale(0.8);
         }
-    }
 
-    .codingLanguageItem:hover span {
-        opacity: 1 !important;
+        span {
+            opacity: 1 !important;
+        }
     }
 }
-
-// article::after {
-//     margin: 0;
-// }
 
 /* ************************************************ */
 /* *          Styling for education page          * */
