@@ -26,7 +26,12 @@
 </head>
 
 <body>
-    <noscript>To fully access and navigate this website, please ensure that JavaScript is enabled in your browser
+    <noscript><svg height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#f1a500"
+                d="M22.25,17.55,14.63,3.71a3,3,0,0,0-5.26,0L1.75,17.55A3,3,0,0,0,4.38,22H19.62a3,3,0,0,0,2.63-4.45ZM12,18a1,1,0,1,1,1-1A1,1,0,0,1,12,18Zm1-5a1,1,0,0,1-2,0V9a1,1,0,0,1,2,0Z">
+            </path>
+        </svg>
+        To fully access and navigate this website, please ensure that JavaScript is enabled in your browser
         settings.</noscript>
 
     <custom-navbar></custom-navbar>
@@ -39,7 +44,7 @@
                 </div>
                 <div class="flex-item">
                     <h1 class="heading">Kim Lukas Myrvold</h1>
-                    <p id="homeAge">2006, <span id="age"></span> år gammel</p>
+                    <p id="homeAge">2006, 17 år gammel</p>
                     <p id="homeLocation">Fredrikstad, Norge</p>
                     <a href="mailto: kimlukasmyrvold06@gmail.com">kimlukasmyrvold06@gmail.com</a>
                 </div>
@@ -50,11 +55,9 @@
             <section class="about-me">
                 <h3 id="homeAboutHeading" class="subheading">Litt om meg</h3>
 
-                <p id="homeAboutText">Jeg er en <strong>ansvarlig, ryddig og snill</strong> gutt på <span
-                        id="age"></span> år.
-                    Jeg
-                    lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske
-                    <strong>selvstendig</strong>.
+                <p id="homeAboutText">Jeg er en <strong>ansvarlig, ryddig og snill</strong> gutt på 17 år.
+                    Jeg lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er
+                    ganske <strong>selvstendig</strong>.
                 </p>
             </section>
 
@@ -139,15 +142,15 @@
             <section>
                 <p id="educationSchoolsHeading" class="subheading">Skoler jeg har gått på</p>
 
-                <table>
-                    <tr>
-                        <td>
+                <div class="school-table">
+                    <div class="school-table-item">
+                        <div>
                             <a href="https://viken.no/glemmen-vgs/" target="_blank" tabindex="-1">
                                 <img src="assets/images/education/glemmen.webp"
                                     alt="Bilde av Glemmen Videregående skole">
                             </a>
-                        </td>
-                        <td>
+                        </div>
+                        <div>
                             <p id="educationSchoolsGlemmenTitle" class="subheading schoolTitle">Glemmen videregående
                                 skole <span class="time">2022 → nå</span></p>
 
@@ -158,11 +161,17 @@
                                 <span id="educationLinkToSchool">Link til skolen</span>
                                 <svg class="icon-redirect"></svg>
                             </a>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
 
-                    <tr>
-                        <td>
+                    <div class="school-table-item">
+                        <div>
+                            <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
+                                tabindex="-1">
+                                <img src="assets/images/education/borge-skole.webp" alt="Image of Borge Ungdom Skole">
+                            </a>
+                        </div>
+                        <div>
                             <p id="educationSchoolsBorgeTitle" class="subheading schoolTitle">Borge ungdomsskole <span
                                     class="time">2019 → 2022</span></p>
 
@@ -176,23 +185,17 @@
                                 <span id="educationLinkToSchool">Link til skolen</span>
                                 <svg class="icon-redirect"></svg>
                             </a>
-                        </td>
-                        <td>
-                            <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
-                                tabindex="-1">
-                                <img src="assets/images/education/borge-skole.webp" alt="Image of Borge Ungdom Skole">
-                            </a>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
 
-                    <tr>
-                        <td>
+                    <div class="school-table-item">
+                        <div>
                             <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank"
                                 tabindex="-1">
                                 <img src="assets/images/education/arum-skole.webp" alt="Image of Årum skole">
                             </a>
-                        </td>
-                        <td>
+                        </div>
+                        <div>
                             <p id="educationSchoolsArumTitle" class="subheading schoolTitle">Årum skole <span
                                     class="time">2012 → 2019</span></p>
 
@@ -205,9 +208,9 @@
                                 <span id="educationLinkToSchool">Link til skolen</span>
                                 <svg class="icon-redirect"></svg>
                             </a>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                    </div>
+                </div>
             </section>
         </article>
 

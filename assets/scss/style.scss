@@ -58,56 +58,11 @@ body {
 
 button,
 a {
-    display: inline-flex;
     position: relative;
     color: var(--text-color);
-}
-
-button {
     background: none;
     border: none;
     cursor: pointer;
-}
-
-a {
-    text-decoration: underline;
-}
-
-/* Styling underline for all buttons and <a> elements inside main part of document */
-.custom-underline {
-    @mixin underlineAfter {
-        content: "";
-        position: absolute;
-        bottom: -0.0001em;
-
-        width: 100%;
-        height: 0.1em;
-
-        background: var(--accent-color);
-        border-radius: var(--border-radius);
-
-        transition: scale 200ms ease-in;
-        scale: 1;
-    }
-
-    a:not(.underline) {
-        text-decoration: none;
-
-        &:after {
-            @include underlineAfter;
-        }
-    }
-
-    button {
-        &::after,
-        &:hover::after {
-            @include underlineAfter;
-        }
-
-        &::after {
-            scale: 0 1;
-        }
-    }
 }
 
 .round {
@@ -151,48 +106,25 @@ hr {
     font-weight: 600;
 }
 
-/* Font weights */
-.fw-100 {
-    font-weight: 100;
-}
-
-.fw-200 {
-    font-weight: 200;
-}
-
-.fw-300 {
-    font-weight: 300;
-}
-
-.fw-400 {
-    font-weight: 400;
-}
-
-.fw-500 {
-    font-weight: 500;
-}
-
-.fw-600 {
-    font-weight: 600;
-}
-
-.fw-700 {
-    font-weight: 700;
-}
-
-.fw-800 {
-    font-weight: 800;
-}
-
-.fw-900 {
-    font-weight: 900;
-}
-
 // Icon sizes
 .icon-redirect,
 .icon-edit {
     height: 0.8em;
     align-self: flex-start;
+}
+
+noscript {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .3em;
+    background: #fff;
+    color: #000;
+    margin: .4em auto 0;
+    padding: .8em 1.5em;
+    border-radius: var(--border-radius);
+    min-height: 50px;
 }
 
 /* ********************************************** */
