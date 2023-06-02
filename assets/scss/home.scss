@@ -5,20 +5,13 @@
 .profile-info {
     margin-bottom: 2em;
 
-    div {
-        &:first-child {
-            max-width: 300px;
-            width: 100%;
-            margin-right: 2em;
+    div:first-child {
+        max-width: 300px;
+        width: 100%;
+        margin-right: 2em;
 
-            @media (width <= 420px) {
-                margin-right: 0;
-            }
-        }
-
-        &:last-child {
-            display: flex;
-            flex-direction: column;
+        @media (width <= 420px) {
+            margin-right: 0;
         }
     }
 
@@ -42,9 +35,9 @@
     }
 }
 
-/* ************************************** */
-/* *     Styling for codingLanguges     * */
-/* ************************************** */
+// **************************************
+// *     Styling for codingLanguges     *
+// **************************************
 
 #codingLanguages {
     overflow: auto hidden;
