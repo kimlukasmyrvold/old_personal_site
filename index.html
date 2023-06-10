@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/css/home.css">
 
     <script defer src="assets/js/main.js"></script>
-    <script defer src="assets/js/ageCalc.js"></script>
+    <script defer src="assets/js/home.js"></script>
 
     <script defer src="assets/js/jquery-3.6.4.min.js"></script>
     <script defer src="assets/js/loadAssets.js"></script>
@@ -30,8 +30,7 @@
             <path fill="#f1a500"
                 d="M22.25,17.55,14.63,3.71a3,3,0,0,0-5.26,0L1.75,17.55A3,3,0,0,0,4.38,22H19.62a3,3,0,0,0,2.63-4.45ZM12,18a1,1,0,1,1,1-1A1,1,0,0,1,12,18Zm1-5a1,1,0,0,1-2,0V9a1,1,0,0,1,2,0Z">
             </path>
-        </svg>
-        To fully access and navigate this website, please ensure that JavaScript is enabled in your browser
+        </svg>To fully access and navigate this website, please ensure that JavaScript is enabled in your browser
         settings.</noscript>
 
     <custom-navbar></custom-navbar>
@@ -40,7 +39,7 @@
         <article id="home">
             <section class="profile-info flex-container">
                 <div>
-                    <img src="assets/images/kimlukas300x300.webp" alt="Picture of me smiling" class="round">
+                    <img loading="lazy" src="assets/images/kimlukas300x300.webp" alt="Picture of me smiling" class="round">
                 </div>
                 <div>
                     <h1 class="heading">Kim Lukas Myrvold</h1>
@@ -146,7 +145,7 @@
                     <div class="school-table-item">
                         <div>
                             <a href="https://viken.no/glemmen-vgs/" target="_blank" tabindex="-1">
-                                <img src="assets/images/education/glemmen.webp"
+                                <img loading="lazy" src="assets/images/education/glemmen.webp"
                                     alt="Bilde av Glemmen Videregående skole">
                             </a>
                         </div>
@@ -168,7 +167,7 @@
                         <div>
                             <a href="https://www.fredrikstad.kommune.no/skoler/borge-uskole/" target="_blank"
                                 tabindex="-1">
-                                <img src="assets/images/education/borge-skole.webp" alt="Image of Borge Ungdom Skole">
+                                <img loading="lazy" src="assets/images/education/borge-skole.webp" alt="Image of Borge Ungdom Skole">
                             </a>
                         </div>
                         <div>
@@ -192,7 +191,7 @@
                         <div>
                             <a href="https://www.fredrikstad.kommune.no/skoler/arum-skole/" target="_blank"
                                 tabindex="-1">
-                                <img src="assets/images/education/arum-skole.webp" alt="Image of Årum skole">
+                                <img loading="lazy" src="assets/images/education/arum-skole.webp" alt="Image of Årum skole">
                             </a>
                         </div>
                         <div>
@@ -344,6 +343,27 @@
             <h2 id="gamesHeading" class="heading">Spill</h2>
 
             <p id="gamesText">Her her er alle spillene jeg har lagd i HTML og JavaScript</p>
+
+            <!-- <section class="games-container">
+                <div class="games-item">
+                    <svg class="game-logo icon-drumkit"></svg>
+                    <p class="game-title">Drum kit</p>
+                    <p class="game-description">A game where to play on drums</p>
+                    <button id="game-play">Start game!</button>
+                </div>
+                <div class="games-item">
+                    <svg class="game-logo icon-simongame"></svg>
+                    <p class="game-title">Simon game</p>
+                    <p class="game-description">Test your memory by repeating a random sequence of lights.</p>
+                    <button id="game-play">Start game!</button>
+                </div>
+                <div class="games-item">
+                    <svg class="game-logo icon-dicegame"></svg>
+                    <p class="game-title">Dice game</p>
+                    <p class="game-description">Test your luck by rolling a dice.</p>
+                    <button id="game-play">Start game!</button>
+                </div>
+            </section> -->
 
             <section id="drum-kit">
                 <h3 class="subheading">Drum kit</h3>
