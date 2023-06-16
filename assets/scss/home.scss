@@ -155,50 +155,54 @@
 
 /* Work experience section styling */
 
-.work-jobs div {
-    margin-bottom: 1em;
-}
+#workExperience {
+    .work-jobs div {
+        margin-bottom: 1em;
+    }
 
-.work-jobs p {
-    font-size: 1.2em;
-    line-height: 1.5em;
-    margin-left: 1em;
-}
+    .work-jobs p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        margin-left: 1em;
+    }
 
-.work-jobs ul {
-    list-style: none;
-    margin-left: 1.5em;
-}
+    .work-jobs ul {
+        list-style: none;
+        margin-left: 1.5em;
+    }
 
-.work-jobs li {
-    line-height: 1.5em;
-}
+    .work-jobs li {
+        line-height: 1.5em;
+    }
 
-.work-jobs button {
-    line-height: 1.5em;
-    font-size: 1.8em;
-    background: transparent;
+    .work-jobs button {
+        line-height: 1.5em;
+        font-size: 1.8em;
+        background: transparent;
+    }
 }
 
 /* Hobbies section styling */
 
-#hobbies button {
-    margin-left: 0.8em;
-    height: 40px;
-}
+#hobbies {
+    button {
+        margin-left: 0.8em;
+        height: 40px;
+    }
 
-#hobbies button::before {
-    content: "- ";
-}
+    button::before {
+        content: "- ";
+    }
 
-#hobbies .dropdowns p,
-#hobbies .dropdowns table {
-    font-size: 1.1em;
-    margin-left: 2.5em;
-}
+    .dropdowns p,
+    .dropdowns table {
+        font-size: 1.1em;
+        margin-left: 2.5em;
+    }
 
-.hobbiesDrop {
-    font-size: 1.4rem;
+    .hobbiesDrop {
+        font-size: 1.4rem;
+    }
 }
 
 /* ******************************************* */
@@ -223,7 +227,6 @@
         align-items: center;
 
         background: var(--black-blur);
-        backdrop-filter: blur(2px);
 
         position: absolute;
         inset: 0;
@@ -277,7 +280,9 @@
     }
 }
 
-/* Drum-kit */
+/* ************************************** */
+/* *             Drum-kit             * */
+/* ************************************** */
 
 #drum-kit .game-content {
     background: #02394a;
@@ -544,3 +549,68 @@
         max-width: 300px;
     }
 }
+
+/* ******************************* */
+/* *        Games section        * */
+/* ******************************* */
+
+// .games-list {
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
+//     gap: 1em;
+
+//     .games-listItem {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         margin: 0.5em 0;
+//     }
+
+//     .game-logo {
+//         height: 3em;
+//     }
+
+//     .game-title,
+//     #game-play {
+//         font-size: 1.6rem;
+//         font-weight: 600;
+//         margin: 0.6em auto 0;
+//     }
+
+//     .game-description {
+//         display: flex;
+//         flex-grow: 1;
+//         max-width: 30ch;
+
+//         font-size: 1.2rem;
+//         text-align: center;
+//     }
+
+//     #game-play {
+//         background: var(--bg-inverse);
+//         color: var(--text-inverse);
+//         padding: 0.3em 0.5em;
+//         border-radius: var(--border-radius);
+//         margin: 0;
+//     }
+// }
+
+// .game-window {
+//     display: block;
+//     position: relative;
+//     left: 0;
+//     right: 0;
+//     margin-bottom: 10em;
+
+//     .icon-cross {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         height: 2em;
+//     }
+
+//     .game-content {
+//         background: red;
+//     }
+// }
