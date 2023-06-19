@@ -143,8 +143,8 @@
 
     img {
         border-radius: var(--border-radius);
-        box-shadow: 6px 8px 3px 0 var(--black-blur);
-        height: auto;
+        box-shadow: -6px 8px 3px 0 var(--black-blur);
+        margin: 6px 8px;
         max-width: 450px;
 
         @media (width <= 1100px) {
