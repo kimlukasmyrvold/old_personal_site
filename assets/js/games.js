@@ -101,7 +101,7 @@ function simonGame() {
 
     // The button colors
     const buttonColors = ['red', 'blue', 'green', 'yellow'];
-    const scoreTable = $('#simon-game .score-table');
+    const scoreTable = document.querySelector('#simon-game .score-table');
 
     // Default values
     let gamePattern = [];
@@ -112,7 +112,7 @@ function simonGame() {
 
     function addScores() {
         // Reset score table
-        scoreTable.text('');
+        scoreTable.textContent = '';
 
         // scores.forEach(score => {
         scores.forEach(score => {
@@ -139,22 +139,22 @@ function simonGame() {
         addScores();
 
         // Add game over to screen
-        $('#simon-game .game-content').addClass('game-over');
-        $('#simon-game .title').text('Game Over!, Click me to Restart');
-        simonGame_event('wrong')
+        document.querySelector('#simon-game .game-content').classList.add('game-over');
+        document.querySelector('#simon-game .title').textContent = 'Game Over!, Click me to Restart';
+        simonGame_event('wrong');
 
         setTimeout(() => {
-            $('#simon-game .game-content').removeClass('game-over');
+            document.querySelector('#simon-game .game-content').classList.remove('game-over');
         }, 200);
 
-        // Reset values
+        // Resetting values
         gamePattern = [];
         started = false;
         level = 0;
     };
 
     // Handel click
-    $('#simon-game .game-content').on('click', (e) => {
+    document.querySelector('#simon-game .game-content').addEventListener('click', (e) => {
         if (!started) {
             started = true;
             simonGame_next();
@@ -185,7 +185,7 @@ function simonGame() {
 
     // Send next sequence
     function simonGame_next() {
-        $('#simon-game .title').text(`Level ${level++}`);
+        document.querySelector('#simon-game .title').textContent = `Level ${level++}`;
 
         // Clear userClickedPattern to prepare for next sequence
         userClickedPattern = [];
@@ -201,13 +201,15 @@ function simonGame() {
     function simonGame_event(value) {
         // Play sound
         let a = new Audio(`/assets/sounds/simon-game/${value}.mp3`);
-        a.volume = .6;
+        a.volume = .3;
         a.play();
 
+        if (value === 'wrong') return;
+
         // Apply animation
-        $(`#simon-game .${value}`).addClass('pressed');
+        document.querySelector(`#simon-game .${value}`).classList.add('pressed');
         setTimeout(() => {
-            $(`#simon-game .${value}`).removeClass('pressed');
+            document.querySelector(`#simon-game .${value}`).classList.remove('pressed');
         }, 150);
     };
 };
@@ -219,28 +221,29 @@ function simonGame() {
 // *               Dice game               *
 // *****************************************
 
-$('#dice-game .game-container').on('click', (e) => {
+const diceGame = document.querySelector('#dice-game');
+diceGame.querySelector('.game-container').addEventListener('click', (e) => {
     if (!Array.from(e.target.classList).some(className => className.includes('player'))) {
         const randomNumber1 = Math.floor(Math.random() * 6) + 1;
         const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-        $('#dice-game #dice1').attr('class', `icon-dice-${randomNumber1}`);
-        $('#dice-game #dice2').attr('class', `icon-dice-${randomNumber2}`);
+        diceGame.querySelector('#dice1').setAttribute('class', `icon-dice-${randomNumber1}`);
+        diceGame.querySelector('#dice2').setAttribute('class', `icon-dice-${randomNumber2}`);
 
         addIcons();
 
-        $('#dice-game .title').text((() => {
-            if (randomNumber1 > randomNumber2) return `${$('.player1').text()} won!`;
-            if (randomNumber1 < randomNumber2) return `${$('.player2').text()} won!`;
+        diceGame.querySelector('.title').textContent = (() => {
+            if (randomNumber1 > randomNumber2) return `${diceGame.querySelector('.player1').textContent} won!`;
+            if (randomNumber1 < randomNumber2) return `${diceGame.querySelector('.player2').textContent} won!`;
             return "It's a draw!";
-        })());
+        })();
     }
 });
 
-$("#dice-game .game-container span").on('keydown', function (e) {
+diceGame.querySelector(".game-container span").addEventListener('keydown', function (e) {
     if (e.code === 'Enter') {
         e.preventDefault();
-        $(this).blur();
+        diceGame.querySelector(this).blur();
     }
 });
 
