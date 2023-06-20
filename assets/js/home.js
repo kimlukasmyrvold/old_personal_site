@@ -39,3 +39,37 @@
         ageCalc(21, 5, 2006);
     });
 })();
+
+
+
+
+// ******************************************
+// *        Coding languages section        *
+// ******************************************
+
+// Make it show up 3 project links on each coding languages item
+document.querySelectorAll('.codingLanguageItem').forEach(item => {
+    const links = item.querySelectorAll('.codingRepos a');
+    if (links.length < 3) return;
+
+    // Loop through all links except the first 3 links
+    for (let i = 3; i < links.length; i++) {
+        links[i].style.display = 'none';
+    }
+
+    // Create span element and appending it the links parent
+    const span = document.createElement('span');
+    span.className = 'show-more';
+    span.textContent = 'Show more...';
+    links[0].parentNode.append(span);
+
+    // Making links visible when 'show more' text is clicked
+    item.querySelectorAll('.show-more').forEach(el => {
+        el.addEventListener('click', () => {
+            // Removing itself
+            el.remove();
+
+            links.forEach(link => link.style.display = 'flex');
+        });
+    });
+});
