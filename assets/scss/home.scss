@@ -40,57 +40,92 @@
 // **************************************
 
 #codingLanguages {
+    $gap: 0.5em;
+
     overflow: auto hidden;
-    margin-bottom: -1.5em;
 
     .codingLanguagesContainer {
         display: flex;
         flex-direction: row;
+        gap: calc($gap * 4);
         flex-wrap: wrap;
-        min-height: 130px;
     }
 
     .codingLanguageItem {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        gap: 1em;
+        margin-block-start: $gap;
+    }
 
-        font-size: 1.3rem;
-        line-height: 2;
-        padding: 0.4em;
-        box-sizing: content-box;
+    .codingHeader {
+        display: flex;
+        gap: $gap;
+        margin-inline: 0.5em 4em;
 
-        width: 56px;
+        svg {
+            height: 56px;
+        }
 
-        transition-property: width, transform, padding;
-        transition-duration: 300ms;
-        transition-timing-function: ease-in-out;
+        p {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+            display: flex;
+            align-items: flex-end;
 
-        [class*="icon-"] {
-            transition: transform 300ms linear;
+            span {
+                display: flex;
+                margin-left: 0.3ch;
+                opacity: 0.6;
+                font-size: 1.2rem;
+            }
         }
     }
 
-    .codingLanguageItem span {
-        transition: opacity 300ms ease-in;
-        white-space: nowrap;
-    }
+    .codingReposSection {
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
 
-    .codingLanguageItem svg {
-        height: 56px;
-    }
+        > p {
+            span {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-inline-start: 0.5em;
+            }
 
-    /* Transition in hovered/focused elements */
-    .codingLanguageItem:hover,
-    .codingLanguageItem:focus {
-        padding: 0.7em;
-
-        [class^="icon-"] {
-            transform: scale(0.8);
+            &::after {
+                content: "";
+                display: block;
+                width: 98%;
+                height: 2px;
+                margin-block: 0 0.2em;
+                border-radius: var(--border-radius);
+                background: var(--separator-color);
+            }
         }
 
-        span {
-            opacity: 1 !important;
+        p {
+            margin: 0;
+        }
+
+        .codingRepos {
+            display: grid;
+            margin-inline-start: 0.5em;
+            gap: 0.5em;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.3em;
+                font-size: 1.2rem;
+            }
+
+            span {
+                opacity: 0.8;
+                font-size: 1rem;
+            }
         }
     }
 }
@@ -141,14 +176,20 @@
         }
     }
 
-    img {
-        border-radius: var(--border-radius);
-        box-shadow: -6px 8px 3px 0 var(--black-blur);
-        margin: 6px 8px;
-        max-width: 450px;
+    .school-table-item > div {
+        a {
+            display: block;
+            margin: 6px 8px;
+        }
 
-        @media (width <= 1100px) {
-            width: 100%;
+        img {
+            border-radius: var(--border-radius);
+            box-shadow: -6px 8px 3px 0 var(--black-blur);
+            max-width: 450px;
+
+            @media (width <= 1100px) {
+                width: 100%;
+            }
         }
     }
 }

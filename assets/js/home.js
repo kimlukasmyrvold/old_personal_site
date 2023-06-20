@@ -39,15 +39,3 @@
         ageCalc(21, 5, 2006);
     });
 })();
-
-
-
-
-// ******************************************
-// *        Coding languages section        *
-// ******************************************
-
-// Making the span elements invisible
-document.querySelectorAll('.codingLanguageItem span').forEach((e) => {
-    e.style.opacity = '0';
-});
