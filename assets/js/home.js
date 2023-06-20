@@ -59,12 +59,12 @@ document.querySelectorAll('.codingLanguageItem').forEach(item => {
 
     // Create span element and appending it the links parent
     const span = document.createElement('span');
-    span.className = 'show-more';
+    span.id = 'show-more';
     span.textContent = 'Show more...';
     links[0].parentNode.append(span);
 
     // Making links visible when 'show more' text is clicked
-    item.querySelectorAll('.show-more').forEach(el => {
+    item.querySelectorAll('#show-more').forEach(el => {
         el.addEventListener('click', () => {
             // Removing itself
             el.remove();
