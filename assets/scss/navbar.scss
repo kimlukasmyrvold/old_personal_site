@@ -133,11 +133,10 @@
     }
 
     .gamesDropdown {
-        display: none;
-    }
+        // display: none;
+        opacity: 0;
+        visibility: hidden;
 
-    #gamesLink:hover + .gamesDropdown,
-    .gamesDropdown:hover {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -150,6 +149,8 @@
         padding: 0.6em 0.7em;
         box-shadow: -1px 2px 6px #000000a6;
         translate: -8% -3px;
+
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
         a {
             width: min-content;
@@ -175,6 +176,12 @@
                 scale: 1;
             }
         }
+    }
+
+    #gamesLink:hover + .gamesDropdown,
+    .gamesDropdown:hover {
+        opacity: 1;
+        visibility: visible;
     }
 
     /* ****************************************** */
@@ -228,7 +235,9 @@
 
     .navbar-drop {
         position: absolute;
-        display: none;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
 
         flex-direction: column;
         justify-content: center;
@@ -244,6 +253,13 @@
         background: var(--navbar-color);
         box-shadow: -1px 2px 6px 1px #000;
         border-radius: var(--border-radius) 0 var(--border-radius) var(--border-radius);
+
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .navbar-buttons > .active .navbar-drop {
+        opacity: 1;
+        visibility: visible;
     }
 
     .navbar-drop hr {
@@ -273,10 +289,6 @@
     .navbar-drop button svg {
         height: 26px;
         margin-right: 0.3em;
-    }
-
-    .navbar-buttons > .active .navbar-drop {
-        display: flex;
     }
 
     .navbar-appearance {
