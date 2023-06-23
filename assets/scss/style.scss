@@ -109,7 +109,7 @@ hr {
 .icon-redirect,
 .icon-edit {
     height: 0.8em;
-    margin-inline: .2em;
+    margin-inline: 0.2em;
     position: absolute;
 }
 
@@ -118,11 +118,11 @@ noscript {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: .3em;
+    gap: 0.3em;
     background: #fff;
     color: #000;
-    margin: .4em auto 0;
-    padding: .8em 1.5em;
+    margin: 0.4em auto 0;
+    padding: 0.8em 1.5em;
     border-radius: var(--border-radius);
     min-height: 50px;
 }
