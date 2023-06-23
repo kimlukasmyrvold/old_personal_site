@@ -56,6 +56,12 @@
         flex-direction: column;
         gap: 1em;
         margin-block-start: $gap;
+
+        background-color: #00000015;
+        border-radius: calc(var(--border-radius) / 2);
+        padding: .4em;
+
+        flex: 1 1 0px;
     }
 
     .codingHeader {
@@ -155,6 +161,7 @@
         flex-direction: row;
         align-items: center;
         gap: 1.5em;
+        margin: 6px 8px;
 
         @media (width <= 1100px) {
             flex-direction: column;
@@ -164,6 +171,16 @@
 
         div {
             max-width: 85ch;
+        }
+
+        img {
+            border-radius: var(--border-radius);
+            box-shadow: -6px 8px 3px 0 var(--black-blur);
+            max-width: 450px;
+
+            @media (width <= 1100px) {
+                width: 100%;
+            }
         }
     }
 
@@ -177,23 +194,6 @@
             opacity: 0.9;
             font-size: 1rem;
             font-weight: 400;
-        }
-    }
-
-    .school-table-item > div {
-        a {
-            display: block;
-            margin: 6px 8px;
-        }
-
-        img {
-            border-radius: var(--border-radius);
-            box-shadow: -6px 8px 3px 0 var(--black-blur);
-            max-width: 450px;
-
-            @media (width <= 1100px) {
-                width: 100%;
-            }
         }
     }
 }
@@ -247,6 +247,96 @@
 
     .hobbiesDrop {
         font-size: 1.4rem;
+    }
+}
+
+/* ****************************************** */
+/* *        Hobbies > Gaming section        * */
+/* ****************************************** */
+
+#gaming .gaming-container {
+    .gaming-item {
+        display: flex;
+        gap: 1em;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 200ch;
+    }
+
+    .image-container {
+        width: 600px;
+
+        .focused-image {
+            height: 337px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: var(--border-radius);
+
+                &.full {
+                    position: fixed;
+                    inset: 0;
+                    width: auto;
+                    height: 80vh;
+                    margin: auto;
+                    z-index: 1;
+                    box-shadow: 0 0 0 100vw #000000c7;
+                }
+            }
+        }
+
+        .image-carousel {
+            display: flex;
+            gap: 3px;
+            max-width: 45em;
+            margin-block: 0.2em;
+            overflow: auto;
+
+            img {
+                height: 64px;
+                width: 115px;
+                border-radius: calc(var(--border-radius) / 4);
+            }
+        }
+
+        .scrollbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 18px;
+            gap: 2px;
+
+            $bg-color: #00000070;
+
+            [class*="arrow"] {
+                display: flex;
+                width: 1.7em;
+                height: 18px;
+                color: #fff;
+                background-color: $bg-color;
+                border-radius: var(--border-radius);
+            }
+
+            .scrollbar {
+                display: flex;
+                background-color: $bg-color;
+                width: 100%;
+                height: 100%;
+                border-radius: var(--border-radius);
+
+                .bar {
+                    display: flex;
+                    width: 5em;
+                    background-color: #fff;
+                    border-radius: var(--border-radius);
+                }
+            }
+        }
     }
 }
 
