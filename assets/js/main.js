@@ -173,7 +173,7 @@ class CustomNavbar extends HTMLElement {
             const articles = document.querySelectorAll('article');
             const firstArticle = articles[0] || 0; // setting default value to avoid errors
             const lastArticle = articles[articles.length - 1] || 0; // setting default value to avoid errors
-            const offset = 50;
+            const offset = 100;
 
             document.querySelectorAll('article').forEach(article => {
                 // Defining the start and end of the article
