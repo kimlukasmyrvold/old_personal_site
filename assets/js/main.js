@@ -305,7 +305,7 @@ class CustomFooter extends HTMLElement {
                         <a href="tel: +4748426624"><svg class="icon-phone"></svg><span>+47 484 26 624</span></a>
                     </p>
                     <p>
-                        <a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><svg class="icon-discord"></svg><span>SoloNerves#4666</span></a>
+                        <a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><svg class="icon-discord"></svg><span>solonerves</span></a>
                     </p>
                     <p>
                         <a href="mailto:kimlukasmyrvold06@gmail.com"><svg class="icon-mail"></svg><span>kimlukasmyrvold06@gmail.com</span></a>
