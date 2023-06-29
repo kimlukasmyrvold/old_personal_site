@@ -22,6 +22,16 @@ function addCss(fileName) {
     document.head.appendChild(link);
 }
 
+// Disables scrolling on document
+function disableScrolling() {
+    document.body.style.overflow = 'hidden';
+}
+
+// Enables Scrolling on document
+function enableScrolling() {
+    document.body.style.overflow = 'auto';
+}
+
 
 
 
