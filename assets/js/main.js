@@ -519,7 +519,7 @@ function addIcons() {
         e.setAttribute('height', '1.4em');
 
         // Add the svg icon
-        e.innerHTML = `<use xlink:href="../assets/images/icons.svg#${icon}"></use>`;
+        e.innerHTML = `<use xlink:href="/assets/images/icons.svg#${icon}"></use>`;
     })
 }
 
