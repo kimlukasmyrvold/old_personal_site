@@ -429,9 +429,9 @@ function changeLanguage(lang) {
 
 
 
-// ***********************************************
-// *         Dark and light theme code           *
-// ***********************************************
+// ************************************************
+// *           Website color theme code           *
+// ************************************************
 
 // Function for changing website color theme
 function changeTheme(theme) {
