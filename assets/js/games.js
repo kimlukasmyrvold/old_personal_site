@@ -25,16 +25,63 @@ window.onload = function () {
 
 
 // ****************************************
+// *           Game Window Code           *
+// ****************************************
+
+const gameStartButtons = document.querySelectorAll('#game-start');
+const gameWindow = document.querySelector('.game-window');
+const gameContainer = gameWindow.querySelector('.game-container');
+const gameClose = gameContainer.querySelector('.game-close');
+const gameContent = gameContainer.querySelector('.game-content');
+
+// Function for opening the game window
+function openGameWindow(e) {
+    gameWindow.classList.add('visible');
+    disableScrolling();
+    loadGameWindowContent(e);
+}
+
+// Function for closing the game window
+function closeGameWindow() {
+    gameWindow.classList.remove('visible');
+    enableScrolling();
+}
+
+// Function for loading the game window content
+function loadGameWindowContent(event) {
+    const target = event.target.dataset.gametitle;
+    loadHTML(".game-content", `${target}.html`, () => {
+        if (typeof window[target] === 'function') {
+            window[target]();
+        } else {
+            console.error(`${target} is not a function.`);
+        }
+    });
+}
+
+// Closing the game window
+gameClose.addEventListener('click', closeGameWindow)
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') closeGameWindow();
+})
+
+// Check for click on each game start button and call openGameWindow function
+gameStartButtons.forEach((el) => { el.addEventListener('click', openGameWindow) })
+
+
+
+
+// ****************************************
 // *               Drum kit               *
 // ****************************************
 
 function drumKit() {
-    document.querySelector('#drum-kit .game-start').style.display = 'none';
-    const audioPath = '/assets/sounds/drum-kit/'
+    const audioPath = '/assets/sounds/drum-kit/';
+    const drumKit = document.querySelector('#drum-kit');
 
     // Playing sound and animation on click
-    for (let i = 0; i < document.querySelectorAll('#drum-kit .drum').length; i++) {
-        document.querySelectorAll('#drum-kit .drum')[i].addEventListener('click', function () {
+    for (let i = 0; i < drumKit.querySelectorAll('.drum').length; i++) {
+        drumKit.querySelectorAll('.drum')[i].addEventListener('click', function () {
             drumKit_playSound(this.innerHTML);
             drumKit_playAnimation(this.innerHTML);
         });
@@ -80,10 +127,10 @@ function drumKit() {
     }
 
     function drumKit_playAnimation(currentKey) {
-        document.querySelector(`#drum-kit .${currentKey}`).classList.add('pressed');
+        drumKit.querySelector(`.${currentKey}`).classList.add('pressed');
 
         setTimeout(function () {
-            document.querySelector(`#drum-kit .${currentKey}`).classList.remove('pressed');
+            drumKit.querySelector(`.${currentKey}`).classList.remove('pressed');
         }, 100);
     }
 
@@ -97,11 +144,11 @@ function drumKit() {
 // ******************************************
 
 function simonGame() {
-    document.querySelector('#simon-game .game-start').style.display = 'none';
+    const simonGame = document.querySelector('#simon-game');
 
     // The button colors
     const buttonColors = ['red', 'blue', 'green', 'yellow'];
-    const scoreTable = document.querySelector('#simon-game .score-table');
+    const scoreTable = simonGame.querySelector('.score-table');
 
     // Default values
     let gamePattern = [];
@@ -139,12 +186,12 @@ function simonGame() {
         addScores();
 
         // Add game over to screen
-        document.querySelector('#simon-game .game-content').classList.add('game-over');
-        document.querySelector('#simon-game .title').textContent = 'Game Over!, Click me to Restart';
+        simonGame.classList.add('game-over');
+        simonGame.querySelector('.title').textContent = 'Game Over!, Click me to Restart';
         simonGame_event('wrong');
 
         setTimeout(() => {
-            document.querySelector('#simon-game .game-content').classList.remove('game-over');
+            simonGame.classList.remove('game-over');
         }, 200);
 
         // Resetting values
@@ -153,8 +200,8 @@ function simonGame() {
         level = 0;
     };
 
-    // Handel click
-    document.querySelector('#simon-game .game-content').addEventListener('click', (e) => {
+    // Handle click
+    simonGame.addEventListener('click', (e) => {
         if (!started) {
             started = true;
             simonGame_next();
@@ -185,7 +232,7 @@ function simonGame() {
 
     // Send next sequence
     function simonGame_next() {
-        document.querySelector('#simon-game .title').textContent = `Level ${level++}`;
+        simonGame.querySelector('.title').textContent = `Level ${level++}`;
 
         // Clear userClickedPattern to prepare for next sequence
         userClickedPattern = [];
@@ -207,9 +254,9 @@ function simonGame() {
         if (value === 'wrong') return;
 
         // Apply animation
-        document.querySelector(`#simon-game .${value}`).classList.add('pressed');
+        simonGame.querySelector(`.${value}`).classList.add('pressed');
         setTimeout(() => {
-            document.querySelector(`#simon-game .${value}`).classList.remove('pressed');
+            simonGame.querySelector(`.${value}`).classList.remove('pressed');
         }, 150);
     };
 };
@@ -220,30 +267,33 @@ function simonGame() {
 // *****************************************
 // *               Dice game               *
 // *****************************************
+function diceGame() {
+    const diceGame = document.querySelector('#dice-game');
 
-const diceGame = document.querySelector('#dice-game');
-diceGame.querySelector('.game-container').addEventListener('click', (e) => {
-    if (!Array.from(e.target.classList).some(className => className.includes('player'))) {
-        const randomNumber1 = Math.floor(Math.random() * 6) + 1;
-        const randomNumber2 = Math.floor(Math.random() * 6) + 1;
+    diceGame.addEventListener('click', (e) => {
+        if (!Array.from(e.target.classList).some(className => className.includes('player'))) {
+            const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+            const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-        diceGame.querySelector('#dice1').setAttribute('class', `icon-dice-${randomNumber1}`);
-        diceGame.querySelector('#dice2').setAttribute('class', `icon-dice-${randomNumber2}`);
+            diceGame.querySelector('#dice1').setAttribute('class', `icon-dice-${randomNumber1}`);
+            diceGame.querySelector('#dice2').setAttribute('class', `icon-dice-${randomNumber2}`);
 
-        addIcons();
+            diceGame.querySelector('.title').textContent = (() => {
+                if (randomNumber1 > randomNumber2) return `${diceGame.querySelector('.player1').textContent} won!`;
+                if (randomNumber1 < randomNumber2) return `${diceGame.querySelector('.player2').textContent} won!`;
+                return "It's a draw!";
+            })();
 
-        diceGame.querySelector('.title').textContent = (() => {
-            if (randomNumber1 > randomNumber2) return `${diceGame.querySelector('.player1').textContent} won!`;
-            if (randomNumber1 < randomNumber2) return `${diceGame.querySelector('.player2').textContent} won!`;
-            return "It's a draw!";
-        })();
-    }
-});
+            addIcons();
+        }
+    });
 
-diceGame.querySelector(".game-container span").addEventListener('keydown', function (e) {
-    if (e.code === 'Enter') {
-        e.preventDefault();
-        diceGame.querySelector(this).blur();
-    }
-});
-
+    diceGame.querySelectorAll("span").forEach((el) => {
+        el.addEventListener('keydown', function (e) {
+            if (e.code === 'Enter') {
+                e.preventDefault();
+                this.blur();
+            }
+        });
+    });
+}
