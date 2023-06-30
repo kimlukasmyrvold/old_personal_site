@@ -73,3 +73,82 @@ document.querySelectorAll('.codingLanguageItem').forEach(item => {
         });
     });
 });
+
+
+
+
+// ******************************************
+// *        Hobbies > Gaming section        *
+// ******************************************
+(function () {
+    let game = document.querySelectorAll('.gaming-item')
+    game.forEach(item => {
+        let isFullImage = false;
+
+        const imageContainer = item.querySelector('.image-container');
+        const focusedImage = imageContainer.querySelector('.focused-image img');
+        const carouselImages = imageContainer.querySelectorAll('.image-carousel .image');
+
+        carouselImages.forEach(img => {
+            img.addEventListener('click', () => {
+                carouselImages.forEach(e => e.classList.remove('focus'));
+                img.classList.add('focus');
+                setFocused();
+            });
+        });
+
+        function setFocused() {
+            const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
+            focusedImage.setAttribute('src', `assets/images/${item.id}/${(focusedImage.classList.contains('full')) ? "large" : "medium"}/${focusedCarouselImage.dataset.image}.jpg`);
+
+            // // Scroll to focused image
+            // const scrollPosition = focusedCarouselImage.offsetLeft - focusedCarouselImage.parentElement.offsetLeft;
+            // focusedCarouselImage.parentElement.scrollLeft = scrollPosition;
+        }
+        setFocused();
+
+        function fullImage(e) {
+            if (focusedImage.classList.contains('full') && e.target === focusedImage) nextImage();
+            const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
+            focusedImage.setAttribute('src', `assets/images/${item.id}/${(e.target === focusedImage) ? "large" : "medium"}/${focusedCarouselImage.dataset.image}.jpg`);
+            focusedImage.classList[(e.target === focusedImage) ? "add" : "remove"]('full');
+            isFullImage = (focusedImage.classList.contains('full')) ? true : false;
+        }
+
+        function nextImage() {
+            let index = 0;
+            for (let i = 0; i < carouselImages.length; i++) {
+                if (carouselImages[i].classList.contains('focus')) {
+                    index = i === (carouselImages.length - 1) ? 0 : i + 1;
+                    carouselImages[i].classList.remove('focus');
+                }
+            }
+            carouselImages[index].classList.add('focus');
+            setFocused()
+        }
+
+        function previousImage() {
+            let index = 0;
+            for (let i = carouselImages.length - 1; i >= 0; i--) {
+                if (carouselImages[i].classList.contains('focus')) {
+                    index = (i === 0) ? carouselImages.length - 1 : i - 1;
+                    carouselImages[i].classList.remove('focus');
+                }
+            }
+            carouselImages[index].classList.add('focus');
+            setFocused()
+        }
+
+        setInterval(() => {
+            if (isFullImage) return;
+            nextImage()
+        }, 10_000);
+
+        document.addEventListener('click', fullImage);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "Escape" || event.key === "Esc") fullImage(event);
+            if (event.key === "ArrowRight" && isFullImage) nextImage();
+            if (event.key === "ArrowLeft" && isFullImage) previousImage();
+        })
+    })
+})();
