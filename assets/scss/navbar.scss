@@ -133,7 +133,6 @@
     }
 
     .gamesDropdown {
-        // display: none;
         opacity: 0;
         visibility: hidden;
 
@@ -179,7 +178,9 @@
     }
 
     #gamesLink:hover + .gamesDropdown,
-    .gamesDropdown:hover {
+    #gamesLink:focus + .gamesDropdown,
+    .gamesDropdown:hover,
+    .gamesDropdown:focus-within {
         opacity: 1;
         visibility: visible;
     }
