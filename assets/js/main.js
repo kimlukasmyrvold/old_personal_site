@@ -32,6 +32,28 @@ function enableScrolling() {
     document.body.style.overflow = 'auto';
 }
 
+// Function for loading in HTML content to page
+function loadHTML(id, filename, callback) {
+    let xhttp;
+    let element = document.querySelector(id);
+    let file = filename;
+
+    if (file) {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    element.innerHTML = this.responseText;
+                    if (typeof callback === 'function') { callback(); }
+                    addIcons();
+                } else if (this.status == 404) { element.innerHTML = '<h1 id="error">Error 404; Page not found.</h1>'; }
+            }
+        }
+        xhttp.open("GET", `/templates/${file}`, true);
+        xhttp.send();
+        return;
+    }
+}
 
 
 
@@ -60,14 +82,7 @@ class CustomNavbar extends HTMLElement {
                     <li><a id="educationLink" href="/#education" class="navbar-link">Education</a></li>
                     <li><a id="workExperienceLink" href="/#workExperience" class="navbar-link">Work experience</a></li>
                     <li><a id="hobbiesLink" href="/#hobbies" class="navbar-link">Hobbies</a></li>
-                    <li>
-                        <a id="gamesLink" href="/#games" class="navbar-link">Games</a>
-                        <div class="gamesDropdown">
-                            <a id="drumKitLink" class="navbar-link" href="/#drum-kit">Drum kit</a>
-                            <a id="simonGameLink" class="navbar-link" href="/#simon-game">Simon game</a>
-                            <a id="diceGameLink" class="navbar-link" href="/#dice-game">Dice game</a>
-                        </div>
-                    </li>
+                    <li><a id="gamesLink" href="/#games" class="navbar-link">Games</a></li>
                 </ul>
             </nav>
             <div class="navbar-buttons">
