@@ -132,59 +132,6 @@
         scale: 1;
     }
 
-    .gamesDropdown {
-        opacity: 0;
-        visibility: hidden;
-
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        gap: 0.6em;
-
-        border-radius: 0 calc(var(--border-radius) / 1.5) calc(var(--border-radius) / 1.5)
-            calc(var(--border-radius) / 1.5);
-        background: var(--navbar-color);
-
-        padding: 0.6em 0.7em;
-        box-shadow: -1px 2px 6px #000000a6;
-        translate: -8% -3px;
-
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-
-        a {
-            width: min-content;
-            height: auto;
-            padding: 0.1em 0;
-
-            &::after {
-                content: "";
-                height: 3px;
-                scale: 0 1;
-
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-
-                background: var(--accent-color);
-                border-radius: var(--border-radius);
-                transition: scale 300ms ease;
-            }
-
-            &:hover::after {
-                scale: 1;
-            }
-        }
-    }
-
-    #gamesLink:hover + .gamesDropdown,
-    #gamesLink:focus + .gamesDropdown,
-    .gamesDropdown:hover,
-    .gamesDropdown:focus-within {
-        opacity: 1;
-        visibility: visible;
-    }
-
     /* ****************************************** */
     /* *             Navbar buttons             * */
     /* ****************************************** */
