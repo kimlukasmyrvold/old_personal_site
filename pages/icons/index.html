@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons display</title>
+    <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <style>
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 .4em;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 .4em .4em;
+
+            background-color: #00000066;
+            border-radius: 1em;
+            padding: .2em .6em;
+        }
+
+        svg {
+            height: 48px;
+            margin-inline: .4em;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <svg height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#f1a500"
+                d="M22.25,17.55,14.63,3.71a3,3,0,0,0-5.26,0L1.75,17.55A3,3,0,0,0,4.38,22H19.62a3,3,0,0,0,2.63-4.45ZM12,18a1,1,0,1,1,1-1A1,1,0,0,1,12,18Zm1-5a1,1,0,0,1-2,0V9a1,1,0,0,1,2,0Z" />
+        </svg>
+        To fully access and navigate this website, please ensure that JavaScript is enabled in your browser settings.
+        <style>
+            [class*="icon-"] {
+                display: none
+            }
+        </style>
+    </noscript>
+
+    <main>
+        <h1 class="iconTitle heading">Icons</h1>
+        <ul class="iconDisplay"></ul>
+    </main>
+
+    <script>
+        // Function to get the IDs of symbols inside an SVG file
+        function getSymbolIdsFromSvg(svgFileUrl) {
+            // Create an empty array to store the symbol IDs
+            const symbolIds = [];
+
+            // Create an XML HTTP request object
+            const xhr = new XMLHttpRequest();
+
+            // Define a callback function to handle the response
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Create a new DOMParser
+                    const parser = new DOMParser();
+
+                    // Parse the SVG file
+                    const svgDoc = parser.parseFromString(xhr.responseText, 'image/svg+xml');
+
+                    // Get all symbol elements in the SVG
+                    const symbols = svgDoc.getElementsByTagName('symbol');
+
+                    // Iterate through each symbol and extract its ID
+                    for (let i = 0; i < symbols.length; i++) {
+                        const symbolId = symbols[i].getAttribute('id');
+                        symbolIds.push(symbolId);
+                    }
+
+                    // Call a function to handle the symbol IDs
+                    handleSymbolIds(symbolIds);
+                }
+            };
+
+            // Open and send the request to fetch the SVG file
+            xhr.open('GET', svgFileUrl, true);
+            xhr.send();
+        }
+
+        // Example usage
+        getSymbolIdsFromSvg('/assets/images/icons.svg');
+
+
+        // Function to handle the symbol IDs
+        function handleSymbolIds(ids) {
+            const title = document.querySelector('.iconTitle');
+            title.style.marginBottom = '0';
+
+            ids.forEach(element => {
+                const ul = document.querySelector('.iconDisplay');
+                const li = document.createElement('li');
+                const value = document.createTextNode(element + ':');
+
+                li.appendChild(value);
+                ul.appendChild(li);
+
+                // Add the SVG icon to all li items
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+
+                // Adding attributes
+                svg.setAttribute('focusable', "false");
+                svg.setAttribute('aria-hidden', "true");
+                svg.setAttribute('viewBox', "0 0 24 24");
+
+                // Add the svg icon
+                svg.innerHTML = `<use xlink:href="/assets/images/icons.svg#${element}"></use>`;
+
+                li.appendChild(svg);
+            });
+        }
+    </script>
+</body>
+
+</html>
