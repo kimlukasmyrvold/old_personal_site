@@ -422,6 +422,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        flex: 1 1 0px;
         margin: 0.5em 0;
     }
 
@@ -439,7 +440,7 @@
     .game-description {
         display: flex;
         flex-grow: 1;
-        max-width: 30ch;
+        max-width: 37ch;
 
         font-size: 1.2rem;
         text-align: center;
