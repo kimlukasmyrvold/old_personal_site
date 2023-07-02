@@ -63,204 +63,127 @@ function loadHTML(id, filename, callback) {
 
 class CustomNavbar extends HTMLElement {
     connectedCallback() {
-        // Adding css file to head of document
-        addCss('/assets/css/navbar.css');
-
-        // Making navbar hidden until css takes over, this is to stop the navbar from flashing whilst loading css
         this.style.display = 'none';
-
-        // Adding class, aria-label and innerHTML to <custom-navbar>
         this.classList.add('navbar');
         this.setAttribute('aria-label', 'Primary navbar.');
+        loadHTML('custom-navbar', 'navbar.html', () => {
+            // Code for navbar functions.
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelectorAll('.navbar-link');
+            const menuButton = document.querySelector('.navbar-menuButton');
+            const navbarLanguage = document.querySelector('.navbar-language');
+            const navbarAppearance = document.querySelector('.navbar-appearance');
 
-        this.innerHTML = /*html*/`
-            <a href="#main" class="skip-to-main">Skip to main content.</a>
-            <div class="navbar-menuButton"><button class="bar"></button></div>
-            <nav class="navbar-links" aria-label="Navigation Links">
-                <ul>
-                    <li><a id="homeLink" href="/#" class="navbar-link">Home</a></li>
-                    <li><a id="educationLink" href="/#education" class="navbar-link">Education</a></li>
-                    <li><a id="workExperienceLink" href="/#workExperience" class="navbar-link">Work experience</a></li>
-                    <li><a id="hobbiesLink" href="/#hobbies" class="navbar-link">Hobbies</a></li>
-                    <li><a id="gamesLink" href="/#games" class="navbar-link">Games</a></li>
-                </ul>
-            </nav>
-            <div class="navbar-buttons">
-                <div class="navbar-language">
-                    <button onclick="navbarDrop('language')" aria-label="Language button">
-                        <svg class="icon-globe-filled"></svg>
-                    </button>
-                    <div class="navbar-drop">
-                        <button onclick="changeLanguage('no')" data-lang="no" aria-label="Norwegian translation button">
-                            <svg class="icon-flag-no"></svg>
-                            <span>Norsk</span>
-                        </button>
-                        <hr>
-                        <button onclick="changeLanguage('en')" data-lang="en" aria-label="English translation button">
-                            <svg class="icon-flag-en"></svg>
-                            <span>English</span>
-                        </button>
-                        <hr>
-                        <button onclick="changeLanguage('de')" data-lang="de" aria-label="English translation button">
-                            <svg class="icon-flag-de"></svg>
-                            <span>Deutsch</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="navbar-appearance">
-                    <button onclick="navbarDrop('appearance')" aria-label="Appearance button">
-                        <svg class="icon-appearance"></svg>
-                    </button>
-                    <div class="navbar-drop">
-                        <button onclick="changeTheme('device')" data-theme="device" aria-label="Device theme button">
-                            <svg class="icon-cog"></svg>
-                            <span id="deviceTheme">Device</span>
-                        </button>
-                        <hr>
-                        <button onclick="changeTheme('dark')" data-theme="dark" aria-label="Dark theme button">
-                            <svg class="icon-splash-black"></svg>
-                            <span id="darkTheme">Dark</span>
-                        </button>
-                        <hr>
-                        <button onclick="changeTheme('purple')" data-theme="purple" aria-label="Purple theme button">
-                            <svg class="icon-splash-purple"></svg>
-                            <span id="purpleTheme">Purple</span>
-                        </button>
-                        <hr>
-                        <button onclick="changeTheme('light')" data-theme="light" aria-label="Light theme button">
-                            <svg class="icon-splash-white"></svg>
-                            <span id="lightTheme">Light</span>
-                        </button>
-                        <hr>
-                        <button onclick="changeTheme('orange')" data-theme="orange" aria-label="Orange theme button">
-                            <svg class="icon-splash-orange"></svg>
-                            <span id="orangeTheme">Orange</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
+            // Listening for click on menuButton
+            menuButton.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+                navbarAppearance.classList.remove('active');
+                navbarLanguage.classList.remove('active');
 
-        // Code for navbar functions.
-
-        const navbar = document.querySelector('.navbar');
-        const navLinks = document.querySelectorAll('.navbar-link');
-        const menuButton = document.querySelector('.navbar-menuButton');
-        const navbarLanguage = document.querySelector('.navbar-language');
-        const navbarAppearance = document.querySelector('.navbar-appearance');
-
-        // Listening for click on menuButton
-        menuButton.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-            navbarAppearance.classList.remove('active');
-            navbarLanguage.classList.remove('active');
-
-            // Closing menu when navlink is pressed
-            document.addEventListener('click', (event) => {
-                navLinks.forEach(a => {
-                    a.contains(event.target) ? navbar.classList.remove('active') : null;
-                });
+                // Closing menu when navlink is pressed
+                document.addEventListener('click', (event) => {
+                    navLinks.forEach(a => {
+                        a.contains(event.target) ? navbar.classList.remove('active') : null;
+                    });
+                })
             })
-        })
 
-        // Closing menues when "Escape" key is pressed
-        document.addEventListener('keydown', (event) => {
-            if (event.key === "Escape" || event.key === "Esc") {
-                navbarAppearance.classList.remove('active');
-                navbarLanguage.classList.remove('active');
-                navbar.classList.remove('active');
-            }
-        })
-
-        // Closing menues when screen width gets to big
-        // Creating constant "viewWidth" with window.matchMedia("(min-width: 740px)");
-        const viewWidth = window.matchMedia("(min-width: 740px)");
-        viewWidth.addEventListener('change', viewWidthFunct); // Checking for change in the media query
-        viewWidthFunct(viewWidth); // Calling viewWidthFunct function at least once
-
-        // Defining the viewWidthFunct function
-        function viewWidthFunct(viewWidth) {
-            // Checking if viewWidth matches "min-width: 740px"
-            if (viewWidth.matches) {
-                // Removes active class from [navbarAppearance, navbarLanguage, navbar]
-                navbarAppearance.classList.remove('active');
-                navbarLanguage.classList.remove('active');
-                navbar.classList.remove('active');
-            }
-        };
-
-
-        // Changing active page/section on navbar
-
-        function setActiveLink() {
-            const currentPosition = window.scrollY;
-            let activeArticle = null;
-            const articles = document.querySelectorAll('article');
-            const firstArticle = articles[0] || 0; // setting default value to avoid errors
-            const lastArticle = articles[articles.length - 1] || 0; // setting default value to avoid errors
-            const offset = 100;
-
-            document.querySelectorAll('article').forEach(article => {
-                // Defining the start and end of the article
-                const articleStart = article.offsetTop - offset;
-                const articleEnd = articleStart + article.offsetHeight;
-
-                // Checking if postition of screen is within an article and then setting activeArticle to be equal to article
-                if (currentPosition >= articleStart && currentPosition <= articleEnd) {
-                    activeArticle = article;
+            // Closing menues when "Escape" key is pressed
+            document.addEventListener('keydown', (event) => {
+                if (event.key === "Escape" || event.key === "Esc") {
+                    navbarAppearance.classList.remove('active');
+                    navbarLanguage.classList.remove('active');
+                    navbar.classList.remove('active');
                 }
-            });
+            })
 
-            // Loop trough all navbar links
-            navLinks.forEach(link => {
-                // Removing active class from all links
-                link.classList.remove('active');
+            // Closing menues when screen width gets to big
+            const viewWidth = window.matchMedia("(min-width: 740px)");
+            viewWidth.addEventListener('change', viewWidthFunct);
+            viewWidthFunct(viewWidth);
 
-                // adding active class to link that fits requirements
-                if (activeArticle && link.getAttribute('id').includes(activeArticle.id)) {
-                    link.classList.add('active');
-                } else if (articles.length === 0 && link.getAttribute('id').includes(currentPage)) {
-                    link.classList.add('active');
+            function viewWidthFunct(viewWidth) {
+                if (viewWidth.matches) {
+                    navbarAppearance.classList.remove('active');
+                    navbarLanguage.classList.remove('active');
+                    navbar.classList.remove('active');
                 }
-            });
+            };
 
-            // If too high on the screen, select the page name
-            if (currentPosition < firstArticle.offsetTop - offset) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                navLinks.forEach(link => link.getAttribute('id').includes(currentPage) ? link.classList.add('active') : null);
+            // Changing active page/section on navbar
+            function setActiveLink() {
+                const currentPosition = window.scrollY;
+                let activeArticle = null;
+                const articles = document.querySelectorAll('article');
+                const firstArticle = articles[0] || 0; // setting default value to avoid errors
+                const lastArticle = articles[articles.length - 1] || 0; // setting default value to avoid errors
+                const offset = 100;
+
+                document.querySelectorAll('article').forEach(article => {
+                    // Defining the start and end of the article
+                    const articleStart = article.offsetTop - offset;
+                    const articleEnd = articleStart + article.offsetHeight;
+
+                    // Checking if postition of screen is within an article and then setting activeArticle to be equal to article
+                    if (currentPosition >= articleStart && currentPosition <= articleEnd) {
+                        activeArticle = article;
+                    }
+                });
+
+                // Loop trough all navbar links
+                navLinks.forEach(link => {
+                    // Removing active class from all links
+                    link.classList.remove('active');
+
+                    // adding active class to link that fits requirements
+                    if (activeArticle && link.getAttribute('id').includes(activeArticle.id)) {
+                        link.classList.add('active');
+                    } else if (articles.length === 0 && link.getAttribute('id').includes(currentPage)) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // If too high on the screen, select the page name
+                if (currentPosition < firstArticle.offsetTop - offset) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks.forEach(link => link.getAttribute('id').includes(currentPage) ? link.classList.add('active') : null);
+                }
+
+                // If too low, select the last article
+                if (currentPosition > lastArticle.offsetTop - offset + lastArticle.offsetHeight) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector(`a[id="${lastArticle.id}Link"]`).classList.add('active');
+                }
             }
 
-            // If too low, select the last article
-            if (currentPosition > lastArticle.offsetTop - offset + lastArticle.offsetHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                document.querySelector(`a[id="${lastArticle.id}Link"]`).classList.add('active');
+            // Function for handling mouse events like mouseout and mouseout
+            function handleMouseEvents(event) {
+                if (event.target.matches('.navbar-link')) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
+                }
             }
-        }
 
-        // Function for handling mouse events like mouseout and mouseout
-        function handleMouseEvents(event) {
-            if (event.target.matches('.navbar-link')) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
+            // Removes hash from url
+            function removeHash() {
+                history.replaceState("", document.title, window.location.pathname + window.location.search);
             }
-        }
 
-        // Removes hash from url
-        function removeHash() {
-            history.replaceState("", document.title, window.location.pathname + window.location.search);
-        }
+            // Add scroll event listener to the document
+            document.addEventListener('scroll', setActiveLink);
+            // Check for change in url
+            window.addEventListener('popstate', removeHash);
+            // Check for mouseout and mousover events
+            document.querySelector('.navbar-links').addEventListener('mouseover', handleMouseEvents);
+            document.querySelector('.navbar-links').addEventListener('mouseout', handleMouseEvents);
 
-        // Add scroll event listener to the document
-        document.addEventListener('scroll', setActiveLink);
-        // Check for change in url
-        window.addEventListener('popstate', removeHash);
-        // Check for mouseout and mousover events
-        document.querySelector('.navbar-links').addEventListener('mouseover', handleMouseEvents);
-        document.querySelector('.navbar-links').addEventListener('mouseout', handleMouseEvents);
+            // Calling functions to start on load
+            setActiveLink();
+            removeHash()
 
-        // Calling functions to start on load
-        setActiveLink();
-        removeHash()
+            // Calling changeTheme function with 'device' has default argument if theme is not found in localstorage.
+            changeTheme(localStorage.getItem('theme') || 'device');
+        })
     };
 };
 customElements.define('custom-navbar', CustomNavbar);
@@ -297,72 +220,19 @@ function navbarDrop(input) {
 
 class CustomFooter extends HTMLElement {
     connectedCallback() {
-        addCss('/assets/css/footer.css');
         this.style.display = 'none';
         this.setAttribute('id', 'footer');
         this.setAttribute('aria-label', 'Primary footer.');
-        this.innerHTML = /*html*/`
-            <div class="grid-container">
-                <div class="grid-item" aria-label="Social information section">
-                    <p class="header">Kim Lukas Myrvold</p>
-                    <p>
-                        <a href="https://github.com/kimlukasmyrvold/kimlukasmyrvold.github.io" target="_blank" rel="noreferrer noopener">
-                            <svg class="icon-github"></svg>
-                            <span>Github</span>
-                        </a>
-                    </p>
-                    <p>
-                        <a href="https://steamcommunity.com/id/solonerves" target="_blank" rel="noreferrer noopener">
-                            <svg class="icon-steam"></svg>
-                            <span>Steam</span>
-                        </a>
-                    </p>
-                    <p>
-                        <a href="https://www.youtube.com/@SoloNerves" target="_blank" rel="noreferrer noopener">
-                            <svg class="icon-youtube"></svg>
-                            <span>Youtube</span>
-                        </a>
-                    </p>
-                </div>
-                <div class="grid-item" aria-label="Contact information section">
-                    <p id="contactInformation" class="header">Kontaktinformasjon</p>
-                    <p>
-                        <a href="tel: +4748426624"><svg class="icon-phone"></svg><span>+47 484 26 624</span></a>
-                    </p>
-                    <p>
-                        <a href="https://discord.com/" target="_blank" rel="noreferrer noopener"><svg class="icon-discord"></svg><span>solonerves</span></a>
-                    </p>
-                    <p>
-                        <a href="mailto:kimlukasmyrvold06@gmail.com"><svg class="icon-mail"></svg><span>kimlukasmyrvold06@gmail.com</span></a>
-                    </p>
-                </div>
-                <div class="grid-item" id="location" aria-label="Location section">
-                    <p id="locationText" class="header">Beliggenhet</p>
-                    <div id="map" style="padding: 0 .5em 1em;">
-                        <p id="map-consent-location">Fredrikstad, Årum.</p>
-                        <p id="map-consent-text">Google maps may collect user data, in order to view map you need to consent.</p>
-                        <button id="map-consent-button">Accept</button>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright"><p><svg class="icon-copyright"></svg>2023 Copyright: Kim Lukas Myrvold</p></div>
-        `;
-
-        // adding google maps script and asking for user consent
-        const googleMapsSource = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map';
-
-        // Checking if user has already consented to the use of google maps
-        if ((localStorage.getItem('googleAPIConsent') || false) === false) {
-            // Checking if user clicks on consent button
-            document.querySelector('#map-consent-button').addEventListener('click', () => {
-                // Adding google maps api script to bottom of page and setting localstorage googleMapsConsent to true
-                localStorage.setItem('googleAPIConsent', true);
-                document.body.appendChild(document.createElement('script')).setAttribute('src', googleMapsSource);
-            })
-        } else {
-            // Adding google maps api script to bottom of page
-            document.body.appendChild(document.createElement('script')).setAttribute('src', googleMapsSource);
-        }
+        loadHTML('custom-footer', 'footer.html', () => {
+            // adding google maps script and asking for user consent
+            function addMapsApi() {
+                localStorage.setItem('mapsConsent', "true");
+                document.body.appendChild(document.createElement('script')).setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map');
+            }
+            if (localStorage.getItem('mapsConsent') === null) localStorage.setItem('mapsConsent', "false");
+            if (localStorage.getItem('mapsConsent') === "true") addMapsApi();
+            document.querySelector('#footer #map-consent-button').addEventListener('click', addMapsApi)
+        })
     }
 };
 customElements.define('custom-footer', CustomFooter);
@@ -373,7 +243,7 @@ function Map() {
         lat: 59.260573,
         lng: 11.107192
     };
-    const map = new google.maps.Map(document.querySelector("#map"), {
+    const map = new google.maps.Map(document.querySelector("#footer #map"), {
         zoom: 12,
         center: location
     });
@@ -475,9 +345,6 @@ function changeTheme(theme) {
     // Adding theme to localstorage
     localStorage.setItem('theme', theme);
 }
-
-// Calling changeTheme function with 'device' has default argument if theme is not found in localstorage.
-changeTheme(localStorage.getItem('theme') || 'device');
 
 
 
