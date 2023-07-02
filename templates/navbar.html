@@ -1,0 +1,71 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+</head>
+
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content.</a>
+    <div class="navbar-menuButton"><button class="bar"></button></div>
+    <nav class="navbar-links" aria-label="Navigation Links">
+        <ul>
+            <li><a id="homeLink" href="/#" class="navbar-link">Home</a></li>
+            <li><a id="educationLink" href="/#education" class="navbar-link">Education</a></li>
+            <li><a id="workExperienceLink" href="/#workExperience" class="navbar-link">Work experience</a></li>
+            <li><a id="hobbiesLink" href="/#hobbies" class="navbar-link">Hobbies</a></li>
+            <li><a id="gamesLink" href="/#games" class="navbar-link">Games</a></li>
+        </ul>
+    </nav>
+    <div class="navbar-buttons">
+        <div class="navbar-language">
+            <button onclick="navbarDrop('language')" aria-label="Language button">
+                <svg class="icon-globe-filled"></svg>
+            </button>
+            <div class="navbar-drop">
+                <button onclick="changeLanguage('no')" data-lang="no" aria-label="Norwegian translation button">
+                    <svg class="icon-flag-no"></svg>
+                    <span>Norsk</span>
+                </button>
+                <hr>
+                <button onclick="changeLanguage('en')" data-lang="en" aria-label="English translation button">
+                    <svg class="icon-flag-en"></svg>
+                    <span>English</span>
+                </button>
+                <hr>
+                <button onclick="changeLanguage('de')" data-lang="de" aria-label="English translation button">
+                    <svg class="icon-flag-de"></svg>
+                    <span>Deutsch</span>
+                </button>
+            </div>
+        </div>
+        <div class="navbar-appearance">
+            <button onclick="navbarDrop('appearance')" aria-label="Appearance button">
+                <svg class="icon-appearance"></svg>
+            </button>
+            <div class="navbar-drop">
+                <button onclick="changeTheme('device')" data-theme="device" aria-label="Device theme button">
+                    <svg class="icon-cog"></svg>
+                    <span id="deviceTheme">Device</span>
+                </button>
+                <hr>
+                <button onclick="changeTheme('dark')" data-theme="dark" aria-label="Dark theme button">
+                    <svg class="icon-splash-black"></svg>
+                    <span id="darkTheme">Dark</span>
+                </button>
+                <hr>
+                <button onclick="changeTheme('purple')" data-theme="purple" aria-label="Purple theme button">
+                    <svg class="icon-splash-purple"></svg>
+                    <span id="purpleTheme">Purple</span>
+                </button>
+                <hr>
+                <button onclick="changeTheme('light')" data-theme="light" aria-label="Light theme button">
+                    <svg class="icon-splash-white"></svg>
+                    <span id="lightTheme">Light</span>
+                </button>
+                <hr>
+                <button onclick="changeTheme('orange')" data-theme="orange" aria-label="Orange theme button">
+                    <svg class="icon-splash-orange"></svg>
+                    <span id="orangeTheme">Orange</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
