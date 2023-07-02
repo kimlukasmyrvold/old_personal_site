@@ -27,46 +27,47 @@ window.onload = function () {
 // ****************************************
 // *           Game Window Code           *
 // ****************************************
+(function () {
+    const gameStartButtons = document.querySelectorAll('#game-start');
+    const gameWindow = document.querySelector('.game-window');
+    const gameContainer = gameWindow.querySelector('.game-container');
+    const gameClose = gameContainer.querySelector('.game-close');
+    const gameContent = gameContainer.querySelector('.game-content');
 
-const gameStartButtons = document.querySelectorAll('#game-start');
-const gameWindow = document.querySelector('.game-window');
-const gameContainer = gameWindow.querySelector('.game-container');
-const gameClose = gameContainer.querySelector('.game-close');
-const gameContent = gameContainer.querySelector('.game-content');
+    // Function for opening the game window
+    function openGameWindow(e) {
+        gameWindow.classList.add('visible');
+        disableScrolling();
+        loadGameWindowContent(e);
 
-// Function for opening the game window
-function openGameWindow(e) {
-    gameWindow.classList.add('visible');
-    disableScrolling();
-    loadGameWindowContent(e);
-}
+        // Closing the game window
+        gameClose.addEventListener('click', closeGameWindow);
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Esc') closeGameWindow();
+        }, { once: true });
+    }
 
-// Function for closing the game window
-function closeGameWindow() {
-    gameWindow.classList.remove('visible');
-    enableScrolling();
-}
+    // Function for closing the game window
+    function closeGameWindow() {
+        gameWindow.classList.remove('visible');
+        enableScrolling();
+    }
 
-// Function for loading the game window content
-function loadGameWindowContent(event) {
-    const target = event.target.dataset.gametitle;
-    loadHTML(".game-content", `${target}.html`, () => {
-        if (typeof window[target] === 'function') {
-            window[target]();
-        } else {
-            console.error(`${target} is not a function.`);
-        }
-    });
-}
+    // Function for loading the game window content
+    function loadGameWindowContent(event) {
+        const target = event.target.dataset.gametitle;
+        loadHTML(".game-content", `${target}.html`, () => {
+            if (typeof window[target] === 'function') {
+                window[target]();
+            } else {
+                console.error(`${target} is not a function.`);
+            }
+        });
+    }
 
-// Closing the game window
-gameClose.addEventListener('click', closeGameWindow)
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' || e.key === 'Esc') closeGameWindow();
-})
-
-// Check for click on each game start button and call openGameWindow function
-gameStartButtons.forEach((el) => { el.addEventListener('click', openGameWindow) })
+    // Check for click on each game start button and call openGameWindow function
+    gameStartButtons.forEach((el) => { el.addEventListener('click', openGameWindow) });
+})();
 
 
 

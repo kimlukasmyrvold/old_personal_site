@@ -80,75 +80,104 @@ document.querySelectorAll('.codingLanguageItem').forEach(item => {
 // ******************************************
 // *        Hobbies > Gaming section        *
 // ******************************************
-(function () {
-    let game = document.querySelectorAll('.gaming-item')
-    game.forEach(item => {
-        let isFullImage = false;
+document.querySelectorAll('.gaming-item').forEach(item => {
+    let isFullImage = false;
 
-        const imageContainer = item.querySelector('.image-container');
-        const focusedImage = imageContainer.querySelector('.focused-image img');
-        const carouselImages = imageContainer.querySelectorAll('.image-carousel .image');
+    const imageContainer = item.querySelector('.image-container');
+    const previewImageContainer = imageContainer.querySelector('.preview-image-container');
+    const previewImage = previewImageContainer.querySelector('img');
+    const carouselImages = imageContainer.querySelectorAll('.image-carousel .image');
 
-        carouselImages.forEach(img => {
-            img.addEventListener('click', () => {
-                carouselImages.forEach(e => e.classList.remove('focus'));
-                img.classList.add('focus');
-                setFocused();
-            });
+    // Check if Escape key was pressed
+    function escapeKey() {
+        if (!isFullImage) return;
+        window.addEventListener('keydown', (e) => { if (e.key === "Escape" || e.key === "Esc") closeFullImage(); }, { once: true });
+    }
+
+    // Check for click outside of preview image
+    function clickOutside(e) {
+        if (e.target === previewImage) return;
+        closeFullImage();
+    }
+
+    // Set the preview image
+    function setPreview() {
+        const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
+        previewImage.setAttribute('src', `/assets/images/${item.id}/${(isFullImage) ? "large" : "medium"}/${focusedCarouselImage.dataset.image}.jpg`);
+    }
+
+    // Check for click on each of the carousel images
+    carouselImages.forEach(img => {
+        img.addEventListener('click', () => {
+            carouselImages.forEach(e => e.classList.remove('focus'));
+            img.classList.add('focus');
+            setPreview();
         });
+    });
 
-        function setFocused() {
-            const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
-            focusedImage.setAttribute('src', `assets/images/${item.id}/${(focusedImage.classList.contains('full')) ? "large" : "medium"}/${focusedCarouselImage.dataset.image}.jpg`);
-
-            // // Scroll to focused image
-            // const scrollPosition = focusedCarouselImage.offsetLeft - focusedCarouselImage.parentElement.offsetLeft;
-            // focusedCarouselImage.parentElement.scrollLeft = scrollPosition;
-        }
-        setFocused();
-
-        function fullImage(e) {
-            if (focusedImage.classList.contains('full') && e.target === focusedImage) nextImage();
-            const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
-            focusedImage.setAttribute('src', `assets/images/${item.id}/${(e.target === focusedImage) ? "large" : "medium"}/${focusedCarouselImage.dataset.image}.jpg`);
-            focusedImage.classList[(e.target === focusedImage) ? "add" : "remove"]('full');
-            isFullImage = (focusedImage.classList.contains('full')) ? true : false;
-        }
-
-        function nextImage() {
-            let index = 0;
-            for (let i = 0; i < carouselImages.length; i++) {
-                if (carouselImages[i].classList.contains('focus')) {
-                    index = i === (carouselImages.length - 1) ? 0 : i + 1;
-                    carouselImages[i].classList.remove('focus');
-                }
+    // Go to next image
+    function nextImage() {
+        let index = 0;
+        for (let i = 0; i < carouselImages.length; i++) {
+            if (carouselImages[i].classList.contains('focus')) {
+                index = i === (carouselImages.length - 1) ? 0 : i + 1;
+                carouselImages[i].classList.remove('focus');
             }
-            carouselImages[index].classList.add('focus');
-            setFocused()
         }
+        carouselImages[index].classList.add('focus');
+        setPreview();
+        escapeKey();
+    }
 
-        function previousImage() {
-            let index = 0;
-            for (let i = carouselImages.length - 1; i >= 0; i--) {
-                if (carouselImages[i].classList.contains('focus')) {
-                    index = (i === 0) ? carouselImages.length - 1 : i - 1;
-                    carouselImages[i].classList.remove('focus');
-                }
+    // Go to the previous image
+    function previousImage() {
+        let index = 0;
+        for (let i = carouselImages.length - 1; i >= 0; i--) {
+            if (carouselImages[i].classList.contains('focus')) {
+                index = (i === 0) ? carouselImages.length - 1 : i - 1;
+                carouselImages[i].classList.remove('focus');
             }
-            carouselImages[index].classList.add('focus');
-            setFocused()
         }
+        carouselImages[index].classList.add('focus');
+        setPreview();
+        escapeKey();
+    }
 
-        setInterval(() => {
-            if (isFullImage) return;
-            nextImage()
-        }, 10_000);
+    // Open a larger preview image
+    function openFullImage() {
+        const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
+        previewImage.setAttribute('src', `assets/images/${item.id}/large/${focusedCarouselImage.dataset.image}.jpg`);
+        previewImageContainer.classList.add('full');
+        isFullImage = true;
 
-        document.addEventListener('click', fullImage);
-        document.addEventListener('keydown', (event) => {
-            if (event.key === "Escape" || event.key === "Esc") fullImage(event);
-            if (event.key === "ArrowRight" && isFullImage) nextImage();
-            if (event.key === "ArrowLeft" && isFullImage) previousImage();
-        })
-    })
-})();
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "ArrowRight" && isFullImage) nextImage();
+            if (e.key === "ArrowLeft" && isFullImage) previousImage();
+        });
+        document.addEventListener('click', clickOutside);
+        escapeKey();
+        disableScrolling();
+    }
+
+    // Closes the larger preview image
+    function closeFullImage() {
+        const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
+        previewImage.setAttribute('src', `assets/images/${item.id}/medium/${focusedCarouselImage.dataset.image}.jpg`);
+        previewImageContainer.classList.remove('full');
+        isFullImage = false;
+        document.removeEventListener('click', clickOutside);
+        enableScrolling();
+    }
+
+    // Check for click on the preview image
+    previewImage.addEventListener('click', () => {
+        if (!isFullImage) openFullImage();
+        else if (isFullImage) nextImage();
+    });
+
+    // Rotate between all the carousel images
+    setInterval(() => {
+        if (isFullImage) return;
+        nextImage()
+    }, 10_000);
+});

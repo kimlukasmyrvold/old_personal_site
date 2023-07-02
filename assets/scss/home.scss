@@ -357,24 +357,54 @@
     .image-container {
         width: min(calc(100%), 700px);
 
-        .focused-image {
-            aspect-ratio: 600 / 337;
+        .preview-image-container {
+            cursor: pointer;
 
-            img {
+            &.full {
+                position: fixed;
+                inset: 0;
+                padding: 3em 3em;
+                background: #000000cc;
+                z-index: 9;
+                overflow: auto;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media (width <= 1100px) {
+                    padding: 2em;
+                }
+            
+                @media (width <= 800px) {
+                    padding: 1em;
+                }
+            
+                @media (width <= 500px) {
+                    padding: 0.3em;
+                }
+            
+                @media (height <= 500px) {
+                    padding-block: 1em;
+                }
+            
+                @media (height <= 300px) {
+                    padding-block: 0.3em;
+                }
+
+                .preview-image {
+                    display: flex;
+                    width: min(100%, 1200px);
+                }
+
+                img {
+                    border-radius: calc(var(--border-radius) * 1.5) !important;
+                }
+            }
+
+            .preview-image img {
                 width: 100%;
                 border-radius: calc(var(--border-radius) / 2);
-
-                &.full {
-                    position: fixed;
-                    inset: 0;
-                    width: min(calc(100vw - 1rem), 1200px);
-                    height: auto;
-                    margin: auto;
-                    z-index: 9;
-                    box-shadow: 0 0 0 calc(100vw + 100vh) #000000c7;
-                    cursor: pointer;
-                    border-radius: calc(var(--border-radius));
-                }
             }
         }
 
@@ -422,8 +452,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex: 1 1 0px;
         margin: 0.5em 0;
+
+        @media (width >= 1200px) {
+            flex: 1 1 0px;
+        }
     }
 
     .game-logo {
