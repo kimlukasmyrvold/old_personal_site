@@ -363,7 +363,6 @@
             &.full {
                 position: fixed;
                 inset: 0;
-                padding: 3em 3em;
                 background: #000000cc;
                 z-index: 9;
                 overflow: auto;
@@ -372,29 +371,9 @@
                 align-items: center;
                 justify-content: center;
 
-                @media (width <= 1100px) {
-                    padding: 2em;
-                }
-            
-                @media (width <= 800px) {
-                    padding: 1em;
-                }
-            
-                @media (width <= 500px) {
-                    padding: 0.3em;
-                }
-            
-                @media (height <= 500px) {
-                    padding-block: 1em;
-                }
-            
-                @media (height <= 300px) {
-                    padding-block: 0.3em;
-                }
-
                 .preview-image {
                     display: flex;
-                    width: min(100%, 1200px);
+                    width: min(calc(100vw - 1em), 1200px);
                 }
 
                 img {
