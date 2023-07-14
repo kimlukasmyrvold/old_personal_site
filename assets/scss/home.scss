@@ -394,6 +394,7 @@
             overflow: auto;
 
             .image {
+                cursor: pointer;
                 position: relative;
             }
 
@@ -410,7 +411,7 @@
 
             .image img {
                 width: 115px;
-                height: 65px;
+                height: auto;
                 border-radius: calc(var(--border-radius) / 3);
             }
         }

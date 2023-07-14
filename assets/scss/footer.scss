@@ -69,14 +69,10 @@
         width: 100%;
         min-height: 250px;
 
-        * {
-            color: #000;
-        }
-
         #map-consent-text {
             font-size: 1.3rem;
             text-align: center;
-            color: var(--text-inverse) !important;
+            color: var(--text-inverse);
         }
 
         #map-consent-button {
@@ -87,14 +83,21 @@
             margin: 0.4em 0 0;
             padding: 0.5em 1em;
 
-            color: var(--text-color) !important;
+            color: var(--text-color);
             font-size: 1.7rem;
         }
 
         #map-consent-location {
+            display: flex;
+            align-items: center;
             font-size: 2rem;
             font-weight: 500;
             color: var(--text-inverse);
+
+            svg {
+                margin-inline-end: .1em;
+                height: 1.3em;
+            }
         }
     }
 
