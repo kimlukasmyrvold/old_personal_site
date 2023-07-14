@@ -59,18 +59,22 @@ document.querySelectorAll('.codingLanguageItem').forEach(item => {
 
     // Create span element and appending it the links parent
     const span = document.createElement('span');
+    span.tabIndex = 0;
     span.id = 'show-more';
     span.textContent = 'Show more...';
     links[0].parentNode.append(span);
 
     // Making links visible when 'show more' text is clicked
     item.querySelectorAll('#show-more').forEach(el => {
-        el.addEventListener('click', () => {
-            // Removing itself
-            el.remove();
-
-            links.forEach(link => link.style.display = 'flex');
+        el.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter') return;
+            a();
         });
+        el.addEventListener('click', a);
+        function a() {
+            el.remove();
+            links.forEach(link => link.style.display = 'flex');
+        }
     });
 });
 
@@ -80,6 +84,8 @@ document.querySelectorAll('.codingLanguageItem').forEach(item => {
 // ******************************************
 // *        Hobbies > Gaming section        *
 // ******************************************
+
+// Loop through all .gaming-item elements
 document.querySelectorAll('.gaming-item').forEach(item => {
     let isFullImage = false;
 
@@ -108,11 +114,13 @@ document.querySelectorAll('.gaming-item').forEach(item => {
 
     // Check for click on each of the carousel images
     carouselImages.forEach(img => {
-        img.addEventListener('click', () => {
+        img.addEventListener('keydown', (e) => { if (e.key !== 'Enter') return; a(); })
+        img.addEventListener('click', a);
+        function a() {
             carouselImages.forEach(e => e.classList.remove('focus'));
             img.classList.add('focus');
             setPreview();
-        });
+        }
     });
 
     // Go to next image
@@ -146,9 +154,17 @@ document.querySelectorAll('.gaming-item').forEach(item => {
     // Open a larger preview image
     function openFullImage() {
         const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
-        previewImage.setAttribute('src', `assets/images/${item.id}/large/${focusedCarouselImage.dataset.image}.jpg`);
+        previewImage.setAttribute('src', `/assets/images/${item.id}/large/${focusedCarouselImage.dataset.image}.jpg`);
         previewImageContainer.classList.add('full');
         isFullImage = true;
+
+        // Push empty history state to allow for clicking on the back button to close the full image
+        history.pushState(null, null, "");
+
+        // Close the modal when the back button is pressed
+        window.addEventListener("popstate", () => {
+            if (isFullImage) closeFullImage();
+        });
 
         window.addEventListener('keydown', (e) => {
             if (e.key === "ArrowRight" && isFullImage) nextImage();
@@ -162,18 +178,20 @@ document.querySelectorAll('.gaming-item').forEach(item => {
     // Closes the larger preview image
     function closeFullImage() {
         const focusedCarouselImage = imageContainer.querySelector('.image-carousel .image.focus');
-        previewImage.setAttribute('src', `assets/images/${item.id}/medium/${focusedCarouselImage.dataset.image}.jpg`);
+        previewImage.setAttribute('src', `/assets/images/${item.id}/medium/${focusedCarouselImage.dataset.image}.jpg`);
         previewImageContainer.classList.remove('full');
         isFullImage = false;
         document.removeEventListener('click', clickOutside);
         enableScrolling();
     }
 
-    // Check for click on the preview image
-    previewImage.addEventListener('click', () => {
+    // Check for different events on the preview image
+    previewImage.addEventListener('keydown', (e) => { if (e.key !== "Enter") return; action(); });
+    previewImage.addEventListener('click', action);
+    function action() {
         if (!isFullImage) openFullImage();
         else if (isFullImage) nextImage();
-    });
+    }
 
     // Rotate between all the carousel images
     setInterval(() => {
