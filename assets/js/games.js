@@ -32,7 +32,6 @@ window.onload = function () {
     const gameWindow = document.querySelector('.game-window');
     const gameContainer = gameWindow.querySelector('.game-container');
     const gameClose = gameContainer.querySelector('.game-close');
-    const gameContent = gameContainer.querySelector('.game-content');
 
     // Function for opening the game window
     function openGameWindow(e) {
@@ -51,6 +50,10 @@ window.onload = function () {
     function closeGameWindow() {
         gameWindow.classList.remove('visible');
         enableScrolling();
+
+        // Remove added scripts
+        const gameAppendedScript = document.querySelectorAll('.gameAppendedScript');
+        gameAppendedScript.forEach((script) => { script.remove(); });
     }
 
     // Function for loading the game window content
@@ -297,4 +300,172 @@ function diceGame() {
             }
         });
     });
+}
+
+
+
+
+// *****************************************
+// *               Pong game               *
+// *****************************************
+function pongGame() {
+    // Appending phaser script to body
+    const phaserScript = document.createElement('script');
+    phaserScript.setAttribute('src', 'https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js');
+    phaserScript.setAttribute('class', 'gameAppendedScript');
+    document.body.append(phaserScript);
+
+    phaserScript.addEventListener('load', () => {
+        // Game configuration
+        const config = {
+            type: Phaser.AUTO,
+            width: 1024,
+            height: 576,
+            parent: 'game-container',
+            transparent: true,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: false
+                }
+            },
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            },
+            callbacks: {
+                postBoot: function (game) {
+                    game.canvas.style.width = '100%';
+                    game.canvas.style.height = '100%';
+                }
+            }
+        };
+
+        // Initialize the game
+        const game = new Phaser.Game(config);
+        const scoreTextA = document.querySelector('.playerA');
+        const scoreTextB = document.querySelector('.playerB');
+        let paddleA, paddleB, ball;
+        let running = false;
+        let scoreA = 0;
+        let scoreB = 0;
+        let start, stop;
+
+        function preload() {
+            // Preload game assets
+            this.load.image('paddle', '/assets/images/pongGame/paddle.png');
+            this.load.image('ball', '/assets/images/pongGame/ball.png');
+            this.load.audio('bounce', '/assets/sounds/pongGame/bounce.wav');
+        }
+
+        function create() {
+            // Create game objects
+            paddleA = this.physics.add.sprite(20, game.config.height / 2, 'paddle');
+            paddleB = this.physics.add.sprite(game.config.width - 20, game.config.height / 2, 'paddle');
+            ball = this.physics.add.sprite(game.config.width / 2, game.config.height / 2, 'ball');
+
+            // Set up physics
+            paddleA.setCollideWorldBounds(true);
+            paddleA.setImmovable(true);
+            paddleB.setCollideWorldBounds(true);
+            paddleB.setImmovable(true);
+            ball.setCollideWorldBounds(true);
+            ball.setBounce(1, 1);
+
+            // Register the collision event for the ball hitting walls
+            this.physics.world.on('worldbounds', ballHitWall);
+
+            // Enable collision event for ball hitting walls
+            ball.body.onWorldBounds = true;
+
+            // Get the buttons from the HTML document
+            start = document.querySelector('.start');
+            stop = document.querySelector('.stop');
+
+            // Add event listeners to the buttons
+            start.addEventListener('click', startGame);
+            stop.addEventListener('click', stopGame);
+        }
+
+        function update() {
+            if (running) {
+                // Move paddles
+                const paddleSpeed = 600;
+                const cursors = this.input.keyboard.createCursorKeys();
+                const keyboard = this.input.keyboard;
+
+                if (keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W).isDown) {
+                    paddleA.setVelocityY(-paddleSpeed);
+                } else if (keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S).isDown) {
+                    paddleA.setVelocityY(paddleSpeed);
+                } else {
+                    paddleA.setVelocityY(0);
+                }
+
+                if (cursors.up.isDown) {
+                    paddleB.setVelocityY(-paddleSpeed);
+                } else if (cursors.down.isDown) {
+                    paddleB.setVelocityY(paddleSpeed);
+                } else {
+                    paddleB.setVelocityY(0);
+                }
+
+                // Ball collision with paddles
+                this.physics.world.collide(ball, paddleA, playSound);
+                this.physics.world.collide(ball, paddleB, playSound);
+            }
+        }
+
+        function startGame() {
+            if (!running) addScore(scoreA = 0, scoreB = 0);
+            running = true;
+            ball.setPosition(game.config.width / 2, game.config.height / 2);
+            ball.setVelocity(300);
+        }
+
+        function stopGame() {
+            if (!running) return;
+            running = false;
+            ball.setVelocity(0);
+        }
+
+        // Function to handle ball collision with walls
+        function ballHitWall(body, up, down, left, right) {
+            if (right) {
+                ++scoreA;
+                startGame();
+            } else if (left) {
+                ++scoreB;
+                startGame();
+            }
+            addScore(scoreA, scoreB)
+            playSound();
+        }
+
+        function addScore(scoreA, scoreB) {
+            // Showing score to players
+            scoreTextA.textContent = scoreA;
+            scoreTextB.textContent = scoreB;
+
+            // Checking for winner
+            if (scoreA >= 11 && scoreB < scoreA - 1) {
+                console.log('player A won!')
+                stopGame();
+            }
+
+            if (scoreB >= 11 && scoreA < scoreB - 1) {
+                console.log('player B won!')
+                stopGame();
+            }
+        }
+
+        function playSound() {
+            let bounce = new Audio('/assets/sounds/pongGame/bounce.wav');
+            bounce.volume = .7;
+            bounce.play();
+        }
+    });
+
 }

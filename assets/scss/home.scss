@@ -10,7 +10,7 @@
         width: 100%;
         margin-right: 2em;
 
-        @media (width <= 420px) {
+        @media (width <=420px) {
             margin-right: 0;
         }
     }
@@ -95,7 +95,7 @@
         flex-direction: column;
         gap: $gap;
 
-        > p {
+        >p {
             span {
                 font-size: 1.3rem;
                 font-weight: 600;
@@ -119,13 +119,13 @@
 
         .codingCertificates {
             margin-inline: $gap;
-            
+
             a {
                 display: flex;
                 align-items: center;
                 gap: calc($gap / 1.7);
                 font-size: 1.2rem;
-                
+
                 p {
                     text-wrap: balance;
                 }
@@ -138,7 +138,7 @@
         flex-direction: column;
         gap: $gap;
 
-        > p {
+        >p {
             span {
                 font-size: 1.3rem;
                 font-weight: 600;
@@ -195,7 +195,7 @@
         flex-direction: column;
         gap: 1em;
 
-        @media (width <= 1100px) {
+        @media (width <=1100px) {
             gap: 2em;
         }
     }
@@ -207,7 +207,7 @@
         gap: 1.5em;
         margin: 6px 8px;
 
-        @media (width <= 1100px) {
+        @media (width <=1100px) {
             flex-direction: column;
             align-items: flex-start;
             gap: 1em;
@@ -222,7 +222,7 @@
             box-shadow: -6px 8px 3px 0 var(--black-blur);
             max-width: 450px;
 
-            @media (width <= 1100px) {
+            @media (width <=1100px) {
                 width: 100%;
             }
         }
@@ -339,12 +339,13 @@
                 padding: 0.4em;
                 width: 100%;
 
-                @media (width <= 450px) {
+                @media (width <=450px) {
                     position: relative;
                     padding-inline: 0;
                     background: none;
                     flex-wrap: wrap;
                     gap: 0.5em;
+
                     * {
                         color: var(--text-color) !important;
                     }
@@ -477,7 +478,7 @@
         align-items: center;
         margin: 0.5em 0;
 
-        @media (width >= 1200px) {
+        @media (width >=1200px) {
             flex: 1 1 0px;
         }
     }
@@ -525,23 +526,23 @@
         visibility 300ms ease,
         padding 300ms ease;
 
-    @media (width <= 1100px) {
+    @media (width <=1100px) {
         padding: 2em;
     }
 
-    @media (width <= 800px) {
+    @media (width <=800px) {
         padding: 1em;
     }
 
-    @media (width <= 500px) {
+    @media (width <=500px) {
         padding: 0.3em;
     }
 
-    @media (height <= 500px) {
+    @media (height <=500px) {
         padding-block: 1em;
     }
 
-    @media (height <= 300px) {
+    @media (height <=300px) {
         padding-block: 0.3em;
     }
 
@@ -778,7 +779,7 @@
         border-bottom-left-radius: $outer-border-radius;
     }
 
-    @media (width <= 450px) {
+    @media (width <=450px) {
         .container {
             gap: 6px;
         }
@@ -859,9 +860,83 @@
         max-width: 15em;
     }
 
-    .dice > svg {
+    .dice>svg {
         height: auto;
         width: 100%;
         max-width: 300px;
+    }
+}
+
+/* ******************************* */
+/* *          Pong game          * */
+/* ******************************* */
+
+.pongGameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(126deg, rgba(3, 0, 156, 1) 0%, rgba(2, 0, 71, 1) 51%, rgba(71, 7, 80, 1) 78%, rgba(78, 3, 161, 1) 100%);
+    background-size: 300% 300%;
+    background-attachment: fixed;
+    animation: pongGameGradient 30s ease infinite;
+
+    min-height: 100%;
+    margin: 0;
+    isolation: isolate;
+
+    @keyframes pongGameGradient {
+        0% {
+            background-position: 0% 0%;
+        }
+
+        50% {
+            background-position: 100% 100%;
+        }
+
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+
+    .pongGameContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pongGame {
+        position: relative;
+        width: 65vw;
+        aspect-ratio: 16 / 9;
+        border: 3px solid #dfdfdf;
+        background-color: #0808087c;
+        border-radius: 7px;
+    }
+
+    .scores {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        gap: 1em;
+
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .divider {
+        position: absolute;
+        border-left: 5px dashed #ffee00;
+        z-index: -1;
+        right: 50%;
+        height: 100%;
+        translate: 50%;
+    }
+
+    #game-container {
+        display: flex;
+        justify-content: center;
     }
 }
