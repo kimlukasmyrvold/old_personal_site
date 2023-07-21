@@ -44,16 +44,35 @@ function loadHTML(id, filename, callback) {
             if (this.readyState == 4) {
                 if (this.status == 200) {
                     element.innerHTML = this.responseText;
-                    if (typeof callback === 'function') { callback(); }
+                    if (typeof callback === 'function') { callback(); };
                     addIcons();
-                } else if (this.status == 404) { element.innerHTML = '<h1 id="error">Error 404; Page not found.</h1>'; }
-            }
-        }
+                } else if (this.status == 404) { element.innerHTML = '<h1 id="error">Error 404; Page not found.</h1>'; };
+            };
+        };
         xhttp.open("GET", `/templates/${file}`, true);
         xhttp.send();
         return;
-    }
+    };
 }
+
+// Prepare localstorage config stuff
+(function localStorageInitiate() {
+    if (!localStorage.getItem('config')) {
+        localStorage.setItem('config', JSON.stringify({
+            theme: 'device',
+            language: 'no',
+            mapsConsent: 'false'
+        }));
+    };
+    if (!localStorage.getItem('gameData')) {
+        localStorage.setItem('gameData', JSON.stringify({
+            simonGameScores: [],
+            pongGameScores: []
+        }));
+    };
+})();
+
+
 
 
 
@@ -85,8 +104,8 @@ class CustomNavbar extends HTMLElement {
                     navLinks.forEach(a => {
                         a.contains(event.target) ? navbar.classList.remove('active') : null;
                     });
-                })
-            })
+                });
+            });
 
             // Closing menues when "Escape" key is pressed
             document.addEventListener('keydown', (event) => {
@@ -94,8 +113,8 @@ class CustomNavbar extends HTMLElement {
                     navbarAppearance.classList.remove('active');
                     navbarLanguage.classList.remove('active');
                     navbar.classList.remove('active');
-                }
-            })
+                };
+            });
 
             // Closing menues when screen width gets to big
             const viewWidth = window.matchMedia("(min-width: 740px)");
@@ -107,8 +126,8 @@ class CustomNavbar extends HTMLElement {
                     navbarAppearance.classList.remove('active');
                     navbarLanguage.classList.remove('active');
                     navbar.classList.remove('active');
-                }
-            };
+                };
+            }
 
             // Changing active page/section on navbar
             function setActiveLink() {
@@ -127,7 +146,7 @@ class CustomNavbar extends HTMLElement {
                     // Checking if postition of screen is within an article and then setting activeArticle to be equal to article
                     if (currentPosition >= articleStart && currentPosition <= articleEnd) {
                         activeArticle = article;
-                    }
+                    };
                 });
 
                 // Loop trough all navbar links
@@ -140,20 +159,20 @@ class CustomNavbar extends HTMLElement {
                         link.classList.add('active');
                     } else if (articles.length === 0 && link.getAttribute('id').includes(currentPage)) {
                         link.classList.add('active');
-                    }
+                    };
                 });
 
                 // If too high on the screen, select the page name
                 if (currentPosition < firstArticle.offsetTop - offset) {
                     navLinks.forEach(link => link.classList.remove('active'));
                     navLinks.forEach(link => link.getAttribute('id').includes(currentPage) ? link.classList.add('active') : null);
-                }
+                };
 
                 // If too low, select the last article
                 if (currentPosition > lastArticle.offsetTop - offset + lastArticle.offsetHeight) {
                     navLinks.forEach(link => link.classList.remove('active'));
                     document.querySelector(`a[id="${lastArticle.id}Link"]`).classList.add('active');
-                }
+                };
             }
 
             // Function for handling mouse events like mouseout and mouseout
@@ -161,7 +180,7 @@ class CustomNavbar extends HTMLElement {
                 if (event.target.matches('.navbar-link')) {
                     navLinks.forEach(link => link.classList.remove('active'));
                     event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
-                }
+                };
             }
 
             // Removes hash from url
@@ -179,10 +198,10 @@ class CustomNavbar extends HTMLElement {
 
             // Calling functions to start on load
             setActiveLink();
-            removeHash()
+            removeHash();
 
             // Calling changeTheme function with 'device' has default argument if theme is not found in localstorage.
-            changeTheme(localStorage.getItem('theme') || 'device');
+            changeTheme(JSON.parse(localStorage.getItem('config')).theme);
         })
     };
 };
@@ -226,14 +245,15 @@ class CustomFooter extends HTMLElement {
         loadHTML('custom-footer', 'footer.html', () => {
             // adding google maps script and asking for user consent
             function addMapsApi() {
-                localStorage.setItem('mapsConsent', "true");
+                let config = JSON.parse(localStorage.getItem('config'));
+                config.mapsConsent = true;
+                localStorage.setItem('config', JSON.stringify(config));
                 document.body.appendChild(document.createElement('script')).setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCriq_RvddTjsYCd-uRVVIJROZpMYBVr0U&callback=Map');
             }
-            if (localStorage.getItem('mapsConsent') === null) localStorage.setItem('mapsConsent', "false");
-            if (localStorage.getItem('mapsConsent') === "true") addMapsApi();
-            document.querySelector('#footer #map-consent-button').addEventListener('click', addMapsApi)
-        })
-    }
+            if (JSON.parse(localStorage.getItem('config')).mapsConsent === true) addMapsApi();
+            document.querySelector('#footer #map-consent-button').addEventListener('click', addMapsApi);
+        });
+    };
 };
 customElements.define('custom-footer', CustomFooter);
 
@@ -271,15 +291,17 @@ try {
             languageJSON = data.language;
 
             // storing value of localstorage and then calling the changeLanguage function with it's value. If no value is present it default to 'no'
-            changeLanguage(localStorage.getItem('lang') || 'no');
-        })
+            changeLanguage(JSON.parse(localStorage.getItem('config')).language);
+        });
 } catch (error) {
     console.error('Could not fetch language.json:', error);
 };
 
 function changeLanguage(lang) {
     // Setting localstorage lang to selected language
-    localStorage.setItem("lang", lang);
+    let config = JSON.parse(localStorage.getItem('config'));
+    config.language = lang;
+    localStorage.setItem("config", JSON.stringify(config));
 
     // Changing lang tag on html tag to current lang
     document.documentElement.setAttribute('lang', lang);
@@ -312,8 +334,8 @@ function changeLanguage(lang) {
             console.error(`Error attempting to apply language change to navbar or footer. ${e}`);
         };
     } catch (error) {
-        console.error(`Could not translate page! ${error}`)
-    }
+        console.error(`Could not translate page! ${error}`);
+    };
 
     // Dispatch a custom event when the function has been executed
     // This is for when there are scripts that modify the innerHTML
@@ -343,7 +365,9 @@ function changeTheme(theme) {
     document.querySelectorAll(".navbar-appearance button").forEach(btn => btn.classList.toggle("underline", btn.dataset.theme === theme));
 
     // Adding theme to localstorage
-    localStorage.setItem('theme', theme);
+    let config = JSON.parse(localStorage.getItem('config'));
+    config.theme = theme;
+    localStorage.setItem('config', JSON.stringify(config));
 }
 
 
@@ -360,7 +384,7 @@ function dropdownToggle(e) {
     // add hidden class to all dropdowns
     dropdownButtons.forEach((x) => {
         e.dataset.dropdown === x.dataset.dropdown ? document.querySelector('#' + e.dataset.dropdown).classList.toggle('hidden') : document.querySelector('#' + x.dataset.dropdown).classList.add('hidden');
-    })
+    });
 }
 
 // Add click listener to all dropdown buttons
@@ -369,10 +393,8 @@ dropdownButtons.forEach((e) => {
     document.querySelector('#' + e.dataset.dropdown).classList.add('hidden');
 
     // Check for click and call dropdownToggle()
-    e.addEventListener('click', () => {
-        dropdownToggle(e)
-    })
-})
+    e.addEventListener('click', () => { dropdownToggle(e); });
+});
 
 
 
@@ -402,7 +424,7 @@ function addIcons() {
 
         // Add the svg icon
         e.innerHTML = `<use xlink:href="/assets/images/icons.svg#${icon}"></use>`;
-    })
+    });
 }
 
 // Initiate addIcons function

@@ -159,7 +159,8 @@ function simonGame() {
     let userClickedPattern = [];
     let started = false;
     let level = 0;
-    let scores = JSON.parse(localStorage.getItem('simonGameScores')) || [];
+
+    let scores = JSON.parse(localStorage.getItem('gameData')).simonGameScores;
 
     function addScores() {
         // Reset score table
@@ -185,7 +186,9 @@ function simonGame() {
         scores = scores.sort((a, b) => b - a);
 
         if (scores.length > 5) scores.length = 5;
-        localStorage.setItem('simonGameScores', JSON.stringify(scores));
+        let gameData = JSON.parse(localStorage.getItem('gameData'));
+        gameData.simonGameScores = scores;
+        localStorage.setItem('gameData', JSON.stringify(gameData));
 
         addScores();
 
