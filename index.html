@@ -73,7 +73,7 @@
                 <p id="homeInterestsText">Jeg har interesse for <strong>datamaskiner, programmering,
                         nettverk og gaming.</strong></p>
 
-                <a href="#hobbies" id="homeInterestsMoreInfo">Mer info på hobby siden...</a>
+                <a href="#hobbies" id="homeInterestsMoreInfo">More info down below...</a>
             </section>
 
             <section id="codingLanguages">
@@ -480,13 +480,16 @@
 
             <p id="hobbiesText">
                 Hobbiene mine er innenfor <a href="#gaming">Gaming,</a> <a href="#computers">datamaskiner,</a> <a
-                    href="#programming">programmering.</a> Jeg starta å bli interesert i gaming og data rundt sånn
+                    href="#codingLanguages">programmering.</a> Jeg starta å bli interesert i gaming og data rundt sånn
                 2017. Programmering kom noen få år etter. Innenfor gaming så liker jeg mer rolige spill og spill
                 hvor du må tenke litt. De spillene jeg liker er mest er fabrikk spill.
             </p>
 
-            <section id="gaming">
-                <p class="subheading">Gaming</p>
+            <section id="gaming" class="flex" style="flex-direction: column; align-items: center;">
+                <div style="text-align: center;">
+                    <h2 class="subheading">Gaming</h2>
+                    <p id="hobbiesGamingText">Here are some of my favorite games that I like to play.</p>
+                </div>
 
                 <div class="gaming-container">
                     <!-- Satisfactory -->
@@ -608,7 +611,7 @@
                             <div class="game-info-content">
                                 <div class="stats">
                                     <p><span id="gamePurchased">Purchased: </span>02/08/2021</p>
-                                    <p><span id="hoursPlayed">Hours played: </span>326</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>329</p>
                                 </div>
 
                                 <p class="description" id="spaceengineersDesc">
@@ -687,7 +690,7 @@
                             <div class="game-info-content">
                                 <div class="stats">
                                     <p><span id="gamePurchased">Purchased: </span>22/02/2021</p>
-                                    <p><span id="hoursPlayed">Hours played: </span>298</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>306</p>
                                 </div>
 
                                 <p class="description" id="dysonsphereprogramDesc">
@@ -797,6 +800,81 @@
                         </div>
                     </div>
 
+                    <!-- Techtonica -->
+                    <div class="gaming-item" id="techtonica">
+                        <div class="game-info-container">
+                            <div class="banner">
+                                <img loading="lazy" src="/assets/images/techtonica/banner.jpg"
+                                    alt="Banner image for a game called Techtonica">
+                                <div class="banner-content">
+                                    <p class="title">Techtonica</p>
+                                    <div class="links">
+                                        <a target="_blank"
+                                            href="https://store.steampowered.com/app/1457320/Techtonica/">
+                                            <svg class="icon-steam"></svg>
+                                        </a>
+                                        <a target="_blank"
+                                            href="https://www.xbox.com/en-us/games/store/techtonica-game-preview/9nr1rvdk9t78">
+                                            <svg class="icon-xbox"></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-info-content">
+                                <div class="stats">
+                                    <p><span id="gamePurchased">Purchased: </span>18/07/2023</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>23.4</p>
+                                </div>
+
+                                <p class="description" id="techtonicaDesc">
+                                    Techtonica is a first-person factory automation game set beneath the surface of an
+                                    alien planet. Work alone or in co-op to build factories, gather resources, research
+                                    new technologies, mold the destructible terrain, establish a base of operations, and
+                                    uncover long-forgotten secrets.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="image-container">
+                            <div class="preview-image-container">
+                                <div class="preview-image">
+                                    <img tabindex="0" loading="lazy" src="/assets/images/techtonica/medium/1.jpg"
+                                        alt="focused image">
+                                </div>
+                            </div>
+                            <div class="image-carousel" tabindex="-1">
+                                <div class="image focus" data-image="1">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/1.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                                <div class="image" data-image="2">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/2.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                                <div class="image" data-image="3">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/3.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                                <div class="image" data-image="4">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/4.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                                <div class="image" data-image="5">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/5.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                                <div class="image" data-image="6">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/6.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                                <div class="image" data-image="7">
+                                    <img loading="lazy" src="/assets/images/techtonica/small/7.jpg" alt="small image"
+                                        tabindex="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- American Truck Simulator -->
                     <div class="gaming-item" id="american-truck-simulator">
                         <div class="game-info-container">
@@ -816,7 +894,7 @@
                             <div class="game-info-content">
                                 <div class="stats">
                                     <p><span id="gamePurchased">Purchased: </span>14/02/2023</p>
-                                    <p><span id="hoursPlayed">Hours played: </span>19</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>18.7</p>
                                 </div>
 
                                 <p class="description" id="americantrucksimDesc">
