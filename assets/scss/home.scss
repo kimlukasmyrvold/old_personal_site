@@ -57,7 +57,7 @@
         gap: 1em;
         margin-block-start: $gap;
 
-        background-color: #00000015;
+        background-color: #00000033;
         border-radius: calc(var(--border-radius) / 2);
         padding: 0.4em;
 
@@ -300,20 +300,31 @@
 
 #gaming .gaming-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1.5em;
+    width: 100%;
 
     .gaming-item {
         display: flex;
-        gap: 1em;
+        flex-direction: column;
         flex-wrap: wrap;
+
+        gap: 1em;
+        padding: .6em;
+        flex: 1 1 0px;
         width: 100%;
+        max-width: 460px;
+
+        background-color: #0000003f;
+        border-radius: var(--border-radius);
     }
 
     .game-info-container {
         display: flex;
         flex-direction: column;
+        flex: 1 1 0px;
         max-width: 460px;
 
         .banner {
@@ -432,12 +443,16 @@
         }
 
         .image-carousel {
+            $border-radius: calc(var(--border-radius) / 3);
+            
             display: flex;
             gap: 3px;
             margin-block: 0.2em;
             overflow: auto;
+            border-radius: $border-radius;
 
             .image {
+                display: flex;
                 cursor: pointer;
                 position: relative;
             }
@@ -450,13 +465,13 @@
                 height: 65px;
                 background: #000000a1;
                 border: 2px solid;
-                border-radius: calc(var(--border-radius) / 3);
+                border-radius: $border-radius;
             }
 
             .image img {
                 width: 115px;
                 height: auto;
-                border-radius: calc(var(--border-radius) / 3);
+                border-radius: $border-radius;
             }
         }
     }
