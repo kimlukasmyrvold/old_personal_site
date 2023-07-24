@@ -448,7 +448,8 @@
             display: flex;
             gap: 3px;
             margin-block: 0.2em;
-            overflow: auto;
+            min-height: 65px;
+            overflow: auto hidden;
             border-radius: $border-radius;
 
             .image {
