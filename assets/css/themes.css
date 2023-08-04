@@ -58,4 +58,7 @@ body.orange {
     --border-radius: 25px;
     --black-blur: #0000004d;
     --separator-color: #53535385;
+    --scrollbar-thumb-color: #929292;
+    --scrollbar-thumb-color-hover: #ffffff;
+    --scrollbar-track-color: #141414a8;
 }
