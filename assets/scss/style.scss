@@ -13,6 +13,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 50px;
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
 
 body {
@@ -31,6 +32,30 @@ body {
 
     overflow: auto;
     animation: gradientAnimation 50s ease infinite;
+}
+
+// ***********************************
+// *        Custom Scroll Bar        *
+// ***********************************
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+    border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+    border-radius: var(--border-radius);
+    height: 30%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-color-hover);
 }
 
 // **********************************
@@ -55,15 +80,19 @@ body {
     0% {
         rotate: 10deg;
     }
+
     25% {
         rotate: -10deg;
     }
+
     50% {
         rotate: 5deg;
     }
+
     75% {
         rotate: -5deg;
     }
+
     100% {
         rotate: 0deg;
     }
@@ -155,17 +184,17 @@ main {
     transition: padding 400ms ease-in;
     overflow: auto;
 
-    @media (width <= 950px) {
+    @media (width <=950px) {
         padding-left: 3em;
         padding-right: 3em;
     }
 
-    @media (width <= 800px) {
+    @media (width <=800px) {
         padding-left: 2em;
         padding-right: 2em;
     }
 
-    @media (width <= 500px) {
+    @media (width <=500px) {
         padding-left: 0.5em;
         padding-right: 0.5em;
     }
