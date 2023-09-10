@@ -27,7 +27,7 @@
                 "games404": "Spill"
             },
             "home": {
-                "homeAge": "2006, <span id=\"age\"></span> år gammel",
+                "homeAge": "21.05.2006 - <span id=\"age\"></span> år gammel",
                 "homeLocation": "Fredrikstad, Norge",
                 "homeAboutHeading": "Litt om meg",
                 "homeAboutText": "Jeg er en <strong>ansvarlig, ryddig og snill</strong> gutt på <span id=\"age\"></span> år. Jeg lærer raskt og gjør mitt beste. Jeg tenker grundig igjennom ting før jeg gjør det og jeg er ganske <strong>selvstendig</strong>.",
@@ -109,7 +109,7 @@
                 "games404": "Games"
             },
             "home": {
-                "homeAge": "2006, <span id=\"age\"></span> years old",
+                "homeAge": "21/05/2006 - <span id=\"age\"></span> years old",
                 "homeLocation": "Fredrikstad, Norway",
                 "homeAboutHeading": "A bit about me",
                 "homeAboutText": "I am a <strong>responsible, tidy and kind</strong> <span id=\"age\"></span>-year-old boy. I learn quickly and do my best. I think things through thoroughly before I do it, and I am quite <strong>independent</strong>.",
@@ -191,7 +191,7 @@
                 "gamesLink": "Spiele"
             },
             "home": {
-                "homeAge": "2006, <span id=\"age\"></span> Jahre alt",
+                "homeAge": "21.05.2006 - <span id=\"age\"></span> Jahre alt",
                 "homeLocation": "Fredrikstad, Norwegen",
                 "homeAboutHeading": "Etwas über mich",
                 "homeAboutText": "Ich bin ein <strong>verantwortungsbewusster, ordentlicher und freundlicher</strong> Junge <span id=\"age\"></span> Jahr. Ich lerne schnell und gebe mein Bestes. Ich denke die Dinge gründlich durch, bevor ich sie tue, und bin ziemlich <strong>unabhängig</strong> .",
