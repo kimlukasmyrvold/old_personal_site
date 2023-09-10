@@ -2,36 +2,47 @@
 
 @import url(../fonts/press-start-2p/press-start-2p.css);
 
-.profile-info {
-    margin-bottom: 2em;
+.profileInfo {
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2em;
+        margin-bottom: 1.5em;
+    }
 
-    div:first-child {
-        max-width: 300px;
-        width: 100%;
-        margin-right: 2em;
+    &__column {
+        display: flex;
+        flex-direction: column;
+    }
 
-        @media (width <=420px) {
-            margin-right: 0;
-        }
+    &__link, &__icon {
+        display: flex;
+        align-items: center;
+        gap: .2em;
+        width: fit-content;
+        text-decoration: none;
+        
+    }
+    &__link:hover {
+        text-decoration: underline;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+
+    .text {
+        font-size: 1.25rem;
+    }
+
+    p, a {
+        margin: .2em 0;
     }
 
     img {
         width: 100%;
-    }
-
-    p,
-    a {
-        margin: 0;
-        line-height: 1.4;
-        font-size: 1.4rem;
-    }
-
-    a {
-        font-size: clamp(1rem, 6vw, 1.4rem);
-    }
-
-    .heading {
-        margin-bottom: 0.4em;
     }
 }
 
@@ -171,8 +182,12 @@
                 gap: calc($gap / 1.7);
                 font-size: 1.2rem;
                 width: fit-content;
+                
+                p {
+                    text-transform: capitalize;
+                }
             }
-            
+
             span {
                 opacity: 0.8;
                 font-size: 1rem;
@@ -446,7 +461,7 @@
 
         .image-carousel {
             $border-radius: calc(var(--border-radius) / 3);
-            
+
             display: flex;
             gap: 3px;
             margin-block: 0.2em;
