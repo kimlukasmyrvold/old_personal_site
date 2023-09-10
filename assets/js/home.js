@@ -1,3 +1,5 @@
+"use strict";
+
 // ****************************************
 // *     Function for calculating age     *
 // ****************************************
@@ -50,7 +52,7 @@
 // Make it show up 3 project links on each coding languages item
 document.querySelectorAll('.codingLanguageItem').forEach(item => {
     const links = item.querySelectorAll('.codingRepos a');
-    if (links.length < 3) return;
+    if (links.length <= 3) return;
 
     // Loop through all links except the first 3 links
     for (let i = 3; i < links.length; i++) {

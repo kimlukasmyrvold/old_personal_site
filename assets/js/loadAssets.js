@@ -1,3 +1,5 @@
+"use strict";
+
 // Credit to: https://github.com/david-reid/preloading.assets.js
 
 class LoadAssets {
@@ -40,12 +42,14 @@ class LoadAssets {
                     if (this.assets[i].var.nodeName == "IMG") {
                         this.beginLoadingImage(
                             this.assets[i].var,
-                            this.assets[i].file);
+                            this.assets[i].file
+                        );
                     }
                     if (this.assets[i].var.nodeName == "AUDIO") {
                         this.beginLoadingAudio(
                             this.assets[i].var,
-                            this.assets[i].file);
+                            this.assets[i].file
+                        );
                     }
                 }
             }
