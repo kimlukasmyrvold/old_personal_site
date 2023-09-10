@@ -79,132 +79,134 @@ function loadHTML(id, filename, callback) {
 // *          Custom Navbar          *
 // ***********************************
 
-class CustomNavbar extends HTMLElement {
-    connectedCallback() {
-        this.style.display = 'none';
-        this.classList.add('navbar');
-        this.setAttribute('aria-label', 'Primary navbar.');
-        loadHTML('custom-navbar', 'navbar.html', () => {
-            // Code for navbar functions.
-            const navbar = document.querySelector('.navbar');
-            const navLinks = document.querySelectorAll('.navbar-link');
-            const menuButton = document.querySelector('.navbar-menuButton');
-            const navbarLanguage = document.querySelector('.navbar-language');
-            const navbarAppearance = document.querySelector('.navbar-appearance');
-
-            // Listening for click on menuButton
-            menuButton.addEventListener('click', () => {
-                navbar.classList.toggle('active');
-                navbarAppearance.classList.remove('active');
-                navbarLanguage.classList.remove('active');
-
-                // Closing menu when navlink is pressed
-                document.addEventListener('click', (event) => {
-                    navLinks.forEach(a => {
-                        a.contains(event.target) ? navbar.classList.remove('active') : null;
-                    });
-                });
-            });
-
-            // Closing menues when "Escape" key is pressed
-            document.addEventListener('keydown', (event) => {
-                if (event.key === "Escape" || event.key === "Esc") {
-                    navbarAppearance.classList.remove('active');
-                    navbarLanguage.classList.remove('active');
-                    navbar.classList.remove('active');
-                };
-            });
-
-            // Closing menues when screen width gets to big
-            const viewWidth = window.matchMedia("(min-width: 740px)");
-            viewWidth.addEventListener('change', viewWidthFunct);
-            viewWidthFunct(viewWidth);
-
-            function viewWidthFunct(viewWidth) {
-                if (viewWidth.matches) {
-                    navbarAppearance.classList.remove('active');
-                    navbarLanguage.classList.remove('active');
-                    navbar.classList.remove('active');
-                };
-            }
-
-            // Changing active page/section on navbar
-            function setActiveLink() {
-                const currentPosition = window.scrollY;
-                let activeArticle = null;
-                const articles = document.querySelectorAll('article');
-                const firstArticle = articles[0] || 0; // setting default value to avoid errors
-                const lastArticle = articles[articles.length - 1] || 0; // setting default value to avoid errors
-                const offset = 100;
-
-                document.querySelectorAll('article').forEach(article => {
-                    // Defining the start and end of the article
-                    const articleStart = article.offsetTop - offset;
-                    const articleEnd = articleStart + article.offsetHeight;
-
-                    // Checking if postition of screen is within an article and then setting activeArticle to be equal to article
-                    if (currentPosition >= articleStart && currentPosition <= articleEnd) {
-                        activeArticle = article;
-                    };
-                });
-
-                // Loop trough all navbar links
-                navLinks.forEach(link => {
-                    // Removing active class from all links
-                    link.classList.remove('active');
-
-                    // adding active class to link that fits requirements
-                    if (activeArticle && link.getAttribute('id').includes(activeArticle.id)) {
-                        link.classList.add('active');
-                    } else if (articles.length === 0 && link.getAttribute('id').includes(currentPage)) {
-                        link.classList.add('active');
-                    };
-                });
-
-                // If too high on the screen, select the page name
-                if (currentPosition < firstArticle.offsetTop - offset) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    navLinks.forEach(link => link.getAttribute('id').includes(currentPage) ? link.classList.add('active') : null);
-                };
-
-                // If too low, select the last article
-                if (currentPosition > lastArticle.offsetTop - offset + lastArticle.offsetHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    document.querySelector(`a[id="${lastArticle.id}Link"]`).classList.add('active');
-                };
-            }
-
-            // Function for handling mouse events like mouseout and mouseout
-            function handleMouseEvents(event) {
-                if (event.target.matches('.navbar-link')) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
-                };
-            }
-
-            // Removes hash from url
-            function removeHash() {
-                history.replaceState("", document.title, window.location.pathname + window.location.search);
-            }
-
-            // Add scroll event listener to the document
-            document.addEventListener('scroll', setActiveLink);
-            // Check for change in url
-            window.addEventListener('popstate', removeHash);
-            // Check for mouseout and mousover events
-            document.querySelector('.navbar-links').addEventListener('mouseover', handleMouseEvents);
-            document.querySelector('.navbar-links').addEventListener('mouseout', handleMouseEvents);
-
-            // Calling functions to start on load
-            setActiveLink();
-            removeHash();
-
-            // Calling changeTheme function with 'device' has default argument if theme is not found in localstorage.
-            changeTheme(JSON.parse(localStorage.getItem('config')).theme);
-        })
-    };
-};
+class CustomNavbar extends HTMLElement { connectedCallback() { navbarInitiate(this) }; };
 customElements.define('custom-navbar', CustomNavbar);
+
+function navbarInitiate(e) {
+    e.style.display = 'none';
+    e.classList.add('navbar');
+    e.setAttribute('aria-label', 'Primary navbar.');
+    loadHTML('custom-navbar', 'navbar.html', () => { navbarFunctionality() });
+}
+
+function navbarFunctionality() {
+    // Code for navbar functions.
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar-link');
+    const menuButton = document.querySelector('.navbar-menuButton');
+    const navbarLanguage = document.querySelector('.navbar-language');
+    const navbarAppearance = document.querySelector('.navbar-appearance');
+
+    // Listening for click on menuButton
+    menuButton.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        navbarAppearance.classList.remove('active');
+        navbarLanguage.classList.remove('active');
+
+        // Closing menu when navlink is pressed
+        document.addEventListener('click', (event) => {
+            navLinks.forEach(a => {
+                a.contains(event.target) ? navbar.classList.remove('active') : null;
+            });
+        });
+    });
+
+    // Closing menues when "Escape" key is pressed
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "Escape" || event.key === "Esc") {
+            navbarAppearance.classList.remove('active');
+            navbarLanguage.classList.remove('active');
+            navbar.classList.remove('active');
+        };
+    });
+
+    // Closing menues when screen width gets to big
+    const viewWidth = window.matchMedia("(min-width: 740px)");
+    viewWidth.addEventListener('change', viewWidthFunct);
+    viewWidthFunct(viewWidth);
+
+    function viewWidthFunct(viewWidth) {
+        if (viewWidth.matches) {
+            navbarAppearance.classList.remove('active');
+            navbarLanguage.classList.remove('active');
+            navbar.classList.remove('active');
+        };
+    }
+
+    // Changing active page/section on navbar
+    function setActiveLink() {
+        const currentPosition = window.scrollY;
+        let activeArticle = null;
+        const articles = document.querySelectorAll('article');
+        const firstArticle = articles[0] || 0; // setting default value to avoid errors
+        const lastArticle = articles[articles.length - 1] || 0; // setting default value to avoid errors
+        const offset = 100;
+
+        document.querySelectorAll('article').forEach(article => {
+            // Defining the start and end of the article
+            const articleStart = article.offsetTop - offset;
+            const articleEnd = articleStart + article.offsetHeight;
+
+            // Checking if postition of screen is within an article and then setting activeArticle to be equal to article
+            if (currentPosition >= articleStart && currentPosition <= articleEnd) {
+                activeArticle = article;
+            };
+        });
+
+        // Loop trough all navbar links
+        navLinks.forEach(link => {
+            // Removing active class from all links
+            link.classList.remove('active');
+
+            // adding active class to link that fits requirements
+            if (activeArticle && link.getAttribute('id').includes(activeArticle.id)) {
+                link.classList.add('active');
+            } else if (articles.length === 0 && link.getAttribute('id').includes(currentPage)) {
+                link.classList.add('active');
+            };
+        });
+
+        // If too high on the screen, select the page name
+        if (currentPosition < firstArticle.offsetTop - offset) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks.forEach(link => link.getAttribute('id').includes(currentPage) ? link.classList.add('active') : null);
+        };
+
+        // If too low, select the last article
+        if (currentPosition > lastArticle.offsetTop - offset + lastArticle.offsetHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector(`a[id="${lastArticle.id}Link"]`).classList.add('active');
+        };
+    }
+
+    // Function for handling mouse events like mouseout and mouseout
+    function handleMouseEvents(event) {
+        if (event.target.matches('.navbar-link')) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.type === 'mouseout' ? setActiveLink() : event.type === 'mouseover' ? event.target.classList.add('active') : null;
+        };
+    }
+
+    // Removes hash from url
+    function removeHash() {
+        history.replaceState("", document.title, window.location.pathname + window.location.search);
+    }
+
+    // Add scroll event listener to the document
+    document.addEventListener('scroll', setActiveLink);
+    // Check for change in url
+    window.addEventListener('popstate', removeHash);
+    // Check for mouseout and mousover events
+    document.querySelector('.navbar-links').addEventListener('mouseover', handleMouseEvents);
+    document.querySelector('.navbar-links').addEventListener('mouseout', handleMouseEvents);
+
+    // Calling functions to start on load
+    setActiveLink();
+    removeHash();
+
+    // Calling changeTheme function with 'device' has default argument if theme is not found in localstorage.
+    changeTheme(JSON.parse(localStorage.getItem('config')).theme);
+}
 
 // Function for dropdown menu's on navbar
 function navbarDrop(input) {
@@ -236,62 +238,66 @@ function navbarDrop(input) {
 // *          Custom footer          *
 // ***********************************
 
-class CustomFooter extends HTMLElement {
-    connectedCallback() {
-        this.style.display = 'none';
-        this.setAttribute('id', 'footer');
-        this.setAttribute('aria-label', 'Primary footer.');
-        loadHTML('custom-footer', 'footer.html', () => {
-            const openLayersScript = document.createElement('script');
-            openLayersScript.src = 'https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js';
-            openLayersScript.onload = function () {
-                const longitude = 11.107192;
-                const latitude = 59.260573;
-
-                let map = new ol.Map({
-                    target: 'map',
-                    layers: [
-                        new ol.layer.Tile({
-                            source: new ol.source.OSM()
-                        })
-                    ],
-                    view: new ol.View({
-                        center: ol.proj.fromLonLat([longitude, latitude]),
-                        zoom: 14
-                    })
-                });
-
-                let marker = new ol.Feature({
-                    geometry: new ol.geom.Point(ol.proj.fromLonLat([longitude, latitude]))
-                });
-
-                let vectorSource = new ol.source.Vector();
-                let vectorLayer = new ol.layer.Vector({
-                    source: vectorSource
-                });
-                vectorSource.addFeature(marker);
-                map.addLayer(vectorLayer);
-
-                let markerStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        anchor: [0.38, 1],
-                        src: '/assets/images/map-marker.svg'
-                    })
-                });
-                marker.setStyle(markerStyle);
-
-                window.addEventListener('resize', function () {
-                    map.updateSize();
-
-                    let extent = map.getView().calculateExtent(map.getSize());
-                    map.getView().fit(extent, { size: map.getSize() });
-                });
-            };
-            document.body.appendChild(openLayersScript);
-        });
-    };
-};
+class CustomFooter extends HTMLElement { connectedCallback() { footerFunctions(this) }; };
 customElements.define('custom-footer', CustomFooter);
+
+function footerFunctions(e) {
+    e.style.display = 'none';
+    e.setAttribute('id', 'footer');
+    e.setAttribute('aria-label', 'Primary footer.');
+    loadHTML('custom-footer', 'footer.html', () => { openLayers(); });
+}
+
+function openLayers() {
+    const openLayersScript = document.createElement('script');
+    openLayersScript.src = 'https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js';
+    openLayersScript.onload = () => { onloadOpenLayers(); };
+    document.body.appendChild(openLayersScript);
+}
+
+function onloadOpenLayers() {
+    const longitude = 11.107192;
+    const latitude = 59.260573;
+
+    let map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([longitude, latitude]),
+            zoom: 14
+        })
+    });
+
+    let marker = new ol.Feature({
+        geometry: new ol.geom.Point(ol.proj.fromLonLat([longitude, latitude]))
+    });
+
+    let vectorSource = new ol.source.Vector();
+    let vectorLayer = new ol.layer.Vector({
+        source: vectorSource
+    });
+    vectorSource.addFeature(marker);
+    map.addLayer(vectorLayer);
+
+    let markerStyle = new ol.style.Style({
+        image: new ol.style.Icon({
+            anchor: [0.38, 1],
+            src: '/assets/images/map-marker.svg'
+        })
+    });
+    marker.setStyle(markerStyle);
+
+    window.addEventListener('resize', function () {
+        map.updateSize();
+
+        let extent = map.getView().calculateExtent(map.getSize());
+        map.getView().fit(extent, { size: map.getSize() });
+    });
+}
 
 
 
@@ -397,25 +403,27 @@ function changeTheme(theme) {
 // *       DropDown toggle function       *
 // ****************************************
 
-// Selecting all buttons with "data-dropdown" value
-const dropdownButtons = document.querySelectorAll('button[data-dropdown]');
+function manageDropdowns() {
+    // Selecting all buttons with "data-dropdown" value
+    const dropdownButtons = document.querySelectorAll('button[data-dropdown]');
 
-function dropdownToggle(e) {
-    // add hidden class to all dropdowns
-    dropdownButtons.forEach((x) => {
-        e.dataset.dropdown === x.dataset.dropdown ? document.querySelector('#' + e.dataset.dropdown).classList.toggle('hidden') : document.querySelector('#' + x.dataset.dropdown).classList.add('hidden');
+    function dropdownToggle(e) {
+        // add hidden class to all dropdowns
+        dropdownButtons.forEach((x) => {
+            e.dataset.dropdown === x.dataset.dropdown ? document.querySelector('#' + e.dataset.dropdown).classList.toggle('hidden') : document.querySelector('#' + x.dataset.dropdown).classList.add('hidden');
+        });
+    }
+
+    // Add click listener to all dropdown buttons
+    dropdownButtons.forEach((e) => {
+        // Add hidden class to all dropdowns
+        document.querySelector('#' + e.dataset.dropdown).classList.add('hidden');
+
+        // Check for click and call dropdownToggle()
+        e.addEventListener('click', () => { dropdownToggle(e); });
     });
 }
-
-// Add click listener to all dropdown buttons
-dropdownButtons.forEach((e) => {
-    // Add hidden class to all dropdowns
-    document.querySelector('#' + e.dataset.dropdown).classList.add('hidden');
-
-    // Check for click and call dropdownToggle()
-    e.addEventListener('click', () => { dropdownToggle(e); });
-});
-
+manageDropdowns();
 
 
 
