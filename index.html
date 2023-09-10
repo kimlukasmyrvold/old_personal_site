@@ -43,17 +43,27 @@
 
     <main id="main" aria-label="Main part of website">
         <article id="home">
-            <section class="profile-info flex-container">
-                <div>
-                    <img loading="lazy" src="/assets/images/persons/kimlukas300x300.webp" alt="Picture of me smiling"
-                        class="round">
-                </div>
-                <div>
-                    <h1 class="heading">Kim Lukas Myrvold</h1>
-                    <p id="homeAge">2006, 17 år gammel</p>
-                    <p id="homeLocation">Fredrikstad, Norge</p>
-                    <a href="/redirects/mailto.html" target="_blank"
-                        rel="noreferrer noopener">kimlukasmyrvold06@gmail.com</a>
+            <section class="profileInfo">
+                <div class="profileInfo__content">
+                    <div class="profileInfo__column">
+                        <img src="/assets/images/persons/kimlukas300x300.webp" alt="Picture of me smiling"
+                            class="round">
+                    </div>
+                    <div class="profileInfo__column">
+                        <p class="title">Kim Lukas Myrvold</p>
+                        <p class="profileInfo__icon text"><svg class="icon-cake-filled"></svg><span id="homeAge">Født
+                                21.05.2006 - 17 år gammel</span></p>
+                        <a class="profileInfo__link text" href="https://goo.gl/maps/pRLoMHc8NmYiQJB49" target="_blank"
+                            rel="noopener noreferrer"><svg class="icon-location-filled"></svg><span
+                                id="homeLocation">Fredrikstad, Norge</span></a>
+                        <a class="profileInfo__link text" href="/redirects/mailto.html" target="_blank"
+                            rel="noopener noreferrer"><svg
+                                class="icon-mail"></svg><span>kimlukasmyrvold06@gmail.com</span></a>
+                        <a class="profileInfo__link text" href="tel:+4748426624"><svg class="icon-phone"></svg><span>+47
+                                484 26 624</span></a>
+                        <a class="profileInfo__link text" href="https://github.com/kimlukasmyrvold" target="_blank"
+                            rel="noopener noreferrer"><svg class="icon-github"></svg><span>GitHub</span></a>
+                    </div>
                 </div>
             </section>
 
@@ -82,6 +92,7 @@
 
                 <div class="codingLanguagesContainer">
 
+                    <!-- HTML -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-html"></svg>
@@ -127,6 +138,7 @@
                         </div>
                     </div>
 
+                    <!-- Css -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-css"></svg>
@@ -172,6 +184,7 @@
                         </div>
                     </div>
 
+                    <!-- Sass/scss -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-sass"></svg>
@@ -189,6 +202,7 @@
                         </div>
                     </div>
 
+                    <!-- JavaScript -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-js"></svg>
@@ -240,6 +254,7 @@
                         </div>
                     </div>
 
+                    <!-- C# -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-cs"></svg>
@@ -253,10 +268,65 @@
                                     <svg class="icon-github"></svg>
                                     <p>IpAddressesGenerator</p>
                                 </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/TemperatureIfElseWhile">
+                                    <svg class="icon-github"></svg>
+                                    <p>TemperatureIfElseWhile</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/bubblesort-cs">
+                                    <svg class="icon-github"></svg>
+                                    <p>bubblesort</p>
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Java -->
+                    <div class="codingLanguageItem">
+                        <div class="codingHeader">
+                            <svg class="icon-java"></svg>
+                            <p>Java</p>
+                        </div>
+                        <div class="codingReposSection">
+                            <p><span id="codingLangugeProjects">Projects:</span></p>
+
+                            <div class="codingRepos">
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/multiplicationTable">
+                                    <svg class="icon-github"></svg>
+                                    <p>multiplicationTable</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/fractionsSum">
+                                    <svg class="icon-github"></svg>
+                                    <p>fractionsSum</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/n_factorial">
+                                    <svg class="icon-github"></svg>
+                                    <p>n_factorial</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/bubblesort-java">
+                                    <svg class="icon-github"></svg>
+                                    <p>bubblesort</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/maxMin-java">
+                                    <svg class="icon-github"></svg>
+                                    <p>maxMin</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/Two7sNextToEachOther">
+                                    <svg class="icon-github"></svg>
+                                    <p>Two7sNextToEachOther</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/threeIncreasingAdjacent">
+                                    <svg class="icon-github"></svg>
+                                    <p>threeIncreasingAdjacent</p>
+                                </a>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/returnEvenNumbers">
+                                    <svg class="icon-github"></svg>
+                                    <p>returnEvenNumbers</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-py"></svg>
@@ -266,11 +336,15 @@
                             <p><span id="codingLangugeProjects">Projects:</span></p>
 
                             <div class="codingRepos">
-                                <span id="codingLanguageLocalForNow">Only local projects for now...</span>
+                                <a target="_blank" href="https://github.com/kimlukasmyrvold/fileRenamer-py">
+                                    <svg class="icon-github"></svg>
+                                    <p>fileRenamer</p>
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- MySQL -->
                     <div class="codingLanguageItem">
                         <div class="codingHeader">
                             <svg class="icon-mysql"></svg>
@@ -317,8 +391,7 @@
                 <div class="school-table">
                     <div class="school-table-item">
                         <div>
-                            <img loading="lazy" src="/assets/images/education/glemmen.webp"
-                                alt="Bilde av Glemmen Videregående skole">
+                            <img src="/assets/images/education/glemmen.webp" alt="Bilde av Glemmen Videregående skole">
                         </div>
                         <div>
                             <p id="educationSchoolsGlemmenTitle" class="subheading schoolTitle">Glemmen videregående
@@ -336,8 +409,7 @@
 
                     <div class="school-table-item">
                         <div>
-                            <img loading="lazy" src="/assets/images/education/borge-skole.webp"
-                                alt="Image of Borge Ungdom Skole">
+                            <img src="/assets/images/education/borge-skole.webp" alt="Image of Borge Ungdom Skole">
                         </div>
                         <div>
                             <p id="educationSchoolsBorgeTitle" class="subheading schoolTitle">Borge ungdomsskole <span
@@ -358,8 +430,7 @@
 
                     <div class="school-table-item">
                         <div>
-                            <img loading="lazy" src="/assets/images/education/arum-skole.webp"
-                                alt="Image of Årum skole">
+                            <img src="/assets/images/education/arum-skole.webp" alt="Image of Årum skole">
                         </div>
                         <div>
                             <p id="educationSchoolsArumTitle" class="subheading schoolTitle">Årum skole <span
@@ -379,55 +450,6 @@
                 </div>
             </section>
         </article>
-
-        <!-- <article id="workExperience">
-            <h2 id="workExperienceHeading" class="heading">Jobberfaringer</h2>
-
-            <section class="work-jobs">
-                <div id="painthouse">
-                    <button id="paintBtn" class="header dropRight" data-dropdown="paintDrop">Male hus</button>
-
-                    <p id="paintDrop">I sommeren 2022 så hjalp jeg til med å male huset, jeg gjorde en
-                        god jobb.</p>
-                </div>
-
-                <div id="vacuuming">
-                    <button id="vacuumingBtn" class="header dropRight" data-dropdown="vaccumDrop">Støvsuging</button>
-
-                    <p id="vaccumDrop">Jeg støvsuger alltid rommet mitt når jeg ser det er støv, noen
-                        ganger så støvsuger jeg også huset når jeg føler for det.</p>
-                </div>
-
-                <div id="takeOutTrash">
-                    <button id="takeOutTrashBtn" class="header dropRight" data-dropdown="takeOutTrashDrop">Ta ut
-                        søppel</button>
-
-                    <p id="takeOutTrashDrop">Noen ganger så kaster jeg søppla vi har ute i søppel
-                        dunken, men jeg pleier oftest bare å gjøre det når jeg har en del søppel på rommet mitt som ikke
-                        har
-                        plass inne.</p>
-                </div>
-
-                <div id="otherJobsHome">
-                    <button id="otherJobsHomeBtn" class="header dropRight" data-dropdown="otherJobsHomeDrop">Andre
-                        jobber hjemme</button>
-
-                    <p id="otherJobsHomeDrop">Jeg pleier oftest å reparere og installere ting i
-                        huset, så langt har jeg fikset dører, lamper, datamaskiner internett og mer. Jeg har også
-                        installert et vindu, røykvarsler, persienner, ovner og mer. <br> Jeg legger også ting ut og inn
-                        i oppvaskmaskinen og legger ved i ovnen. Jeg klarer også lage ild.</p>
-                </div>
-
-                <div id="jobsMyRoom">
-                    <button id="jobsMyRoomBtn" class="header dropRight" data-dropdown="jobsMyRoomDrop">Jobber inne på
-                        rommet mitt</button>
-
-                    <p id="jobsMyRoomDrop">Inne på rommet mitt sørger jeg alltid for at det er ryddig
-                        og pent. Jeg rer opp senga, støvsuger, vasker bort støv, vanner blomster og legger klær inn i
-                        skapet.</p>
-                </div>
-            </section>
-        </article> -->
 
         <article id="games">
             <h1 id="gamesHeading" class="heading">Spill</h1>
@@ -497,7 +519,7 @@
                     <div class="gaming-item" id="satisfactory">
                         <div class="game-info-container">
                             <div class="banner">
-                                <img loading="lazy" src="assets/images/satisfactory/banner.jpg"
+                                <img src="assets/images/satisfactory/banner.jpg"
                                     alt="Banner image for a game called Satisfactory">
                                 <div class="banner-content">
                                     <p class="title">Satisfactory</p>
@@ -515,7 +537,7 @@
                             <div class="game-info-content">
                                 <div class="stats">
                                     <p><span id="gamePurchased">Purchased: </span>05/09/2020</p>
-                                    <p><span id="hoursPlayed">Hours played: </span>942</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>964</p>
                                 </div>
 
                                 <p class="description" id="satisfactoryDesc">
@@ -529,66 +551,52 @@
                         <div class="image-container">
                             <div class="preview-image-container">
                                 <div class="preview-image">
-                                    <img tabindex="0" loading="lazy" src="/assets/images/satisfactory/medium/1.jpg"
+                                    <img tabindex="0" src="/assets/images/satisfactory/medium/1.jpg"
                                         alt="focused image">
                                 </div>
                             </div>
                             <div class="image-carousel" tabindex="-1">
                                 <div class="image focus" data-image="1">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/1.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/1.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="2">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/2.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/2.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="3">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/3.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/3.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="4">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/4.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/4.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="5">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/5.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/5.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="6">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/6.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/6.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="7">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/7.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/7.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="8">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/8.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/8.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="9">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/9.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/9.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="10">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/10.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/10.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="11">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/11.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/11.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="12">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/12.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/12.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="13">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/13.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/13.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="14">
-                                    <img loading="lazy" src="/assets/images/satisfactory/small/14.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/satisfactory/small/14.jpg" alt="small image" tabindex="0">
                                 </div>
                             </div>
                         </div>
@@ -598,7 +606,7 @@
                     <div class="gaming-item" id="space-engineers">
                         <div class="game-info-container">
                             <div class="banner">
-                                <img loading="lazy" src="/assets/images/space-engineers/banner.jpg"
+                                <img src="/assets/images/space-engineers/banner.jpg"
                                     alt="Banner image for a game called Space Engineers">
                                 <div class="banner-content">
                                     <p class="title">Space Engineers</p>
@@ -635,46 +643,46 @@
                         <div class="image-container">
                             <div class="preview-image-container">
                                 <div class="preview-image">
-                                    <img tabindex="0" loading="lazy" src="/assets/images/space-engineers/medium/1.jpg"
+                                    <img tabindex="0" src="/assets/images/space-engineers/medium/1.jpg"
                                         alt="focused image">
                                 </div>
                             </div>
                             <div class="image-carousel" tabindex="-1">
                                 <div class="image focus" data-image="1">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/1.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/1.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="2">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/2.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/2.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="3">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/3.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/3.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="4">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/4.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/4.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="5">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/5.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/5.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="6">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/6.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/6.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="7">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/7.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/7.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="8">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/8.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/8.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="9">
-                                    <img loading="lazy" src="/assets/images/space-engineers/small/9.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/space-engineers/small/9.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                             </div>
                         </div>
@@ -684,7 +692,7 @@
                     <div class="gaming-item" id="dyson-sphere-program">
                         <div class="game-info-container">
                             <div class="banner">
-                                <img loading="lazy" src="/assets/images/dyson-sphere-program/banner.jpg"
+                                <img src="/assets/images/dyson-sphere-program/banner.jpg"
                                     alt="Banner image for a game called Dyson Sphere Program">
                                 <div class="banner-content">
                                     <p class="title">Dyson Sphere Program</p>
@@ -714,38 +722,38 @@
                         <div class="image-container">
                             <div class="preview-image-container">
                                 <div class="preview-image">
-                                    <img tabindex="0" loading="lazy"
-                                        src="/assets/images/dyson-sphere-program/medium/1.jpg" alt="focused image">
+                                    <img tabindex="0" src="/assets/images/dyson-sphere-program/medium/1.jpg"
+                                        alt="focused image">
                                 </div>
                             </div>
                             <div class="image-carousel" tabindex="-1">
                                 <div class="image focus" data-image="1">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/1.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/1.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="2">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/2.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/2.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="3">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/3.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/3.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="4">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/4.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/4.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="5">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/5.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/5.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="6">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/6.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/6.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="7">
-                                    <img loading="lazy" src="/assets/images/dyson-sphere-program/small/7.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/dyson-sphere-program/small/7.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                             </div>
                         </div>
@@ -755,7 +763,7 @@
                     <div class="gaming-item" id="euro-truck-simulator-2">
                         <div class="game-info-container">
                             <div class="banner">
-                                <img loading="lazy" src="/assets/images/euro-truck-simulator-2/banner.jpg"
+                                <img src="/assets/images/euro-truck-simulator-2/banner.jpg"
                                     alt="Banner image for a game called Euro Truck Simulator 2">
                                 <div class="banner-content">
                                     <p class="title">Euro Truck Simulator 2</p>
@@ -784,26 +792,26 @@
                         <div class="image-container">
                             <div class="preview-image-container">
                                 <div class="preview-image">
-                                    <img tabindex="0" loading="lazy"
-                                        src="/assets/images/euro-truck-simulator-2/medium/1.jpg" alt="focused image">
+                                    <img tabindex="0" src="/assets/images/euro-truck-simulator-2/medium/1.jpg"
+                                        alt="focused image">
                                 </div>
                             </div>
                             <div class="image-carousel" tabindex="-1">
                                 <div class="image focus" data-image="1">
-                                    <img loading="lazy" src="/assets/images/euro-truck-simulator-2/small/1.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/euro-truck-simulator-2/small/1.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="2">
-                                    <img loading="lazy" src="/assets/images/euro-truck-simulator-2/small/2.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/euro-truck-simulator-2/small/2.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="3">
-                                    <img loading="lazy" src="/assets/images/euro-truck-simulator-2/small/3.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/euro-truck-simulator-2/small/3.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="4">
-                                    <img loading="lazy" src="/assets/images/euro-truck-simulator-2/small/4.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/euro-truck-simulator-2/small/4.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                             </div>
                         </div>
@@ -813,7 +821,7 @@
                     <div class="gaming-item" id="techtonica">
                         <div class="game-info-container">
                             <div class="banner">
-                                <img loading="lazy" src="/assets/images/techtonica/banner.jpg"
+                                <img src="/assets/images/techtonica/banner.jpg"
                                     alt="Banner image for a game called Techtonica">
                                 <div class="banner-content">
                                     <p class="title">Techtonica</p>
@@ -832,7 +840,7 @@
                             <div class="game-info-content">
                                 <div class="stats">
                                     <p><span id="gamePurchased">Purchased: </span>18/07/2023</p>
-                                    <p><span id="hoursPlayed">Hours played: </span>23.4</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>23.6</p>
                                 </div>
 
                                 <p class="description" id="techtonicaDesc">
@@ -847,38 +855,30 @@
                         <div class="image-container">
                             <div class="preview-image-container">
                                 <div class="preview-image">
-                                    <img tabindex="0" loading="lazy" src="/assets/images/techtonica/medium/1.jpg"
-                                        alt="focused image">
+                                    <img tabindex="0" src="/assets/images/techtonica/medium/1.jpg" alt="focused image">
                                 </div>
                             </div>
                             <div class="image-carousel" tabindex="-1">
                                 <div class="image focus" data-image="1">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/1.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/1.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="2">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/2.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/2.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="3">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/3.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/3.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="4">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/4.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/4.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="5">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/5.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/5.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="6">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/6.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/6.jpg" alt="small image" tabindex="0">
                                 </div>
                                 <div class="image" data-image="7">
-                                    <img loading="lazy" src="/assets/images/techtonica/small/7.jpg" alt="small image"
-                                        tabindex="0">
+                                    <img src="/assets/images/techtonica/small/7.jpg" alt="small image" tabindex="0">
                                 </div>
                             </div>
                         </div>
@@ -888,7 +888,7 @@
                     <div class="gaming-item" id="american-truck-simulator">
                         <div class="game-info-container">
                             <div class="banner">
-                                <img loading="lazy" src="/assets/images/american-truck-simulator/banner.jpg"
+                                <img src="/assets/images/american-truck-simulator/banner.jpg"
                                     alt="Banner image for a game called American Truck Simulator">
                                 <div class="banner-content">
                                     <p class="title">American Truck Simulator</p>
@@ -903,7 +903,7 @@
                             <div class="game-info-content">
                                 <div class="stats">
                                     <p><span id="gamePurchased">Purchased: </span>14/02/2023</p>
-                                    <p><span id="hoursPlayed">Hours played: </span>18.7</p>
+                                    <p><span id="hoursPlayed">Hours played: </span>19.9</p>
                                 </div>
 
                                 <p class="description" id="americantrucksimDesc">
@@ -918,26 +918,26 @@
                         <div class="image-container">
                             <div class="preview-image-container">
                                 <div class="preview-image">
-                                    <img tabindex="0" loading="lazy"
-                                        src="/assets/images/american-truck-simulator/medium/1.jpg" alt="focused image">
+                                    <img tabindex="0" src="/assets/images/american-truck-simulator/medium/1.jpg"
+                                        alt="focused image">
                                 </div>
                             </div>
                             <div class="image-carousel" tabindex="-1">
                                 <div class="image focus" data-image="1">
-                                    <img loading="lazy" src="/assets/images/american-truck-simulator/small/1.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/american-truck-simulator/small/1.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="2">
-                                    <img loading="lazy" src="/assets/images/american-truck-simulator/small/2.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/american-truck-simulator/small/2.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="3">
-                                    <img loading="lazy" src="/assets/images/american-truck-simulator/small/3.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/american-truck-simulator/small/3.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                                 <div class="image" data-image="4">
-                                    <img loading="lazy" src="/assets/images/american-truck-simulator/small/4.jpg"
-                                        alt="small image" tabindex="0">
+                                    <img src="/assets/images/american-truck-simulator/small/4.jpg" alt="small image"
+                                        tabindex="0">
                                 </div>
                             </div>
                         </div>
@@ -945,7 +945,6 @@
 
                 </div>
             </section>
-            <!-- <section id="computers"><p class="subheading">Datamaskiner</p><div class="dropdowns"><div id="computerObsidian"><button id="computerObsidianBtn" class="hobbiesDrop dropRight2" data-dropdown="computerObsidianDrop">Obsidian Computer</button><table id="computerObsidianDrop"><tr><td>test</td></tr></table></div></div></section> -->
         </article>
 
     </main>
