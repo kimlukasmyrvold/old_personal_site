@@ -70,7 +70,7 @@
 
         background-color: #00000033;
         border-radius: calc(var(--border-radius) / 2);
-        padding: 0.4em;
+        padding: calc($gap * 1.5) $gap;
 
         flex: 1 1 0px;
     }
