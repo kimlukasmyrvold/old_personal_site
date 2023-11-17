@@ -1,0 +1,25 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "This is my Personal Site that I show off games I have made and personal things about such as my personality, work experience, education and my skills.",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -o -c-1",
+    "sass": "sass -w assets/scss:assets/css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimlukasmyrvold/kimlukasmyrvold.github.io.git"
+  },
+  "keywords": [],
+  "author": "Kim Lukas Myrvold",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimlukasmyrvold/kimlukasmyrvold.github.io/issues"
+  },
+  "homepage": "https://github.com/kimlukasmyrvold/kimlukasmyrvold.github.io#readme",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "sass": "^1.66.0"
+  }
+}
