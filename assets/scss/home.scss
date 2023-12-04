@@ -3,6 +3,8 @@
 @import url(../fonts/press-start-2p/press-start-2p.css);
 
 .profileInfo {
+    position: relative;
+
     &__content {
         display: flex;
         flex-wrap: wrap;
@@ -16,14 +18,16 @@
         flex-direction: column;
     }
 
-    &__link, &__icon {
+    &__link,
+    &__icon {
         display: flex;
         align-items: center;
         gap: .2em;
         width: fit-content;
         text-decoration: none;
-        
+
     }
+
     &__link:hover {
         text-decoration: underline var(--accent-color) 2px;
     }
@@ -37,7 +41,8 @@
         font-size: 1.25rem;
     }
 
-    p, a {
+    p,
+    a {
         margin: .2em 0;
     }
 
@@ -182,7 +187,7 @@
                 gap: calc($gap / 1.7);
                 font-size: 1.2rem;
                 width: fit-content;
-                
+
                 p {
                     text-transform: capitalize;
                 }
