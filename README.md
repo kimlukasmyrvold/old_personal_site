@@ -1,2 +1,2 @@
 # Personal Site
-This is my Site where I show off the games I have made and about my things such as my personality, work experience, education, and my skills.
+This is my personal site where I show off games that I have made and also about my personality, work experience, education, and what skills I have.
